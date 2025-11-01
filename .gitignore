@@ -1,0 +1,92 @@
+# Arquivos de configuração do usuário do Visual Studio
+*.suo
+*.user
+*.sln.docstates
+
+# Pastas de build
+[Dd]ebug/
+[Rr]elease/
+x64/
+[Bb]in/
+[Oo]bj/
+
+# Pacotes NuGet
+*.nupkg
+**/packages/*
+!**/packages/build/
+# !**/packages/repositories.config  (descomente se necessário)
+
+# Resultados de testes MSTest
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# Arquivos temporários e de build intermediário
+*_i.c
+*_p.c
+*.ilk
+*.meta
+*.obj
+*.pch
+*.pdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*.log
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.scc
+
+# Arquivos gerados pelo sistema operacional
+.DS_Store*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Pastas e arquivos de cache e configurações de IDEs
+ipch/
+*.aps
+*.ncb
+*.opensdf
+*.sdf
+*.cachefile
+.vs/
+.idea/
+.vscode/
+
+# Ferramentas de terceiros e dados temporários
+_ReSharper*/
+*.[Rr]e[Ss]harper
+_TeamCity*
+*.dotCover
+*.ncrunch*
+.*crunch*.local.xml
+[Ee]xpress/
+
+# Publicações e arquivos relacionados
+publish/
+*.Publish.xml
+*.pfx
+*.publishsettings
+
+# Outros arquivos a ignorar
+~$*
+*~
+*.dbmdl
+*.Cache
+Temp*/
+*.orig
+
+# Arquivos de banco de dados locais
+**/App_Data/*.mdf
+**/App_Data/*.ldf
+**/App_Data/*.sdf
+prjMerchades/obj/Debug/DesignTimeResolveAssemblyReferences.cache
