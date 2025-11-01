@@ -86,7 +86,7 @@ Os 40 alunos estão organizados em grupos, subdivididos em funções que simulam
 
 - Analista de Sistemas:
 
- Levantamento de requisitos e desenho dos fluxos do sistema.
+  Levantamento de requisitos e desenho dos fluxos do sistema.
 
 
 
