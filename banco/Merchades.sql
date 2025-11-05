@@ -9,7 +9,7 @@ CREATE TABLE PRODUTOS (
 	TIPO_PRODUTOS varchar (30),  -- Exemplo: Higiene, Alimento, Limpeza...
 	TIPO_UNITARIO varchar (30),  -- Exemplo: Grama, , Kilograma, Litro, Mililitro, Fardo...
 	PRECO_PRODUTOS money, -- Gerenciar o dinheiro do mercado e atribuir valor aos produtos 
-	CODIGO_DE_BARRAS int, -- Identificação do produto nas notas fiscais e no sistema
+	CODIGO_DE_BARRAS varchar(20), -- Identificação do produto nas notas fiscais e no sistema
 );
  
 CREATE TABLE FORNECEDOR (
@@ -20,6 +20,15 @@ CREATE TABLE FORNECEDOR (
 	ESTADO_FORNECEDOR char (2), -- Estado em que o fornecedor está localizado. Detalhe está em char pois só iremos usar 2 letras para as siglas dos estados exemplo: (RJ, MG, SP, BH...)
 	CEP_FORNECEDOR varchar (8), -- Bairro em que o fornecedor se localiza
 	CNPJ_FORNECEDOR varchar (14) -- Documento da empresa
+);
+
+CREATE TABLE NOTA_FISCAL_FORNECEDOR (
+    ID_NOTA_FISCAL_FORNEC int identity primary key,
+    DATA_EMISSAO date, -- Data que será emitida na compra com o fornecedor
+    VALOR_COMPRA money, -- Quanto foi gasto com o fornecedor
+    COD_NOTA_FORN varchar (50), -- Código da nota fiscal do fornecedor, para dividir e saber qual nota é
+    OBSERVACAO varchar (150), -- Alguma especificação
+    ID_FORNECEDOR int foreign key references FORNECEDOR (ID_FORNECEDOR) -- Identificação do fornecedor via id
 );
 
 CREATE TABLE ESTOQUE ( 	
@@ -54,7 +63,7 @@ CREATE TABLE NOTA_FISCAL_VENDA (
 	ID_NOTA_VENDA int identity primary key, -- Detalhamento do pedido 
 	DATA_EMISSAO date, -- Data de emissão da nota fiscal
 	VALOR_VENDA money,
-	COD_NOTA_VENDA int,
+	COD_NOTA_VENDA varchar(50),
 	QTD_PARCELAS int,
     CPF_CNPJ_VENDA varchar (14),
 	OBSERVACAO varchar (150),
@@ -69,15 +78,6 @@ CREATE TABLE ITENS_NOTA_VENDA (
 	QTD_PRODUTO int, -- Saber a quantidade do produto em uma venda
     ID_PRODUTOS int foreign key references PRODUTOS (ID_PRODUTOS),
 	ID_NOTA_VENDA int foreign key references NOTA_FISCAL_VENDA (ID_NOTA_VENDA)
-);
-
-CREATE TABLE NOTA_FISCAL_FORNECEDOR (
-    ID_NOTA_FISCAL_FORNEC int identity primary key,
-    DATA_EMISSAO date, -- Data que será emitida na compra com o fornecedor
-    VALOR_COMPRA money, -- Quanto foi gasto com o fornecedor
-    COD_NOTA_FORN varchar (50), -- Código da nota fiscal do fornecedor, para dividir e saber qual nota é
-    OBSERVACAO varchar (150), -- Alguma especificação
-    ID_FORNECEDOR int foreign key references FORNECEDOR (ID_FORNECEDOR) -- Identificação do fornecedor via id
 );
 
 CREATE TABLE ITENS_NOTA_FORNECEDOR (
@@ -192,6 +192,7 @@ END;
 
 -----
 
+GO
 CREATE TRIGGER TR_AI_ITENS_NOTA_VENDA
 ON ITENS_NOTA_VENDA
 AFTER INSERT
@@ -450,6 +451,7 @@ BEGIN
 END;
 GO
 
+GO
 CREATE TRIGGER TR_AI_Relatorio_Fornecedor
 ON NOTA_FISCAL_FORNECEDOR
 AFTER INSERT
@@ -474,6 +476,7 @@ GO
 
 -- de relatorio financeiro --
 
+GO
 CREATE PROCEDURE PR_GerarRelatorioFinanceiro
     @DataInicio DATE,
     @DataFim DATE
