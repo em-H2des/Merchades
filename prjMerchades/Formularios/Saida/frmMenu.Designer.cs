@@ -47,8 +47,14 @@
             this.btnExcluirItem = new System.Windows.Forms.Button();
             this.btnAdicionarItem = new System.Windows.Forms.Button();
             this.dataGridViewProdutosCarrinho = new System.Windows.Forms.DataGridView();
+            this.ColumnDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnValUni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblCodigoCompra = new System.Windows.Forms.Label();
             this.tabProdutos = new System.Windows.Forms.TabPage();
+            this.btnLimparFiltro = new System.Windows.Forms.Button();
+            this.txtBuscarEstoque = new System.Windows.Forms.TextBox();
             this.btnVoltarTelaInicial = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -68,12 +74,6 @@
             this.dsDadosSaida = new prjMerchades.Dados.dsDadosSaida();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.resumoEstoqueTableAdapter = new prjMerchades.Dados.dsDadosSaidaTableAdapters.ResumoEstoqueTableAdapter();
-            this.txtBuscarEstoque = new System.Windows.Forms.TextBox();
-            this.btnLimparFiltro = new System.Windows.Forms.Button();
-            this.ColumnDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnValUni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlSaida.SuspendLayout();
             this.tabCaixa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProdutosCarrinho)).BeginInit();
@@ -134,7 +134,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
-            this.label7.Location = new System.Drawing.Point(226, 378);
+            this.label7.Location = new System.Drawing.Point(222, 372);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(161, 22);
@@ -157,6 +157,7 @@
             this.btnDiminuiQtd.TabIndex = 58;
             this.btnDiminuiQtd.Text = "▼";
             this.btnDiminuiQtd.UseVisualStyleBackColor = false;
+            this.btnDiminuiQtd.Click += new System.EventHandler(this.btnDiminuiQtd_Click);
             // 
             // btnAumentaQtd
             // 
@@ -173,6 +174,7 @@
             this.btnAumentaQtd.TabIndex = 57;
             this.btnAumentaQtd.Text = "▲";
             this.btnAumentaQtd.UseVisualStyleBackColor = false;
+            this.btnAumentaQtd.Click += new System.EventHandler(this.btnAumentaQtd_Click);
             // 
             // lblTotalFinal
             // 
@@ -324,6 +326,7 @@
             this.btnExcluirItem.TabIndex = 39;
             this.btnExcluirItem.Text = "Excluir Item";
             this.btnExcluirItem.UseVisualStyleBackColor = false;
+            this.btnExcluirItem.Click += new System.EventHandler(this.btnExcluirItem_Click);
             // 
             // btnAdicionarItem
             // 
@@ -363,8 +366,41 @@
             this.dataGridViewProdutosCarrinho.ReadOnly = true;
             this.dataGridViewProdutosCarrinho.RowHeadersWidth = 62;
             this.dataGridViewProdutosCarrinho.RowTemplate.Height = 28;
+            this.dataGridViewProdutosCarrinho.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProdutosCarrinho.Size = new System.Drawing.Size(558, 240);
             this.dataGridViewProdutosCarrinho.TabIndex = 37;
+            // 
+            // ColumnDesc
+            // 
+            this.ColumnDesc.HeaderText = "Produto";
+            this.ColumnDesc.MinimumWidth = 8;
+            this.ColumnDesc.Name = "ColumnDesc";
+            this.ColumnDesc.ReadOnly = true;
+            this.ColumnDesc.Width = 150;
+            // 
+            // ColumnQtd
+            // 
+            this.ColumnQtd.HeaderText = "Quantidade";
+            this.ColumnQtd.MinimumWidth = 8;
+            this.ColumnQtd.Name = "ColumnQtd";
+            this.ColumnQtd.ReadOnly = true;
+            this.ColumnQtd.Width = 150;
+            // 
+            // ColumnValUni
+            // 
+            this.ColumnValUni.HeaderText = "Preço Unitário";
+            this.ColumnValUni.MinimumWidth = 8;
+            this.ColumnValUni.Name = "ColumnValUni";
+            this.ColumnValUni.ReadOnly = true;
+            this.ColumnValUni.Width = 150;
+            // 
+            // ColumnTotal
+            // 
+            this.ColumnTotal.HeaderText = "Total";
+            this.ColumnTotal.MinimumWidth = 8;
+            this.ColumnTotal.Name = "ColumnTotal";
+            this.ColumnTotal.ReadOnly = true;
+            this.ColumnTotal.Width = 150;
             // 
             // lblCodigoCompra
             // 
@@ -401,6 +437,38 @@
             this.tabProdutos.TabIndex = 1;
             this.tabProdutos.Text = "Estoque";
             this.tabProdutos.UseVisualStyleBackColor = true;
+            // 
+            // btnLimparFiltro
+            // 
+            this.btnLimparFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLimparFiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(61)))), ((int)(((byte)(32)))));
+            this.btnLimparFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimparFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F);
+            this.btnLimparFiltro.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnLimparFiltro.Location = new System.Drawing.Point(829, 321);
+            this.btnLimparFiltro.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btnLimparFiltro.MaximumSize = new System.Drawing.Size(192, 46);
+            this.btnLimparFiltro.MinimumSize = new System.Drawing.Size(74, 27);
+            this.btnLimparFiltro.Name = "btnLimparFiltro";
+            this.btnLimparFiltro.Size = new System.Drawing.Size(157, 46);
+            this.btnLimparFiltro.TabIndex = 46;
+            this.btnLimparFiltro.Text = "Limpar Filtro";
+            this.btnLimparFiltro.UseVisualStyleBackColor = false;
+            this.btnLimparFiltro.Click += new System.EventHandler(this.btnLimparFiltro_Click);
+            // 
+            // txtBuscarEstoque
+            // 
+            this.txtBuscarEstoque.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBuscarEstoque.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
+            this.txtBuscarEstoque.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBuscarEstoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.8F);
+            this.txtBuscarEstoque.ForeColor = System.Drawing.Color.White;
+            this.txtBuscarEstoque.Location = new System.Drawing.Point(640, 125);
+            this.txtBuscarEstoque.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.txtBuscarEstoque.Name = "txtBuscarEstoque";
+            this.txtBuscarEstoque.Size = new System.Drawing.Size(346, 29);
+            this.txtBuscarEstoque.TabIndex = 35;
             // 
             // btnVoltarTelaInicial
             // 
@@ -638,70 +706,6 @@
             // resumoEstoqueTableAdapter
             // 
             this.resumoEstoqueTableAdapter.ClearBeforeFill = true;
-            // 
-            // txtBuscarEstoque
-            // 
-            this.txtBuscarEstoque.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBuscarEstoque.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
-            this.txtBuscarEstoque.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBuscarEstoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.8F);
-            this.txtBuscarEstoque.ForeColor = System.Drawing.Color.White;
-            this.txtBuscarEstoque.Location = new System.Drawing.Point(640, 125);
-            this.txtBuscarEstoque.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.txtBuscarEstoque.Name = "txtBuscarEstoque";
-            this.txtBuscarEstoque.Size = new System.Drawing.Size(346, 29);
-            this.txtBuscarEstoque.TabIndex = 35;
-            // 
-            // btnLimparFiltro
-            // 
-            this.btnLimparFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLimparFiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(61)))), ((int)(((byte)(32)))));
-            this.btnLimparFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimparFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F);
-            this.btnLimparFiltro.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnLimparFiltro.Location = new System.Drawing.Point(829, 321);
-            this.btnLimparFiltro.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.btnLimparFiltro.MaximumSize = new System.Drawing.Size(192, 46);
-            this.btnLimparFiltro.MinimumSize = new System.Drawing.Size(74, 27);
-            this.btnLimparFiltro.Name = "btnLimparFiltro";
-            this.btnLimparFiltro.Size = new System.Drawing.Size(157, 46);
-            this.btnLimparFiltro.TabIndex = 46;
-            this.btnLimparFiltro.Text = "Limpar Filtro";
-            this.btnLimparFiltro.UseVisualStyleBackColor = false;
-            this.btnLimparFiltro.Click += new System.EventHandler(this.btnLimparFiltro_Click);
-            // 
-            // ColumnDesc
-            // 
-            this.ColumnDesc.HeaderText = "Produto";
-            this.ColumnDesc.MinimumWidth = 8;
-            this.ColumnDesc.Name = "ColumnDesc";
-            this.ColumnDesc.ReadOnly = true;
-            this.ColumnDesc.Width = 150;
-            // 
-            // ColumnQtd
-            // 
-            this.ColumnQtd.HeaderText = "Quantidade";
-            this.ColumnQtd.MinimumWidth = 8;
-            this.ColumnQtd.Name = "ColumnQtd";
-            this.ColumnQtd.ReadOnly = true;
-            this.ColumnQtd.Width = 150;
-            // 
-            // ColumnValUni
-            // 
-            this.ColumnValUni.HeaderText = "Preço Unitário";
-            this.ColumnValUni.MinimumWidth = 8;
-            this.ColumnValUni.Name = "ColumnValUni";
-            this.ColumnValUni.ReadOnly = true;
-            this.ColumnValUni.Width = 150;
-            // 
-            // ColumnTotal
-            // 
-            this.ColumnTotal.HeaderText = "Total";
-            this.ColumnTotal.MinimumWidth = 8;
-            this.ColumnTotal.Name = "ColumnTotal";
-            this.ColumnTotal.ReadOnly = true;
-            this.ColumnTotal.Width = 150;
             // 
             // frmMenu
             // 

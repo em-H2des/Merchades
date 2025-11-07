@@ -3,31 +3,31 @@
   "WorkspaceRootPath": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjmerchades\\formularios\\saida\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|c:\\users\\labinfo\\documents\\github\\merchades\\prjmerchades\\formularios\\saida\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\saida\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|c:\\users\\labinfo\\documents\\github\\merchades\\prjmerchades\\formularios\\saida\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjmerchades\\formularios\\saida\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\saida\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjmerchades\\dados\\dsdadossaida.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\dados\\dsdadossaida.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}"
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|prjMerchades||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|prjMerchades||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjmerchades\\formularios\\frmmenusaida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\frmmenusaida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjmerchades\\formularios\\saida\\frmnotafiscal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\saida\\frmnotafiscal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjmerchades\\formularios\\saida\\frmpagamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\saida\\frmpagamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjmerchades\\dados\\dsdadossaida.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}",
+      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\dados\\dsdadossaida.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|c:\\users\\labinfo\\documents\\github\\merchades\\prjmerchades\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}"
+      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjmerchades\\formularios\\saida\\frmpagamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\saida\\frmpagamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -37,19 +37,29 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "frmMenuSaida.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\frmMenuSaida.cs",
+              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\frmMenuSaida.cs",
+              "ToolTip": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\frmMenuSaida.cs [Design]",
+              "RelativeToolTip": "prjMerchades\\Formularios\\frmMenuSaida.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T12:16:49.542Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "prjMerchades",
               "DocumentMoniker": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\prjMerchades.csproj",
               "RelativeDocumentMoniker": "prjMerchades\\prjMerchades.csproj",
               "ToolTip": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\prjMerchades.csproj",
               "RelativeToolTip": "prjMerchades\\prjMerchades.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-11-03T17:46:08.945Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-03T17:46:08.945Z"
             },
             {
               "$type": "Document",
@@ -59,7 +69,7 @@
               "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Saida\\frmMenu.cs",
               "ToolTip": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Saida\\frmMenu.cs",
               "RelativeToolTip": "prjMerchades\\Formularios\\Saida\\frmMenu.cs",
-              "ViewState": "AgIAAM8AAAAAAAAAAADwv9oAAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAAFsAAAAAAAAAAADwv20AAAByAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-01T12:01:00.992Z",
               "EditorCaption": ""
@@ -89,7 +99,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "frmPagamento.cs [Design]",
               "DocumentMoniker": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Saida\\frmPagamento.cs",
               "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Saida\\frmPagamento.cs",
@@ -100,7 +110,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "dsDadosSaida.xsd",
               "DocumentMoniker": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Dados\\dsDadosSaida.xsd",
               "RelativeDocumentMoniker": "prjMerchades\\Dados\\dsDadosSaida.xsd",

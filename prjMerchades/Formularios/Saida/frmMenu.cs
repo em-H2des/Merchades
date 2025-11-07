@@ -44,13 +44,106 @@ namespace Merchades
                 form.Show();
             }
 
-            
-        private void btnFecharAba_Click(object sender, EventArgs e)
+
+        //==================================Aba do Caixa==================================//
+
+        private void btnCancelaVenda_Click(object sender, EventArgs e)
         {
-            if (tabControlSaida.TabPages.Count > 0)
-                tabControlSaida.TabPages.Remove(tabControlSaida.SelectedTab);
+            frmMenuSaida novoForm = new frmMenuSaida();
+            this.Hide(); // apenas esconde o atual
+            novoForm.ShowDialog();
+            this.Close(); // fecha depois que o novo for fechado
         }
 
+        private void btnFinalizaCompra_Click(object sender, EventArgs e)
+        {
+            frmPagamento novoForm = new frmPagamento();
+            novoForm.Show();//Abre uma tela do formProdutos
+        }
+
+        //Botão que leva para a aba estoque para adicionar um item ao carrinho
+        private void btnAdicionarItem_Click(object sender, EventArgs e)
+        {
+            //Troca para a aba de estoque
+            tabControlSaida.SelectedIndex = 1;
+        }
+
+        private void btnAumentaQtd_Click(object sender, EventArgs e)
+        {
+            //Verifica se um item foi selecionado para aumentar a quantidade
+            if (dataGridViewProdutosCarrinho.SelectedRows.Count == 0)
+            {
+                //Se não selecionou um item, vai dar um alert
+                MessageBox.Show("Selecione um produto para aumentar a quantidade.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                //Aumenta a quantidade de todos os itens selecionados em 1
+                for (int i = 0; i < dataGridViewProdutosCarrinho.SelectedRows.Count; i++)
+                {
+                    dataGridViewProdutosCarrinho.SelectedRows[i].Cells[1].Value = int.Parse(dataGridViewProdutosCarrinho.SelectedRows[i].Cells[1].Value.ToString()) + 1;
+                }
+            }
+        }
+
+        private void btnDiminuiQtd_Click(object sender, EventArgs e)
+        {
+            //Verifica se um item foi selecionado para aumentar a quantidade
+            if (dataGridViewProdutosCarrinho.SelectedRows.Count == 0)
+            {
+                //Se não selecionou um item, vai dar um alert
+                MessageBox.Show("Selecione um produto para diminuir a quantidade.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                DialogResult acaoDoUsuario = MessageBox.Show("Deseja apagar o(s) produto(s) selecionados do carrinho?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+                if (acaoDoUsuario == DialogResult.Yes)
+                {
+                    //Loop para diminuir a quantidade de todos os itens selecionados em 1
+                    int numDeItensSelecionados = dataGridViewProdutosCarrinho.SelectedRows.Count;
+                    for (int i = 0; i < numDeItensSelecionados; i++)
+                    {
+                        //Verifica se o item vai zerar a quantidade caso seja removida uma unidade
+                        if (int.Parse(dataGridViewProdutosCarrinho.SelectedRows[0].Cells[1].Value.ToString()) == 1)
+                        {
+                            //Remove o item inteiro (ele pega na posição 0 porque quando um item é removido o array diminui em tamanho, então ele tem que apagar todos na posição 0)
+                            dataGridViewProdutosCarrinho.Rows.RemoveAt(dataGridViewProdutosCarrinho.SelectedRows[0].Index);
+                        }
+                        else
+                        {
+                            //Remove uma unidade do item no carrinho caso ainda tenha mais de uma unidade
+                            dataGridViewProdutosCarrinho.SelectedRows[i].Cells[1].Value = int.Parse(dataGridViewProdutosCarrinho.SelectedRows[i].Cells[1].Value.ToString()) - 1;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void btnExcluirItem_Click(object sender, EventArgs e)
+        {
+            DialogResult acaoDoUsuario = MessageBox.Show("Deseja apagar o(s) produto(s) selecionados do carrinho?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (acaoDoUsuario == DialogResult.Yes)
+            {
+
+                int numDeItensSelecionados = dataGridViewProdutosCarrinho.SelectedRows.Count;
+                for (int i = 0; i < numDeItensSelecionados; i++)
+                {
+                    dataGridViewProdutosCarrinho.Rows.RemoveAt(dataGridViewProdutosCarrinho.SelectedRows[0].Index);
+                }
+            }
+        }
+
+        //==================================Aba do Estoque==================================//
+
+        //Carrega os dados do DataGrid de Estoque através do TableAdapter ResumoEstoque no dsDadosSaida
+        private void formMenu_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dsDadosSaida.ResumoEstoque' table. You can move, or remove it, as needed.
+            this.resumoEstoqueTableAdapter.FillResumoEstoque(this.dsDadosSaida.ResumoEstoque);
+
+        }
+
+        //Botão da que volta para a aba Caixa
         private void btnVoltarTelaInicial_Click(object sender, EventArgs e)
         {
             /*formMerchades novoForm = new formMerchades();
@@ -67,41 +160,6 @@ namespace Merchades
                     break;
                 }
             }
-        }
-
-        private void BtnNovoProduto2_Click(object sender, EventArgs e)
-        {
-            this.Close(); // fecha o formProduto e mostra a tela formVendas que está aberta atrás
-        }
-
-        private void btnCancelaVenda_Click(object sender, EventArgs e)
-        {
-            frmMenuSaida novoForm = new frmMenuSaida();
-            this.Hide(); // apenas esconde o atual
-            novoForm.ShowDialog();
-            this.Close(); // fecha depois que o novo for fechado
-        }
-
-        private void btnFinalizaCompra_Click(object sender, EventArgs e)
-        {
-            frmPagamento novoForm = new frmPagamento();
-            novoForm.Show();//Abre uma tela do formProdutos
-        }
-
-        private void btnAdicionarItem_Click(object sender, EventArgs e)
-        {
-            //Troca para a aba de estoque
-            tabControlSaida.SelectedIndex = 1;
-        }
-
-        //=================Aba do Estoque=================//
-
-        //Carrega os dados do DataGrid de Estoque através do TableAdapter ResumoEstoque no dsDadosSaida
-        private void formMenu_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'dsDadosSaida.ResumoEstoque' table. You can move, or remove it, as needed.
-            this.resumoEstoqueTableAdapter.FillResumoEstoque(this.dsDadosSaida.ResumoEstoque);
-
         }
 
         //Botão de Aplicar o filtro e a coluna de ordenação
@@ -205,6 +263,7 @@ namespace Merchades
             this.resumoEstoqueBindingSource.Sort = null;
         }
 
+        //Botão que adiciona os itens selecionados do estoque para o carrinho
         private void btnAddItemCarrinho_Click(object sender, EventArgs e)
         {
             //Verifica se o usuário selecionou algum item
@@ -223,14 +282,35 @@ namespace Merchades
                 //informacoesDoProduto[1] = Quantidade do produto
                 //informacoesDoProduto[2] = Preço unitário do produto
 
-                //Se selecionou, vai enviar para o carrinho cada produto que foi seleciona, um em cada ciclo do int i
-                for (int i=0; i<dataGridViewProdutosDisponiveis.SelectedRows.Count; i++)
+                //Se selecionou mais de um produto, vai enviar todos para o carrinho, um em cada ciclo do int i
+                for (int i=dataGridViewProdutosDisponiveis.SelectedRows.Count-1; i>=0; i--)
                 {
-                    informacoesDoProduto[0] = dataGridViewProdutosDisponiveis.SelectedRows[i].Cells[1].Value; //Pega o valor da célula de index [1] da linha, que no caso é a coluna Nome
-                    informacoesDoProduto[1] = dataGridViewProdutosDisponiveis.SelectedRows[i].Cells[4].Value; //Pega o Estoque disponível do produto
-                    informacoesDoProduto[2] = dataGridViewProdutosDisponiveis.SelectedRows[i].Cells[5].Value; //Pega o preço de venda do produto
+                    //Loop para verificar se o produto já está no carrinho
+                    bool produtoJaEstavaNoCarrinho = false; //Variável para controlar se o produto já estava no carrinho ou não
+                    for (int aux=0; aux<dataGridViewProdutosCarrinho.Rows.Count; aux++)
+                    {
+                        //Condição: Se o produto que está sendo adicionado já estiver no carrinho adicione um para a quantidade
+                        if (dataGridViewProdutosCarrinho.Rows[aux].Cells[0].Value == dataGridViewProdutosDisponiveis.SelectedRows[i].Cells[1].Value)
+                        {
+                            //Adiciona mais uma unidade à quantidade do produto no carrinho
+                            dataGridViewProdutosCarrinho.Rows[aux].Cells[1].Value = int.Parse(dataGridViewProdutosCarrinho.Rows[aux].Cells[1].Value.ToString()) + 1;
 
-                    dataGridViewProdutosCarrinho.Rows.Add(informacoesDoProduto);
+                            //Muda a flag que verifica se o item já estava no carrinho para true
+                            produtoJaEstavaNoCarrinho = true;
+                        }
+                    }
+
+                    //Cadastra o produto no carrinho com uma unidade caso ele já não esteja lá
+                    if (!produtoJaEstavaNoCarrinho)
+                    {
+                        //Pega as informações do item
+                        informacoesDoProduto[0] = dataGridViewProdutosDisponiveis.SelectedRows[i].Cells[1].Value; //Pega o valor da célula de index [1] da linha, que no caso é a coluna Nome
+                        informacoesDoProduto[1] = 1; // Envia uma unidade do produto para o carrinho, onde a quantidade pode ser alterada facilmente
+                        informacoesDoProduto[2] = dataGridViewProdutosDisponiveis.SelectedRows[i].Cells[5].Value; //Pega o preço de venda do produto
+
+                        //Envia para o DataGrid de carrinho
+                        dataGridViewProdutosCarrinho.Rows.Add(informacoesDoProduto);
+                    }  
                 }
 
             }
