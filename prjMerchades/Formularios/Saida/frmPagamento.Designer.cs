@@ -35,6 +35,9 @@
             this.mETODOPAGAMENTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsDadosSaida = new prjMerchades.Dados.dsDadosSaida();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtValorPago = new System.Windows.Forms.TextBox();
+            this.lblValorTotal = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.lblParcelas = new System.Windows.Forms.Label();
             this.numEstoqueAddProduto = new System.Windows.Forms.NumericUpDown();
             this.lblTrocoVenda = new System.Windows.Forms.Label();
@@ -42,14 +45,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
-            this.btnCancelaVenda = new System.Windows.Forms.Button();
             this.btnCancelaOperacao = new System.Windows.Forms.Button();
             this.btnConfirmaCompra = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mETODO_PAGAMENTOTableAdapter = new prjMerchades.Dados.dsDadosSaidaTableAdapters.METODO_PAGAMENTOTableAdapter();
-            this.lblValorTotal = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtValorPago = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.mETODOPAGAMENTOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsDadosSaida)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -110,7 +109,6 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label);
-            this.groupBox1.Controls.Add(this.btnCancelaVenda);
             this.groupBox1.Controls.Add(this.btnCancelaOperacao);
             this.groupBox1.Controls.Add(this.cmbFormaPagamento);
             this.groupBox1.Controls.Add(this.btnConfirmaCompra);
@@ -121,6 +119,44 @@
             this.groupBox1.Size = new System.Drawing.Size(1120, 490);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
+            // 
+            // txtValorPago
+            // 
+            this.txtValorPago.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.8F);
+            this.txtValorPago.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
+            this.txtValorPago.Location = new System.Drawing.Point(211, 318);
+            this.txtValorPago.Name = "txtValorPago";
+            this.txtValorPago.Size = new System.Drawing.Size(162, 41);
+            this.txtValorPago.TabIndex = 44;
+            this.txtValorPago.TextChanged += new System.EventHandler(this.txtValorPago_TextChanged);
+            // 
+            // lblValorTotal
+            // 
+            this.lblValorTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblValorTotal.BackColor = System.Drawing.SystemColors.Window;
+            this.lblValorTotal.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.8F);
+            this.lblValorTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
+            this.lblValorTotal.Location = new System.Drawing.Point(498, 315);
+            this.lblValorTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblValorTotal.Name = "lblValorTotal";
+            this.lblValorTotal.Size = new System.Drawing.Size(142, 40);
+            this.lblValorTotal.TabIndex = 43;
+            this.lblValorTotal.Text = "R$ 0,00";
+            this.lblValorTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.BackColor = System.Drawing.SystemColors.Window;
+            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.8F);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
+            this.label6.Location = new System.Drawing.Point(411, 275);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(219, 40);
+            this.label6.TabIndex = 42;
+            this.label6.Text = "Total";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblParcelas
             // 
@@ -148,13 +184,23 @@
             this.numEstoqueAddProduto.Location = new System.Drawing.Point(565, 196);
             this.numEstoqueAddProduto.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.numEstoqueAddProduto.Maximum = new decimal(new int[] {
-            12,
+            3,
+            0,
+            0,
+            0});
+            this.numEstoqueAddProduto.Minimum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
             this.numEstoqueAddProduto.Name = "numEstoqueAddProduto";
             this.numEstoqueAddProduto.Size = new System.Drawing.Size(345, 31);
             this.numEstoqueAddProduto.TabIndex = 40;
+            this.numEstoqueAddProduto.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numEstoqueAddProduto.Visible = false;
             // 
             // lblTrocoVenda
@@ -228,33 +274,15 @@
             this.label.Text = "Forma de Pagamento:";
             this.label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnCancelaVenda
-            // 
-            this.btnCancelaVenda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCancelaVenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.btnCancelaVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelaVenda.Font = new System.Drawing.Font("Arial Rounded MT Bold", 17F);
-            this.btnCancelaVenda.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancelaVenda.Location = new System.Drawing.Point(26, 420);
-            this.btnCancelaVenda.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.btnCancelaVenda.MaximumSize = new System.Drawing.Size(283, 51);
-            this.btnCancelaVenda.MinimumSize = new System.Drawing.Size(139, 39);
-            this.btnCancelaVenda.Name = "btnCancelaVenda";
-            this.btnCancelaVenda.Size = new System.Drawing.Size(283, 51);
-            this.btnCancelaVenda.TabIndex = 28;
-            this.btnCancelaVenda.Text = "⇇ Cancelar Venda";
-            this.btnCancelaVenda.UseVisualStyleBackColor = false;
-            this.btnCancelaVenda.Click += new System.EventHandler(this.btnCancelaVenda_Click);
-            // 
             // btnCancelaOperacao
             // 
             this.btnCancelaOperacao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelaOperacao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
+            this.btnCancelaOperacao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
             this.btnCancelaOperacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelaOperacao.Font = new System.Drawing.Font("Arial Rounded MT Bold", 17F);
             this.btnCancelaOperacao.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancelaOperacao.Location = new System.Drawing.Point(438, 420);
+            this.btnCancelaOperacao.Location = new System.Drawing.Point(211, 420);
             this.btnCancelaOperacao.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnCancelaOperacao.MaximumSize = new System.Drawing.Size(283, 51);
             this.btnCancelaOperacao.MinimumSize = new System.Drawing.Size(122, 36);
@@ -272,13 +300,13 @@
             this.btnConfirmaCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmaCompra.Font = new System.Drawing.Font("Arial Rounded MT Bold", 17F);
             this.btnConfirmaCompra.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnConfirmaCompra.Location = new System.Drawing.Point(794, 420);
+            this.btnConfirmaCompra.Location = new System.Drawing.Point(588, 420);
             this.btnConfirmaCompra.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnConfirmaCompra.MinimumSize = new System.Drawing.Size(122, 36);
             this.btnConfirmaCompra.Name = "btnConfirmaCompra";
             this.btnConfirmaCompra.Size = new System.Drawing.Size(283, 51);
             this.btnConfirmaCompra.TabIndex = 29;
-            this.btnConfirmaCompra.Text = "Confirmar Pagamento ⇉";
+            this.btnConfirmaCompra.Text = "Confirmar Pagamento\r\n";
             this.btnConfirmaCompra.UseVisualStyleBackColor = false;
             this.btnConfirmaCompra.Click += new System.EventHandler(this.btnConfirmaCompra_Click);
             // 
@@ -301,44 +329,6 @@
             // mETODO_PAGAMENTOTableAdapter
             // 
             this.mETODO_PAGAMENTOTableAdapter.ClearBeforeFill = true;
-            // 
-            // lblValorTotal
-            // 
-            this.lblValorTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblValorTotal.BackColor = System.Drawing.SystemColors.Window;
-            this.lblValorTotal.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.8F);
-            this.lblValorTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.lblValorTotal.Location = new System.Drawing.Point(498, 315);
-            this.lblValorTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblValorTotal.Name = "lblValorTotal";
-            this.lblValorTotal.Size = new System.Drawing.Size(142, 40);
-            this.lblValorTotal.TabIndex = 43;
-            this.lblValorTotal.Text = "R$ 0,00";
-            this.lblValorTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.BackColor = System.Drawing.SystemColors.Window;
-            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.8F);
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
-            this.label6.Location = new System.Drawing.Point(411, 275);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(219, 40);
-            this.label6.TabIndex = 42;
-            this.label6.Text = "Total";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtValorPago
-            // 
-            this.txtValorPago.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.8F);
-            this.txtValorPago.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.txtValorPago.Location = new System.Drawing.Point(211, 318);
-            this.txtValorPago.Name = "txtValorPago";
-            this.txtValorPago.Size = new System.Drawing.Size(162, 41);
-            this.txtValorPago.TabIndex = 44;
-            this.txtValorPago.TextChanged += new System.EventHandler(this.txtValorPago_TextChanged);
             // 
             // frmPagamento
             // 
@@ -369,7 +359,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbFormaPagamento;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnCancelaVenda;
         private System.Windows.Forms.Button btnConfirmaCompra;
         private System.Windows.Forms.Button btnCancelaOperacao;
         private System.Windows.Forms.PictureBox pictureBox1;

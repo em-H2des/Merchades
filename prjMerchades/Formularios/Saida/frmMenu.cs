@@ -51,8 +51,16 @@ namespace Merchades
 
         //==================================Aba do Caixa==================================//
 
+        //método que será passado pra tela de pagamento, afim de limpar a tela de vendas ao cancelar uma.
+        public void LimparTelaVendas()
+        {
+            dataGridViewProdutosCarrinho.Rows.Clear();
+            lblTotalFinal.Text = "R$ 0,00";
+        }
+
         private void btnCancelaVenda_Click(object sender, EventArgs e)
         {
+            LimparTelaVendas();
             frmMenuSaida novoForm = new frmMenuSaida();
             this.Hide(); // apenas esconde o atual
             novoForm.ShowDialog();

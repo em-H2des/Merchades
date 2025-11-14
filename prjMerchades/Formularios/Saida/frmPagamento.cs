@@ -27,11 +27,14 @@ namespace Merchades
         }
         private void btnCancelaVenda_Click(object sender, EventArgs e)
         {
+            //chama o método do outro forms
+            _valorTotal.LimparTelaVendas();
             frmMenuSaida novoForm = new frmMenuSaida();
+            //frmMenu menuCarrinho = frmMenu();
+            //menuCarrinho.Hide();
             this.Hide(); // apenas esconde o atual
             novoForm.ShowDialog();
             this.Close(); // fecha depois que o novo for aberto
-
         }
 
         private void btnCancelaOperacao_Click(object sender, EventArgs e)

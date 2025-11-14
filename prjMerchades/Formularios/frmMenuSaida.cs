@@ -34,10 +34,6 @@ namespace prjMerchades.Formularios
 
         private void btnNovaCompra_Click(object sender, EventArgs e)
         {
-            /*formVendas novoForm = new formVendas();
-            this.Hide(); // apenas esconde o atual
-            novoForm.ShowDialog();
-            this.Close(); // fecha depois que o novo for fechado*/
 
             // Verifica se já existe um formMenu aberto
             frmMenu menuAberto = Application.OpenForms.OfType<frmMenu>().FirstOrDefault();
@@ -51,10 +47,9 @@ namespace prjMerchades.Formularios
             else
             {
                 // Se já estiver aberto, apenas traz para frente
+                menuAberto.Show();
                 menuAberto.BringToFront();
             }
-
-            this.Hide(); // Esconde o formVendas atual
         }
     }
     
