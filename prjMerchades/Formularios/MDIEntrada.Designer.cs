@@ -33,7 +33,6 @@
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fornecedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listagemDeFornecedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastroFrncdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estoqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exibirNotaFiscalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,8 +65,7 @@
             // 
             this.fornecedorToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.fornecedorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listagemDeFornecedoresToolStripMenuItem,
-            this.cadastroFrncdToolStripMenuItem});
+            this.listagemDeFornecedoresToolStripMenuItem});
             this.fornecedorToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fornecedorToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.fornecedorToolStripMenuItem.Name = "fornecedorToolStripMenuItem";
@@ -82,15 +80,6 @@
             this.listagemDeFornecedoresToolStripMenuItem.Size = new System.Drawing.Size(331, 28);
             this.listagemDeFornecedoresToolStripMenuItem.Text = "Listagem de Fornecedores";
             this.listagemDeFornecedoresToolStripMenuItem.Click += new System.EventHandler(this.listagemDeFornecedoresToolStripMenuItem_Click);
-            // 
-            // cadastroFrncdToolStripMenuItem
-            // 
-            this.cadastroFrncdToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
-            this.cadastroFrncdToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.cadastroFrncdToolStripMenuItem.Name = "cadastroFrncdToolStripMenuItem";
-            this.cadastroFrncdToolStripMenuItem.Size = new System.Drawing.Size(331, 28);
-            this.cadastroFrncdToolStripMenuItem.Text = "Cadastro de Fornecedores";
-            this.cadastroFrncdToolStripMenuItem.Click += new System.EventHandler(this.cadastroFrncdToolStripMenuItem_Click);
             // 
             // comprasToolStripMenuItem
             // 
@@ -204,7 +193,6 @@
         private System.Windows.Forms.ToolStripMenuItem estoqueToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exibirNotaFiscalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fecharToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cadastroFrncdToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoToolStripMenuItem;
     }
 }

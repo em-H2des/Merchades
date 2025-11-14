@@ -64,6 +64,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dados\daDadosEntrada.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>daDadosEntrada.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Dados\dsDadosSaida.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -213,6 +218,17 @@
     <EmbeddedResource Include="Properties\ResourcesSaida.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <None Include="Dados\daDadosEntrada.xsc">
+      <DependentUpon>daDadosEntrada.xsd</DependentUpon>
+    </None>
+    <None Include="Dados\daDadosEntrada.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>daDadosEntrada.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dados\daDadosEntrada.xss">
+      <DependentUpon>daDadosEntrada.xsd</DependentUpon>
+    </None>
     <None Include="Dados\dsDadosSaida.xsc">
       <DependentUpon>dsDadosSaida.xsd</DependentUpon>
     </None>

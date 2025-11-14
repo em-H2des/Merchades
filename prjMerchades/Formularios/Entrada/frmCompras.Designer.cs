@@ -63,15 +63,10 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.lbl_Data2 = new System.Windows.Forms.Label();
             this.listView2 = new System.Windows.Forms.ListView();
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.col_fornecedor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.col_produto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.col_data = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.col_valor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage_CompraAntg = new System.Windows.Forms.TabPage();
             this.cmbBox_Filtro = new System.Windows.Forms.ComboBox();
             this.txtBox_TxtFiltro = new System.Windows.Forms.TextBox();
@@ -101,7 +96,7 @@
             this.tabControl_Compras.Controls.Add(this.tabPage_Divida);
             this.tabControl_Compras.Controls.Add(this.tabPage_CompraAntg);
             this.tabControl_Compras.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tabControl_Compras.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl_Compras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl_Compras.Location = new System.Drawing.Point(0, 74);
             this.tabControl_Compras.Name = "tabControl_Compras";
             this.tabControl_Compras.SelectedIndex = 0;
@@ -136,10 +131,10 @@
             this.tabPage_NF.Controls.Add(this.NumUpDown_Qtd);
             this.tabPage_NF.Controls.Add(this.txtBox_CodBarras);
             this.tabPage_NF.Controls.Add(this.lbl_CodBarras);
-            this.tabPage_NF.Location = new System.Drawing.Point(4, 32);
+            this.tabPage_NF.Location = new System.Drawing.Point(4, 29);
             this.tabPage_NF.Name = "tabPage_NF";
             this.tabPage_NF.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_NF.Size = new System.Drawing.Size(1085, 572);
+            this.tabPage_NF.Size = new System.Drawing.Size(1085, 575);
             this.tabPage_NF.TabIndex = 0;
             this.tabPage_NF.Text = "Receber Nota Fiscal";
             // 
@@ -149,7 +144,7 @@
             this.lbl_Linha2.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.lbl_Linha2.Location = new System.Drawing.Point(25, 464);
             this.lbl_Linha2.Name = "lbl_Linha2";
-            this.lbl_Linha2.Size = new System.Drawing.Size(808, 23);
+            this.lbl_Linha2.Size = new System.Drawing.Size(1149, 20);
             this.lbl_Linha2.TabIndex = 34;
             this.lbl_Linha2.Text = "_________________________________________________________________________________" +
     "_________________________________";
@@ -160,7 +155,7 @@
             this.lbl_Linha1.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.lbl_Linha1.Location = new System.Drawing.Point(25, 134);
             this.lbl_Linha1.Name = "lbl_Linha1";
-            this.lbl_Linha1.Size = new System.Drawing.Size(808, 23);
+            this.lbl_Linha1.Size = new System.Drawing.Size(1149, 20);
             this.lbl_Linha1.TabIndex = 33;
             this.lbl_Linha1.Text = "_________________________________________________________________________________" +
     "_________________________________";
@@ -169,17 +164,17 @@
             // 
             this.txtBox_TipoProduto.Location = new System.Drawing.Point(355, 211);
             this.txtBox_TipoProduto.Name = "txtBox_TipoProduto";
-            this.txtBox_TipoProduto.Size = new System.Drawing.Size(194, 29);
+            this.txtBox_TipoProduto.Size = new System.Drawing.Size(194, 26);
             this.txtBox_TipoProduto.TabIndex = 32;
             // 
             // lbl_TipoProduto
             // 
             this.lbl_TipoProduto.AutoSize = true;
-            this.lbl_TipoProduto.Font = new System.Drawing.Font("Open Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TipoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TipoProduto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
             this.lbl_TipoProduto.Location = new System.Drawing.Point(349, 177);
             this.lbl_TipoProduto.Name = "lbl_TipoProduto";
-            this.lbl_TipoProduto.Size = new System.Drawing.Size(184, 31);
+            this.lbl_TipoProduto.Size = new System.Drawing.Size(187, 25);
             this.lbl_TipoProduto.TabIndex = 31;
             this.lbl_TipoProduto.Text = "Tipo de Produto:";
             // 
@@ -187,17 +182,17 @@
             // 
             this.txtBox_NomeProduto.Location = new System.Drawing.Point(92, 211);
             this.txtBox_NomeProduto.Name = "txtBox_NomeProduto";
-            this.txtBox_NomeProduto.Size = new System.Drawing.Size(237, 29);
+            this.txtBox_NomeProduto.Size = new System.Drawing.Size(237, 26);
             this.txtBox_NomeProduto.TabIndex = 30;
             // 
             // lbl_NomeProduto
             // 
             this.lbl_NomeProduto.AutoSize = true;
-            this.lbl_NomeProduto.Font = new System.Drawing.Font("Open Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_NomeProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_NomeProduto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
             this.lbl_NomeProduto.Location = new System.Drawing.Point(86, 177);
             this.lbl_NomeProduto.Name = "lbl_NomeProduto";
-            this.lbl_NomeProduto.Size = new System.Drawing.Size(173, 31);
+            this.lbl_NomeProduto.Size = new System.Drawing.Size(168, 25);
             this.lbl_NomeProduto.TabIndex = 29;
             this.lbl_NomeProduto.Text = "Nome Produto:";
             // 
@@ -205,17 +200,17 @@
             // 
             this.txtBox_CodNF.Location = new System.Drawing.Point(768, 311);
             this.txtBox_CodNF.Name = "txtBox_CodNF";
-            this.txtBox_CodNF.Size = new System.Drawing.Size(225, 29);
+            this.txtBox_CodNF.Size = new System.Drawing.Size(225, 26);
             this.txtBox_CodNF.TabIndex = 28;
             // 
             // lbl_CodNF
             // 
             this.lbl_CodNF.AutoSize = true;
-            this.lbl_CodNF.Font = new System.Drawing.Font("Open Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CodNF.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_CodNF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
             this.lbl_CodNF.Location = new System.Drawing.Point(762, 277);
             this.lbl_CodNF.Name = "lbl_CodNF";
-            this.lbl_CodNF.Size = new System.Drawing.Size(241, 31);
+            this.lbl_CodNF.Size = new System.Drawing.Size(252, 25);
             this.lbl_CodNF.TabIndex = 27;
             this.lbl_CodNF.Text = "Código da Nota Fiscal:";
             // 
@@ -223,7 +218,7 @@
             // 
             this.btn_Enviar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
             this.btn_Enviar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Enviar.Font = new System.Drawing.Font("Open Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Enviar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Enviar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_Enviar.Location = new System.Drawing.Point(871, 404);
             this.btn_Enviar.Name = "btn_Enviar";
@@ -236,11 +231,11 @@
             // lbl_DataEmissao
             // 
             this.lbl_DataEmissao.AutoSize = true;
-            this.lbl_DataEmissao.Font = new System.Drawing.Font("Open Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_DataEmissao.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_DataEmissao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
             this.lbl_DataEmissao.Location = new System.Drawing.Point(565, 277);
             this.lbl_DataEmissao.Name = "lbl_DataEmissao";
-            this.lbl_DataEmissao.Size = new System.Drawing.Size(191, 31);
+            this.lbl_DataEmissao.Size = new System.Drawing.Size(197, 25);
             this.lbl_DataEmissao.TabIndex = 17;
             this.lbl_DataEmissao.Text = "Data de Emissão:";
             // 
@@ -257,17 +252,17 @@
             // 
             this.txtCodFornecedor.Location = new System.Drawing.Point(92, 87);
             this.txtCodFornecedor.Name = "txtCodFornecedor";
-            this.txtCodFornecedor.Size = new System.Drawing.Size(237, 29);
+            this.txtCodFornecedor.Size = new System.Drawing.Size(237, 26);
             this.txtCodFornecedor.TabIndex = 13;
             // 
             // lbl_CodFornecedor
             // 
             this.lbl_CodFornecedor.AutoSize = true;
-            this.lbl_CodFornecedor.Font = new System.Drawing.Font("Open Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CodFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_CodFornecedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
             this.lbl_CodFornecedor.Location = new System.Drawing.Point(86, 53);
             this.lbl_CodFornecedor.Name = "lbl_CodFornecedor";
-            this.lbl_CodFornecedor.Size = new System.Drawing.Size(246, 31);
+            this.lbl_CodFornecedor.Size = new System.Drawing.Size(253, 25);
             this.lbl_CodFornecedor.TabIndex = 12;
             this.lbl_CodFornecedor.Text = "Código do Fornecedor:";
             // 
@@ -275,17 +270,17 @@
             // 
             this.txtBox_VlrTtl.Location = new System.Drawing.Point(92, 414);
             this.txtBox_VlrTtl.Name = "txtBox_VlrTtl";
-            this.txtBox_VlrTtl.Size = new System.Drawing.Size(237, 29);
+            this.txtBox_VlrTtl.Size = new System.Drawing.Size(237, 26);
             this.txtBox_VlrTtl.TabIndex = 11;
             // 
             // lbl_VlrTtl
             // 
             this.lbl_VlrTtl.AutoSize = true;
-            this.lbl_VlrTtl.Font = new System.Drawing.Font("Open Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_VlrTtl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_VlrTtl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
             this.lbl_VlrTtl.Location = new System.Drawing.Point(86, 380);
             this.lbl_VlrTtl.Name = "lbl_VlrTtl";
-            this.lbl_VlrTtl.Size = new System.Drawing.Size(134, 31);
+            this.lbl_VlrTtl.Size = new System.Drawing.Size(134, 25);
             this.lbl_VlrTtl.TabIndex = 10;
             this.lbl_VlrTtl.Text = "Valor Total:";
             // 
@@ -293,28 +288,28 @@
             // 
             this.txtBox_Preco.Location = new System.Drawing.Point(571, 211);
             this.txtBox_Preco.Name = "txtBox_Preco";
-            this.txtBox_Preco.Size = new System.Drawing.Size(120, 29);
+            this.txtBox_Preco.Size = new System.Drawing.Size(120, 26);
             this.txtBox_Preco.TabIndex = 9;
             // 
             // lbl_Preco
             // 
             this.lbl_Preco.AutoSize = true;
-            this.lbl_Preco.Font = new System.Drawing.Font("Open Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Preco.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Preco.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
             this.lbl_Preco.Location = new System.Drawing.Point(565, 177);
             this.lbl_Preco.Name = "lbl_Preco";
-            this.lbl_Preco.Size = new System.Drawing.Size(79, 31);
+            this.lbl_Preco.Size = new System.Drawing.Size(80, 25);
             this.lbl_Preco.TabIndex = 8;
             this.lbl_Preco.Text = "Preço:";
             // 
             // lbl_DataVldd
             // 
             this.lbl_DataVldd.AutoSize = true;
-            this.lbl_DataVldd.Font = new System.Drawing.Font("Open Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_DataVldd.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_DataVldd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
             this.lbl_DataVldd.Location = new System.Drawing.Point(809, 177);
             this.lbl_DataVldd.Name = "lbl_DataVldd";
-            this.lbl_DataVldd.Size = new System.Drawing.Size(196, 31);
+            this.lbl_DataVldd.Size = new System.Drawing.Size(200, 25);
             this.lbl_DataVldd.TabIndex = 7;
             this.lbl_DataVldd.Text = "Data de Validade:";
             // 
@@ -331,28 +326,28 @@
             // 
             this.txtBox_Lote.Location = new System.Drawing.Point(317, 311);
             this.txtBox_Lote.Name = "txtBox_Lote";
-            this.txtBox_Lote.Size = new System.Drawing.Size(232, 29);
+            this.txtBox_Lote.Size = new System.Drawing.Size(232, 26);
             this.txtBox_Lote.TabIndex = 5;
             // 
             // lbl_Lote
             // 
             this.lbl_Lote.AutoSize = true;
-            this.lbl_Lote.Font = new System.Drawing.Font("Open Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Lote.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Lote.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
             this.lbl_Lote.Location = new System.Drawing.Point(311, 277);
             this.lbl_Lote.Name = "lbl_Lote";
-            this.lbl_Lote.Size = new System.Drawing.Size(66, 31);
+            this.lbl_Lote.Size = new System.Drawing.Size(65, 25);
             this.lbl_Lote.TabIndex = 4;
             this.lbl_Lote.Text = "Lote:";
             // 
             // lbl_Qtd
             // 
             this.lbl_Qtd.AutoSize = true;
-            this.lbl_Qtd.Font = new System.Drawing.Font("Open Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Qtd.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Qtd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
             this.lbl_Qtd.Location = new System.Drawing.Point(708, 177);
             this.lbl_Qtd.Name = "lbl_Qtd";
-            this.lbl_Qtd.Size = new System.Drawing.Size(59, 31);
+            this.lbl_Qtd.Size = new System.Drawing.Size(56, 25);
             this.lbl_Qtd.TabIndex = 3;
             this.lbl_Qtd.Text = "Qtd:";
             // 
@@ -368,17 +363,17 @@
             // 
             this.txtBox_CodBarras.Location = new System.Drawing.Point(92, 311);
             this.txtBox_CodBarras.Name = "txtBox_CodBarras";
-            this.txtBox_CodBarras.Size = new System.Drawing.Size(196, 29);
+            this.txtBox_CodBarras.Size = new System.Drawing.Size(196, 26);
             this.txtBox_CodBarras.TabIndex = 1;
             // 
             // lbl_CodBarras
             // 
             this.lbl_CodBarras.AutoSize = true;
-            this.lbl_CodBarras.Font = new System.Drawing.Font("Open Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CodBarras.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_CodBarras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
             this.lbl_CodBarras.Location = new System.Drawing.Point(86, 277);
             this.lbl_CodBarras.Name = "lbl_CodBarras";
-            this.lbl_CodBarras.Size = new System.Drawing.Size(200, 31);
+            this.lbl_CodBarras.Size = new System.Drawing.Size(209, 25);
             this.lbl_CodBarras.TabIndex = 0;
             this.lbl_CodBarras.Text = "Código de Barras: ";
             // 
@@ -391,17 +386,17 @@
             this.tabPage_Divida.Controls.Add(this.textBox2);
             this.tabPage_Divida.Controls.Add(this.lbl_Data2);
             this.tabPage_Divida.Controls.Add(this.listView2);
-            this.tabPage_Divida.Location = new System.Drawing.Point(4, 32);
+            this.tabPage_Divida.Location = new System.Drawing.Point(4, 29);
             this.tabPage_Divida.Name = "tabPage_Divida";
             this.tabPage_Divida.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_Divida.Size = new System.Drawing.Size(1085, 572);
+            this.tabPage_Divida.Size = new System.Drawing.Size(1085, 575);
             this.tabPage_Divida.TabIndex = 1;
             this.tabPage_Divida.Text = "Dívidas";
             // 
             // comboBox1
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Open Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
@@ -410,12 +405,12 @@
             "Fornecedor"});
             this.comboBox1.Location = new System.Drawing.Point(425, 33);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(217, 35);
+            this.comboBox1.Size = new System.Drawing.Size(217, 32);
             this.comboBox1.TabIndex = 28;
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Open Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
             this.textBox1.Location = new System.Drawing.Point(676, 35);
             this.textBox1.Multiline = true;
@@ -427,21 +422,21 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Open Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
             this.label2.Location = new System.Drawing.Point(297, 33);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 31);
+            this.label2.Size = new System.Drawing.Size(124, 25);
             this.label2.TabIndex = 26;
             this.label2.Text = "Filtrar Por:";
             // 
             // textBox2
             // 
-            this.textBox2.Font = new System.Drawing.Font("Open Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
             this.textBox2.Location = new System.Drawing.Point(13, 35);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(280, 33);
+            this.textBox2.Size = new System.Drawing.Size(280, 29);
             this.textBox2.TabIndex = 25;
             this.textBox2.Text = "Nome do Fornecedor";
             // 
@@ -449,38 +444,49 @@
             // 
             this.lbl_Data2.AutoSize = true;
             this.lbl_Data2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
-            this.lbl_Data2.Font = new System.Drawing.Font("Open Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Data2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Data2.ForeColor = System.Drawing.Color.White;
             this.lbl_Data2.Location = new System.Drawing.Point(945, 35);
             this.lbl_Data2.Name = "lbl_Data2";
-            this.lbl_Data2.Size = new System.Drawing.Size(84, 31);
+            this.lbl_Data2.Size = new System.Drawing.Size(110, 25);
             this.lbl_Data2.TabIndex = 24;
             this.lbl_Data2.Text = "              ";
             // 
             // listView2
             // 
             this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader7,
-            this.columnHeader8,
-            this.columnHeader9,
-            this.columnHeader10,
-            this.columnHeader11,
-            this.columnHeader12,
-            this.columnHeader13,
-            this.columnHeader14,
-            this.columnHeader15});
+            this.col_fornecedor,
+            this.col_produto,
+            this.col_data,
+            this.col_valor});
             this.listView2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(3, 101);
+            this.listView2.Location = new System.Drawing.Point(3, 104);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(1079, 468);
             this.listView2.TabIndex = 0;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader7
+            // col_fornecedor
             // 
-            this.columnHeader7.Text = "ColumnHeader";
+            this.col_fornecedor.Text = "Fornecedor";
+            this.col_fornecedor.Width = 157;
+            // 
+            // col_produto
+            // 
+            this.col_produto.Text = "Produto";
+            this.col_produto.Width = 216;
+            // 
+            // col_data
+            // 
+            this.col_data.Text = "Data de compra";
+            this.col_data.Width = 150;
+            // 
+            // col_valor
+            // 
+            this.col_valor.Text = "Valor";
+            this.col_valor.Width = 131;
             // 
             // tabPage_CompraAntg
             // 
@@ -491,17 +497,17 @@
             this.tabPage_CompraAntg.Controls.Add(this.txt_NomeFiltro);
             this.tabPage_CompraAntg.Controls.Add(this.lbl_Data);
             this.tabPage_CompraAntg.Controls.Add(this.listView1);
-            this.tabPage_CompraAntg.Location = new System.Drawing.Point(4, 32);
+            this.tabPage_CompraAntg.Location = new System.Drawing.Point(4, 29);
             this.tabPage_CompraAntg.Name = "tabPage_CompraAntg";
             this.tabPage_CompraAntg.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_CompraAntg.Size = new System.Drawing.Size(1085, 572);
+            this.tabPage_CompraAntg.Size = new System.Drawing.Size(1085, 575);
             this.tabPage_CompraAntg.TabIndex = 2;
             this.tabPage_CompraAntg.Text = "Compras antigas";
             // 
             // cmbBox_Filtro
             // 
             this.cmbBox_Filtro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbBox_Filtro.Font = new System.Drawing.Font("Open Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBox_Filtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBox_Filtro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
             this.cmbBox_Filtro.FormattingEnabled = true;
             this.cmbBox_Filtro.Items.AddRange(new object[] {
@@ -510,12 +516,12 @@
             "Produto"});
             this.cmbBox_Filtro.Location = new System.Drawing.Point(430, 33);
             this.cmbBox_Filtro.Name = "cmbBox_Filtro";
-            this.cmbBox_Filtro.Size = new System.Drawing.Size(217, 35);
+            this.cmbBox_Filtro.Size = new System.Drawing.Size(217, 32);
             this.cmbBox_Filtro.TabIndex = 23;
             // 
             // txtBox_TxtFiltro
             // 
-            this.txtBox_TxtFiltro.Font = new System.Drawing.Font("Open Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBox_TxtFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBox_TxtFiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
             this.txtBox_TxtFiltro.Location = new System.Drawing.Point(676, 35);
             this.txtBox_TxtFiltro.Multiline = true;
@@ -527,21 +533,21 @@
             // lbl_FiltrarPor
             // 
             this.lbl_FiltrarPor.AutoSize = true;
-            this.lbl_FiltrarPor.Font = new System.Drawing.Font("Open Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_FiltrarPor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_FiltrarPor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
             this.lbl_FiltrarPor.Location = new System.Drawing.Point(297, 33);
             this.lbl_FiltrarPor.Name = "lbl_FiltrarPor";
-            this.lbl_FiltrarPor.Size = new System.Drawing.Size(127, 31);
+            this.lbl_FiltrarPor.Size = new System.Drawing.Size(124, 25);
             this.lbl_FiltrarPor.TabIndex = 21;
             this.lbl_FiltrarPor.Text = "Filtrar Por:";
             // 
             // txt_NomeFiltro
             // 
-            this.txt_NomeFiltro.Font = new System.Drawing.Font("Open Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_NomeFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_NomeFiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
             this.txt_NomeFiltro.Location = new System.Drawing.Point(13, 35);
             this.txt_NomeFiltro.Name = "txt_NomeFiltro";
-            this.txt_NomeFiltro.Size = new System.Drawing.Size(280, 33);
+            this.txt_NomeFiltro.Size = new System.Drawing.Size(280, 29);
             this.txt_NomeFiltro.TabIndex = 20;
             this.txt_NomeFiltro.Text = "Nome do Fornecedor";
             // 
@@ -549,11 +555,11 @@
             // 
             this.lbl_Data.AutoSize = true;
             this.lbl_Data.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
-            this.lbl_Data.Font = new System.Drawing.Font("Open Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Data.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Data.ForeColor = System.Drawing.Color.White;
             this.lbl_Data.Location = new System.Drawing.Point(945, 35);
             this.lbl_Data.Name = "lbl_Data";
-            this.lbl_Data.Size = new System.Drawing.Size(84, 31);
+            this.lbl_Data.Size = new System.Drawing.Size(110, 25);
             this.lbl_Data.TabIndex = 19;
             this.lbl_Data.Text = "              ";
             // 
@@ -568,7 +574,7 @@
             this.columnHeader6});
             this.listView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(3, 101);
+            this.listView1.Location = new System.Drawing.Point(3, 104);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(1079, 468);
             this.listView1.TabIndex = 0;
@@ -608,11 +614,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Open Sans", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(11, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 58);
+            this.label1.Size = new System.Drawing.Size(189, 46);
             this.label1.TabIndex = 1;
             this.label1.Text = "Compras";
             // 
@@ -686,15 +692,10 @@
         private System.Windows.Forms.Label lbl_CodFornecedor;
         private System.Windows.Forms.Button btn_Enviar;
         private System.Windows.Forms.ListView listView2;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.ColumnHeader columnHeader9;
-        private System.Windows.Forms.ColumnHeader columnHeader10;
-        private System.Windows.Forms.ColumnHeader columnHeader11;
-        private System.Windows.Forms.ColumnHeader columnHeader12;
-        private System.Windows.Forms.ColumnHeader columnHeader13;
-        private System.Windows.Forms.ColumnHeader columnHeader14;
-        private System.Windows.Forms.ColumnHeader columnHeader15;
+        private System.Windows.Forms.ColumnHeader col_fornecedor;
+        private System.Windows.Forms.ColumnHeader col_produto;
+        private System.Windows.Forms.ColumnHeader col_data;
+        private System.Windows.Forms.ColumnHeader col_valor;
         private System.Windows.Forms.TextBox txtBox_TipoProduto;
         private System.Windows.Forms.Label lbl_TipoProduto;
         private System.Windows.Forms.TextBox txtBox_NomeProduto;
