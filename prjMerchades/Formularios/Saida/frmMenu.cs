@@ -19,7 +19,11 @@ namespace Merchades
                 InitializeComponent();
                 this.WindowState = FormWindowState.Maximized; // abre em tela cheia
             }
-
+            //variável pública para passar o total da compra para a tela de pagamento
+            public string ValorTotal
+            {
+                get { return lblTotalFinal.Text; }
+            }
             // Abre formulários dentro de uma aba
             private void AbrirFormulario(Form form, string titulo)
             {
@@ -57,7 +61,12 @@ namespace Merchades
 
         private void btnFinalizaCompra_Click(object sender, EventArgs e)
         {
-            frmPagamento novoForm = new frmPagamento();
+            //Passa o código fiscal pra tela de pagamento
+            int codFiscal = int.Parse(lblCodFiscal.Text);
+            //Passa o cpf pra tela de pagamento
+            string cpf = txtCpf.Text;
+
+            frmPagamento novoForm = new frmPagamento(this, codFiscal, cpf);
             novoForm.Show();//Abre uma tela do formProdutos
         }
 
@@ -82,13 +91,25 @@ namespace Merchades
                 for (int i = 0; i < dataGridViewProdutosCarrinho.SelectedRows.Count; i++)
                 {
                     dataGridViewProdutosCarrinho.SelectedRows[i].Cells[1].Value = int.Parse(dataGridViewProdutosCarrinho.SelectedRows[i].Cells[1].Value.ToString()) + 1;
+                    object quantidade = dataGridViewProdutosCarrinho.SelectedRows[i].Cells[1].Value; //Quantidade do Produto
+                    object precoUnitario = dataGridViewProdutosCarrinho.SelectedRows[i].Cells[2].Value; //Valor Unitário do Produto                                                                            //Ajusta o Preço Total de acordo com a unidade
+                    dataGridViewProdutosCarrinho.SelectedRows[i].Cells[3].Value = decimal.Parse(precoUnitario.ToString()) * decimal.Parse(quantidade.ToString());
+
+                    decimal somaTotal = 0; //Soma das colunas "Total" de cada linha
+                    //Para cada Linha no DataGridView
+                    foreach (DataGridViewRow row in dataGridViewProdutosCarrinho.Rows)
+                    {
+                        //Soma o valor de todas as colunas "Total"
+                        somaTotal += Math.Round(Convert.ToDecimal(row.Cells["ColumnTotal"].Value), 2);
+                    }
+                    lblTotalFinal.Text = somaTotal.ToString();
                 }
             }
         }
 
         private void btnDiminuiQtd_Click(object sender, EventArgs e)
         {
-            //Verifica se um item foi selecionado para aumentar a quantidade
+            //Verifica se um item foi selecionado para diminuir a quantidade
             if (dataGridViewProdutosCarrinho.SelectedRows.Count == 0)
             {
                 //Se não selecionou um item, vai dar um alert
@@ -96,24 +117,40 @@ namespace Merchades
             }
             else
             {
-                DialogResult acaoDoUsuario = MessageBox.Show("Deseja apagar o(s) produto(s) selecionados do carrinho?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-                if (acaoDoUsuario == DialogResult.Yes)
+                //Loop para diminuir a quantidade de todos os itens selecionados em 1
+                int numDeItensSelecionados = dataGridViewProdutosCarrinho.SelectedRows.Count;
+                for (int i = 0; i < numDeItensSelecionados; i++)
                 {
-                    //Loop para diminuir a quantidade de todos os itens selecionados em 1
-                    int numDeItensSelecionados = dataGridViewProdutosCarrinho.SelectedRows.Count;
-                    for (int i = 0; i < numDeItensSelecionados; i++)
+                    //Verifica se o item vai zerar a quantidade caso seja removida uma unidade
+                    if (int.Parse(dataGridViewProdutosCarrinho.SelectedRows[0].Cells[1].Value.ToString()) == 1)
                     {
-                        //Verifica se o item vai zerar a quantidade caso seja removida uma unidade
-                        if (int.Parse(dataGridViewProdutosCarrinho.SelectedRows[0].Cells[1].Value.ToString()) == 1)
+                        //Mensagem de confirmação de exclusão
+                        DialogResult acaoDoUsuario = MessageBox.Show("Deseja apagar o(s) produto(s) selecionados do carrinho?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+
+                        if (acaoDoUsuario == DialogResult.Yes)
                         {
                             //Remove o item inteiro (ele pega na posição 0 porque quando um item é removido o array diminui em tamanho, então ele tem que apagar todos na posição 0)
                             dataGridViewProdutosCarrinho.Rows.RemoveAt(dataGridViewProdutosCarrinho.SelectedRows[0].Index);
                         }
-                        else
+                    }
+                    else
+                    {
+                        //Remove uma unidade do item no carrinho caso ainda tenha mais de uma unidade
+                        dataGridViewProdutosCarrinho.SelectedRows[i].Cells[1].Value = int.Parse(dataGridViewProdutosCarrinho.SelectedRows[i].Cells[1].Value.ToString()) - 1;
+
+                        object quantidade = dataGridViewProdutosCarrinho.SelectedRows[i].Cells[1].Value; //Quantidade do Produto
+                        object precoUnitario = dataGridViewProdutosCarrinho.SelectedRows[i].Cells[2].Value; //Valor Unitário do Produto
+                        //Ajusta o Preço Total de acordo com a unidade
+                        dataGridViewProdutosCarrinho.SelectedRows[i].Cells[3].Value = decimal.Parse(precoUnitario.ToString()) * decimal.Parse(quantidade.ToString());
+
+                        decimal somaTotal = 0; //Soma das colunas "Total" de cada linha
+                                               //Para cada Linha no DataGridView
+                        foreach (DataGridViewRow row in dataGridViewProdutosCarrinho.Rows)
                         {
-                            //Remove uma unidade do item no carrinho caso ainda tenha mais de uma unidade
-                            dataGridViewProdutosCarrinho.SelectedRows[i].Cells[1].Value = int.Parse(dataGridViewProdutosCarrinho.SelectedRows[i].Cells[1].Value.ToString()) - 1;
+                            //Soma o valor de todas as colunas "Total"
+                            somaTotal += Math.Round(Convert.ToDecimal(row.Cells["ColumnTotal"].Value), 2);
                         }
+                        lblTotalFinal.Text = somaTotal.ToString();
                     }
                 }
             }
@@ -138,6 +175,7 @@ namespace Merchades
         //Carrega os dados do DataGrid de Estoque através do TableAdapter ResumoEstoque no dsDadosSaida
         private void formMenu_Load(object sender, EventArgs e)
         {
+            this.dsDadosSaida.EnforceConstraints = false;   
             // TODO: This line of code loads data into the 'dsDadosSaida.ResumoEstoque' table. You can move, or remove it, as needed.
             this.resumoEstoqueTableAdapter.FillResumoEstoque(this.dsDadosSaida.ResumoEstoque);
 
@@ -275,12 +313,13 @@ namespace Merchades
             else
             {
                 //Cria um array que aceita vários tipos de dados para armazenar os dados de um produto
-                object[] informacoesDoProduto = new object[3];
+                object[] informacoesDoProduto = new object[4];
 
                 //Segue abaixo o index de cada informação dentro do array:
                 //informacoesDoProduto[0] = Nome do produto
                 //informacoesDoProduto[1] = Quantidade do produto
                 //informacoesDoProduto[2] = Preço unitário do produto
+                //informacoesDoProduto[3] = Preço Total
 
                 //Se selecionou mais de um produto, vai enviar todos para o carrinho, um em cada ciclo do int i
                 for (int i=dataGridViewProdutosDisponiveis.SelectedRows.Count-1; i>=0; i--)
@@ -294,6 +333,8 @@ namespace Merchades
                         {
                             //Adiciona mais uma unidade à quantidade do produto no carrinho
                             dataGridViewProdutosCarrinho.Rows[aux].Cells[1].Value = int.Parse(dataGridViewProdutosCarrinho.Rows[aux].Cells[1].Value.ToString()) + 1;
+                            //Muda o Preço Total (Produto de quantidade e preço unitário)
+                            dataGridViewProdutosCarrinho.Rows[aux].Cells[3].Value = decimal.Parse(dataGridViewProdutosCarrinho.Rows[aux].Cells[3].Value.ToString()) * 2;
 
                             //Muda a flag que verifica se o item já estava no carrinho para true
                             produtoJaEstavaNoCarrinho = true;
@@ -303,16 +344,23 @@ namespace Merchades
                     //Cadastra o produto no carrinho com uma unidade caso ele já não esteja lá
                     if (!produtoJaEstavaNoCarrinho)
                     {
-                        //Pega as informações do item
                         informacoesDoProduto[0] = dataGridViewProdutosDisponiveis.SelectedRows[i].Cells[1].Value; //Pega o valor da célula de index [1] da linha, que no caso é a coluna Nome
                         informacoesDoProduto[1] = 1; // Envia uma unidade do produto para o carrinho, onde a quantidade pode ser alterada facilmente
                         informacoesDoProduto[2] = dataGridViewProdutosDisponiveis.SelectedRows[i].Cells[5].Value; //Pega o preço de venda do produto
-
+                        informacoesDoProduto[3] = dataGridViewProdutosDisponiveis.SelectedRows[i].Cells[5].Value;
                         //Envia para o DataGrid de carrinho
                         dataGridViewProdutosCarrinho.Rows.Add(informacoesDoProduto);
-                    }  
-                }
+                    }
 
+                    decimal somaTotal = 0; //Soma das colunas "Total" de cada linha
+                    //Para cada Linha no DataGridView
+                    foreach(DataGridViewRow row in dataGridViewProdutosCarrinho.Rows)
+                    {
+                        //Soma o valor de todas as colunas "Total"
+                        somaTotal += Math.Round(Convert.ToDecimal(row.Cells["ColumnTotal"].Value), 2);
+                    }
+                    lblTotalFinal.Text = somaTotal.ToString();
+                }
             }
         }
     }
