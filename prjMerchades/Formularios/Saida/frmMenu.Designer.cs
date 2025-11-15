@@ -29,12 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.tabControlSaida = new System.Windows.Forms.TabControl();
             this.tabCaixa = new System.Windows.Forms.TabPage();
+            this.txtCpf = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblCodFiscal = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnDiminuiQtd = new System.Windows.Forms.Button();
             this.btnAumentaQtd = new System.Windows.Forms.Button();
@@ -46,6 +49,10 @@
             this.btnExcluirItem = new System.Windows.Forms.Button();
             this.btnAdicionarItem = new System.Windows.Forms.Button();
             this.dataGridViewProdutosCarrinho = new System.Windows.Forms.DataGridView();
+            this.ColumnDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnValUni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabProdutos = new System.Windows.Forms.TabPage();
             this.btnLimparFiltro = new System.Windows.Forms.Button();
             this.txtBuscarEstoque = new System.Windows.Forms.TextBox();
@@ -58,31 +65,24 @@
             this.cmbOrdenar = new System.Windows.Forms.ComboBox();
             this.cmbFiltro = new System.Windows.Forms.ComboBox();
             this.dataGridViewProdutosDisponiveis = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.resumoEstoqueBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsDadosSaida = new prjMerchades.Dados.dsDadosSaida();
-            this.resumoEstoqueTableAdapter = new prjMerchades.Dados.dsDadosSaidaTableAdapters.ResumoEstoqueTableAdapter();
             this.cODIGODEBARRASDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nOMEPRODUTOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tIPOUNITARIODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tIPOPRODUTOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qTDESTOQUEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pRECO_PRODUTOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnValUni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblCodFiscal = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtCpf = new System.Windows.Forms.TextBox();
+            this.resumoEstoqueBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsDadosSaida = new prjMerchades.Dados.dsDadosSaida();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.resumoEstoqueTableAdapter = new prjMerchades.Dados.dsDadosSaidaTableAdapters.ResumoEstoqueTableAdapter();
             this.tabControlSaida.SuspendLayout();
             this.tabCaixa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProdutosCarrinho)).BeginInit();
             this.tabProdutos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProdutosDisponiveis)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resumoEstoqueBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsDadosSaida)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlSaida
@@ -126,6 +126,44 @@
             this.tabCaixa.TabIndex = 0;
             this.tabCaixa.Text = "Caixa";
             this.tabCaixa.UseVisualStyleBackColor = true;
+            // 
+            // txtCpf
+            // 
+            this.txtCpf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
+            this.txtCpf.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.txtCpf.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtCpf.Location = new System.Drawing.Point(548, 24);
+            this.txtCpf.Name = "txtCpf";
+            this.txtCpf.Size = new System.Drawing.Size(385, 28);
+            this.txtCpf.TabIndex = 62;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
+            this.label8.Location = new System.Drawing.Point(7, 15);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(167, 39);
+            this.label8.TabIndex = 61;
+            this.label8.Text = "CÓDIGO:";
+            // 
+            // lblCodFiscal
+            // 
+            this.lblCodFiscal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
+            this.lblCodFiscal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.lblCodFiscal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblCodFiscal.Location = new System.Drawing.Point(185, 25);
+            this.lblCodFiscal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCodFiscal.Name = "lblCodFiscal";
+            this.lblCodFiscal.Size = new System.Drawing.Size(212, 27);
+            this.lblCodFiscal.TabIndex = 60;
+            this.lblCodFiscal.Text = "1";
+            this.lblCodFiscal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label7
             // 
@@ -312,6 +350,42 @@
             this.dataGridViewProdutosCarrinho.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProdutosCarrinho.Size = new System.Drawing.Size(558, 240);
             this.dataGridViewProdutosCarrinho.TabIndex = 37;
+            // 
+            // ColumnDesc
+            // 
+            this.ColumnDesc.HeaderText = "Produto";
+            this.ColumnDesc.MinimumWidth = 8;
+            this.ColumnDesc.Name = "ColumnDesc";
+            this.ColumnDesc.ReadOnly = true;
+            this.ColumnDesc.Width = 150;
+            // 
+            // ColumnQtd
+            // 
+            this.ColumnQtd.HeaderText = "Quantidade";
+            this.ColumnQtd.MinimumWidth = 8;
+            this.ColumnQtd.Name = "ColumnQtd";
+            this.ColumnQtd.ReadOnly = true;
+            this.ColumnQtd.Width = 150;
+            // 
+            // ColumnValUni
+            // 
+            dataGridViewCellStyle1.Format = "C2";
+            this.ColumnValUni.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ColumnValUni.HeaderText = "Preço Unitário";
+            this.ColumnValUni.MinimumWidth = 8;
+            this.ColumnValUni.Name = "ColumnValUni";
+            this.ColumnValUni.ReadOnly = true;
+            this.ColumnValUni.Width = 150;
+            // 
+            // ColumnTotal
+            // 
+            dataGridViewCellStyle2.Format = "C2";
+            this.ColumnTotal.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ColumnTotal.HeaderText = "Total";
+            this.ColumnTotal.MinimumWidth = 8;
+            this.ColumnTotal.Name = "ColumnTotal";
+            this.ColumnTotal.ReadOnly = true;
+            this.ColumnTotal.Width = 150;
             // 
             // tabProdutos
             // 
@@ -537,32 +611,6 @@
             this.dataGridViewProdutosDisponiveis.Size = new System.Drawing.Size(600, 412);
             this.dataGridViewProdutosDisponiveis.TabIndex = 8;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pictureBox1.Image = global::prjMerchades.Properties.Resources.logoMerchades1;
-            this.pictureBox1.Location = new System.Drawing.Point(785, 1);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(236, 85);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // resumoEstoqueBindingSource
-            // 
-            this.resumoEstoqueBindingSource.DataMember = "ResumoEstoque";
-            this.resumoEstoqueBindingSource.DataSource = this.dsDadosSaida;
-            // 
-            // dsDadosSaida
-            // 
-            this.dsDadosSaida.DataSetName = "dsDadosSaida";
-            this.dsDadosSaida.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // resumoEstoqueTableAdapter
-            // 
-            this.resumoEstoqueTableAdapter.ClearBeforeFill = true;
-            // 
             // cODIGODEBARRASDataGridViewTextBoxColumn
             // 
             this.cODIGODEBARRASDataGridViewTextBoxColumn.DataPropertyName = "CODIGO_DE_BARRAS";
@@ -607,79 +655,31 @@
             this.pRECO_PRODUTOSDataGridViewTextBoxColumn.Name = "pRECO_PRODUTOSDataGridViewTextBoxColumn";
             this.pRECO_PRODUTOSDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // ColumnDesc
+            // resumoEstoqueBindingSource
             // 
-            this.ColumnDesc.HeaderText = "Produto";
-            this.ColumnDesc.MinimumWidth = 8;
-            this.ColumnDesc.Name = "ColumnDesc";
-            this.ColumnDesc.ReadOnly = true;
-            this.ColumnDesc.Width = 150;
+            this.resumoEstoqueBindingSource.DataMember = "ResumoEstoque";
+            this.resumoEstoqueBindingSource.DataSource = this.dsDadosSaida;
             // 
-            // ColumnQtd
+            // dsDadosSaida
             // 
-            this.ColumnQtd.HeaderText = "Quantidade";
-            this.ColumnQtd.MinimumWidth = 8;
-            this.ColumnQtd.Name = "ColumnQtd";
-            this.ColumnQtd.ReadOnly = true;
-            this.ColumnQtd.Width = 150;
+            this.dsDadosSaida.DataSetName = "dsDadosSaida";
+            this.dsDadosSaida.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // ColumnValUni
+            // pictureBox1
             // 
-            dataGridViewCellStyle1.Format = "C2";
-            this.ColumnValUni.DefaultCellStyle = dataGridViewCellStyle1;
-            this.ColumnValUni.HeaderText = "Preço Unitário";
-            this.ColumnValUni.MinimumWidth = 8;
-            this.ColumnValUni.Name = "ColumnValUni";
-            this.ColumnValUni.ReadOnly = true;
-            this.ColumnValUni.Width = 150;
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pictureBox1.Image = global::prjMerchades.Properties.Resources.logoMerchades1;
+            this.pictureBox1.Location = new System.Drawing.Point(785, 1);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(236, 85);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
-            // ColumnTotal
+            // resumoEstoqueTableAdapter
             // 
-            dataGridViewCellStyle2.Format = "C2";
-            this.ColumnTotal.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ColumnTotal.HeaderText = "Total";
-            this.ColumnTotal.MinimumWidth = 8;
-            this.ColumnTotal.Name = "ColumnTotal";
-            this.ColumnTotal.ReadOnly = true;
-            this.ColumnTotal.Width = 150;
-            // 
-            // lblCodFiscal
-            // 
-            this.lblCodFiscal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
-            this.lblCodFiscal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.lblCodFiscal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCodFiscal.Location = new System.Drawing.Point(185, 25);
-            this.lblCodFiscal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblCodFiscal.Name = "lblCodFiscal";
-            this.lblCodFiscal.Size = new System.Drawing.Size(131, 27);
-            this.lblCodFiscal.TabIndex = 60;
-            this.lblCodFiscal.Text = "1";
-            this.lblCodFiscal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F);
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.label8.Location = new System.Drawing.Point(7, 15);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(167, 39);
-            this.label8.TabIndex = 61;
-            this.label8.Text = "CÓDIGO:";
-            // 
-            // txtCpf
-            // 
-            this.txtCpf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
-            this.txtCpf.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.txtCpf.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtCpf.Location = new System.Drawing.Point(548, 24);
-            this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(385, 28);
-            this.txtCpf.TabIndex = 62;
+            this.resumoEstoqueTableAdapter.ClearBeforeFill = true;
             // 
             // frmMenu
             // 
@@ -701,9 +701,9 @@
             this.tabProdutos.ResumeLayout(false);
             this.tabProdutos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProdutosDisponiveis)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resumoEstoqueBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsDadosSaida)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

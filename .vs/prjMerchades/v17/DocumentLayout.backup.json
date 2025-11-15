@@ -7,7 +7,23 @@
       "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\agapi\\Documents\\GitHub\\Merchades\\prjmerchades\\formularios\\saida\\frmpagamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|c:\\users\\agapi\\documents\\github\\merchades\\prjmerchades\\formularios\\frmmenusaida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\frmmenusaida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|c:\\users\\agapi\\documents\\github\\merchades\\prjmerchades\\formularios\\frmmenusaida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\frmmenusaida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\agapi\\Documents\\GitHub\\Merchades\\prjmerchades\\formularios\\saida\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\saida\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|c:\\users\\agapi\\documents\\github\\merchades\\prjmerchades\\formularios\\saida\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\saida\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|c:\\users\\agapi\\documents\\github\\merchades\\prjmerchades\\formularios\\saida\\frmpagamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\saida\\frmpagamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -15,16 +31,12 @@
       "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\saida\\frmpagamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\agapi\\Documents\\GitHub\\Merchades\\prjmerchades\\formularios\\saida\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\saida\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\agapi\\Documents\\GitHub\\Merchades\\prjmerchades\\dados\\dsdadossaida.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}",
+      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|c:\\users\\agapi\\documents\\github\\merchades\\prjmerchades\\dados\\dsdadossaida.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}",
       "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\dados\\dsdadossaida.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\agapi\\Documents\\GitHub\\Merchades\\prjmerchades\\formularios\\saida\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\saida\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\agapi\\Documents\\GitHub\\Merchades\\prjmerchades\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,13 +50,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "frmMenu.cs",
               "DocumentMoniker": "C:\\Users\\agapi\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Saida\\frmMenu.cs",
               "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Saida\\frmMenu.cs",
               "ToolTip": "C:\\Users\\agapi\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Saida\\frmMenu.cs",
               "RelativeToolTip": "prjMerchades\\Formularios\\Saida\\frmMenu.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAwwEEAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAHkBAAAAAAAAAAAAAKMBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-01T12:01:00.992Z",
               "IsPinned": true,
@@ -58,58 +70,96 @@
               "RelativeDocumentMoniker": "prjMerchades\\Program.cs",
               "ToolTip": "C:\\Users\\agapi\\Documents\\GitHub\\Merchades\\prjMerchades\\Program.cs*",
               "RelativeToolTip": "prjMerchades\\Program.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T22:49:27.102Z",
+              "WhenOpened": "2025-11-15T14:09:45.511Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "frmPagamento.cs",
-              "DocumentMoniker": "C:\\Users\\agapi\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Saida\\frmPagamento.cs",
-              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Saida\\frmPagamento.cs",
-              "ToolTip": "C:\\Users\\agapi\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Saida\\frmPagamento.cs",
-              "RelativeToolTip": "prjMerchades\\Formularios\\Saida\\frmPagamento.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACAAAAApAAAAAAAAAA==",
+              "Title": "frmMenuSaida.cs",
+              "DocumentMoniker": "C:\\Users\\agapi\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\frmMenuSaida.cs",
+              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\frmMenuSaida.cs",
+              "ToolTip": "C:\\Users\\agapi\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\frmMenuSaida.cs",
+              "RelativeToolTip": "prjMerchades\\Formularios\\frmMenuSaida.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAkwBMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T22:05:52.371Z",
+              "WhenOpened": "2025-11-15T14:07:30.229Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "frmPagamento.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\agapi\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Saida\\frmPagamento.cs",
-              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Saida\\frmPagamento.cs",
-              "ToolTip": "C:\\Users\\agapi\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Saida\\frmPagamento.cs [Design]",
-              "RelativeToolTip": "prjMerchades\\Formularios\\Saida\\frmPagamento.cs [Design]",
+              "Title": "frmMenuSaida.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\agapi\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\frmMenuSaida.cs",
+              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\frmMenuSaida.cs",
+              "ToolTip": "C:\\Users\\agapi\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\frmMenuSaida.cs [Design]",
+              "RelativeToolTip": "prjMerchades\\Formularios\\frmMenuSaida.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T22:03:14.132Z",
+              "WhenOpened": "2025-11-15T14:07:28.317Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
+              "Title": "frmPagamento.cs",
+              "DocumentMoniker": "C:\\Users\\agapi\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Saida\\frmPagamento.cs",
+              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Saida\\frmPagamento.cs",
+              "ToolTip": "C:\\Users\\agapi\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Saida\\frmPagamento.cs",
+              "RelativeToolTip": "prjMerchades\\Formularios\\Saida\\frmPagamento.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAowFsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T13:57:44.327Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "dsDadosSaida.xsd",
               "DocumentMoniker": "C:\\Users\\agapi\\Documents\\GitHub\\Merchades\\prjMerchades\\Dados\\dsDadosSaida.xsd",
               "RelativeDocumentMoniker": "prjMerchades\\Dados\\dsDadosSaida.xsd",
               "ToolTip": "C:\\Users\\agapi\\Documents\\GitHub\\Merchades\\prjMerchades\\Dados\\dsDadosSaida.xsd",
               "RelativeToolTip": "prjMerchades\\Dados\\dsDadosSaida.xsd",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003579|",
-              "WhenOpened": "2025-11-11T19:33:15.361Z",
+              "WhenOpened": "2025-11-15T13:54:29.053Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "frmMenu.cs [Design]",
               "DocumentMoniker": "C:\\Users\\agapi\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Saida\\frmMenu.cs",
               "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Saida\\frmMenu.cs",
               "ToolTip": "C:\\Users\\agapi\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Saida\\frmMenu.cs [Design]",
               "RelativeToolTip": "prjMerchades\\Formularios\\Saida\\frmMenu.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T12:47:27.398Z",
+              "WhenOpened": "2025-11-15T12:56:11.204Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\agapi\\Documents\\GitHub\\Merchades\\prjMerchades\\App.config",
+              "RelativeDocumentMoniker": "prjMerchades\\App.config",
+              "ToolTip": "C:\\Users\\agapi\\Documents\\GitHub\\Merchades\\prjMerchades\\App.config",
+              "RelativeToolTip": "prjMerchades\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-11-15T12:06:26.272Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "frmPagamento.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\agapi\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Saida\\frmPagamento.cs",
+              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Saida\\frmPagamento.cs",
+              "ToolTip": "C:\\Users\\agapi\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Saida\\frmPagamento.cs [Design]",
+              "RelativeToolTip": "prjMerchades\\Formularios\\Saida\\frmPagamento.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T11:43:10.134Z",
               "EditorCaption": " [Design]"
             }
           ]

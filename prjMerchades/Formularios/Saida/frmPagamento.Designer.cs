@@ -43,7 +43,7 @@
             this.lblTrocoVenda = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblvalorPago = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
             this.btnCancelaOperacao = new System.Windows.Forms.Button();
             this.btnConfirmaCompra = new System.Windows.Forms.Button();
@@ -76,7 +76,7 @@
             this.cmbFormaPagamento.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFormaPagamento.ForeColor = System.Drawing.Color.White;
             this.cmbFormaPagamento.FormattingEnabled = true;
-            this.cmbFormaPagamento.Location = new System.Drawing.Point(566, 147);
+            this.cmbFormaPagamento.Location = new System.Drawing.Point(565, 118);
             this.cmbFormaPagamento.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.cmbFormaPagamento.Name = "cmbFormaPagamento";
             this.cmbFormaPagamento.Size = new System.Drawing.Size(346, 29);
@@ -107,7 +107,7 @@
             this.groupBox1.Controls.Add(this.lblTrocoVenda);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.lblvalorPago);
             this.groupBox1.Controls.Add(this.label);
             this.groupBox1.Controls.Add(this.btnCancelaOperacao);
             this.groupBox1.Controls.Add(this.cmbFormaPagamento);
@@ -124,10 +124,11 @@
             // 
             this.txtValorPago.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.8F);
             this.txtValorPago.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.txtValorPago.Location = new System.Drawing.Point(211, 318);
+            this.txtValorPago.Location = new System.Drawing.Point(588, 346);
             this.txtValorPago.Name = "txtValorPago";
             this.txtValorPago.Size = new System.Drawing.Size(162, 41);
             this.txtValorPago.TabIndex = 44;
+            this.txtValorPago.Visible = false;
             this.txtValorPago.TextChanged += new System.EventHandler(this.txtValorPago_TextChanged);
             // 
             // lblValorTotal
@@ -136,10 +137,10 @@
             this.lblValorTotal.BackColor = System.Drawing.SystemColors.Window;
             this.lblValorTotal.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.8F);
             this.lblValorTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.lblValorTotal.Location = new System.Drawing.Point(498, 315);
+            this.lblValorTotal.Location = new System.Drawing.Point(356, 277);
             this.lblValorTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblValorTotal.Name = "lblValorTotal";
-            this.lblValorTotal.Size = new System.Drawing.Size(142, 40);
+            this.lblValorTotal.Size = new System.Drawing.Size(162, 40);
             this.lblValorTotal.TabIndex = 43;
             this.lblValorTotal.Text = "R$ 0,00";
             this.lblValorTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -150,7 +151,7 @@
             this.label6.BackColor = System.Drawing.SystemColors.Window;
             this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.8F);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
-            this.label6.Location = new System.Drawing.Point(411, 275);
+            this.label6.Location = new System.Drawing.Point(269, 237);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(219, 40);
@@ -164,7 +165,7 @@
             this.lblParcelas.BackColor = System.Drawing.SystemColors.Window;
             this.lblParcelas.Font = new System.Drawing.Font("Arial Rounded MT Bold", 25.8F);
             this.lblParcelas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.lblParcelas.Location = new System.Drawing.Point(311, 187);
+            this.lblParcelas.Location = new System.Drawing.Point(310, 158);
             this.lblParcelas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblParcelas.Name = "lblParcelas";
             this.lblParcelas.Size = new System.Drawing.Size(213, 40);
@@ -181,7 +182,7 @@
             this.numEstoqueAddProduto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.numEstoqueAddProduto.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F);
             this.numEstoqueAddProduto.ForeColor = System.Drawing.Color.White;
-            this.numEstoqueAddProduto.Location = new System.Drawing.Point(565, 196);
+            this.numEstoqueAddProduto.Location = new System.Drawing.Point(564, 167);
             this.numEstoqueAddProduto.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.numEstoqueAddProduto.Maximum = new decimal(new int[] {
             3,
@@ -209,7 +210,7 @@
             this.lblTrocoVenda.BackColor = System.Drawing.SystemColors.Window;
             this.lblTrocoVenda.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.8F);
             this.lblTrocoVenda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.lblTrocoVenda.Location = new System.Drawing.Point(717, 315);
+            this.lblTrocoVenda.Location = new System.Drawing.Point(575, 277);
             this.lblTrocoVenda.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTrocoVenda.Name = "lblTrocoVenda";
             this.lblTrocoVenda.Size = new System.Drawing.Size(233, 40);
@@ -223,7 +224,7 @@
             this.label4.BackColor = System.Drawing.SystemColors.Window;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.8F);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
-            this.label4.Location = new System.Drawing.Point(700, 275);
+            this.label4.Location = new System.Drawing.Point(558, 237);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(182, 40);
@@ -245,19 +246,20 @@
             this.label3.Text = "Tela de Pagamento";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // lblvalorPago
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.BackColor = System.Drawing.SystemColors.Window;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.8F);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
-            this.label2.Location = new System.Drawing.Point(68, 275);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(374, 40);
-            this.label2.TabIndex = 35;
-            this.label2.Text = "Valor Pago";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblvalorPago.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblvalorPago.BackColor = System.Drawing.SystemColors.Window;
+            this.lblvalorPago.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.8F);
+            this.lblvalorPago.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
+            this.lblvalorPago.Location = new System.Drawing.Point(287, 347);
+            this.lblvalorPago.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblvalorPago.Name = "lblvalorPago";
+            this.lblvalorPago.Size = new System.Drawing.Size(374, 40);
+            this.lblvalorPago.TabIndex = 35;
+            this.lblvalorPago.Text = "Valor Pago";
+            this.lblvalorPago.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblvalorPago.Visible = false;
             // 
             // label
             // 
@@ -266,7 +268,7 @@
             this.label.BackColor = System.Drawing.SystemColors.Window;
             this.label.Font = new System.Drawing.Font("Arial Rounded MT Bold", 25.8F);
             this.label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.label.Location = new System.Drawing.Point(154, 135);
+            this.label.Location = new System.Drawing.Point(153, 106);
             this.label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(391, 40);
@@ -365,7 +367,7 @@
         private System.Windows.Forms.Label lblTrocoVenda;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblvalorPago;
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.Label lblParcelas;
         private System.Windows.Forms.NumericUpDown numEstoqueAddProduto;

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -69,13 +70,22 @@ namespace Merchades
 
         private void btnFinalizaCompra_Click(object sender, EventArgs e)
         {
-            //Passa o código fiscal pra tela de pagamento
-            int codFiscal = int.Parse(lblCodFiscal.Text);
-            //Passa o cpf pra tela de pagamento
-            string cpf = txtCpf.Text;
+            //verifica se o CPF foi colocado
+            if (txtCpf.Text == "")
+            {
+                MessageBox.Show("Preencha o campo CPF");
+            }
+            else
+            {
+                //Passa o código fiscal pra tela de pagamento
+                string codFiscal = lblCodFiscal.Text;
+                //Passa o cpf pra tela de pagamento
+                string cpf = txtCpf.Text;
 
-            frmPagamento novoForm = new frmPagamento(this, codFiscal, cpf);
-            novoForm.Show();//Abre uma tela do formProdutos
+                frmPagamento novoForm = new frmPagamento(this, codFiscal, cpf);
+                novoForm.Show();//Abre uma tela do formProdutos
+            }
+       
         }
 
         //Botão que leva para a aba estoque para adicionar um item ao carrinho
@@ -187,6 +197,38 @@ namespace Merchades
             // TODO: This line of code loads data into the 'dsDadosSaida.ResumoEstoque' table. You can move, or remove it, as needed.
             this.resumoEstoqueTableAdapter.FillResumoEstoque(this.dsDadosSaida.ResumoEstoque);
 
+            //string de conexão
+            string stringDeConexao = prjMerchades.Properties.Settings.Default.ConnectionString;
+
+            //Cod_Nota_Venda
+            //data formatada para query no banco de dados
+            string dataFormatada = DateTime.Now.ToString("yyyy-MM-dd");
+
+            //Busca a quantidade de vendas em um dia para padronizar o codigo. Ex: AAAAMMDD-XXXX
+            int qtdVendas = BuscarQtdNotasDia(stringDeConexao, dataFormatada);
+            //Transforma o número em 4 digitos. Ex: 1 -> 0001
+            string sufixoVenda = (qtdVendas + 1).ToString("D4");
+            string codNotaVenda = $"NF{DateTime.Today.ToString("yyyyMMdd")}-{sufixoVenda}";
+            lblCodFiscal.Text = codNotaVenda;
+        }
+
+        //Busca a quantidade de vendas em um dia para padronizar o codigo da nota
+        public int BuscarQtdNotasDia(string StringConexao, string data)
+        {
+            string sqlQuery = @"SELECT COUNT(*) FROM NOTA_FISCAL_VENDA
+            WHERE DATA_EMISSAO = @data;";
+            using (SqlConnection conn = new SqlConnection(StringConexao))
+            {
+                using (SqlCommand cmd = new SqlCommand(sqlQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("@data", data);
+
+                    conn.Open();
+                    object resultado = cmd.ExecuteScalar();
+
+                    return Convert.ToInt32(resultado);
+                }
+            }
         }
 
         //Botão da que volta para a aba Caixa

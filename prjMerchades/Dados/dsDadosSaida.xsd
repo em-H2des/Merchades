@@ -500,39 +500,39 @@ GROUP BY
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ResumoEstoque" msprop:Generator_RowClassName="ResumoEstoqueRow" msprop:Generator_RowEvHandlerName="ResumoEstoqueRowChangeEventHandler" msprop:Generator_RowDeletedName="ResumoEstoqueRowDeleted" msprop:Generator_RowDeletingName="ResumoEstoqueRowDeleting" msprop:Generator_RowEvArgName="ResumoEstoqueRowChangeEvent" msprop:Generator_TablePropName="ResumoEstoque" msprop:Generator_RowChangedName="ResumoEstoqueRowChanged" msprop:Generator_UserTableName="ResumoEstoque" msprop:Generator_RowChangingName="ResumoEstoqueRowChanging" msprop:Generator_TableClassName="ResumoEstoqueDataTable" msprop:Generator_TableVarName="tableResumoEstoque">
+        <xs:element name="ResumoEstoque" msprop:Generator_RowEvHandlerName="ResumoEstoqueRowChangeEventHandler" msprop:Generator_RowDeletedName="ResumoEstoqueRowDeleted" msprop:Generator_RowDeletingName="ResumoEstoqueRowDeleting" msprop:Generator_RowEvArgName="ResumoEstoqueRowChangeEvent" msprop:Generator_TablePropName="ResumoEstoque" msprop:Generator_RowChangedName="ResumoEstoqueRowChanged" msprop:Generator_UserTableName="ResumoEstoque" msprop:Generator_RowChangingName="ResumoEstoqueRowChanging" msprop:Generator_RowClassName="ResumoEstoqueRow" msprop:Generator_TableClassName="ResumoEstoqueDataTable" msprop:Generator_TableVarName="tableResumoEstoque">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="NOME_PRODUTOS" msprop:Generator_UserColumnName="NOME_PRODUTOS" msprop:Generator_ColumnPropNameInTable="NOME_PRODUTOSColumn" msprop:Generator_ColumnPropNameInRow="NOME_PRODUTOS" msprop:Generator_ColumnVarNameInTable="columnNOME_PRODUTOS" minOccurs="0">
+              <xs:element name="NOME_PRODUTOS" msprop:Generator_ColumnPropNameInTable="NOME_PRODUTOSColumn" msprop:Generator_ColumnPropNameInRow="NOME_PRODUTOS" msprop:Generator_UserColumnName="NOME_PRODUTOS" msprop:Generator_ColumnVarNameInTable="columnNOME_PRODUTOS" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="70" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="QTD_ESTOQUE" msdata:ReadOnly="true" msprop:Generator_UserColumnName="QTD_ESTOQUE" msprop:Generator_ColumnPropNameInTable="QTD_ESTOQUEColumn" msprop:Generator_ColumnPropNameInRow="QTD_ESTOQUE" msprop:Generator_ColumnVarNameInTable="columnQTD_ESTOQUE" type="xs:int" minOccurs="0" />
-              <xs:element name="TIPO_PRODUTOS" msprop:Generator_UserColumnName="TIPO_PRODUTOS" msprop:Generator_ColumnPropNameInTable="TIPO_PRODUTOSColumn" msprop:Generator_ColumnPropNameInRow="TIPO_PRODUTOS" msprop:Generator_ColumnVarNameInTable="columnTIPO_PRODUTOS" minOccurs="0">
+              <xs:element name="QTD_ESTOQUE" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="QTD_ESTOQUEColumn" msprop:Generator_ColumnPropNameInRow="QTD_ESTOQUE" msprop:Generator_UserColumnName="QTD_ESTOQUE" msprop:Generator_ColumnVarNameInTable="columnQTD_ESTOQUE" type="xs:int" minOccurs="0" />
+              <xs:element name="TIPO_PRODUTOS" msprop:Generator_ColumnPropNameInTable="TIPO_PRODUTOSColumn" msprop:Generator_ColumnPropNameInRow="TIPO_PRODUTOS" msprop:Generator_UserColumnName="TIPO_PRODUTOS" msprop:Generator_ColumnVarNameInTable="columnTIPO_PRODUTOS" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="TIPO_UNITARIO" msprop:Generator_UserColumnName="TIPO_UNITARIO" msprop:Generator_ColumnPropNameInTable="TIPO_UNITARIOColumn" msprop:Generator_ColumnPropNameInRow="TIPO_UNITARIO" msprop:Generator_ColumnVarNameInTable="columnTIPO_UNITARIO" minOccurs="0">
+              <xs:element name="TIPO_UNITARIO" msprop:Generator_ColumnPropNameInTable="TIPO_UNITARIOColumn" msprop:Generator_ColumnPropNameInRow="TIPO_UNITARIO" msprop:Generator_UserColumnName="TIPO_UNITARIO" msprop:Generator_ColumnVarNameInTable="columnTIPO_UNITARIO" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="CODIGO_DE_BARRAS" msprop:Generator_UserColumnName="CODIGO_DE_BARRAS" msprop:Generator_ColumnPropNameInTable="CODIGO_DE_BARRASColumn" msprop:Generator_ColumnPropNameInRow="CODIGO_DE_BARRAS" msprop:Generator_ColumnVarNameInTable="columnCODIGO_DE_BARRAS" minOccurs="0">
+              <xs:element name="CODIGO_DE_BARRAS" msprop:Generator_ColumnPropNameInTable="CODIGO_DE_BARRASColumn" msprop:Generator_ColumnPropNameInRow="CODIGO_DE_BARRAS" msprop:Generator_UserColumnName="CODIGO_DE_BARRAS" msprop:Generator_ColumnVarNameInTable="columnCODIGO_DE_BARRAS" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="PRECO_PRODUTOS" msprop:Generator_ColumnPropNameInRow="PRECO_PRODUTOS" msprop:Generator_ColumnPropNameInTable="PRECO_PRODUTOSColumn" msprop:Generator_ColumnVarNameInTable="columnPRECO_PRODUTOS" msprop:Generator_UserColumnName="PRECO_PRODUTOS" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PRECO_PRODUTOS" msprop:Generator_UserColumnName="PRECO_PRODUTOS" msprop:Generator_ColumnPropNameInTable="PRECO_PRODUTOSColumn" msprop:Generator_ColumnPropNameInRow="PRECO_PRODUTOS" msprop:Generator_ColumnVarNameInTable="columnPRECO_PRODUTOS" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -561,10 +561,10 @@ GROUP BY
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__ESTOQUE__ID_PROD__634EBE90" msdata:parent="PRODUTOS" msdata:child="ESTOQUE" msdata:parentkey="ID_PRODUTOS" msdata:childkey="ID_PRODUTOS" msprop:Generator_UserParentTable="PRODUTOS" msprop:Generator_UserChildTable="ESTOQUE" msprop:Generator_RelationVarName="relationFK__ESTOQUE__ID_PROD__634EBE90" msprop:Generator_ChildPropName="GetESTOQUERows" msprop:Generator_UserRelationName="FK__ESTOQUE__ID_PROD__634EBE90" msprop:Generator_ParentPropName="PRODUTOSRow" />
-      <msdata:Relationship name="FK__NOTA_FISC__ID_ME__2645B050" msdata:parent="METODO_PAGAMENTO" msdata:child="NOTA_FISCAL_VENDA" msdata:parentkey="ID_METODO_PAGAMENTO" msdata:childkey="ID_METODO_PAGAMENTO" msprop:Generator_UserParentTable="METODO_PAGAMENTO" msprop:Generator_UserChildTable="NOTA_FISCAL_VENDA" msprop:Generator_RelationVarName="relationFK__NOTA_FISC__ID_ME__2645B050" msprop:Generator_ChildPropName="GetNOTA_FISCAL_VENDARows" msprop:Generator_UserRelationName="FK__NOTA_FISC__ID_ME__2645B050" msprop:Generator_ParentPropName="METODO_PAGAMENTORow" />
-      <msdata:Relationship name="FK__NOTA_FISC__ID_IT__59C55456" msdata:parent="ITENS_NOTA_VENDA" msdata:child="NOTA_FISCAL_VENDA" msdata:parentkey="ID_ITENS_NOTA_VENDA" msdata:childkey="ID_ITENS_NOTA_VENDA" msprop:Generator_UserParentTable="ITENS_NOTA_VENDA" msprop:Generator_UserChildTable="NOTA_FISCAL_VENDA" msprop:Generator_RelationVarName="relationFK__NOTA_FISC__ID_IT__59C55456" msprop:Generator_ChildPropName="GetNOTA_FISCAL_VENDARows" msprop:Generator_UserRelationName="FK__NOTA_FISC__ID_IT__59C55456" msprop:Generator_ParentPropName="ITENS_NOTA_VENDARow" />
-      <msdata:Relationship name="FK__ITENS_NOT__ID_PR__58D1301D" msdata:parent="PRODUTOS" msdata:child="ITENS_NOTA_VENDA" msdata:parentkey="ID_PRODUTOS" msdata:childkey="ID_PRODUTOS" msprop:Generator_UserParentTable="PRODUTOS" msprop:Generator_UserChildTable="ITENS_NOTA_VENDA" msprop:Generator_RelationVarName="relationFK__ITENS_NOT__ID_PR__58D1301D" msprop:Generator_ChildPropName="GetITENS_NOTA_VENDARows" msprop:Generator_ParentPropName="PRODUTOSRow" msprop:Generator_UserRelationName="FK__ITENS_NOT__ID_PR__58D1301D" />
+      <msdata:Relationship name="FK__ESTOQUE__ID_PROD__634EBE90" msdata:parent="PRODUTOS" msdata:child="ESTOQUE" msdata:parentkey="ID_PRODUTOS" msdata:childkey="ID_PRODUTOS" msprop:Generator_UserParentTable="PRODUTOS" msprop:Generator_UserChildTable="ESTOQUE" msprop:Generator_RelationVarName="relationFK__ESTOQUE__ID_PROD__634EBE90" msprop:Generator_ChildPropName="GetESTOQUERows" msprop:Generator_ParentPropName="PRODUTOSRow" msprop:Generator_UserRelationName="FK__ESTOQUE__ID_PROD__634EBE90" />
+      <msdata:Relationship name="FK__NOTA_FISC__ID_ME__2645B050" msdata:parent="METODO_PAGAMENTO" msdata:child="NOTA_FISCAL_VENDA" msdata:parentkey="ID_METODO_PAGAMENTO" msdata:childkey="ID_METODO_PAGAMENTO" msprop:Generator_UserParentTable="METODO_PAGAMENTO" msprop:Generator_UserChildTable="NOTA_FISCAL_VENDA" msprop:Generator_RelationVarName="relationFK__NOTA_FISC__ID_ME__2645B050" msprop:Generator_ChildPropName="GetNOTA_FISCAL_VENDARows" msprop:Generator_ParentPropName="METODO_PAGAMENTORow" msprop:Generator_UserRelationName="FK__NOTA_FISC__ID_ME__2645B050" />
+      <msdata:Relationship name="FK__NOTA_FISC__ID_IT__59C55456" msdata:parent="ITENS_NOTA_VENDA" msdata:child="NOTA_FISCAL_VENDA" msdata:parentkey="ID_ITENS_NOTA_VENDA" msdata:childkey="ID_ITENS_NOTA_VENDA" msprop:Generator_UserParentTable="ITENS_NOTA_VENDA" msprop:Generator_UserChildTable="NOTA_FISCAL_VENDA" msprop:Generator_RelationVarName="relationFK__NOTA_FISC__ID_IT__59C55456" msprop:Generator_ChildPropName="GetNOTA_FISCAL_VENDARows" msprop:Generator_ParentPropName="ITENS_NOTA_VENDARow" msprop:Generator_UserRelationName="FK__NOTA_FISC__ID_IT__59C55456" />
+      <msdata:Relationship name="FK__ITENS_NOT__ID_PR__58D1301D" msdata:parent="PRODUTOS" msdata:child="ITENS_NOTA_VENDA" msdata:parentkey="ID_PRODUTOS" msdata:childkey="ID_PRODUTOS" msprop:Generator_UserParentTable="PRODUTOS" msprop:Generator_UserChildTable="ITENS_NOTA_VENDA" msprop:Generator_RelationVarName="relationFK__ITENS_NOT__ID_PR__58D1301D" msprop:Generator_ChildPropName="GetITENS_NOTA_VENDARows" msprop:Generator_UserRelationName="FK__ITENS_NOT__ID_PR__58D1301D" msprop:Generator_ParentPropName="PRODUTOSRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

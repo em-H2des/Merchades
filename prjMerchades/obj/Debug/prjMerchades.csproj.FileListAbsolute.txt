@@ -913,3 +913,4 @@ C:\Users\agapi\Documents\GitHub\Merchades\prjMerchades\bin\Debug\ru\Microsoft.Re
 C:\Users\agapi\Documents\GitHub\Merchades\prjMerchades\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\agapi\Documents\GitHub\Merchades\prjMerchades\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\agapi\Documents\GitHub\Merchades\prjMerchades\obj\Debug\prjMerch.B26AA8EB.Up2Date
+C:\Users\agapi\Documents\GitHub\Merchades\prjMerchades\bin\Debug\App.config
