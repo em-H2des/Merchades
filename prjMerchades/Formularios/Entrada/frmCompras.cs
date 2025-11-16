@@ -1,4 +1,6 @@
 ﻿using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
+using prjMerchades.Dados;
+using prjMerchades.Dados.daDadosEntradaTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,11 +35,14 @@ namespace prjMerchades.Formularios.Entrada
             lbl_Data2.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnEnviar_Click(object sender, EventArgs e)
         {
             int codigoFornecedor =  int.Parse(txtCodFornecedor.Text);
 
-            if (codigoFornecedor == 888)
+            var fornecedor = daDadosEntrada.FORNECEDOR.FindByID_FORNECEDOR(codigoFornecedor);
+
+
+            if (fornecedor ==  null)
             {
                 MessageBox.Show("O fornecedor infomrado nao existe, cadastre-o.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 var formCadastroFornecedor = new frmCadFornecedor();
@@ -46,10 +51,16 @@ namespace prjMerchades.Formularios.Entrada
                 //formCadastroFornecedor.ShowDialog();
             }
 
-            else
-            {
-                //aqui é o resto do codigo caso o fornecedor ja exista
-            }
+            //insert na tabela de nota fiscal
+            nOTA_FISCAL_FORNECEDORTableAdapter.Insert(
+                dateEmissao.Value,
+                int.Parse(txtVlrTtl.Text),
+                txtCodNF.Text,
+                txtTipoProduto.Text,
+                codigoFornecedor
+                );
+            
+            //insert na tabela 
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -60,6 +71,32 @@ namespace prjMerchades.Formularios.Entrada
             filtro = txtFiltro.Text;
 
             if (coluna == "Fornecedor") 
+            {
+                resultado = "NOME_FORNECEDOR like '%" + filtro + "%'";
+                compraDividasBindingSource1.Filter = resultado;
+            }
+
+            else if (coluna == "Data")
+            {
+                resultado = $"Convert(DATA_EMISSAO, 'System.String') LIKE '%{filtro}%'";
+                compraDividasBindingSource1.Filter = resultado;
+            }
+
+            if (coluna == "Valor")
+            {
+                resultado = $"Convert(VALOR_COMPRA, 'System.String') LIKE '%{filtro}%'";
+                compraDividasBindingSource1.Filter = resultado;
+            }
+        }
+
+        private void btnBuscarAntigas_Click(object sender, EventArgs e)
+        {
+            string coluna, filtro, resultado;
+
+            coluna = cmbFiltroAntigas.Text;
+            filtro = txtFiltroAntigas.Text;
+
+            if (coluna == "Fornecedor")
             {
                 resultado = "NOME_FORNECEDOR like '%" + filtro + "%'";
                 compraDividasBindingSource1.Filter = resultado;

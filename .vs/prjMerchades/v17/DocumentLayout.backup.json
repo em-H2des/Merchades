@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\entrada\\frmcompras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|c:\\users\\brend\\onedrive\\documentos\\estudo\\merchades\\prjmerchades\\formularios\\entrada\\frmcompras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\entrada\\frmcompras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\brend\\OneDrive\\Documentos\\estudo\\Merchades\\prjmerchades\\dados\\dadadosentrada.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}",
+      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\dados\\dadadosentrada.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|c:\\users\\brend\\onedrive\\documentos\\estudo\\merchades\\prjmerchades\\dados\\dadadosentrada.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\dados\\dadadosentrada.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}"
+      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\brend\\OneDrive\\Documentos\\estudo\\Merchades\\prjmerchades\\formularios\\entrada\\frmcompras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\entrada\\frmcompras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Entrada\\frmCompras.cs",
               "ToolTip": "C:\\Users\\brend\\OneDrive\\Documentos\\estudo\\Merchades\\prjMerchades\\Formularios\\Entrada\\frmCompras.cs*",
               "RelativeToolTip": "prjMerchades\\Formularios\\Entrada\\frmCompras.cs*",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAIwEsAAABYAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAgwDsAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-15T01:14:26.095Z",
               "EditorCaption": ""
@@ -40,6 +40,18 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "daDadosEntrada.xsd",
+              "DocumentMoniker": "C:\\Users\\brend\\OneDrive\\Documentos\\estudo\\Merchades\\prjMerchades\\Dados\\daDadosEntrada.xsd",
+              "RelativeDocumentMoniker": "prjMerchades\\Dados\\daDadosEntrada.xsd",
+              "ToolTip": "C:\\Users\\brend\\OneDrive\\Documentos\\estudo\\Merchades\\prjMerchades\\Dados\\daDadosEntrada.xsd*",
+              "RelativeToolTip": "prjMerchades\\Dados\\daDadosEntrada.xsd*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003579|",
+              "WhenOpened": "2025-11-14T21:37:52.099Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "frmCompras.cs [Design]",
               "DocumentMoniker": "C:\\Users\\brend\\OneDrive\\Documentos\\estudo\\Merchades\\prjMerchades\\Formularios\\Entrada\\frmCompras.cs",
               "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Entrada\\frmCompras.cs",
@@ -48,18 +60,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-14T21:39:32.716Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "daDadosEntrada.xsd",
-              "DocumentMoniker": "C:\\Users\\brend\\OneDrive\\Documentos\\estudo\\Merchades\\prjMerchades\\Dados\\daDadosEntrada.xsd",
-              "RelativeDocumentMoniker": "prjMerchades\\Dados\\daDadosEntrada.xsd",
-              "ToolTip": "C:\\Users\\brend\\OneDrive\\Documentos\\estudo\\Merchades\\prjMerchades\\Dados\\daDadosEntrada.xsd",
-              "RelativeToolTip": "prjMerchades\\Dados\\daDadosEntrada.xsd",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003579|",
-              "WhenOpened": "2025-11-14T21:37:52.099Z",
-              "EditorCaption": ""
             }
           ]
         }
