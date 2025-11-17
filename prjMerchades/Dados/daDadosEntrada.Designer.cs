@@ -30,9 +30,9 @@ namespace prjMerchades.Dados {
         
         private FORNECEDORDataTable tableFORNECEDOR;
         
-        private PRODUTOSDataTable tablePRODUTOS;
+        private PRODUTOSEntradaDataTable tablePRODUTOSEntrada;
         
-        private ESTOQUEDataTable tableESTOQUE;
+        private ESTOQUEEntradaDataTable tableESTOQUEEntrada;
         
         private global::System.Data.DataRelation relationFK__NOTA_FISC__ID_FO__7C3A67EB;
         
@@ -77,11 +77,11 @@ namespace prjMerchades.Dados {
                 if ((ds.Tables["FORNECEDOR"] != null)) {
                     base.Tables.Add(new FORNECEDORDataTable(ds.Tables["FORNECEDOR"]));
                 }
-                if ((ds.Tables["PRODUTOS"] != null)) {
-                    base.Tables.Add(new PRODUTOSDataTable(ds.Tables["PRODUTOS"]));
+                if ((ds.Tables["PRODUTOSEntrada"] != null)) {
+                    base.Tables.Add(new PRODUTOSEntradaDataTable(ds.Tables["PRODUTOSEntrada"]));
                 }
-                if ((ds.Tables["ESTOQUE"] != null)) {
-                    base.Tables.Add(new ESTOQUEDataTable(ds.Tables["ESTOQUE"]));
+                if ((ds.Tables["ESTOQUEEntrada"] != null)) {
+                    base.Tables.Add(new ESTOQUEEntradaDataTable(ds.Tables["ESTOQUEEntrada"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -135,9 +135,9 @@ namespace prjMerchades.Dados {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public PRODUTOSDataTable PRODUTOS {
+        public PRODUTOSEntradaDataTable PRODUTOSEntrada {
             get {
-                return this.tablePRODUTOS;
+                return this.tablePRODUTOSEntrada;
             }
         }
         
@@ -145,9 +145,9 @@ namespace prjMerchades.Dados {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public ESTOQUEDataTable ESTOQUE {
+        public ESTOQUEEntradaDataTable ESTOQUEEntrada {
             get {
-                return this.tableESTOQUE;
+                return this.tableESTOQUEEntrada;
             }
         }
         
@@ -227,11 +227,11 @@ namespace prjMerchades.Dados {
                 if ((ds.Tables["FORNECEDOR"] != null)) {
                     base.Tables.Add(new FORNECEDORDataTable(ds.Tables["FORNECEDOR"]));
                 }
-                if ((ds.Tables["PRODUTOS"] != null)) {
-                    base.Tables.Add(new PRODUTOSDataTable(ds.Tables["PRODUTOS"]));
+                if ((ds.Tables["PRODUTOSEntrada"] != null)) {
+                    base.Tables.Add(new PRODUTOSEntradaDataTable(ds.Tables["PRODUTOSEntrada"]));
                 }
-                if ((ds.Tables["ESTOQUE"] != null)) {
-                    base.Tables.Add(new ESTOQUEDataTable(ds.Tables["ESTOQUE"]));
+                if ((ds.Tables["ESTOQUEEntrada"] != null)) {
+                    base.Tables.Add(new ESTOQUEEntradaDataTable(ds.Tables["ESTOQUEEntrada"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -284,16 +284,16 @@ namespace prjMerchades.Dados {
                     this.tableFORNECEDOR.InitVars();
                 }
             }
-            this.tablePRODUTOS = ((PRODUTOSDataTable)(base.Tables["PRODUTOS"]));
+            this.tablePRODUTOSEntrada = ((PRODUTOSEntradaDataTable)(base.Tables["PRODUTOSEntrada"]));
             if ((initTable == true)) {
-                if ((this.tablePRODUTOS != null)) {
-                    this.tablePRODUTOS.InitVars();
+                if ((this.tablePRODUTOSEntrada != null)) {
+                    this.tablePRODUTOSEntrada.InitVars();
                 }
             }
-            this.tableESTOQUE = ((ESTOQUEDataTable)(base.Tables["ESTOQUE"]));
+            this.tableESTOQUEEntrada = ((ESTOQUEEntradaDataTable)(base.Tables["ESTOQUEEntrada"]));
             if ((initTable == true)) {
-                if ((this.tableESTOQUE != null)) {
-                    this.tableESTOQUE.InitVars();
+                if ((this.tableESTOQUEEntrada != null)) {
+                    this.tableESTOQUEEntrada.InitVars();
                 }
             }
             this.relationFK__NOTA_FISC__ID_FO__7C3A67EB = this.Relations["FK__NOTA_FISC__ID_FO__7C3A67EB"];
@@ -315,21 +315,21 @@ namespace prjMerchades.Dados {
             base.Tables.Add(this.tablecompraDividas);
             this.tableFORNECEDOR = new FORNECEDORDataTable();
             base.Tables.Add(this.tableFORNECEDOR);
-            this.tablePRODUTOS = new PRODUTOSDataTable();
-            base.Tables.Add(this.tablePRODUTOS);
-            this.tableESTOQUE = new ESTOQUEDataTable();
-            base.Tables.Add(this.tableESTOQUE);
+            this.tablePRODUTOSEntrada = new PRODUTOSEntradaDataTable();
+            base.Tables.Add(this.tablePRODUTOSEntrada);
+            this.tableESTOQUEEntrada = new ESTOQUEEntradaDataTable();
+            base.Tables.Add(this.tableESTOQUEEntrada);
             this.relationFK__NOTA_FISC__ID_FO__7C3A67EB = new global::System.Data.DataRelation("FK__NOTA_FISC__ID_FO__7C3A67EB", new global::System.Data.DataColumn[] {
                         this.tableFORNECEDOR.ID_FORNECEDORColumn}, new global::System.Data.DataColumn[] {
                         this.tableNOTA_FISCAL_FORNECEDOR.ID_FORNECEDORColumn}, false);
             this.Relations.Add(this.relationFK__NOTA_FISC__ID_FO__7C3A67EB);
             this.relationFK__ESTOQUE__ID_NOTA__06B7F65E = new global::System.Data.DataRelation("FK__ESTOQUE__ID_NOTA__06B7F65E", new global::System.Data.DataColumn[] {
                         this.tableNOTA_FISCAL_FORNECEDOR.ID_NOTA_FISCAL_FORNECColumn}, new global::System.Data.DataColumn[] {
-                        this.tableESTOQUE.ID_NOTA_FISCAL_FORNECColumn}, false);
+                        this.tableESTOQUEEntrada.ID_NOTA_FISCAL_FORNECColumn}, false);
             this.Relations.Add(this.relationFK__ESTOQUE__ID_NOTA__06B7F65E);
             this.relationFK__ESTOQUE__ID_PROD__05C3D225 = new global::System.Data.DataRelation("FK__ESTOQUE__ID_PROD__05C3D225", new global::System.Data.DataColumn[] {
-                        this.tablePRODUTOS.ID_PRODUTOSColumn}, new global::System.Data.DataColumn[] {
-                        this.tableESTOQUE.ID_PRODUTOSColumn}, false);
+                        this.tablePRODUTOSEntrada.ID_PRODUTOSColumn}, new global::System.Data.DataColumn[] {
+                        this.tableESTOQUEEntrada.ID_PRODUTOSColumn}, false);
             this.Relations.Add(this.relationFK__ESTOQUE__ID_PROD__05C3D225);
         }
         
@@ -353,13 +353,13 @@ namespace prjMerchades.Dados {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializePRODUTOS() {
+        private bool ShouldSerializePRODUTOSEntrada() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeESTOQUE() {
+        private bool ShouldSerializeESTOQUEEntrada() {
             return false;
         }
         
@@ -428,10 +428,10 @@ namespace prjMerchades.Dados {
         public delegate void FORNECEDORRowChangeEventHandler(object sender, FORNECEDORRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void PRODUTOSRowChangeEventHandler(object sender, PRODUTOSRowChangeEvent e);
+        public delegate void PRODUTOSEntradaRowChangeEventHandler(object sender, PRODUTOSEntradaRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void ESTOQUERowChangeEventHandler(object sender, ESTOQUERowChangeEvent e);
+        public delegate void ESTOQUEEntradaRowChangeEventHandler(object sender, ESTOQUEEntradaRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1447,7 +1447,7 @@ namespace prjMerchades.Dados {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class PRODUTOSDataTable : global::System.Data.TypedTableBase<PRODUTOSRow> {
+        public partial class PRODUTOSEntradaDataTable : global::System.Data.TypedTableBase<PRODUTOSEntradaRow> {
             
             private global::System.Data.DataColumn columnID_PRODUTOS;
             
@@ -1463,8 +1463,8 @@ namespace prjMerchades.Dados {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PRODUTOSDataTable() {
-                this.TableName = "PRODUTOS";
+            public PRODUTOSEntradaDataTable() {
+                this.TableName = "PRODUTOSEntrada";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -1472,7 +1472,7 @@ namespace prjMerchades.Dados {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal PRODUTOSDataTable(global::System.Data.DataTable table) {
+            internal PRODUTOSEntradaDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -1489,7 +1489,7 @@ namespace prjMerchades.Dados {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected PRODUTOSDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected PRODUTOSEntradaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -1553,34 +1553,34 @@ namespace prjMerchades.Dados {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PRODUTOSRow this[int index] {
+            public PRODUTOSEntradaRow this[int index] {
                 get {
-                    return ((PRODUTOSRow)(this.Rows[index]));
+                    return ((PRODUTOSEntradaRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event PRODUTOSRowChangeEventHandler PRODUTOSRowChanging;
+            public event PRODUTOSEntradaRowChangeEventHandler PRODUTOSEntradaRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event PRODUTOSRowChangeEventHandler PRODUTOSRowChanged;
+            public event PRODUTOSEntradaRowChangeEventHandler PRODUTOSEntradaRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event PRODUTOSRowChangeEventHandler PRODUTOSRowDeleting;
+            public event PRODUTOSEntradaRowChangeEventHandler PRODUTOSEntradaRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event PRODUTOSRowChangeEventHandler PRODUTOSRowDeleted;
+            public event PRODUTOSEntradaRowChangeEventHandler PRODUTOSEntradaRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddPRODUTOSRow(PRODUTOSRow row) {
+            public void AddPRODUTOSEntradaRow(PRODUTOSEntradaRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PRODUTOSRow AddPRODUTOSRow(string NOME_PRODUTOS, string TIPO_PRODUTOS, string TIPO_UNITARIO, decimal PRECO_PRODUTOS, int CODIGO_DE_BARRAS) {
-                PRODUTOSRow rowPRODUTOSRow = ((PRODUTOSRow)(this.NewRow()));
+            public PRODUTOSEntradaRow AddPRODUTOSEntradaRow(string NOME_PRODUTOS, string TIPO_PRODUTOS, string TIPO_UNITARIO, decimal PRECO_PRODUTOS, int CODIGO_DE_BARRAS) {
+                PRODUTOSEntradaRow rowPRODUTOSEntradaRow = ((PRODUTOSEntradaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         NOME_PRODUTOS,
@@ -1588,22 +1588,22 @@ namespace prjMerchades.Dados {
                         TIPO_UNITARIO,
                         PRECO_PRODUTOS,
                         CODIGO_DE_BARRAS};
-                rowPRODUTOSRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowPRODUTOSRow);
-                return rowPRODUTOSRow;
+                rowPRODUTOSEntradaRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowPRODUTOSEntradaRow);
+                return rowPRODUTOSEntradaRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PRODUTOSRow FindByID_PRODUTOS(int ID_PRODUTOS) {
-                return ((PRODUTOSRow)(this.Rows.Find(new object[] {
+            public PRODUTOSEntradaRow FindByID_PRODUTOS(int ID_PRODUTOS) {
+                return ((PRODUTOSEntradaRow)(this.Rows.Find(new object[] {
                             ID_PRODUTOS})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                PRODUTOSDataTable cln = ((PRODUTOSDataTable)(base.Clone()));
+                PRODUTOSEntradaDataTable cln = ((PRODUTOSEntradaDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1611,7 +1611,7 @@ namespace prjMerchades.Dados {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new PRODUTOSDataTable();
+                return new PRODUTOSEntradaDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1655,28 +1655,28 @@ namespace prjMerchades.Dados {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PRODUTOSRow NewPRODUTOSRow() {
-                return ((PRODUTOSRow)(this.NewRow()));
+            public PRODUTOSEntradaRow NewPRODUTOSEntradaRow() {
+                return ((PRODUTOSEntradaRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new PRODUTOSRow(builder);
+                return new PRODUTOSEntradaRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(PRODUTOSRow);
+                return typeof(PRODUTOSEntradaRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.PRODUTOSRowChanged != null)) {
-                    this.PRODUTOSRowChanged(this, new PRODUTOSRowChangeEvent(((PRODUTOSRow)(e.Row)), e.Action));
+                if ((this.PRODUTOSEntradaRowChanged != null)) {
+                    this.PRODUTOSEntradaRowChanged(this, new PRODUTOSEntradaRowChangeEvent(((PRODUTOSEntradaRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1684,8 +1684,8 @@ namespace prjMerchades.Dados {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.PRODUTOSRowChanging != null)) {
-                    this.PRODUTOSRowChanging(this, new PRODUTOSRowChangeEvent(((PRODUTOSRow)(e.Row)), e.Action));
+                if ((this.PRODUTOSEntradaRowChanging != null)) {
+                    this.PRODUTOSEntradaRowChanging(this, new PRODUTOSEntradaRowChangeEvent(((PRODUTOSEntradaRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1693,8 +1693,8 @@ namespace prjMerchades.Dados {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.PRODUTOSRowDeleted != null)) {
-                    this.PRODUTOSRowDeleted(this, new PRODUTOSRowChangeEvent(((PRODUTOSRow)(e.Row)), e.Action));
+                if ((this.PRODUTOSEntradaRowDeleted != null)) {
+                    this.PRODUTOSEntradaRowDeleted(this, new PRODUTOSEntradaRowChangeEvent(((PRODUTOSEntradaRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1702,14 +1702,14 @@ namespace prjMerchades.Dados {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.PRODUTOSRowDeleting != null)) {
-                    this.PRODUTOSRowDeleting(this, new PRODUTOSRowChangeEvent(((PRODUTOSRow)(e.Row)), e.Action));
+                if ((this.PRODUTOSEntradaRowDeleting != null)) {
+                    this.PRODUTOSEntradaRowDeleting(this, new PRODUTOSEntradaRowChangeEvent(((PRODUTOSEntradaRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemovePRODUTOSRow(PRODUTOSRow row) {
+            public void RemovePRODUTOSEntradaRow(PRODUTOSEntradaRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1736,7 +1736,7 @@ namespace prjMerchades.Dados {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "PRODUTOSDataTable";
+                attribute2.FixedValue = "PRODUTOSEntradaDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1782,7 +1782,7 @@ namespace prjMerchades.Dados {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ESTOQUEDataTable : global::System.Data.TypedTableBase<ESTOQUERow> {
+        public partial class ESTOQUEEntradaDataTable : global::System.Data.TypedTableBase<ESTOQUEEntradaRow> {
             
             private global::System.Data.DataColumn columnID_ESTOQUE;
             
@@ -1794,8 +1794,8 @@ namespace prjMerchades.Dados {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ESTOQUEDataTable() {
-                this.TableName = "ESTOQUE";
+            public ESTOQUEEntradaDataTable() {
+                this.TableName = "ESTOQUEEntrada";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -1803,7 +1803,7 @@ namespace prjMerchades.Dados {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal ESTOQUEDataTable(global::System.Data.DataTable table) {
+            internal ESTOQUEEntradaDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -1820,7 +1820,7 @@ namespace prjMerchades.Dados {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected ESTOQUEDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected ESTOQUEEntradaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -1868,61 +1868,61 @@ namespace prjMerchades.Dados {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ESTOQUERow this[int index] {
+            public ESTOQUEEntradaRow this[int index] {
                 get {
-                    return ((ESTOQUERow)(this.Rows[index]));
+                    return ((ESTOQUEEntradaRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event ESTOQUERowChangeEventHandler ESTOQUERowChanging;
+            public event ESTOQUEEntradaRowChangeEventHandler ESTOQUEEntradaRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event ESTOQUERowChangeEventHandler ESTOQUERowChanged;
+            public event ESTOQUEEntradaRowChangeEventHandler ESTOQUEEntradaRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event ESTOQUERowChangeEventHandler ESTOQUERowDeleting;
+            public event ESTOQUEEntradaRowChangeEventHandler ESTOQUEEntradaRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event ESTOQUERowChangeEventHandler ESTOQUERowDeleted;
+            public event ESTOQUEEntradaRowChangeEventHandler ESTOQUEEntradaRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddESTOQUERow(ESTOQUERow row) {
+            public void AddESTOQUEEntradaRow(ESTOQUEEntradaRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ESTOQUERow AddESTOQUERow(int QTD_ESTOQUE, PRODUTOSRow parentPRODUTOSRowByFK__ESTOQUE__ID_PROD__05C3D225, NOTA_FISCAL_FORNECEDORRow parentNOTA_FISCAL_FORNECEDORRowByFK__ESTOQUE__ID_NOTA__06B7F65E) {
-                ESTOQUERow rowESTOQUERow = ((ESTOQUERow)(this.NewRow()));
+            public ESTOQUEEntradaRow AddESTOQUEEntradaRow(int QTD_ESTOQUE, PRODUTOSEntradaRow parentPRODUTOSEntradaRowByFK__ESTOQUE__ID_PROD__05C3D225, NOTA_FISCAL_FORNECEDORRow parentNOTA_FISCAL_FORNECEDORRowByFK__ESTOQUE__ID_NOTA__06B7F65E) {
+                ESTOQUEEntradaRow rowESTOQUEEntradaRow = ((ESTOQUEEntradaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         QTD_ESTOQUE,
                         null,
                         null};
-                if ((parentPRODUTOSRowByFK__ESTOQUE__ID_PROD__05C3D225 != null)) {
-                    columnValuesArray[2] = parentPRODUTOSRowByFK__ESTOQUE__ID_PROD__05C3D225[0];
+                if ((parentPRODUTOSEntradaRowByFK__ESTOQUE__ID_PROD__05C3D225 != null)) {
+                    columnValuesArray[2] = parentPRODUTOSEntradaRowByFK__ESTOQUE__ID_PROD__05C3D225[0];
                 }
                 if ((parentNOTA_FISCAL_FORNECEDORRowByFK__ESTOQUE__ID_NOTA__06B7F65E != null)) {
                     columnValuesArray[3] = parentNOTA_FISCAL_FORNECEDORRowByFK__ESTOQUE__ID_NOTA__06B7F65E[0];
                 }
-                rowESTOQUERow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowESTOQUERow);
-                return rowESTOQUERow;
+                rowESTOQUEEntradaRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowESTOQUEEntradaRow);
+                return rowESTOQUEEntradaRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ESTOQUERow FindByID_ESTOQUE(int ID_ESTOQUE) {
-                return ((ESTOQUERow)(this.Rows.Find(new object[] {
+            public ESTOQUEEntradaRow FindByID_ESTOQUE(int ID_ESTOQUE) {
+                return ((ESTOQUEEntradaRow)(this.Rows.Find(new object[] {
                             ID_ESTOQUE})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                ESTOQUEDataTable cln = ((ESTOQUEDataTable)(base.Clone()));
+                ESTOQUEEntradaDataTable cln = ((ESTOQUEEntradaDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1930,7 +1930,7 @@ namespace prjMerchades.Dados {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new ESTOQUEDataTable();
+                return new ESTOQUEEntradaDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1965,28 +1965,28 @@ namespace prjMerchades.Dados {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ESTOQUERow NewESTOQUERow() {
-                return ((ESTOQUERow)(this.NewRow()));
+            public ESTOQUEEntradaRow NewESTOQUEEntradaRow() {
+                return ((ESTOQUEEntradaRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new ESTOQUERow(builder);
+                return new ESTOQUEEntradaRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(ESTOQUERow);
+                return typeof(ESTOQUEEntradaRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.ESTOQUERowChanged != null)) {
-                    this.ESTOQUERowChanged(this, new ESTOQUERowChangeEvent(((ESTOQUERow)(e.Row)), e.Action));
+                if ((this.ESTOQUEEntradaRowChanged != null)) {
+                    this.ESTOQUEEntradaRowChanged(this, new ESTOQUEEntradaRowChangeEvent(((ESTOQUEEntradaRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1994,8 +1994,8 @@ namespace prjMerchades.Dados {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.ESTOQUERowChanging != null)) {
-                    this.ESTOQUERowChanging(this, new ESTOQUERowChangeEvent(((ESTOQUERow)(e.Row)), e.Action));
+                if ((this.ESTOQUEEntradaRowChanging != null)) {
+                    this.ESTOQUEEntradaRowChanging(this, new ESTOQUEEntradaRowChangeEvent(((ESTOQUEEntradaRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2003,8 +2003,8 @@ namespace prjMerchades.Dados {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.ESTOQUERowDeleted != null)) {
-                    this.ESTOQUERowDeleted(this, new ESTOQUERowChangeEvent(((ESTOQUERow)(e.Row)), e.Action));
+                if ((this.ESTOQUEEntradaRowDeleted != null)) {
+                    this.ESTOQUEEntradaRowDeleted(this, new ESTOQUEEntradaRowChangeEvent(((ESTOQUEEntradaRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2012,14 +2012,14 @@ namespace prjMerchades.Dados {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.ESTOQUERowDeleting != null)) {
-                    this.ESTOQUERowDeleting(this, new ESTOQUERowChangeEvent(((ESTOQUERow)(e.Row)), e.Action));
+                if ((this.ESTOQUEEntradaRowDeleting != null)) {
+                    this.ESTOQUEEntradaRowDeleting(this, new ESTOQUEEntradaRowChangeEvent(((ESTOQUEEntradaRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveESTOQUERow(ESTOQUERow row) {
+            public void RemoveESTOQUEEntradaRow(ESTOQUEEntradaRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -2046,7 +2046,7 @@ namespace prjMerchades.Dados {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "ESTOQUEDataTable";
+                attribute2.FixedValue = "ESTOQUEEntradaDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2265,12 +2265,12 @@ namespace prjMerchades.Dados {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ESTOQUERow[] GetESTOQUERows() {
+            public ESTOQUEEntradaRow[] GetESTOQUEEntradaRows() {
                 if ((this.Table.ChildRelations["FK__ESTOQUE__ID_NOTA__06B7F65E"] == null)) {
-                    return new ESTOQUERow[0];
+                    return new ESTOQUEEntradaRow[0];
                 }
                 else {
-                    return ((ESTOQUERow[])(base.GetChildRows(this.Table.ChildRelations["FK__ESTOQUE__ID_NOTA__06B7F65E"])));
+                    return ((ESTOQUEEntradaRow[])(base.GetChildRows(this.Table.ChildRelations["FK__ESTOQUE__ID_NOTA__06B7F65E"])));
                 }
             }
         }
@@ -2621,25 +2621,25 @@ namespace prjMerchades.Dados {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class PRODUTOSRow : global::System.Data.DataRow {
+        public partial class PRODUTOSEntradaRow : global::System.Data.DataRow {
             
-            private PRODUTOSDataTable tablePRODUTOS;
+            private PRODUTOSEntradaDataTable tablePRODUTOSEntrada;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal PRODUTOSRow(global::System.Data.DataRowBuilder rb) : 
+            internal PRODUTOSEntradaRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablePRODUTOS = ((PRODUTOSDataTable)(this.Table));
+                this.tablePRODUTOSEntrada = ((PRODUTOSEntradaDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int ID_PRODUTOS {
                 get {
-                    return ((int)(this[this.tablePRODUTOS.ID_PRODUTOSColumn]));
+                    return ((int)(this[this.tablePRODUTOSEntrada.ID_PRODUTOSColumn]));
                 }
                 set {
-                    this[this.tablePRODUTOS.ID_PRODUTOSColumn] = value;
+                    this[this.tablePRODUTOSEntrada.ID_PRODUTOSColumn] = value;
                 }
             }
             
@@ -2648,14 +2648,14 @@ namespace prjMerchades.Dados {
             public string NOME_PRODUTOS {
                 get {
                     try {
-                        return ((string)(this[this.tablePRODUTOS.NOME_PRODUTOSColumn]));
+                        return ((string)(this[this.tablePRODUTOSEntrada.NOME_PRODUTOSColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'NOME_PRODUTOS\' na tabela \'PRODUTOS\' é DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'NOME_PRODUTOS\' na tabela \'PRODUTOSEntrada\' é DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePRODUTOS.NOME_PRODUTOSColumn] = value;
+                    this[this.tablePRODUTOSEntrada.NOME_PRODUTOSColumn] = value;
                 }
             }
             
@@ -2664,14 +2664,14 @@ namespace prjMerchades.Dados {
             public string TIPO_PRODUTOS {
                 get {
                     try {
-                        return ((string)(this[this.tablePRODUTOS.TIPO_PRODUTOSColumn]));
+                        return ((string)(this[this.tablePRODUTOSEntrada.TIPO_PRODUTOSColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'TIPO_PRODUTOS\' na tabela \'PRODUTOS\' é DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'TIPO_PRODUTOS\' na tabela \'PRODUTOSEntrada\' é DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePRODUTOS.TIPO_PRODUTOSColumn] = value;
+                    this[this.tablePRODUTOSEntrada.TIPO_PRODUTOSColumn] = value;
                 }
             }
             
@@ -2680,14 +2680,14 @@ namespace prjMerchades.Dados {
             public string TIPO_UNITARIO {
                 get {
                     try {
-                        return ((string)(this[this.tablePRODUTOS.TIPO_UNITARIOColumn]));
+                        return ((string)(this[this.tablePRODUTOSEntrada.TIPO_UNITARIOColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'TIPO_UNITARIO\' na tabela \'PRODUTOS\' é DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'TIPO_UNITARIO\' na tabela \'PRODUTOSEntrada\' é DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePRODUTOS.TIPO_UNITARIOColumn] = value;
+                    this[this.tablePRODUTOSEntrada.TIPO_UNITARIOColumn] = value;
                 }
             }
             
@@ -2696,14 +2696,14 @@ namespace prjMerchades.Dados {
             public decimal PRECO_PRODUTOS {
                 get {
                     try {
-                        return ((decimal)(this[this.tablePRODUTOS.PRECO_PRODUTOSColumn]));
+                        return ((decimal)(this[this.tablePRODUTOSEntrada.PRECO_PRODUTOSColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'PRECO_PRODUTOS\' na tabela \'PRODUTOS\' é DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'PRECO_PRODUTOS\' na tabela \'PRODUTOSEntrada\' é DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePRODUTOS.PRECO_PRODUTOSColumn] = value;
+                    this[this.tablePRODUTOSEntrada.PRECO_PRODUTOSColumn] = value;
                 }
             }
             
@@ -2712,85 +2712,85 @@ namespace prjMerchades.Dados {
             public int CODIGO_DE_BARRAS {
                 get {
                     try {
-                        return ((int)(this[this.tablePRODUTOS.CODIGO_DE_BARRASColumn]));
+                        return ((int)(this[this.tablePRODUTOSEntrada.CODIGO_DE_BARRASColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'CODIGO_DE_BARRAS\' na tabela \'PRODUTOS\' é DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'CODIGO_DE_BARRAS\' na tabela \'PRODUTOSEntrada\' é DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePRODUTOS.CODIGO_DE_BARRASColumn] = value;
+                    this[this.tablePRODUTOSEntrada.CODIGO_DE_BARRASColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsNOME_PRODUTOSNull() {
-                return this.IsNull(this.tablePRODUTOS.NOME_PRODUTOSColumn);
+                return this.IsNull(this.tablePRODUTOSEntrada.NOME_PRODUTOSColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetNOME_PRODUTOSNull() {
-                this[this.tablePRODUTOS.NOME_PRODUTOSColumn] = global::System.Convert.DBNull;
+                this[this.tablePRODUTOSEntrada.NOME_PRODUTOSColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsTIPO_PRODUTOSNull() {
-                return this.IsNull(this.tablePRODUTOS.TIPO_PRODUTOSColumn);
+                return this.IsNull(this.tablePRODUTOSEntrada.TIPO_PRODUTOSColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetTIPO_PRODUTOSNull() {
-                this[this.tablePRODUTOS.TIPO_PRODUTOSColumn] = global::System.Convert.DBNull;
+                this[this.tablePRODUTOSEntrada.TIPO_PRODUTOSColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsTIPO_UNITARIONull() {
-                return this.IsNull(this.tablePRODUTOS.TIPO_UNITARIOColumn);
+                return this.IsNull(this.tablePRODUTOSEntrada.TIPO_UNITARIOColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetTIPO_UNITARIONull() {
-                this[this.tablePRODUTOS.TIPO_UNITARIOColumn] = global::System.Convert.DBNull;
+                this[this.tablePRODUTOSEntrada.TIPO_UNITARIOColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsPRECO_PRODUTOSNull() {
-                return this.IsNull(this.tablePRODUTOS.PRECO_PRODUTOSColumn);
+                return this.IsNull(this.tablePRODUTOSEntrada.PRECO_PRODUTOSColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetPRECO_PRODUTOSNull() {
-                this[this.tablePRODUTOS.PRECO_PRODUTOSColumn] = global::System.Convert.DBNull;
+                this[this.tablePRODUTOSEntrada.PRECO_PRODUTOSColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsCODIGO_DE_BARRASNull() {
-                return this.IsNull(this.tablePRODUTOS.CODIGO_DE_BARRASColumn);
+                return this.IsNull(this.tablePRODUTOSEntrada.CODIGO_DE_BARRASColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetCODIGO_DE_BARRASNull() {
-                this[this.tablePRODUTOS.CODIGO_DE_BARRASColumn] = global::System.Convert.DBNull;
+                this[this.tablePRODUTOSEntrada.CODIGO_DE_BARRASColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ESTOQUERow[] GetESTOQUERows() {
+            public ESTOQUEEntradaRow[] GetESTOQUEEntradaRows() {
                 if ((this.Table.ChildRelations["FK__ESTOQUE__ID_PROD__05C3D225"] == null)) {
-                    return new ESTOQUERow[0];
+                    return new ESTOQUEEntradaRow[0];
                 }
                 else {
-                    return ((ESTOQUERow[])(base.GetChildRows(this.Table.ChildRelations["FK__ESTOQUE__ID_PROD__05C3D225"])));
+                    return ((ESTOQUEEntradaRow[])(base.GetChildRows(this.Table.ChildRelations["FK__ESTOQUE__ID_PROD__05C3D225"])));
                 }
             }
         }
@@ -2798,25 +2798,25 @@ namespace prjMerchades.Dados {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class ESTOQUERow : global::System.Data.DataRow {
+        public partial class ESTOQUEEntradaRow : global::System.Data.DataRow {
             
-            private ESTOQUEDataTable tableESTOQUE;
+            private ESTOQUEEntradaDataTable tableESTOQUEEntrada;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal ESTOQUERow(global::System.Data.DataRowBuilder rb) : 
+            internal ESTOQUEEntradaRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableESTOQUE = ((ESTOQUEDataTable)(this.Table));
+                this.tableESTOQUEEntrada = ((ESTOQUEEntradaDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int ID_ESTOQUE {
                 get {
-                    return ((int)(this[this.tableESTOQUE.ID_ESTOQUEColumn]));
+                    return ((int)(this[this.tableESTOQUEEntrada.ID_ESTOQUEColumn]));
                 }
                 set {
-                    this[this.tableESTOQUE.ID_ESTOQUEColumn] = value;
+                    this[this.tableESTOQUEEntrada.ID_ESTOQUEColumn] = value;
                 }
             }
             
@@ -2825,14 +2825,14 @@ namespace prjMerchades.Dados {
             public int QTD_ESTOQUE {
                 get {
                     try {
-                        return ((int)(this[this.tableESTOQUE.QTD_ESTOQUEColumn]));
+                        return ((int)(this[this.tableESTOQUEEntrada.QTD_ESTOQUEColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'QTD_ESTOQUE\' na tabela \'ESTOQUE\' é DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'QTD_ESTOQUE\' na tabela \'ESTOQUEEntrada\' é DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableESTOQUE.QTD_ESTOQUEColumn] = value;
+                    this[this.tableESTOQUEEntrada.QTD_ESTOQUEColumn] = value;
                 }
             }
             
@@ -2841,14 +2841,14 @@ namespace prjMerchades.Dados {
             public int ID_PRODUTOS {
                 get {
                     try {
-                        return ((int)(this[this.tableESTOQUE.ID_PRODUTOSColumn]));
+                        return ((int)(this[this.tableESTOQUEEntrada.ID_PRODUTOSColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'ID_PRODUTOS\' na tabela \'ESTOQUE\' é DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'ID_PRODUTOS\' na tabela \'ESTOQUEEntrada\' é DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableESTOQUE.ID_PRODUTOSColumn] = value;
+                    this[this.tableESTOQUEEntrada.ID_PRODUTOSColumn] = value;
                 }
             }
             
@@ -2857,14 +2857,14 @@ namespace prjMerchades.Dados {
             public int ID_NOTA_FISCAL_FORNEC {
                 get {
                     try {
-                        return ((int)(this[this.tableESTOQUE.ID_NOTA_FISCAL_FORNECColumn]));
+                        return ((int)(this[this.tableESTOQUEEntrada.ID_NOTA_FISCAL_FORNECColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'ID_NOTA_FISCAL_FORNEC\' na tabela \'ESTOQUE\' é DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'ID_NOTA_FISCAL_FORNEC\' na tabela \'ESTOQUEEntrada\' é DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableESTOQUE.ID_NOTA_FISCAL_FORNECColumn] = value;
+                    this[this.tableESTOQUEEntrada.ID_NOTA_FISCAL_FORNECColumn] = value;
                 }
             }
             
@@ -2881,9 +2881,9 @@ namespace prjMerchades.Dados {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PRODUTOSRow PRODUTOSRow {
+            public PRODUTOSEntradaRow PRODUTOSRow {
                 get {
-                    return ((PRODUTOSRow)(this.GetParentRow(this.Table.ParentRelations["FK__ESTOQUE__ID_PROD__05C3D225"])));
+                    return ((PRODUTOSEntradaRow)(this.GetParentRow(this.Table.ParentRelations["FK__ESTOQUE__ID_PROD__05C3D225"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK__ESTOQUE__ID_PROD__05C3D225"]);
@@ -2893,37 +2893,37 @@ namespace prjMerchades.Dados {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsQTD_ESTOQUENull() {
-                return this.IsNull(this.tableESTOQUE.QTD_ESTOQUEColumn);
+                return this.IsNull(this.tableESTOQUEEntrada.QTD_ESTOQUEColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetQTD_ESTOQUENull() {
-                this[this.tableESTOQUE.QTD_ESTOQUEColumn] = global::System.Convert.DBNull;
+                this[this.tableESTOQUEEntrada.QTD_ESTOQUEColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsID_PRODUTOSNull() {
-                return this.IsNull(this.tableESTOQUE.ID_PRODUTOSColumn);
+                return this.IsNull(this.tableESTOQUEEntrada.ID_PRODUTOSColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetID_PRODUTOSNull() {
-                this[this.tableESTOQUE.ID_PRODUTOSColumn] = global::System.Convert.DBNull;
+                this[this.tableESTOQUEEntrada.ID_PRODUTOSColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsID_NOTA_FISCAL_FORNECNull() {
-                return this.IsNull(this.tableESTOQUE.ID_NOTA_FISCAL_FORNECColumn);
+                return this.IsNull(this.tableESTOQUEEntrada.ID_NOTA_FISCAL_FORNECColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetID_NOTA_FISCAL_FORNECNull() {
-                this[this.tableESTOQUE.ID_NOTA_FISCAL_FORNECColumn] = global::System.Convert.DBNull;
+                this[this.tableESTOQUEEntrada.ID_NOTA_FISCAL_FORNECColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3033,22 +3033,22 @@ namespace prjMerchades.Dados {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class PRODUTOSRowChangeEvent : global::System.EventArgs {
+        public class PRODUTOSEntradaRowChangeEvent : global::System.EventArgs {
             
-            private PRODUTOSRow eventRow;
+            private PRODUTOSEntradaRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PRODUTOSRowChangeEvent(PRODUTOSRow row, global::System.Data.DataRowAction action) {
+            public PRODUTOSEntradaRowChangeEvent(PRODUTOSEntradaRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PRODUTOSRow Row {
+            public PRODUTOSEntradaRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -3067,22 +3067,22 @@ namespace prjMerchades.Dados {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class ESTOQUERowChangeEvent : global::System.EventArgs {
+        public class ESTOQUEEntradaRowChangeEvent : global::System.EventArgs {
             
-            private ESTOQUERow eventRow;
+            private ESTOQUEEntradaRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ESTOQUERowChangeEvent(ESTOQUERow row, global::System.Data.DataRowAction action) {
+            public ESTOQUEEntradaRowChangeEvent(ESTOQUEEntradaRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ESTOQUERow Row {
+            public ESTOQUEEntradaRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -4245,7 +4245,7 @@ SELECT ID_FORNECEDOR, NOME_FORNECEDOR, TELEFONE_FORNECEDOR, EMAIL_FORNECEDOR, ES
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class PRODUTOSENTRADATableAdapter : global::System.ComponentModel.Component {
+    public partial class PRODUTOSEntradaTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -4259,7 +4259,7 @@ SELECT ID_FORNECEDOR, NOME_FORNECEDOR, TELEFONE_FORNECEDOR, EMAIL_FORNECEDOR, ES
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public PRODUTOSENTRADATableAdapter() {
+        public PRODUTOSEntradaTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -4356,7 +4356,7 @@ SELECT ID_FORNECEDOR, NOME_FORNECEDOR, TELEFONE_FORNECEDOR, EMAIL_FORNECEDOR, ES
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "PRODUTOS";
+            tableMapping.DataSetTable = "PRODUTOSEntrada";
             tableMapping.ColumnMappings.Add("ID_PRODUTOS", "ID_PRODUTOS");
             tableMapping.ColumnMappings.Add("NOME_PRODUTOS", "NOME_PRODUTOS");
             tableMapping.ColumnMappings.Add("TIPO_PRODUTOS", "TIPO_PRODUTOS");
@@ -4366,7 +4366,7 @@ SELECT ID_FORNECEDOR, NOME_FORNECEDOR, TELEFONE_FORNECEDOR, EMAIL_FORNECEDOR, ES
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [PRODUTOS] WHERE (([ID_PRODUTOS] = @Original_ID_PRODUTOS) AND ((@IsNull_NOME_PRODUTOS = 1 AND [NOME_PRODUTOS] IS NULL) OR ([NOME_PRODUTOS] = @Original_NOME_PRODUTOS)) AND ((@IsNull_TIPO_PRODUTOS = 1 AND [TIPO_PRODUTOS] IS NULL) OR ([TIPO_PRODUTOS] = @Original_TIPO_PRODUTOS)) AND ((@IsNull_TIPO_UNITARIO = 1 AND [TIPO_UNITARIO] IS NULL) OR ([TIPO_UNITARIO] = @Original_TIPO_UNITARIO)) AND ((@IsNull_PRECO_PRODUTOS = 1 AND [PRECO_PRODUTOS] IS NULL) OR ([PRECO_PRODUTOS] = @Original_PRECO_PRODUTOS)) AND ((@IsNull_CODIGO_DE_BARRAS = 1 AND [CODIGO_DE_BARRAS] IS NULL) OR ([CODIGO_DE_BARRAS] = @Original_CODIGO_DE_BARRAS)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[PRODUTOS] WHERE (([ID_PRODUTOS] = @Original_ID_PRODUTOS) AND ((@IsNull_NOME_PRODUTOS = 1 AND [NOME_PRODUTOS] IS NULL) OR ([NOME_PRODUTOS] = @Original_NOME_PRODUTOS)) AND ((@IsNull_TIPO_PRODUTOS = 1 AND [TIPO_PRODUTOS] IS NULL) OR ([TIPO_PRODUTOS] = @Original_TIPO_PRODUTOS)) AND ((@IsNull_TIPO_UNITARIO = 1 AND [TIPO_UNITARIO] IS NULL) OR ([TIPO_UNITARIO] = @Original_TIPO_UNITARIO)) AND ((@IsNull_PRECO_PRODUTOS = 1 AND [PRECO_PRODUTOS] IS NULL) OR ([PRECO_PRODUTOS] = @Original_PRECO_PRODUTOS)) AND ((@IsNull_CODIGO_DE_BARRAS = 1 AND [CODIGO_DE_BARRAS] IS NULL) OR ([CODIGO_DE_BARRAS] = @Original_CODIGO_DE_BARRAS)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_PRODUTOS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_PRODUTOS", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NOME_PRODUTOS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOME_PRODUTOS", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -4381,19 +4381,17 @@ SELECT ID_FORNECEDOR, NOME_FORNECEDOR, TELEFONE_FORNECEDOR, EMAIL_FORNECEDOR, ES
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CODIGO_DE_BARRAS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CODIGO_DE_BARRAS", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO PRODUTOS
-                         (NOME_PRODUTOS, TIPO_PRODUTOS, TIPO_UNITARIO, PRECO_PRODUTOS, CODIGO_DE_BARRAS)
-VALUES        (@NOME_PRODUTOS,@TIPO_PRODUTOS,@TIPO_UNITARIO,@PRECO_PRODUTOS,@CODIGO_DE_BARRAS); 
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[PRODUTOS] ([NOME_PRODUTOS], [TIPO_PRODUTOS], [TIPO_UNITARIO], [PRECO_PRODUTOS], [CODIGO_DE_BARRAS]) VALUES (@NOME_PRODUTOS, @TIPO_PRODUTOS, @TIPO_UNITARIO, @PRECO_PRODUTOS, @CODIGO_DE_BARRAS);
 SELECT ID_PRODUTOS, NOME_PRODUTOS, TIPO_PRODUTOS, TIPO_UNITARIO, PRECO_PRODUTOS, CODIGO_DE_BARRAS FROM PRODUTOS WHERE (ID_PRODUTOS = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOME_PRODUTOS", global::System.Data.SqlDbType.VarChar, 70, global::System.Data.ParameterDirection.Input, 0, 0, "NOME_PRODUTOS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TIPO_PRODUTOS", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "TIPO_PRODUTOS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TIPO_UNITARIO", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "TIPO_UNITARIO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PRECO_PRODUTOS", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "PRECO_PRODUTOS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CODIGO_DE_BARRAS", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CODIGO_DE_BARRAS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOME_PRODUTOS", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOME_PRODUTOS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TIPO_PRODUTOS", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TIPO_PRODUTOS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TIPO_UNITARIO", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TIPO_UNITARIO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PRECO_PRODUTOS", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PRECO_PRODUTOS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CODIGO_DE_BARRAS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CODIGO_DE_BARRAS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [PRODUTOS] SET [NOME_PRODUTOS] = @NOME_PRODUTOS, [TIPO_PRODUTOS] = @TIPO_PRODUTOS, [TIPO_UNITARIO] = @TIPO_UNITARIO, [PRECO_PRODUTOS] = @PRECO_PRODUTOS, [CODIGO_DE_BARRAS] = @CODIGO_DE_BARRAS WHERE (([ID_PRODUTOS] = @Original_ID_PRODUTOS) AND ((@IsNull_NOME_PRODUTOS = 1 AND [NOME_PRODUTOS] IS NULL) OR ([NOME_PRODUTOS] = @Original_NOME_PRODUTOS)) AND ((@IsNull_TIPO_PRODUTOS = 1 AND [TIPO_PRODUTOS] IS NULL) OR ([TIPO_PRODUTOS] = @Original_TIPO_PRODUTOS)) AND ((@IsNull_TIPO_UNITARIO = 1 AND [TIPO_UNITARIO] IS NULL) OR ([TIPO_UNITARIO] = @Original_TIPO_UNITARIO)) AND ((@IsNull_PRECO_PRODUTOS = 1 AND [PRECO_PRODUTOS] IS NULL) OR ([PRECO_PRODUTOS] = @Original_PRECO_PRODUTOS)) AND ((@IsNull_CODIGO_DE_BARRAS = 1 AND [CODIGO_DE_BARRAS] IS NULL) OR ([CODIGO_DE_BARRAS] = @Original_CODIGO_DE_BARRAS)));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[PRODUTOS] SET [NOME_PRODUTOS] = @NOME_PRODUTOS, [TIPO_PRODUTOS] = @TIPO_PRODUTOS, [TIPO_UNITARIO] = @TIPO_UNITARIO, [PRECO_PRODUTOS] = @PRECO_PRODUTOS, [CODIGO_DE_BARRAS] = @CODIGO_DE_BARRAS WHERE (([ID_PRODUTOS] = @Original_ID_PRODUTOS) AND ((@IsNull_NOME_PRODUTOS = 1 AND [NOME_PRODUTOS] IS NULL) OR ([NOME_PRODUTOS] = @Original_NOME_PRODUTOS)) AND ((@IsNull_TIPO_PRODUTOS = 1 AND [TIPO_PRODUTOS] IS NULL) OR ([TIPO_PRODUTOS] = @Original_TIPO_PRODUTOS)) AND ((@IsNull_TIPO_UNITARIO = 1 AND [TIPO_UNITARIO] IS NULL) OR ([TIPO_UNITARIO] = @Original_TIPO_UNITARIO)) AND ((@IsNull_PRECO_PRODUTOS = 1 AND [PRECO_PRODUTOS] IS NULL) OR ([PRECO_PRODUTOS] = @Original_PRECO_PRODUTOS)) AND ((@IsNull_CODIGO_DE_BARRAS = 1 AND [CODIGO_DE_BARRAS] IS NULL) OR ([CODIGO_DE_BARRAS] = @Original_CODIGO_DE_BARRAS)));
 SELECT ID_PRODUTOS, NOME_PRODUTOS, TIPO_PRODUTOS, TIPO_UNITARIO, PRECO_PRODUTOS, CODIGO_DE_BARRAS FROM PRODUTOS WHERE (ID_PRODUTOS = @ID_PRODUTOS)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOME_PRODUTOS", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOME_PRODUTOS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4425,23 +4423,19 @@ SELECT ID_PRODUTOS, NOME_PRODUTOS, TIPO_PRODUTOS, TIPO_UNITARIO, PRECO_PRODUTOS,
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        ID_PRODUTOS, NOME_PRODUTOS, TIPO_PRODUTOS, TIPO_UNITARIO, PRECO_PRO" +
-                "DUTOS, CODIGO_DE_BARRAS\r\nFROM            PRODUTOS";
+            this._commandCollection[0].CommandText = "SELECT ID_PRODUTOS, NOME_PRODUTOS, TIPO_PRODUTOS, TIPO_UNITARIO, PRECO_PRODUTOS, " +
+                "CODIGO_DE_BARRAS FROM dbo.PRODUTOS";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        *\r\nFROM            PRODUTOS";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(daDadosEntrada.PRODUTOSDataTable dataTable) {
+        public virtual int Fill(daDadosEntrada.PRODUTOSEntradaDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4454,9 +4448,9 @@ SELECT ID_PRODUTOS, NOME_PRODUTOS, TIPO_PRODUTOS, TIPO_UNITARIO, PRECO_PRODUTOS,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual daDadosEntrada.PRODUTOSDataTable GetData() {
+        public virtual daDadosEntrada.PRODUTOSEntradaDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            daDadosEntrada.PRODUTOSDataTable dataTable = new daDadosEntrada.PRODUTOSDataTable();
+            daDadosEntrada.PRODUTOSEntradaDataTable dataTable = new daDadosEntrada.PRODUTOSEntradaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4464,31 +4458,7 @@ SELECT ID_PRODUTOS, NOME_PRODUTOS, TIPO_PRODUTOS, TIPO_UNITARIO, PRECO_PRODUTOS,
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(daDadosEntrada.PRODUTOSDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual daDadosEntrada.PRODUTOSDataTable GetDataBy() {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            daDadosEntrada.PRODUTOSDataTable dataTable = new daDadosEntrada.PRODUTOSDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(daDadosEntrada.PRODUTOSDataTable dataTable) {
+        public virtual int Update(daDadosEntrada.PRODUTOSEntradaDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -4496,7 +4466,7 @@ SELECT ID_PRODUTOS, NOME_PRODUTOS, TIPO_PRODUTOS, TIPO_UNITARIO, PRECO_PRODUTOS,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(daDadosEntrada dataSet) {
-            return this.Adapter.Update(dataSet, "PRODUTOS");
+            return this.Adapter.Update(dataSet, "PRODUTOSEntrada");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4738,7 +4708,7 @@ SELECT ID_PRODUTOS, NOME_PRODUTOS, TIPO_PRODUTOS, TIPO_UNITARIO, PRECO_PRODUTOS,
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class ESTOQUEENTRADATableAdapter : global::System.ComponentModel.Component {
+    public partial class ESTOQUEEntradaTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -4752,7 +4722,7 @@ SELECT ID_PRODUTOS, NOME_PRODUTOS, TIPO_PRODUTOS, TIPO_UNITARIO, PRECO_PRODUTOS,
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public ESTOQUEENTRADATableAdapter() {
+        public ESTOQUEEntradaTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -4849,7 +4819,7 @@ SELECT ID_PRODUTOS, NOME_PRODUTOS, TIPO_PRODUTOS, TIPO_UNITARIO, PRECO_PRODUTOS,
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "ESTOQUE";
+            tableMapping.DataSetTable = "ESTOQUEEntrada";
             tableMapping.ColumnMappings.Add("ID_ESTOQUE", "ID_ESTOQUE");
             tableMapping.ColumnMappings.Add("QTD_ESTOQUE", "QTD_ESTOQUE");
             tableMapping.ColumnMappings.Add("ID_PRODUTOS", "ID_PRODUTOS");
@@ -4857,7 +4827,7 @@ SELECT ID_PRODUTOS, NOME_PRODUTOS, TIPO_PRODUTOS, TIPO_UNITARIO, PRECO_PRODUTOS,
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [ESTOQUE] WHERE (([ID_ESTOQUE] = @Original_ID_ESTOQUE) AND ((@IsNull_QTD_ESTOQUE = 1 AND [QTD_ESTOQUE] IS NULL) OR ([QTD_ESTOQUE] = @Original_QTD_ESTOQUE)) AND ((@IsNull_ID_PRODUTOS = 1 AND [ID_PRODUTOS] IS NULL) OR ([ID_PRODUTOS] = @Original_ID_PRODUTOS)) AND ((@IsNull_ID_NOTA_FISCAL_FORNEC = 1 AND [ID_NOTA_FISCAL_FORNEC] IS NULL) OR ([ID_NOTA_FISCAL_FORNEC] = @Original_ID_NOTA_FISCAL_FORNEC)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[ESTOQUE] WHERE (([ID_ESTOQUE] = @Original_ID_ESTOQUE) AND ((@IsNull_QTD_ESTOQUE = 1 AND [QTD_ESTOQUE] IS NULL) OR ([QTD_ESTOQUE] = @Original_QTD_ESTOQUE)) AND ((@IsNull_ID_PRODUTOS = 1 AND [ID_PRODUTOS] IS NULL) OR ([ID_PRODUTOS] = @Original_ID_PRODUTOS)) AND ((@IsNull_ID_NOTA_FISCAL_FORNEC = 1 AND [ID_NOTA_FISCAL_FORNEC] IS NULL) OR ([ID_NOTA_FISCAL_FORNEC] = @Original_ID_NOTA_FISCAL_FORNEC)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_ESTOQUE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_ESTOQUE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_QTD_ESTOQUE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QTD_ESTOQUE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -4868,7 +4838,7 @@ SELECT ID_PRODUTOS, NOME_PRODUTOS, TIPO_PRODUTOS, TIPO_UNITARIO, PRECO_PRODUTOS,
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_NOTA_FISCAL_FORNEC", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_NOTA_FISCAL_FORNEC", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [ESTOQUE] ([QTD_ESTOQUE], [ID_PRODUTOS], [ID_NOTA_FISCAL_FORNEC]) VALUES (@QTD_ESTOQUE, @ID_PRODUTOS, @ID_NOTA_FISCAL_FORNEC);
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[ESTOQUE] ([QTD_ESTOQUE], [ID_PRODUTOS], [ID_NOTA_FISCAL_FORNEC]) VALUES (@QTD_ESTOQUE, @ID_PRODUTOS, @ID_NOTA_FISCAL_FORNEC);
 SELECT ID_ESTOQUE, QTD_ESTOQUE, ID_PRODUTOS, ID_NOTA_FISCAL_FORNEC FROM ESTOQUE WHERE (ID_ESTOQUE = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@QTD_ESTOQUE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QTD_ESTOQUE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4876,7 +4846,7 @@ SELECT ID_ESTOQUE, QTD_ESTOQUE, ID_PRODUTOS, ID_NOTA_FISCAL_FORNEC FROM ESTOQUE 
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_NOTA_FISCAL_FORNEC", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_NOTA_FISCAL_FORNEC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [ESTOQUE] SET [QTD_ESTOQUE] = @QTD_ESTOQUE, [ID_PRODUTOS] = @ID_PRODUTOS, [ID_NOTA_FISCAL_FORNEC] = @ID_NOTA_FISCAL_FORNEC WHERE (([ID_ESTOQUE] = @Original_ID_ESTOQUE) AND ((@IsNull_QTD_ESTOQUE = 1 AND [QTD_ESTOQUE] IS NULL) OR ([QTD_ESTOQUE] = @Original_QTD_ESTOQUE)) AND ((@IsNull_ID_PRODUTOS = 1 AND [ID_PRODUTOS] IS NULL) OR ([ID_PRODUTOS] = @Original_ID_PRODUTOS)) AND ((@IsNull_ID_NOTA_FISCAL_FORNEC = 1 AND [ID_NOTA_FISCAL_FORNEC] IS NULL) OR ([ID_NOTA_FISCAL_FORNEC] = @Original_ID_NOTA_FISCAL_FORNEC)));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ESTOQUE] SET [QTD_ESTOQUE] = @QTD_ESTOQUE, [ID_PRODUTOS] = @ID_PRODUTOS, [ID_NOTA_FISCAL_FORNEC] = @ID_NOTA_FISCAL_FORNEC WHERE (([ID_ESTOQUE] = @Original_ID_ESTOQUE) AND ((@IsNull_QTD_ESTOQUE = 1 AND [QTD_ESTOQUE] IS NULL) OR ([QTD_ESTOQUE] = @Original_QTD_ESTOQUE)) AND ((@IsNull_ID_PRODUTOS = 1 AND [ID_PRODUTOS] IS NULL) OR ([ID_PRODUTOS] = @Original_ID_PRODUTOS)) AND ((@IsNull_ID_NOTA_FISCAL_FORNEC = 1 AND [ID_NOTA_FISCAL_FORNEC] IS NULL) OR ([ID_NOTA_FISCAL_FORNEC] = @Original_ID_NOTA_FISCAL_FORNEC)));
 SELECT ID_ESTOQUE, QTD_ESTOQUE, ID_PRODUTOS, ID_NOTA_FISCAL_FORNEC FROM ESTOQUE WHERE (ID_ESTOQUE = @ID_ESTOQUE)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@QTD_ESTOQUE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QTD_ESTOQUE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4905,8 +4875,8 @@ SELECT ID_ESTOQUE, QTD_ESTOQUE, ID_PRODUTOS, ID_NOTA_FISCAL_FORNEC FROM ESTOQUE 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        ID_ESTOQUE, QTD_ESTOQUE, ID_PRODUTOS, ID_NOTA_FISCAL_FORNEC\r\nFROM  " +
-                "          ESTOQUE";
+            this._commandCollection[0].CommandText = "SELECT ID_ESTOQUE, QTD_ESTOQUE, ID_PRODUTOS, ID_NOTA_FISCAL_FORNEC FROM dbo.ESTOQ" +
+                "UE";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4914,7 +4884,7 @@ SELECT ID_ESTOQUE, QTD_ESTOQUE, ID_PRODUTOS, ID_NOTA_FISCAL_FORNEC FROM ESTOQUE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(daDadosEntrada.ESTOQUEDataTable dataTable) {
+        public virtual int Fill(daDadosEntrada.ESTOQUEEntradaDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4927,9 +4897,9 @@ SELECT ID_ESTOQUE, QTD_ESTOQUE, ID_PRODUTOS, ID_NOTA_FISCAL_FORNEC FROM ESTOQUE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual daDadosEntrada.ESTOQUEDataTable GetData() {
+        public virtual daDadosEntrada.ESTOQUEEntradaDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            daDadosEntrada.ESTOQUEDataTable dataTable = new daDadosEntrada.ESTOQUEDataTable();
+            daDadosEntrada.ESTOQUEEntradaDataTable dataTable = new daDadosEntrada.ESTOQUEEntradaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4937,7 +4907,7 @@ SELECT ID_ESTOQUE, QTD_ESTOQUE, ID_PRODUTOS, ID_NOTA_FISCAL_FORNEC FROM ESTOQUE 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(daDadosEntrada.ESTOQUEDataTable dataTable) {
+        public virtual int Update(daDadosEntrada.ESTOQUEEntradaDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -4945,7 +4915,7 @@ SELECT ID_ESTOQUE, QTD_ESTOQUE, ID_PRODUTOS, ID_NOTA_FISCAL_FORNEC FROM ESTOQUE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(daDadosEntrada dataSet) {
-            return this.Adapter.Update(dataSet, "ESTOQUE");
+            return this.Adapter.Update(dataSet, "ESTOQUEEntrada");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5138,9 +5108,9 @@ SELECT ID_ESTOQUE, QTD_ESTOQUE, ID_PRODUTOS, ID_NOTA_FISCAL_FORNEC FROM ESTOQUE 
         
         private FORNECEDORTableAdapter _fORNECEDORTableAdapter;
         
-        private PRODUTOSENTRADATableAdapter _pRODUTOSENTRADATableAdapter;
+        private PRODUTOSEntradaTableAdapter _pRODUTOSEntradaTableAdapter;
         
-        private ESTOQUEENTRADATableAdapter _eSTOQUEENTRADATableAdapter;
+        private ESTOQUEEntradaTableAdapter _eSTOQUEEntradaTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -5190,12 +5160,12 @@ SELECT ID_ESTOQUE, QTD_ESTOQUE, ID_PRODUTOS, ID_NOTA_FISCAL_FORNEC FROM ESTOQUE 
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public PRODUTOSENTRADATableAdapter PRODUTOSENTRADATableAdapter {
+        public PRODUTOSEntradaTableAdapter PRODUTOSEntradaTableAdapter {
             get {
-                return this._pRODUTOSENTRADATableAdapter;
+                return this._pRODUTOSEntradaTableAdapter;
             }
             set {
-                this._pRODUTOSENTRADATableAdapter = value;
+                this._pRODUTOSEntradaTableAdapter = value;
             }
         }
         
@@ -5204,12 +5174,12 @@ SELECT ID_ESTOQUE, QTD_ESTOQUE, ID_PRODUTOS, ID_NOTA_FISCAL_FORNEC FROM ESTOQUE 
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public ESTOQUEENTRADATableAdapter ESTOQUEENTRADATableAdapter {
+        public ESTOQUEEntradaTableAdapter ESTOQUEEntradaTableAdapter {
             get {
-                return this._eSTOQUEENTRADATableAdapter;
+                return this._eSTOQUEEntradaTableAdapter;
             }
             set {
-                this._eSTOQUEENTRADATableAdapter = value;
+                this._eSTOQUEEntradaTableAdapter = value;
             }
         }
         
@@ -5240,13 +5210,13 @@ SELECT ID_ESTOQUE, QTD_ESTOQUE, ID_PRODUTOS, ID_NOTA_FISCAL_FORNEC FROM ESTOQUE 
                             && (this._fORNECEDORTableAdapter.Connection != null))) {
                     return this._fORNECEDORTableAdapter.Connection;
                 }
-                if (((this._pRODUTOSENTRADATableAdapter != null) 
-                            && (this._pRODUTOSENTRADATableAdapter.Connection != null))) {
-                    return this._pRODUTOSENTRADATableAdapter.Connection;
+                if (((this._pRODUTOSEntradaTableAdapter != null) 
+                            && (this._pRODUTOSEntradaTableAdapter.Connection != null))) {
+                    return this._pRODUTOSEntradaTableAdapter.Connection;
                 }
-                if (((this._eSTOQUEENTRADATableAdapter != null) 
-                            && (this._eSTOQUEENTRADATableAdapter.Connection != null))) {
-                    return this._eSTOQUEENTRADATableAdapter.Connection;
+                if (((this._eSTOQUEEntradaTableAdapter != null) 
+                            && (this._eSTOQUEEntradaTableAdapter.Connection != null))) {
+                    return this._eSTOQUEEntradaTableAdapter.Connection;
                 }
                 return null;
             }
@@ -5267,10 +5237,10 @@ SELECT ID_ESTOQUE, QTD_ESTOQUE, ID_PRODUTOS, ID_NOTA_FISCAL_FORNEC FROM ESTOQUE 
                 if ((this._fORNECEDORTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._pRODUTOSENTRADATableAdapter != null)) {
+                if ((this._pRODUTOSEntradaTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._eSTOQUEENTRADATableAdapter != null)) {
+                if ((this._eSTOQUEEntradaTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -5302,21 +5272,21 @@ SELECT ID_ESTOQUE, QTD_ESTOQUE, ID_PRODUTOS, ID_NOTA_FISCAL_FORNEC FROM ESTOQUE 
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._pRODUTOSENTRADATableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.PRODUTOS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._pRODUTOSEntradaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.PRODUTOSEntrada.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._pRODUTOSENTRADATableAdapter.Update(updatedRows));
+                    result = (result + this._pRODUTOSEntradaTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._eSTOQUEENTRADATableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ESTOQUE.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._eSTOQUEEntradaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ESTOQUEEntrada.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._eSTOQUEENTRADATableAdapter.Update(updatedRows));
+                    result = (result + this._eSTOQUEEntradaTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -5346,19 +5316,19 @@ SELECT ID_ESTOQUE, QTD_ESTOQUE, ID_PRODUTOS, ID_NOTA_FISCAL_FORNEC FROM ESTOQUE 
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._pRODUTOSENTRADATableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.PRODUTOS.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._pRODUTOSEntradaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.PRODUTOSEntrada.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._pRODUTOSENTRADATableAdapter.Update(addedRows));
+                    result = (result + this._pRODUTOSEntradaTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._eSTOQUEENTRADATableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ESTOQUE.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._eSTOQUEEntradaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ESTOQUEEntrada.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._eSTOQUEENTRADATableAdapter.Update(addedRows));
+                    result = (result + this._eSTOQUEEntradaTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -5372,19 +5342,19 @@ SELECT ID_ESTOQUE, QTD_ESTOQUE, ID_PRODUTOS, ID_NOTA_FISCAL_FORNEC FROM ESTOQUE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateDeletedRows(daDadosEntrada dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._eSTOQUEENTRADATableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.ESTOQUE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._eSTOQUEEntradaTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ESTOQUEEntrada.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._eSTOQUEENTRADATableAdapter.Update(deletedRows));
+                    result = (result + this._eSTOQUEEntradaTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._pRODUTOSENTRADATableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.PRODUTOS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._pRODUTOSEntradaTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.PRODUTOSEntrada.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._pRODUTOSENTRADATableAdapter.Update(deletedRows));
+                    result = (result + this._pRODUTOSEntradaTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -5453,13 +5423,13 @@ SELECT ID_ESTOQUE, QTD_ESTOQUE, ID_PRODUTOS, ID_NOTA_FISCAL_FORNEC FROM ESTOQUE 
                 throw new global::System.ArgumentException("Todos os TableAdapters gerenciados por um TableAdapterManager devem usar a mesma " +
                         "cadeia de conexão.");
             }
-            if (((this._pRODUTOSENTRADATableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._pRODUTOSENTRADATableAdapter.Connection) == false))) {
+            if (((this._pRODUTOSEntradaTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._pRODUTOSEntradaTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Todos os TableAdapters gerenciados por um TableAdapterManager devem usar a mesma " +
                         "cadeia de conexão.");
             }
-            if (((this._eSTOQUEENTRADATableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._eSTOQUEENTRADATableAdapter.Connection) == false))) {
+            if (((this._eSTOQUEEntradaTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._eSTOQUEEntradaTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Todos os TableAdapters gerenciados por um TableAdapterManager devem usar a mesma " +
                         "cadeia de conexão.");
             }
@@ -5513,22 +5483,22 @@ SELECT ID_ESTOQUE, QTD_ESTOQUE, ID_PRODUTOS, ID_NOTA_FISCAL_FORNEC FROM ESTOQUE 
                         adaptersWithAcceptChangesDuringUpdate.Add(this._fORNECEDORTableAdapter.Adapter);
                     }
                 }
-                if ((this._pRODUTOSENTRADATableAdapter != null)) {
-                    revertConnections.Add(this._pRODUTOSENTRADATableAdapter, this._pRODUTOSENTRADATableAdapter.Connection);
-                    this._pRODUTOSENTRADATableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._pRODUTOSENTRADATableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._pRODUTOSENTRADATableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._pRODUTOSENTRADATableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._pRODUTOSENTRADATableAdapter.Adapter);
+                if ((this._pRODUTOSEntradaTableAdapter != null)) {
+                    revertConnections.Add(this._pRODUTOSEntradaTableAdapter, this._pRODUTOSEntradaTableAdapter.Connection);
+                    this._pRODUTOSEntradaTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._pRODUTOSEntradaTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._pRODUTOSEntradaTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._pRODUTOSEntradaTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._pRODUTOSEntradaTableAdapter.Adapter);
                     }
                 }
-                if ((this._eSTOQUEENTRADATableAdapter != null)) {
-                    revertConnections.Add(this._eSTOQUEENTRADATableAdapter, this._eSTOQUEENTRADATableAdapter.Connection);
-                    this._eSTOQUEENTRADATableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._eSTOQUEENTRADATableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._eSTOQUEENTRADATableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._eSTOQUEENTRADATableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._eSTOQUEENTRADATableAdapter.Adapter);
+                if ((this._eSTOQUEEntradaTableAdapter != null)) {
+                    revertConnections.Add(this._eSTOQUEEntradaTableAdapter, this._eSTOQUEEntradaTableAdapter.Connection);
+                    this._eSTOQUEEntradaTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._eSTOQUEEntradaTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._eSTOQUEEntradaTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._eSTOQUEEntradaTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._eSTOQUEEntradaTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -5597,13 +5567,13 @@ SELECT ID_ESTOQUE, QTD_ESTOQUE, ID_PRODUTOS, ID_NOTA_FISCAL_FORNEC FROM ESTOQUE 
                     this._fORNECEDORTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._fORNECEDORTableAdapter]));
                     this._fORNECEDORTableAdapter.Transaction = null;
                 }
-                if ((this._pRODUTOSENTRADATableAdapter != null)) {
-                    this._pRODUTOSENTRADATableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._pRODUTOSENTRADATableAdapter]));
-                    this._pRODUTOSENTRADATableAdapter.Transaction = null;
+                if ((this._pRODUTOSEntradaTableAdapter != null)) {
+                    this._pRODUTOSEntradaTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._pRODUTOSEntradaTableAdapter]));
+                    this._pRODUTOSEntradaTableAdapter.Transaction = null;
                 }
-                if ((this._eSTOQUEENTRADATableAdapter != null)) {
-                    this._eSTOQUEENTRADATableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._eSTOQUEENTRADATableAdapter]));
-                    this._eSTOQUEENTRADATableAdapter.Transaction = null;
+                if ((this._eSTOQUEEntradaTableAdapter != null)) {
+                    this._eSTOQUEEntradaTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._eSTOQUEEntradaTableAdapter]));
+                    this._eSTOQUEEntradaTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

@@ -89,6 +89,8 @@
             this.daDadosEntrada1 = new prjMerchades.Dados.daDadosEntrada();
             this.compraDividasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.compraDividasTableAdapter = new prjMerchades.Dados.daDadosEntradaTableAdapters.compraDividasTableAdapter();
+            this.cmbTipoUnitario = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.tabControl_Compras.SuspendLayout();
             this.tabPage_NF.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numQtd)).BeginInit();
@@ -121,6 +123,8 @@
             // tabPage_NF
             // 
             this.tabPage_NF.BackColor = System.Drawing.Color.Gainsboro;
+            this.tabPage_NF.Controls.Add(this.label4);
+            this.tabPage_NF.Controls.Add(this.cmbTipoUnitario);
             this.tabPage_NF.Controls.Add(this.lbl_Linha2);
             this.tabPage_NF.Controls.Add(this.lbl_Linha1);
             this.tabPage_NF.Controls.Add(this.txtTipoProduto);
@@ -213,7 +217,7 @@
             // 
             // txtCodNF
             // 
-            this.txtCodNF.Location = new System.Drawing.Point(768, 311);
+            this.txtCodNF.Location = new System.Drawing.Point(92, 413);
             this.txtCodNF.Name = "txtCodNF";
             this.txtCodNF.Size = new System.Drawing.Size(225, 26);
             this.txtCodNF.TabIndex = 28;
@@ -223,7 +227,7 @@
             this.lbl_CodNF.AutoSize = true;
             this.lbl_CodNF.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_CodNF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.lbl_CodNF.Location = new System.Drawing.Point(762, 277);
+            this.lbl_CodNF.Location = new System.Drawing.Point(86, 379);
             this.lbl_CodNF.Name = "lbl_CodNF";
             this.lbl_CodNF.Size = new System.Drawing.Size(252, 25);
             this.lbl_CodNF.TabIndex = 27;
@@ -248,7 +252,7 @@
             this.lbl_DataEmissao.AutoSize = true;
             this.lbl_DataEmissao.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_DataEmissao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.lbl_DataEmissao.Location = new System.Drawing.Point(565, 277);
+            this.lbl_DataEmissao.Location = new System.Drawing.Point(808, 273);
             this.lbl_DataEmissao.Name = "lbl_DataEmissao";
             this.lbl_DataEmissao.Size = new System.Drawing.Size(197, 25);
             this.lbl_DataEmissao.TabIndex = 17;
@@ -258,7 +262,7 @@
             // 
             this.dateEmissao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateEmissao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateEmissao.Location = new System.Drawing.Point(571, 313);
+            this.dateEmissao.Location = new System.Drawing.Point(814, 309);
             this.dateEmissao.Name = "dateEmissao";
             this.dateEmissao.Size = new System.Drawing.Size(140, 29);
             this.dateEmissao.TabIndex = 16;
@@ -283,7 +287,7 @@
             // 
             // txtVlrTtl
             // 
-            this.txtVlrTtl.Location = new System.Drawing.Point(92, 414);
+            this.txtVlrTtl.Location = new System.Drawing.Point(365, 413);
             this.txtVlrTtl.Name = "txtVlrTtl";
             this.txtVlrTtl.Size = new System.Drawing.Size(237, 26);
             this.txtVlrTtl.TabIndex = 11;
@@ -293,7 +297,7 @@
             this.lbl_VlrTtl.AutoSize = true;
             this.lbl_VlrTtl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_VlrTtl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.lbl_VlrTtl.Location = new System.Drawing.Point(86, 380);
+            this.lbl_VlrTtl.Location = new System.Drawing.Point(359, 379);
             this.lbl_VlrTtl.Name = "lbl_VlrTtl";
             this.lbl_VlrTtl.Size = new System.Drawing.Size(134, 25);
             this.lbl_VlrTtl.TabIndex = 10;
@@ -339,7 +343,7 @@
             // 
             // txtLote
             // 
-            this.txtLote.Location = new System.Drawing.Point(317, 311);
+            this.txtLote.Location = new System.Drawing.Point(560, 307);
             this.txtLote.Name = "txtLote";
             this.txtLote.Size = new System.Drawing.Size(232, 26);
             this.txtLote.TabIndex = 5;
@@ -349,7 +353,7 @@
             this.lbl_Lote.AutoSize = true;
             this.lbl_Lote.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Lote.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.lbl_Lote.Location = new System.Drawing.Point(311, 277);
+            this.lbl_Lote.Location = new System.Drawing.Point(554, 273);
             this.lbl_Lote.Name = "lbl_Lote";
             this.lbl_Lote.Size = new System.Drawing.Size(65, 25);
             this.lbl_Lote.TabIndex = 4;
@@ -376,7 +380,7 @@
             // 
             // txtCodBarras
             // 
-            this.txtCodBarras.Location = new System.Drawing.Point(92, 311);
+            this.txtCodBarras.Location = new System.Drawing.Point(335, 307);
             this.txtCodBarras.Name = "txtCodBarras";
             this.txtCodBarras.Size = new System.Drawing.Size(196, 26);
             this.txtCodBarras.TabIndex = 1;
@@ -386,7 +390,7 @@
             this.lbl_CodBarras.AutoSize = true;
             this.lbl_CodBarras.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_CodBarras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.lbl_CodBarras.Location = new System.Drawing.Point(86, 277);
+            this.lbl_CodBarras.Location = new System.Drawing.Point(329, 273);
             this.lbl_CodBarras.Name = "lbl_CodBarras";
             this.lbl_CodBarras.Size = new System.Drawing.Size(209, 25);
             this.lbl_CodBarras.TabIndex = 0;
@@ -688,6 +692,31 @@
             // 
             this.compraDividasTableAdapter.ClearBeforeFill = true;
             // 
+            // cmbTipoUnitario
+            // 
+            this.cmbTipoUnitario.FormattingEnabled = true;
+            this.cmbTipoUnitario.Items.AddRange(new object[] {
+            "Grama",
+            "Quilograma",
+            "Mililitro",
+            "Litro",
+            "Fardo"});
+            this.cmbTipoUnitario.Location = new System.Drawing.Point(91, 307);
+            this.cmbTipoUnitario.Name = "cmbTipoUnitario";
+            this.cmbTipoUnitario.Size = new System.Drawing.Size(216, 28);
+            this.cmbTipoUnitario.TabIndex = 35;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
+            this.label4.Location = new System.Drawing.Point(87, 273);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(154, 25);
+            this.label4.TabIndex = 36;
+            this.label4.Text = "Tipo Unitario:";
+            // 
             // frmCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -786,5 +815,7 @@
         private System.Windows.Forms.ComboBox cmbFiltroAntigas;
         private System.Windows.Forms.TextBox txtFiltroAntigas;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cmbTipoUnitario;
     }
 }
