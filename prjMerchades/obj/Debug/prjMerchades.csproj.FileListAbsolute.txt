@@ -758,3 +758,5 @@ C:\Users\brend\OneDrive\Documentos\estudo\Merchades\prjMerchades\obj\Debug\prjMe
 C:\Users\brend\OneDrive\Documentos\estudo\Merchades\prjMerchades\obj\Debug\prjMerch.B26AA8EB.Up2Date
 C:\Users\brend\OneDrive\Documentos\estudo\Merchades\prjMerchades\obj\Debug\prjMerchades.exe
 C:\Users\brend\OneDrive\Documentos\estudo\Merchades\prjMerchades\obj\Debug\prjMerchades.pdb
+C:\Users\brend\OneDrive\Documentos\estudo\Merchades\prjMerchades\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\brend\OneDrive\Documentos\estudo\Merchades\prjMerchades\bin\Debug\System.Configuration.ConfigurationManager.xml

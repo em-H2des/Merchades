@@ -38,23 +38,28 @@ namespace prjMerchades.Formularios.Entrada
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
+            var fornecedorTA = new Dados.daDadosEntradaTableAdapters.FORNECEDORTableAdapter();
+
+            fornecedorTA.Fill(daDadosEntrada.FORNECEDOR);
+
             int codigoFornecedor =  int.Parse(txtCodFornecedor.Text);
 
             var fornecedor = daDadosEntrada.FORNECEDOR.FindByID_FORNECEDOR(codigoFornecedor);
+        
+            if (fornecedor == null)
+            {
+                MessageBox.Show("O fornecedor informado nao existe, cadastre-o.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                var formCadastroFornecedor = new frmCadFornecedor();
+                formCadastroFornecedor.MdiParent = this.MdiParent;
+                formCadastroFornecedor.Show();
+
+                return; //intemrrompe a execução
+            }
 
             var notaFiscalFornecedor = new Dados.daDadosEntradaTableAdapters.NOTA_FISCAL_FORNECEDORTableAdapter();
             var produtos = new Dados.daDadosEntradaTableAdapters.PRODUTOSEntradaTableAdapter();
             var estoque = new Dados.daDadosEntradaTableAdapters.ESTOQUEEntradaTableAdapter();
 
-
-            if (fornecedor ==  null)
-            {
-                MessageBox.Show("O fornecedor infomrado nao existe, cadastre-o.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                var formCadastroFornecedor = new frmCadFornecedor();
-                formCadastroFornecedor.MdiParent = this.MdiParent;
-                formCadastroFornecedor.Show();
-                //formCadastroFornecedor.ShowDialog();
-            }
 
             //insert na tabela de nota fiscal
             notaFiscalFornecedor.Insert(
@@ -63,7 +68,7 @@ namespace prjMerchades.Formularios.Entrada
                 txtCodNF.Text,
                 txtTipoProduto.Text,
                 codigoFornecedor
-                );
+             );
 
             //insert na tabela produto
             produtos.Insert(
@@ -72,18 +77,22 @@ namespace prjMerchades.Formularios.Entrada
                 cmbTipoUnitario.Text,
                 decimal.Parse(txtPreco.Text),
                 int.Parse(txtCodBarras.Text)
-                );
+             );
 
-            int idProduto = int.Parse(produtos.UltimoId().ToString());
-            //int idNF = int.Parse(notaFiscalFornecedor.UltimoId().ToString());
-
+            int idProduto = int.Parse(produtos.ultimoId().ToString());
+            int idNF = int.Parse(notaFiscalFornecedor.ultimoId().ToString());
+            int qtd = (int)numQtd.Value;
 
             //insert na tabela estoque
-            /*estoque.Insert(
-                numQtd.Value,
+            estoque.Insert(
+                qtd,
                 idProduto,
                 idNF
-                );*/
+             );
+
+            MessageBox.Show("Entrada cadastrada com sucesso!", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
+
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

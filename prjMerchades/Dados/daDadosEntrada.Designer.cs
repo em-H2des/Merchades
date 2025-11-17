@@ -3288,12 +3288,17 @@ SELECT ID_NOTA_FISCAL_FORNEC, DATA_EMISSAO, VALOR_COMPRA, COD_NOTA_FORN, OBSERVA
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        ID_NOTA_FISCAL_FORNEC, DATA_EMISSAO, VALOR_COMPRA, COD_NOTA_FORN, O" +
                 "BSERVACAO, ID_FORNECEDOR\r\nFROM            NOTA_FISCAL_FORNECEDOR";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        TOP (1) ID_NOTA_FISCAL_FORNEC\r\nFROM            NOTA_FISCAL_FORNECED" +
+                "OR\r\nORDER BY ID_NOTA_FISCAL_FORNEC DESC";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3561,6 +3566,34 @@ SELECT ID_NOTA_FISCAL_FORNEC, DATA_EMISSAO, VALOR_COMPRA, COD_NOTA_FORN, OBSERVA
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(global::System.Nullable<global::System.DateTime> DATA_EMISSAO, global::System.Nullable<decimal> VALOR_COMPRA, string COD_NOTA_FORN, string OBSERVACAO, global::System.Nullable<int> ID_FORNECEDOR, int Original_ID_NOTA_FISCAL_FORNEC, global::System.Nullable<global::System.DateTime> Original_DATA_EMISSAO, global::System.Nullable<decimal> Original_VALOR_COMPRA, string Original_COD_NOTA_FORN, string Original_OBSERVACAO, global::System.Nullable<int> Original_ID_FORNECEDOR) {
             return this.Update(DATA_EMISSAO, VALOR_COMPRA, COD_NOTA_FORN, OBSERVACAO, ID_FORNECEDOR, Original_ID_NOTA_FISCAL_FORNEC, Original_DATA_EMISSAO, Original_VALOR_COMPRA, Original_COD_NOTA_FORN, Original_OBSERVACAO, Original_ID_FORNECEDOR, Original_ID_NOTA_FISCAL_FORNEC);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> ultimoId() {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
+            }
         }
     }
     
@@ -4417,7 +4450,7 @@ SELECT ID_PRODUTOS, NOME_PRODUTOS, TIPO_PRODUTOS, TIPO_UNITARIO, PRECO_PRODUTOS,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::prjMerchades.Properties.Settings.Default.db_240098_66_A_1_2024ConnectionString;
+            this._connection.ConnectionString = global::prjMerchades.Properties.Settings.Default.masterConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4431,7 +4464,8 @@ SELECT ID_PRODUTOS, NOME_PRODUTOS, TIPO_PRODUTOS, TIPO_UNITARIO, PRECO_PRODUTOS,
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT TOP (1) ID_PRODUTOS\r\nFROM   PRODUTOS";
+            this._commandCollection[1].CommandText = "SELECT        TOP (1) ID_PRODUTOS\r\nFROM            PRODUTOS\r\nORDER BY ID_PRODUTOS" +
+                " DESC";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4705,7 +4739,7 @@ SELECT ID_PRODUTOS, NOME_PRODUTOS, TIPO_PRODUTOS, TIPO_UNITARIO, PRECO_PRODUTOS,
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual object UltimoId() {
+        public virtual object ultimoId() {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
