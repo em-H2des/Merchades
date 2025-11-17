@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCompras));
             this.tabControl_Compras = new System.Windows.Forms.TabControl();
             this.tabPage_NF = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmbTipoUnitario = new System.Windows.Forms.ComboBox();
             this.lbl_Linha2 = new System.Windows.Forms.Label();
             this.lbl_Linha1 = new System.Windows.Forms.Label();
             this.txtTipoProduto = new System.Windows.Forms.TextBox();
@@ -59,12 +61,6 @@
             this.lbl_CodBarras = new System.Windows.Forms.Label();
             this.tabPage_Divida = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.colNomeFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colObs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.compraDividasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.daDadosEntrada2 = new prjMerchades.Dados.daDadosEntrada();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.cmbFiltro = new System.Windows.Forms.ComboBox();
             this.txtFiltro = new System.Windows.Forms.TextBox();
@@ -76,31 +72,42 @@
             this.txtFiltroAntigas = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comprasAntigasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.daDadosEntrada3 = new prjMerchades.Dados.daDadosEntrada();
             this.lbl_Data = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.picBox_Logo = new System.Windows.Forms.PictureBox();
+            this.daDadosEntrada2 = new prjMerchades.Dados.daDadosEntrada();
             this.nOTAFISCALFORNECEDORBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.daDadosEntrada = new prjMerchades.Dados.daDadosEntrada();
             this.nOTA_FISCAL_FORNECEDORTableAdapter = new prjMerchades.Dados.daDadosEntradaTableAdapters.NOTA_FISCAL_FORNECEDORTableAdapter();
             this.daDadosEntrada1 = new prjMerchades.Dados.daDadosEntrada();
+            this.comprasAntigasTableAdapter = new prjMerchades.Dados.daDadosEntradaTableAdapters.comprasAntigasTableAdapter();
             this.compraDividasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.compraDividasTableAdapter = new prjMerchades.Dados.daDadosEntradaTableAdapters.compraDividasTableAdapter();
-            this.cmbTipoUnitario = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.iDNOTAFISCALFORNECDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nOMEFORNECEDORDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oBSERVACAODataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dATAEMISSAODataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vALORCOMPRADataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDNOTAFISCALFORNECDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nOMEFORNECEDORDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oBSERVACAODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dATAEMISSAODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vALORCOMPRADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.tabControl_Compras.SuspendLayout();
             this.tabPage_NF.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numQtd)).BeginInit();
             this.tabPage_Divida.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.compraDividasBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.daDadosEntrada2)).BeginInit();
             this.tabPage_CompraAntg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comprasAntigasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.daDadosEntrada3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.daDadosEntrada2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nOTAFISCALFORNECEDORBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.daDadosEntrada)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.daDadosEntrada1)).BeginInit();
@@ -156,6 +163,31 @@
             this.tabPage_NF.Size = new System.Drawing.Size(1085, 575);
             this.tabPage_NF.TabIndex = 0;
             this.tabPage_NF.Text = "Receber Nota Fiscal";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
+            this.label4.Location = new System.Drawing.Point(87, 273);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(154, 25);
+            this.label4.TabIndex = 36;
+            this.label4.Text = "Tipo Unitario:";
+            // 
+            // cmbTipoUnitario
+            // 
+            this.cmbTipoUnitario.FormattingEnabled = true;
+            this.cmbTipoUnitario.Items.AddRange(new object[] {
+            "Grama",
+            "Quilograma",
+            "Mililitro",
+            "Litro",
+            "Fardo"});
+            this.cmbTipoUnitario.Location = new System.Drawing.Point(91, 307);
+            this.cmbTipoUnitario.Name = "cmbTipoUnitario";
+            this.cmbTipoUnitario.Size = new System.Drawing.Size(216, 28);
+            this.cmbTipoUnitario.TabIndex = 35;
             // 
             // lbl_Linha2
             // 
@@ -399,6 +431,7 @@
             // tabPage_Divida
             // 
             this.tabPage_Divida.BackColor = System.Drawing.Color.DarkGray;
+            this.tabPage_Divida.Controls.Add(this.label5);
             this.tabPage_Divida.Controls.Add(this.dataGridView1);
             this.tabPage_Divida.Controls.Add(this.btnBuscar);
             this.tabPage_Divida.Controls.Add(this.cmbFiltro);
@@ -417,57 +450,20 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colNomeFornecedor,
-            this.colValor,
-            this.colData,
-            this.colObs});
-            this.dataGridView1.DataSource = this.compraDividasBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 88);
+            this.iDNOTAFISCALFORNECDataGridViewTextBoxColumn1,
+            this.nOMEFORNECEDORDataGridViewTextBoxColumn1,
+            this.oBSERVACAODataGridViewTextBoxColumn1,
+            this.dATAEMISSAODataGridViewTextBoxColumn1,
+            this.vALORCOMPRADataGridViewTextBoxColumn1});
+            this.dataGridView1.DataSource = this.compraDividasBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 120);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1085, 487);
+            this.dataGridView1.Size = new System.Drawing.Size(1085, 455);
             this.dataGridView1.TabIndex = 31;
-            // 
-            // colNomeFornecedor
-            // 
-            this.colNomeFornecedor.DataPropertyName = "NOME_FORNECEDOR";
-            this.colNomeFornecedor.HeaderText = "NOME_FORNECEDOR";
-            this.colNomeFornecedor.Name = "colNomeFornecedor";
-            this.colNomeFornecedor.Width = 250;
-            // 
-            // colValor
-            // 
-            this.colValor.DataPropertyName = "VALOR_COMPRA";
-            this.colValor.HeaderText = "VALOR_COMPRA";
-            this.colValor.Name = "colValor";
-            this.colValor.Width = 200;
-            // 
-            // colData
-            // 
-            this.colData.DataPropertyName = "DATA_EMISSAO";
-            this.colData.HeaderText = "DATA_EMISSAO";
-            this.colData.Name = "colData";
-            this.colData.Width = 150;
-            // 
-            // colObs
-            // 
-            this.colObs.DataPropertyName = "OBSERVACAO";
-            this.colObs.HeaderText = "OBSERVACAO";
-            this.colObs.Name = "colObs";
-            this.colObs.Width = 400;
-            // 
-            // compraDividasBindingSource1
-            // 
-            this.compraDividasBindingSource1.DataMember = "compraDividas";
-            this.compraDividasBindingSource1.DataSource = this.daDadosEntrada2;
-            // 
-            // daDadosEntrada2
-            // 
-            this.daDadosEntrada2.DataSetName = "daDadosEntrada";
-            this.daDadosEntrada2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(716, 35);
+            this.btnBuscar.Location = new System.Drawing.Point(689, 59);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(99, 30);
             this.btnBuscar.TabIndex = 30;
@@ -485,28 +481,28 @@
             "Data",
             "Valor",
             "Fornecedor"});
-            this.cmbFiltro.Location = new System.Drawing.Point(149, 33);
+            this.cmbFiltro.Location = new System.Drawing.Point(57, 59);
             this.cmbFiltro.Name = "cmbFiltro";
-            this.cmbFiltro.Size = new System.Drawing.Size(217, 32);
+            this.cmbFiltro.Size = new System.Drawing.Size(302, 32);
             this.cmbFiltro.TabIndex = 28;
             // 
             // txtFiltro
             // 
             this.txtFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.txtFiltro.Location = new System.Drawing.Point(391, 34);
+            this.txtFiltro.Location = new System.Drawing.Point(388, 59);
             this.txtFiltro.Multiline = true;
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(263, 31);
             this.txtFiltro.TabIndex = 27;
-            this.txtFiltro.Text = "Texto Filtrador Ex:(14/07/2000)";
+            this.txtFiltro.Text = "\r\n";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.label2.Location = new System.Drawing.Point(21, 33);
+            this.label2.Location = new System.Drawing.Point(52, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(124, 25);
             this.label2.TabIndex = 26;
@@ -527,6 +523,7 @@
             // tabPage_CompraAntg
             // 
             this.tabPage_CompraAntg.BackColor = System.Drawing.Color.DarkGray;
+            this.tabPage_CompraAntg.Controls.Add(this.label6);
             this.tabPage_CompraAntg.Controls.Add(this.btnBuscarAntigas);
             this.tabPage_CompraAntg.Controls.Add(this.cmbFiltroAntigas);
             this.tabPage_CompraAntg.Controls.Add(this.txtFiltroAntigas);
@@ -542,7 +539,7 @@
             // 
             // btnBuscarAntigas
             // 
-            this.btnBuscarAntigas.Location = new System.Drawing.Point(750, 35);
+            this.btnBuscarAntigas.Location = new System.Drawing.Point(682, 58);
             this.btnBuscarAntigas.Name = "btnBuscarAntigas";
             this.btnBuscarAntigas.Size = new System.Drawing.Size(99, 30);
             this.btnBuscarAntigas.TabIndex = 36;
@@ -560,28 +557,28 @@
             "Data",
             "Valor",
             "Fornecedor"});
-            this.cmbFiltroAntigas.Location = new System.Drawing.Point(183, 33);
+            this.cmbFiltroAntigas.Location = new System.Drawing.Point(58, 58);
             this.cmbFiltroAntigas.Name = "cmbFiltroAntigas";
-            this.cmbFiltroAntigas.Size = new System.Drawing.Size(217, 32);
+            this.cmbFiltroAntigas.Size = new System.Drawing.Size(300, 32);
             this.cmbFiltroAntigas.TabIndex = 35;
             // 
             // txtFiltroAntigas
             // 
             this.txtFiltroAntigas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFiltroAntigas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.txtFiltroAntigas.Location = new System.Drawing.Point(425, 34);
+            this.txtFiltroAntigas.Location = new System.Drawing.Point(385, 58);
             this.txtFiltroAntigas.Multiline = true;
             this.txtFiltroAntigas.Name = "txtFiltroAntigas";
             this.txtFiltroAntigas.Size = new System.Drawing.Size(263, 31);
             this.txtFiltroAntigas.TabIndex = 34;
-            this.txtFiltroAntigas.Text = "Texto Filtrador Ex:(14/07/2000)";
+            this.txtFiltroAntigas.Text = "\r\n";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.label3.Location = new System.Drawing.Point(41, 33);
+            this.label3.Location = new System.Drawing.Point(53, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(124, 25);
             this.label3.TabIndex = 33;
@@ -592,43 +589,26 @@
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.dataGridView2.DataSource = this.compraDividasBindingSource1;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 92);
+            this.iDNOTAFISCALFORNECDataGridViewTextBoxColumn,
+            this.nOMEFORNECEDORDataGridViewTextBoxColumn,
+            this.oBSERVACAODataGridViewTextBoxColumn,
+            this.dATAEMISSAODataGridViewTextBoxColumn,
+            this.vALORCOMPRADataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.comprasAntigasBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(0, 118);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(1085, 487);
+            this.dataGridView2.Size = new System.Drawing.Size(1085, 461);
             this.dataGridView2.TabIndex = 32;
             // 
-            // dataGridViewTextBoxColumn1
+            // comprasAntigasBindingSource
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "NOME_FORNECEDOR";
-            this.dataGridViewTextBoxColumn1.HeaderText = "NOME_FORNECEDOR";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 250;
+            this.comprasAntigasBindingSource.DataMember = "comprasAntigas";
+            this.comprasAntigasBindingSource.DataSource = this.daDadosEntrada3;
             // 
-            // dataGridViewTextBoxColumn2
+            // daDadosEntrada3
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "VALOR_COMPRA";
-            this.dataGridViewTextBoxColumn2.HeaderText = "VALOR_COMPRA";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "DATA_EMISSAO";
-            this.dataGridViewTextBoxColumn3.HeaderText = "DATA_EMISSAO";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "OBSERVACAO";
-            this.dataGridViewTextBoxColumn4.HeaderText = "OBSERVACAO";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 400;
+            this.daDadosEntrada3.DataSetName = "daDadosEntrada";
+            this.daDadosEntrada3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lbl_Data
             // 
@@ -664,6 +644,11 @@
             this.picBox_Logo.TabIndex = 4;
             this.picBox_Logo.TabStop = false;
             // 
+            // daDadosEntrada2
+            // 
+            this.daDadosEntrada2.DataSetName = "daDadosEntrada";
+            this.daDadosEntrada2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // nOTAFISCALFORNECEDORBindingSource
             // 
             this.nOTAFISCALFORNECEDORBindingSource.DataMember = "NOTA_FISCAL_FORNECEDOR";
@@ -683,39 +668,112 @@
             this.daDadosEntrada1.DataSetName = "daDadosEntrada";
             this.daDadosEntrada1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // comprasAntigasTableAdapter
+            // 
+            this.comprasAntigasTableAdapter.ClearBeforeFill = true;
+            // 
             // compraDividasBindingSource
             // 
-            this.compraDividasBindingSource.DataSource = this.daDadosEntrada1;
-            this.compraDividasBindingSource.Position = 0;
+            this.compraDividasBindingSource.DataMember = "compraDividas";
+            this.compraDividasBindingSource.DataSource = this.daDadosEntrada3;
             // 
             // compraDividasTableAdapter
             // 
             this.compraDividasTableAdapter.ClearBeforeFill = true;
             // 
-            // cmbTipoUnitario
+            // iDNOTAFISCALFORNECDataGridViewTextBoxColumn1
             // 
-            this.cmbTipoUnitario.FormattingEnabled = true;
-            this.cmbTipoUnitario.Items.AddRange(new object[] {
-            "Grama",
-            "Quilograma",
-            "Mililitro",
-            "Litro",
-            "Fardo"});
-            this.cmbTipoUnitario.Location = new System.Drawing.Point(91, 307);
-            this.cmbTipoUnitario.Name = "cmbTipoUnitario";
-            this.cmbTipoUnitario.Size = new System.Drawing.Size(216, 28);
-            this.cmbTipoUnitario.TabIndex = 35;
+            this.iDNOTAFISCALFORNECDataGridViewTextBoxColumn1.DataPropertyName = "ID_NOTA_FISCAL_FORNEC";
+            this.iDNOTAFISCALFORNECDataGridViewTextBoxColumn1.HeaderText = "ID NF";
+            this.iDNOTAFISCALFORNECDataGridViewTextBoxColumn1.Name = "iDNOTAFISCALFORNECDataGridViewTextBoxColumn1";
+            this.iDNOTAFISCALFORNECDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.iDNOTAFISCALFORNECDataGridViewTextBoxColumn1.Width = 150;
             // 
-            // label4
+            // nOMEFORNECEDORDataGridViewTextBoxColumn1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.label4.Location = new System.Drawing.Point(87, 273);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(154, 25);
-            this.label4.TabIndex = 36;
-            this.label4.Text = "Tipo Unitario:";
+            this.nOMEFORNECEDORDataGridViewTextBoxColumn1.DataPropertyName = "NOME_FORNECEDOR";
+            this.nOMEFORNECEDORDataGridViewTextBoxColumn1.HeaderText = "NOME DO FORNECEDOR";
+            this.nOMEFORNECEDORDataGridViewTextBoxColumn1.Name = "nOMEFORNECEDORDataGridViewTextBoxColumn1";
+            this.nOMEFORNECEDORDataGridViewTextBoxColumn1.Width = 300;
+            // 
+            // oBSERVACAODataGridViewTextBoxColumn1
+            // 
+            this.oBSERVACAODataGridViewTextBoxColumn1.DataPropertyName = "OBSERVACAO";
+            this.oBSERVACAODataGridViewTextBoxColumn1.HeaderText = "OBSERVACAO";
+            this.oBSERVACAODataGridViewTextBoxColumn1.Name = "oBSERVACAODataGridViewTextBoxColumn1";
+            this.oBSERVACAODataGridViewTextBoxColumn1.Width = 300;
+            // 
+            // dATAEMISSAODataGridViewTextBoxColumn1
+            // 
+            this.dATAEMISSAODataGridViewTextBoxColumn1.DataPropertyName = "DATA_EMISSAO";
+            this.dATAEMISSAODataGridViewTextBoxColumn1.HeaderText = "DATA DE EMISSAO";
+            this.dATAEMISSAODataGridViewTextBoxColumn1.Name = "dATAEMISSAODataGridViewTextBoxColumn1";
+            this.dATAEMISSAODataGridViewTextBoxColumn1.Width = 200;
+            // 
+            // vALORCOMPRADataGridViewTextBoxColumn1
+            // 
+            this.vALORCOMPRADataGridViewTextBoxColumn1.DataPropertyName = "VALOR_COMPRA";
+            this.vALORCOMPRADataGridViewTextBoxColumn1.HeaderText = "VALOR";
+            this.vALORCOMPRADataGridViewTextBoxColumn1.Name = "vALORCOMPRADataGridViewTextBoxColumn1";
+            this.vALORCOMPRADataGridViewTextBoxColumn1.Width = 200;
+            // 
+            // iDNOTAFISCALFORNECDataGridViewTextBoxColumn
+            // 
+            this.iDNOTAFISCALFORNECDataGridViewTextBoxColumn.DataPropertyName = "ID_NOTA_FISCAL_FORNEC";
+            this.iDNOTAFISCALFORNECDataGridViewTextBoxColumn.HeaderText = "ID DA NF";
+            this.iDNOTAFISCALFORNECDataGridViewTextBoxColumn.Name = "iDNOTAFISCALFORNECDataGridViewTextBoxColumn";
+            this.iDNOTAFISCALFORNECDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDNOTAFISCALFORNECDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // nOMEFORNECEDORDataGridViewTextBoxColumn
+            // 
+            this.nOMEFORNECEDORDataGridViewTextBoxColumn.DataPropertyName = "NOME_FORNECEDOR";
+            this.nOMEFORNECEDORDataGridViewTextBoxColumn.HeaderText = "NOME DO FORNECEDOR";
+            this.nOMEFORNECEDORDataGridViewTextBoxColumn.Name = "nOMEFORNECEDORDataGridViewTextBoxColumn";
+            this.nOMEFORNECEDORDataGridViewTextBoxColumn.Width = 300;
+            // 
+            // oBSERVACAODataGridViewTextBoxColumn
+            // 
+            this.oBSERVACAODataGridViewTextBoxColumn.DataPropertyName = "OBSERVACAO";
+            this.oBSERVACAODataGridViewTextBoxColumn.HeaderText = "OBSERVACAO";
+            this.oBSERVACAODataGridViewTextBoxColumn.Name = "oBSERVACAODataGridViewTextBoxColumn";
+            this.oBSERVACAODataGridViewTextBoxColumn.Width = 300;
+            // 
+            // dATAEMISSAODataGridViewTextBoxColumn
+            // 
+            this.dATAEMISSAODataGridViewTextBoxColumn.DataPropertyName = "DATA_EMISSAO";
+            this.dATAEMISSAODataGridViewTextBoxColumn.HeaderText = "DATA DE EMISSAO";
+            this.dATAEMISSAODataGridViewTextBoxColumn.Name = "dATAEMISSAODataGridViewTextBoxColumn";
+            this.dATAEMISSAODataGridViewTextBoxColumn.Width = 200;
+            // 
+            // vALORCOMPRADataGridViewTextBoxColumn
+            // 
+            this.vALORCOMPRADataGridViewTextBoxColumn.DataPropertyName = "VALOR_COMPRA";
+            this.vALORCOMPRADataGridViewTextBoxColumn.HeaderText = "VALOR";
+            this.vALORCOMPRADataGridViewTextBoxColumn.Name = "vALORCOMPRADataGridViewTextBoxColumn";
+            this.vALORCOMPRADataGridViewTextBoxColumn.Width = 200;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
+            this.label5.Location = new System.Drawing.Point(383, 21);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 25);
+            this.label5.TabIndex = 32;
+            this.label5.Text = "Filtro:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
+            this.label6.Location = new System.Drawing.Point(380, 22);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(73, 25);
+            this.label6.TabIndex = 37;
+            this.label6.Text = "Filtro:";
             // 
             // frmCompras
             // 
@@ -739,12 +797,13 @@
             this.tabPage_Divida.ResumeLayout(false);
             this.tabPage_Divida.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.compraDividasBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.daDadosEntrada2)).EndInit();
             this.tabPage_CompraAntg.ResumeLayout(false);
             this.tabPage_CompraAntg.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comprasAntigasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.daDadosEntrada3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.daDadosEntrada2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nOTAFISCALFORNECEDORBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.daDadosEntrada)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.daDadosEntrada1)).EndInit();
@@ -796,26 +855,32 @@
         private System.Windows.Forms.BindingSource nOTAFISCALFORNECEDORBindingSource;
         private Dados.daDadosEntradaTableAdapters.NOTA_FISCAL_FORNECEDORTableAdapter nOTA_FISCAL_FORNECEDORTableAdapter;
         private Dados.daDadosEntrada daDadosEntrada1;
-        private System.Windows.Forms.BindingSource compraDividasBindingSource;
-        private Dados.daDadosEntradaTableAdapters.compraDividasTableAdapter compraDividasTableAdapter;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private Dados.daDadosEntrada daDadosEntrada2;
-        private System.Windows.Forms.BindingSource compraDividasBindingSource1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNomeFornecedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colValor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colObs;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.Button btnBuscarAntigas;
         private System.Windows.Forms.ComboBox cmbFiltroAntigas;
         private System.Windows.Forms.TextBox txtFiltroAntigas;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbTipoUnitario;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private Dados.daDadosEntrada daDadosEntrada3;
+        private System.Windows.Forms.BindingSource comprasAntigasBindingSource;
+        private Dados.daDadosEntradaTableAdapters.comprasAntigasTableAdapter comprasAntigasTableAdapter;
+        private System.Windows.Forms.BindingSource compraDividasBindingSource;
+        private Dados.daDadosEntradaTableAdapters.compraDividasTableAdapter compraDividasTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDNOTAFISCALFORNECDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nOMEFORNECEDORDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oBSERVACAODataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dATAEMISSAODataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vALORCOMPRADataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDNOTAFISCALFORNECDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nOMEFORNECEDORDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oBSERVACAODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dATAEMISSAODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vALORCOMPRADataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

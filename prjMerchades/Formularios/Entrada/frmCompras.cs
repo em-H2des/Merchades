@@ -26,6 +26,12 @@ namespace prjMerchades.Formularios.Entrada
 
         private void frmCompras_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'daDadosEntrada3.compraDividas'. Você pode movê-la ou removê-la conforme necessário.
+            this.compraDividasTableAdapter.Fill(this.daDadosEntrada3.compraDividas);
+            // TODO: esta linha de código carrega dados na tabela 'daDadosEntrada3.comprasAntigas'. Você pode movê-la ou removê-la conforme necessário.
+            this.comprasAntigasTableAdapter.Fill(this.daDadosEntrada3.comprasAntigas);
+            // TODO: esta linha de código carrega dados na tabela 'daDadosEntrada2.compraDividas'. Você pode movê-la ou removê-la conforme necessário.
+            this.compraDividasTableAdapter.Fill(this.daDadosEntrada2.compraDividas);
             // TODO: esta linha de código carrega dados na tabela 'daDadosEntrada2.compraDividas'. Você pode movê-la ou removê-la conforme necessário.
             this.compraDividasTableAdapter.Fill(this.daDadosEntrada2.compraDividas);
             // TODO: esta linha de código carrega dados na tabela 'daDadosEntrada1.compraDividas'. Você pode movê-la ou removê-la conforme necessário.
@@ -67,7 +73,8 @@ namespace prjMerchades.Formularios.Entrada
                 int.Parse(txtVlrTtl.Text),
                 txtCodNF.Text,
                 txtTipoProduto.Text,
-                codigoFornecedor
+                codigoFornecedor,
+                "n"
              );
 
             //insert na tabela produto
@@ -105,19 +112,19 @@ namespace prjMerchades.Formularios.Entrada
             if (coluna == "Fornecedor") 
             {
                 resultado = "NOME_FORNECEDOR like '%" + filtro + "%'";
-                compraDividasBindingSource1.Filter = resultado;
+                compraDividasBindingSource.Filter = resultado;
             }
 
             else if (coluna == "Data")
             {
                 resultado = $"Convert(DATA_EMISSAO, 'System.String') LIKE '%{filtro}%'";
-                compraDividasBindingSource1.Filter = resultado;
+                compraDividasBindingSource.Filter = resultado;
             }
 
             if (coluna == "Valor")
             {
                 resultado = $"Convert(VALOR_COMPRA, 'System.String') LIKE '%{filtro}%'";
-                compraDividasBindingSource1.Filter = resultado;
+                compraDividasBindingSource.Filter = resultado;
             }
         }
 
@@ -131,20 +138,22 @@ namespace prjMerchades.Formularios.Entrada
             if (coluna == "Fornecedor")
             {
                 resultado = "NOME_FORNECEDOR like '%" + filtro + "%'";
-                compraDividasBindingSource1.Filter = resultado;
+                comprasAntigasBindingSource.Filter = resultado;
             }
 
             else if (coluna == "Data")
             {
                 resultado = $"Convert(DATA_EMISSAO, 'System.String') LIKE '%{filtro}%'";
-                compraDividasBindingSource1.Filter = resultado;
+                comprasAntigasBindingSource.Filter = resultado;
             }
 
             if (coluna == "Valor")
             {
                 resultado = $"Convert(VALOR_COMPRA, 'System.String') LIKE '%{filtro}%'";
-                compraDividasBindingSource1.Filter = resultado;
+                comprasAntigasBindingSource.Filter = resultado;
             }
         }
+
+
     }
 }
