@@ -6,25 +6,25 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.23cm</Width>
+              <Width>0.96164cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>6.66687cm</Width>
+              <Width>6.67664cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.24625cm</Width>
+              <Width>4.37476cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.51625cm</Width>
+              <Width>4.71777cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.15604cm</Width>
+              <Width>2.33747cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.64313cm</Width>
+              <Width>4.95779cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.83375cm</Width>
+              <Width>6.27976cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -575,6 +575,72 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="Textbox19">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontWeight>Normal</FontWeight>
+                                <Color>#333333</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox19</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <BackgroundColor>LightGreen</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox20">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=CStr(Count(Fields!NOME_FORNECEDOR.Value)) + " Fornecedores listados(as)"</Value>
+                              <Style>
+                                <FontWeight>Normal</FontWeight>
+                                <Color>#333333</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox20</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <BackgroundColor>LightGreen</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="Textbox21">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -589,9 +655,7 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
+                          <Style />
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox21</rd:DefaultName>
@@ -617,16 +681,14 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=CStr(Count(Fields!NOME_FORNECEDOR.Value)) + " Fornecedores listados(as)"</Value>
+                              <Value />
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
+                          <Style />
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox22</rd:DefaultName>
@@ -659,9 +721,7 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
+                          <Style />
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox23</rd:DefaultName>
@@ -694,9 +754,7 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
+                          <Style />
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox24</rd:DefaultName>
@@ -729,82 +787,10 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
+                          <Style />
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox25</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Style>None</Style>
-                        </Border>
-                        <BackgroundColor>LightGreen</BackgroundColor>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox26">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value />
-                              <Style>
-                                <FontWeight>Normal</FontWeight>
-                                <Color>#333333</Color>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox26</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Style>None</Style>
-                        </Border>
-                        <BackgroundColor>LightGreen</BackgroundColor>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox27">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value />
-                              <Style>
-                                <FontWeight>Normal</FontWeight>
-                                <Color>#333333</Color>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox27</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -847,27 +833,38 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DadosFornec</DataSetName>
-        <Top>0.9525cm</Top>
-        <Left>0.01354cm</Left>
         <Height>1.8cm</Height>
-        <Width>30.29229cm</Width>
+        <Width>30.30583cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <TextAlign>Center</TextAlign>
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>1.47949in</Height>
+    <Height>1.12532in</Height>
     <Style>
+      <Border>
+        <Style>None</Style>
+      </Border>
       <BackgroundColor>#3a9374</BackgroundColor>
     </Style>
   </Body>
   <Width>11.93143in</Width>
   <Page>
+    <PageHeader>
+      <Height>1.00542cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+        <BackgroundColor>#3a9374</BackgroundColor>
+      </Style>
+    </PageHeader>
     <PageFooter>
-      <Height>1.37584cm</Height>
+      <Height>0.92604cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -888,8 +885,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>ExecutionTime</rd:DefaultName>
-          <Top>0.49375cm</Top>
-          <Left>0.01354cm</Left>
+          <Top>0.17639cm</Top>
           <Height>0.6cm</Height>
           <Width>4.64312cm</Width>
           <Style>
@@ -921,8 +917,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
-          <Top>0.49375cm</Top>
-          <Left>24.47208cm</Left>
+          <Top>0.17639cm</Top>
+          <Left>22.31132cm</Left>
           <Height>0.6cm</Height>
           <Width>0.71028cm</Width>
           <ZIndex>1</ZIndex>
@@ -955,8 +951,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox29</rd:DefaultName>
-          <Top>0.49375cm</Top>
-          <Left>25.35875cm</Left>
+          <Top>0.17639cm</Top>
+          <Left>23.19799cm</Left>
           <Height>0.6cm</Height>
           <Width>1.28292cm</Width>
           <ZIndex>2</ZIndex>
@@ -989,8 +985,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>TotalPages</rd:DefaultName>
-          <Top>0.49375cm</Top>
-          <Left>26.7875cm</Left>
+          <Top>0.17639cm</Top>
+          <Left>24.62674cm</Left>
           <Height>0.6cm</Height>
           <Width>0.54208cm</Width>
           <ZIndex>3</ZIndex>
@@ -1028,7 +1024,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>fd5894e7-f387-488e-ac20-caeaa07c631d</rd:DataSourceID>
+      <rd:DataSourceID>8e961edc-78e7-4de9-94c6-0889ceb1c5b4</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -1069,7 +1065,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsDadosEntrada</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\ryanr\Downloads\Merchades-main\prjMerchades\Dados\dsDadosEntrada.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\ryanr\Downloads\Merchades-Tela-LISTAGEM-FORNECEDORES\prjMerchades\Dados\dsDadosEntrada.xsd</rd:SchemaPath>
         <rd:TableName>FORNECEDOR</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -1078,5 +1074,5 @@
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>713f2fe9-6943-4015-ba89-22b1f80bc338</rd:ReportID>
+  <rd:ReportID>5ec90cd6-e055-4326-a72e-bf30e850915e</rd:ReportID>
 </Report>
