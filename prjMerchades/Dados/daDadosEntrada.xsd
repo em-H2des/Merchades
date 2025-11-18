@@ -169,7 +169,7 @@ SELECT ID_PRODUTOS, NOME_PRODUTOS, TIPO_PRODUTOS, TIPO_UNITARIO, PRECO_PRODUTOS,
               <Mapping SourceColumn="CODIGO_DE_BARRAS" DataSetColumn="CODIGO_DE_BARRAS" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="masterConnectionString (Settings)" DbObjectName="master.dbo.PRODUTOS" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="ultimoId" Modifier="Public" Name="ultimoId" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="ultimoId">
+              <DbSource ConnectionRef="masterConnectionString (Settings)" DbObjectName="master.dbo.PRODUTOS" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="ultimoId" Modifier="Public" Name="ultimoId" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ultimoId">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        TOP (1) ID_PRODUTOS
@@ -385,6 +385,34 @@ WHERE PAGO = 's'</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ESTOQUEEntradaNomesTableAdapter" GeneratorDataComponentClassName="ESTOQUEEntradaNomesTableAdapter" Name="ESTOQUEEntradaNomes" UserDataComponentName="ESTOQUEEntradaNomesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="masterConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT
+    E.ID_ESTOQUE,
+    E.QTD_ESTOQUE,
+    P.NOME_PRODUTOS AS PRODUTO,
+    N.COD_NOTA_FORN AS NOTA_FISCAL
+FROM ESTOQUE E
+LEFT JOIN PRODUTOS P 
+       ON E.ID_PRODUTOS = P.ID_PRODUTOS
+LEFT JOIN NOTA_FISCAL_FORNECEDOR N
+       ON E.ID_NOTA_FISCAL_FORNEC = N.ID_NOTA_FISCAL_FORNEC;</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_ESTOQUE" DataSetColumn="ID_ESTOQUE" />
+              <Mapping SourceColumn="QTD_ESTOQUE" DataSetColumn="QTD_ESTOQUE" />
+              <Mapping SourceColumn="PRODUTO" DataSetColumn="PRODUTO" />
+              <Mapping SourceColumn="NOTA_FISCAL" DataSetColumn="NOTA_FISCAL" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -482,28 +510,28 @@ WHERE PAGO = 's'</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="NOTA_FISCAL_FORNECEDOR" msprop:Generator_RowEvHandlerName="NOTA_FISCAL_FORNECEDORRowChangeEventHandler" msprop:Generator_RowDeletedName="NOTA_FISCAL_FORNECEDORRowDeleted" msprop:Generator_RowDeletingName="NOTA_FISCAL_FORNECEDORRowDeleting" msprop:Generator_RowEvArgName="NOTA_FISCAL_FORNECEDORRowChangeEvent" msprop:Generator_TablePropName="NOTA_FISCAL_FORNECEDOR" msprop:Generator_RowChangedName="NOTA_FISCAL_FORNECEDORRowChanged" msprop:Generator_RowChangingName="NOTA_FISCAL_FORNECEDORRowChanging" msprop:Generator_TableClassName="NOTA_FISCAL_FORNECEDORDataTable" msprop:Generator_RowClassName="NOTA_FISCAL_FORNECEDORRow" msprop:Generator_TableVarName="tableNOTA_FISCAL_FORNECEDOR" msprop:Generator_UserTableName="NOTA_FISCAL_FORNECEDOR">
+        <xs:element name="NOTA_FISCAL_FORNECEDOR" msprop:Generator_RowClassName="NOTA_FISCAL_FORNECEDORRow" msprop:Generator_RowEvHandlerName="NOTA_FISCAL_FORNECEDORRowChangeEventHandler" msprop:Generator_RowDeletedName="NOTA_FISCAL_FORNECEDORRowDeleted" msprop:Generator_RowDeletingName="NOTA_FISCAL_FORNECEDORRowDeleting" msprop:Generator_RowEvArgName="NOTA_FISCAL_FORNECEDORRowChangeEvent" msprop:Generator_TablePropName="NOTA_FISCAL_FORNECEDOR" msprop:Generator_RowChangedName="NOTA_FISCAL_FORNECEDORRowChanged" msprop:Generator_UserTableName="NOTA_FISCAL_FORNECEDOR" msprop:Generator_RowChangingName="NOTA_FISCAL_FORNECEDORRowChanging" msprop:Generator_TableClassName="NOTA_FISCAL_FORNECEDORDataTable" msprop:Generator_TableVarName="tableNOTA_FISCAL_FORNECEDOR">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID_NOTA_FISCAL_FORNEC" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="ID_NOTA_FISCAL_FORNEC" msprop:Generator_ColumnPropNameInTable="ID_NOTA_FISCAL_FORNECColumn" msprop:Generator_ColumnVarNameInTable="columnID_NOTA_FISCAL_FORNEC" msprop:Generator_UserColumnName="ID_NOTA_FISCAL_FORNEC" type="xs:int" />
-              <xs:element name="DATA_EMISSAO" msprop:Generator_ColumnPropNameInRow="DATA_EMISSAO" msprop:Generator_ColumnPropNameInTable="DATA_EMISSAOColumn" msprop:Generator_ColumnVarNameInTable="columnDATA_EMISSAO" msprop:Generator_UserColumnName="DATA_EMISSAO" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="VALOR_COMPRA" msprop:Generator_ColumnPropNameInRow="VALOR_COMPRA" msprop:Generator_ColumnPropNameInTable="VALOR_COMPRAColumn" msprop:Generator_ColumnVarNameInTable="columnVALOR_COMPRA" msprop:Generator_UserColumnName="VALOR_COMPRA" type="xs:decimal" minOccurs="0" />
-              <xs:element name="COD_NOTA_FORN" msprop:Generator_ColumnPropNameInRow="COD_NOTA_FORN" msprop:Generator_ColumnPropNameInTable="COD_NOTA_FORNColumn" msprop:Generator_ColumnVarNameInTable="columnCOD_NOTA_FORN" msprop:Generator_UserColumnName="COD_NOTA_FORN" minOccurs="0">
+              <xs:element name="ID_NOTA_FISCAL_FORNEC" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="ID_NOTA_FISCAL_FORNEC" msprop:Generator_ColumnPropNameInTable="ID_NOTA_FISCAL_FORNECColumn" msprop:Generator_ColumnPropNameInRow="ID_NOTA_FISCAL_FORNEC" msprop:Generator_ColumnVarNameInTable="columnID_NOTA_FISCAL_FORNEC" type="xs:int" />
+              <xs:element name="DATA_EMISSAO" msprop:Generator_UserColumnName="DATA_EMISSAO" msprop:Generator_ColumnPropNameInTable="DATA_EMISSAOColumn" msprop:Generator_ColumnPropNameInRow="DATA_EMISSAO" msprop:Generator_ColumnVarNameInTable="columnDATA_EMISSAO" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="VALOR_COMPRA" msprop:Generator_UserColumnName="VALOR_COMPRA" msprop:Generator_ColumnPropNameInTable="VALOR_COMPRAColumn" msprop:Generator_ColumnPropNameInRow="VALOR_COMPRA" msprop:Generator_ColumnVarNameInTable="columnVALOR_COMPRA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="COD_NOTA_FORN" msprop:Generator_UserColumnName="COD_NOTA_FORN" msprop:Generator_ColumnPropNameInTable="COD_NOTA_FORNColumn" msprop:Generator_ColumnPropNameInRow="COD_NOTA_FORN" msprop:Generator_ColumnVarNameInTable="columnCOD_NOTA_FORN" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="OBSERVACAO" msprop:Generator_ColumnPropNameInRow="OBSERVACAO" msprop:Generator_ColumnPropNameInTable="OBSERVACAOColumn" msprop:Generator_ColumnVarNameInTable="columnOBSERVACAO" msprop:Generator_UserColumnName="OBSERVACAO" minOccurs="0">
+              <xs:element name="OBSERVACAO" msprop:Generator_UserColumnName="OBSERVACAO" msprop:Generator_ColumnPropNameInTable="OBSERVACAOColumn" msprop:Generator_ColumnPropNameInRow="OBSERVACAO" msprop:Generator_ColumnVarNameInTable="columnOBSERVACAO" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="150" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ID_FORNECEDOR" msprop:Generator_ColumnPropNameInRow="ID_FORNECEDOR" msprop:Generator_ColumnPropNameInTable="ID_FORNECEDORColumn" msprop:Generator_ColumnVarNameInTable="columnID_FORNECEDOR" msprop:Generator_UserColumnName="ID_FORNECEDOR" type="xs:int" minOccurs="0" />
-              <xs:element name="PAGO" msprop:Generator_ColumnPropNameInRow="PAGO" msprop:Generator_ColumnPropNameInTable="PAGOColumn" msprop:Generator_ColumnVarNameInTable="columnPAGO" msprop:Generator_UserColumnName="PAGO" minOccurs="0">
+              <xs:element name="ID_FORNECEDOR" msprop:Generator_UserColumnName="ID_FORNECEDOR" msprop:Generator_ColumnPropNameInTable="ID_FORNECEDORColumn" msprop:Generator_ColumnPropNameInRow="ID_FORNECEDOR" msprop:Generator_ColumnVarNameInTable="columnID_FORNECEDOR" type="xs:int" minOccurs="0" />
+              <xs:element name="PAGO" msprop:Generator_UserColumnName="PAGO" msprop:Generator_ColumnPropNameInTable="PAGOColumn" msprop:Generator_ColumnPropNameInRow="PAGO" msprop:Generator_ColumnVarNameInTable="columnPAGO" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="1" />
@@ -513,49 +541,71 @@ WHERE PAGO = 's'</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="compraDividas" msprop:Generator_RowEvHandlerName="compraDividasRowChangeEventHandler" msprop:Generator_RowDeletedName="compraDividasRowDeleted" msprop:Generator_RowDeletingName="compraDividasRowDeleting" msprop:Generator_RowEvArgName="compraDividasRowChangeEvent" msprop:Generator_TablePropName="compraDividas" msprop:Generator_RowChangedName="compraDividasRowChanged" msprop:Generator_RowChangingName="compraDividasRowChanging" msprop:Generator_TableClassName="compraDividasDataTable" msprop:Generator_RowClassName="compraDividasRow" msprop:Generator_TableVarName="tablecompraDividas" msprop:Generator_UserTableName="compraDividas">
+        <xs:element name="compraDividas" msprop:Generator_RowClassName="compraDividasRow" msprop:Generator_RowEvHandlerName="compraDividasRowChangeEventHandler" msprop:Generator_RowDeletedName="compraDividasRowDeleted" msprop:Generator_RowDeletingName="compraDividasRowDeleting" msprop:Generator_RowEvArgName="compraDividasRowChangeEvent" msprop:Generator_TablePropName="compraDividas" msprop:Generator_RowChangedName="compraDividasRowChanged" msprop:Generator_UserTableName="compraDividas" msprop:Generator_RowChangingName="compraDividasRowChanging" msprop:Generator_TableClassName="compraDividasDataTable" msprop:Generator_TableVarName="tablecompraDividas">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID_NOTA_FISCAL_FORNEC" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="ID_NOTA_FISCAL_FORNEC" msprop:Generator_ColumnPropNameInTable="ID_NOTA_FISCAL_FORNECColumn" msprop:Generator_ColumnVarNameInTable="columnID_NOTA_FISCAL_FORNEC" msprop:Generator_UserColumnName="ID_NOTA_FISCAL_FORNEC" type="xs:int" />
-              <xs:element name="NOME_FORNECEDOR" msprop:Generator_ColumnPropNameInRow="NOME_FORNECEDOR" msprop:Generator_ColumnPropNameInTable="NOME_FORNECEDORColumn" msprop:Generator_ColumnVarNameInTable="columnNOME_FORNECEDOR" msprop:Generator_UserColumnName="NOME_FORNECEDOR" minOccurs="0">
+              <xs:element name="ID_NOTA_FISCAL_FORNEC" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="ID_NOTA_FISCAL_FORNEC" msprop:Generator_ColumnPropNameInTable="ID_NOTA_FISCAL_FORNECColumn" msprop:Generator_ColumnPropNameInRow="ID_NOTA_FISCAL_FORNEC" msprop:Generator_ColumnVarNameInTable="columnID_NOTA_FISCAL_FORNEC" type="xs:int" />
+              <xs:element name="NOME_FORNECEDOR" msprop:Generator_UserColumnName="NOME_FORNECEDOR" msprop:Generator_ColumnPropNameInTable="NOME_FORNECEDORColumn" msprop:Generator_ColumnPropNameInRow="NOME_FORNECEDOR" msprop:Generator_ColumnVarNameInTable="columnNOME_FORNECEDOR" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="OBSERVACAO" msprop:Generator_ColumnPropNameInRow="OBSERVACAO" msprop:Generator_ColumnPropNameInTable="OBSERVACAOColumn" msprop:Generator_ColumnVarNameInTable="columnOBSERVACAO" msprop:Generator_UserColumnName="OBSERVACAO" minOccurs="0">
+              <xs:element name="OBSERVACAO" msprop:Generator_UserColumnName="OBSERVACAO" msprop:Generator_ColumnPropNameInTable="OBSERVACAOColumn" msprop:Generator_ColumnPropNameInRow="OBSERVACAO" msprop:Generator_ColumnVarNameInTable="columnOBSERVACAO" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="150" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="DATA_EMISSAO" msprop:Generator_ColumnPropNameInRow="DATA_EMISSAO" msprop:Generator_ColumnPropNameInTable="DATA_EMISSAOColumn" msprop:Generator_ColumnVarNameInTable="columnDATA_EMISSAO" msprop:Generator_UserColumnName="DATA_EMISSAO" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="VALOR_COMPRA" msprop:Generator_ColumnPropNameInRow="VALOR_COMPRA" msprop:Generator_ColumnPropNameInTable="VALOR_COMPRAColumn" msprop:Generator_ColumnVarNameInTable="columnVALOR_COMPRA" msprop:Generator_UserColumnName="VALOR_COMPRA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DATA_EMISSAO" msprop:Generator_UserColumnName="DATA_EMISSAO" msprop:Generator_ColumnPropNameInTable="DATA_EMISSAOColumn" msprop:Generator_ColumnPropNameInRow="DATA_EMISSAO" msprop:Generator_ColumnVarNameInTable="columnDATA_EMISSAO" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="VALOR_COMPRA" msprop:Generator_UserColumnName="VALOR_COMPRA" msprop:Generator_ColumnPropNameInTable="VALOR_COMPRAColumn" msprop:Generator_ColumnPropNameInRow="VALOR_COMPRA" msprop:Generator_ColumnVarNameInTable="columnVALOR_COMPRA" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="comprasAntigas" msprop:Generator_RowEvHandlerName="comprasAntigasRowChangeEventHandler" msprop:Generator_RowDeletedName="comprasAntigasRowDeleted" msprop:Generator_RowDeletingName="comprasAntigasRowDeleting" msprop:Generator_RowEvArgName="comprasAntigasRowChangeEvent" msprop:Generator_TablePropName="comprasAntigas" msprop:Generator_RowChangedName="comprasAntigasRowChanged" msprop:Generator_RowChangingName="comprasAntigasRowChanging" msprop:Generator_TableClassName="comprasAntigasDataTable" msprop:Generator_RowClassName="comprasAntigasRow" msprop:Generator_TableVarName="tablecomprasAntigas" msprop:Generator_UserTableName="comprasAntigas">
+        <xs:element name="comprasAntigas" msprop:Generator_RowClassName="comprasAntigasRow" msprop:Generator_RowEvHandlerName="comprasAntigasRowChangeEventHandler" msprop:Generator_RowDeletedName="comprasAntigasRowDeleted" msprop:Generator_RowDeletingName="comprasAntigasRowDeleting" msprop:Generator_RowEvArgName="comprasAntigasRowChangeEvent" msprop:Generator_TablePropName="comprasAntigas" msprop:Generator_RowChangedName="comprasAntigasRowChanged" msprop:Generator_UserTableName="comprasAntigas" msprop:Generator_RowChangingName="comprasAntigasRowChanging" msprop:Generator_TableClassName="comprasAntigasDataTable" msprop:Generator_TableVarName="tablecomprasAntigas">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID_NOTA_FISCAL_FORNEC" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="ID_NOTA_FISCAL_FORNEC" msprop:Generator_ColumnPropNameInTable="ID_NOTA_FISCAL_FORNECColumn" msprop:Generator_ColumnVarNameInTable="columnID_NOTA_FISCAL_FORNEC" msprop:Generator_UserColumnName="ID_NOTA_FISCAL_FORNEC" type="xs:int" />
-              <xs:element name="NOME_FORNECEDOR" msprop:Generator_ColumnPropNameInRow="NOME_FORNECEDOR" msprop:Generator_ColumnPropNameInTable="NOME_FORNECEDORColumn" msprop:Generator_ColumnVarNameInTable="columnNOME_FORNECEDOR" msprop:Generator_UserColumnName="NOME_FORNECEDOR" minOccurs="0">
+              <xs:element name="ID_NOTA_FISCAL_FORNEC" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="ID_NOTA_FISCAL_FORNEC" msprop:Generator_ColumnPropNameInTable="ID_NOTA_FISCAL_FORNECColumn" msprop:Generator_ColumnPropNameInRow="ID_NOTA_FISCAL_FORNEC" msprop:Generator_ColumnVarNameInTable="columnID_NOTA_FISCAL_FORNEC" type="xs:int" />
+              <xs:element name="NOME_FORNECEDOR" msprop:Generator_UserColumnName="NOME_FORNECEDOR" msprop:Generator_ColumnPropNameInTable="NOME_FORNECEDORColumn" msprop:Generator_ColumnPropNameInRow="NOME_FORNECEDOR" msprop:Generator_ColumnVarNameInTable="columnNOME_FORNECEDOR" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="OBSERVACAO" msprop:Generator_ColumnPropNameInRow="OBSERVACAO" msprop:Generator_ColumnPropNameInTable="OBSERVACAOColumn" msprop:Generator_ColumnVarNameInTable="columnOBSERVACAO" msprop:Generator_UserColumnName="OBSERVACAO" minOccurs="0">
+              <xs:element name="OBSERVACAO" msprop:Generator_UserColumnName="OBSERVACAO" msprop:Generator_ColumnPropNameInTable="OBSERVACAOColumn" msprop:Generator_ColumnPropNameInRow="OBSERVACAO" msprop:Generator_ColumnVarNameInTable="columnOBSERVACAO" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="150" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="DATA_EMISSAO" msprop:Generator_ColumnPropNameInRow="DATA_EMISSAO" msprop:Generator_ColumnPropNameInTable="DATA_EMISSAOColumn" msprop:Generator_ColumnVarNameInTable="columnDATA_EMISSAO" msprop:Generator_UserColumnName="DATA_EMISSAO" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="VALOR_COMPRA" msprop:Generator_ColumnPropNameInRow="VALOR_COMPRA" msprop:Generator_ColumnPropNameInTable="VALOR_COMPRAColumn" msprop:Generator_ColumnVarNameInTable="columnVALOR_COMPRA" msprop:Generator_UserColumnName="VALOR_COMPRA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DATA_EMISSAO" msprop:Generator_UserColumnName="DATA_EMISSAO" msprop:Generator_ColumnPropNameInTable="DATA_EMISSAOColumn" msprop:Generator_ColumnPropNameInRow="DATA_EMISSAO" msprop:Generator_ColumnVarNameInTable="columnDATA_EMISSAO" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="VALOR_COMPRA" msprop:Generator_UserColumnName="VALOR_COMPRA" msprop:Generator_ColumnPropNameInTable="VALOR_COMPRAColumn" msprop:Generator_ColumnPropNameInRow="VALOR_COMPRA" msprop:Generator_ColumnVarNameInTable="columnVALOR_COMPRA" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ESTOQUEEntradaNomes" msprop:Generator_RowEvHandlerName="ESTOQUEEntradaNomesRowChangeEventHandler" msprop:Generator_RowDeletedName="ESTOQUEEntradaNomesRowDeleted" msprop:Generator_RowDeletingName="ESTOQUEEntradaNomesRowDeleting" msprop:Generator_RowEvArgName="ESTOQUEEntradaNomesRowChangeEvent" msprop:Generator_TablePropName="ESTOQUEEntradaNomes" msprop:Generator_RowChangedName="ESTOQUEEntradaNomesRowChanged" msprop:Generator_RowChangingName="ESTOQUEEntradaNomesRowChanging" msprop:Generator_TableClassName="ESTOQUEEntradaNomesDataTable" msprop:Generator_RowClassName="ESTOQUEEntradaNomesRow" msprop:Generator_TableVarName="tableESTOQUEEntradaNomes" msprop:Generator_UserTableName="ESTOQUEEntradaNomes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_ESTOQUE" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="ID_ESTOQUE" msprop:Generator_ColumnPropNameInTable="ID_ESTOQUEColumn" msprop:Generator_ColumnVarNameInTable="columnID_ESTOQUE" msprop:Generator_UserColumnName="ID_ESTOQUE" type="xs:int" />
+              <xs:element name="QTD_ESTOQUE" msprop:Generator_ColumnPropNameInRow="QTD_ESTOQUE" msprop:Generator_ColumnPropNameInTable="QTD_ESTOQUEColumn" msprop:Generator_ColumnVarNameInTable="columnQTD_ESTOQUE" msprop:Generator_UserColumnName="QTD_ESTOQUE" type="xs:int" minOccurs="0" />
+              <xs:element name="PRODUTO" msprop:Generator_ColumnPropNameInRow="PRODUTO" msprop:Generator_ColumnPropNameInTable="PRODUTOColumn" msprop:Generator_ColumnVarNameInTable="columnPRODUTO" msprop:Generator_UserColumnName="PRODUTO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="70" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NOTA_FISCAL" msprop:Generator_ColumnPropNameInRow="NOTA_FISCAL" msprop:Generator_ColumnPropNameInTable="NOTA_FISCALColumn" msprop:Generator_ColumnVarNameInTable="columnNOTA_FISCAL" msprop:Generator_UserColumnName="NOTA_FISCAL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -585,12 +635,16 @@ WHERE PAGO = 's'</CommandText>
       <xs:selector xpath=".//mstns:comprasAntigas" />
       <xs:field xpath="mstns:ID_NOTA_FISCAL_FORNEC" />
     </xs:unique>
+    <xs:unique name="ESTOQUEEntradaNomes_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ESTOQUEEntradaNomes" />
+      <xs:field xpath="mstns:ID_ESTOQUE" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__ESTOQUE__ID_PROD__05C3D225" msdata:parent="PRODUTOSEntrada" msdata:child="ESTOQUEEntrada" msdata:parentkey="ID_PRODUTOS" msdata:childkey="ID_PRODUTOS" msprop:Generator_UserParentTable="PRODUTOSEntrada" msprop:Generator_UserChildTable="ESTOQUEEntrada" msprop:Generator_RelationVarName="relationFK__ESTOQUE__ID_PROD__05C3D225" msprop:Generator_ChildPropName="GetESTOQUEEntradaRows" msprop:Generator_ParentPropName="PRODUTOSRow" msprop:Generator_UserRelationName="FK__ESTOQUE__ID_PROD__05C3D225" />
-      <msdata:Relationship name="FK__ESTOQUE__ID_NOTA__06B7F65E1" msdata:parent="NOTA_FISCAL_FORNECEDOR" msdata:child="ESTOQUEEntrada" msdata:parentkey="ID_NOTA_FISCAL_FORNEC" msdata:childkey="ID_NOTA_FISCAL_FORNEC" msprop:Generator_UserParentTable="NOTA_FISCAL_FORNECEDOR" msprop:Generator_UserChildTable="ESTOQUEEntrada" msprop:Generator_RelationVarName="relationFK__ESTOQUE__ID_NOTA__06B7F65E1" msprop:Generator_UserRelationName="FK__ESTOQUE__ID_NOTA__06B7F65E1" msprop:Generator_ChildPropName="GetESTOQUEEntradaRows" msprop:Generator_ParentPropName="NOTA_FISCAL_FORNECEDORRow" />
-      <msdata:Relationship name="FK__NOTA_FISC__ID_FO__7C3A67EB1" msdata:parent="FORNECEDOR" msdata:child="NOTA_FISCAL_FORNECEDOR" msdata:parentkey="ID_FORNECEDOR" msdata:childkey="ID_FORNECEDOR" msprop:Generator_UserParentTable="FORNECEDOR" msprop:Generator_UserChildTable="NOTA_FISCAL_FORNECEDOR" msprop:Generator_RelationVarName="relationFK__NOTA_FISC__ID_FO__7C3A67EB1" msprop:Generator_ChildPropName="GetNOTA_FISCAL_FORNECEDORRows" msprop:Generator_ParentPropName="FORNECEDORRow" msprop:Generator_UserRelationName="FK__NOTA_FISC__ID_FO__7C3A67EB1" />
+      <msdata:Relationship name="FK__ESTOQUE__ID_PROD__05C3D225" msdata:parent="PRODUTOSEntrada" msdata:child="ESTOQUEEntrada" msdata:parentkey="ID_PRODUTOS" msdata:childkey="ID_PRODUTOS" msprop:Generator_UserParentTable="PRODUTOSEntrada" msprop:Generator_UserChildTable="ESTOQUEEntrada" msprop:Generator_RelationVarName="relationFK__ESTOQUE__ID_PROD__05C3D225" msprop:Generator_ChildPropName="GetESTOQUEEntradaRows" msprop:Generator_UserRelationName="FK__ESTOQUE__ID_PROD__05C3D225" msprop:Generator_ParentPropName="PRODUTOSRow" />
+      <msdata:Relationship name="FK__ESTOQUE__ID_NOTA__06B7F65E1" msdata:parent="NOTA_FISCAL_FORNECEDOR" msdata:child="ESTOQUEEntrada" msdata:parentkey="ID_NOTA_FISCAL_FORNEC" msdata:childkey="ID_NOTA_FISCAL_FORNEC" msprop:Generator_UserParentTable="NOTA_FISCAL_FORNECEDOR" msprop:Generator_UserChildTable="ESTOQUEEntrada" msprop:Generator_RelationVarName="relationFK__ESTOQUE__ID_NOTA__06B7F65E1" msprop:Generator_ChildPropName="GetESTOQUEEntradaRows" msprop:Generator_ParentPropName="NOTA_FISCAL_FORNECEDORRow" msprop:Generator_UserRelationName="FK__ESTOQUE__ID_NOTA__06B7F65E1" />
+      <msdata:Relationship name="FK__NOTA_FISC__ID_FO__7C3A67EB1" msdata:parent="FORNECEDOR" msdata:child="NOTA_FISCAL_FORNECEDOR" msdata:parentkey="ID_FORNECEDOR" msdata:childkey="ID_FORNECEDOR" msprop:Generator_UserParentTable="FORNECEDOR" msprop:Generator_UserChildTable="NOTA_FISCAL_FORNECEDOR" msprop:Generator_RelationVarName="relationFK__NOTA_FISC__ID_FO__7C3A67EB1" msprop:Generator_ChildPropName="GetNOTA_FISCAL_FORNECEDORRows" msprop:Generator_UserRelationName="FK__NOTA_FISC__ID_FO__7C3A67EB1" msprop:Generator_ParentPropName="FORNECEDORRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

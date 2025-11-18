@@ -117,11 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="eSTOQUEEntradaNomesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>157, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="picBox_Logo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAJIAAACjCAYAAABhXUeGAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAhhFJREFUeF7tvQd0XNd1Luy82HFsyyokRfVKil0kJVFUdRTHsZM4L4ljWxILegem
+        vgAADr4B6kKxwAAAhhFJREFUeF7tvQd0XNd1Luy82HFsyyokRfVKil0kJVFUdRTHsZM4L4ljWxILegem
         90EdkETH9IZO9N47QJBELyxiQQdISpZLYifujmVbBd+/9r4zIDQm1WKJ0Pt91trrTrnl3HO+u8/u9zOf
         +QQagM9NA39F5P2M65B3v5V0vX18f/+g5Ht+X/Ld/3q0cn/fz777fhC6Xj98f3+v8/vs8zkAf+E7H5+6
         BuD/aE2GvTJbcrTIkSST2g/FSB2GKKnVECOxxYuk1kSxzJIoVblTpGrXEYk255BYnXtEonYfESlyDomV
@@ -696,6 +699,12 @@
         79vIxNE3PXz/p0Uo/v8AQoY+gA5DlP0AAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="daDadosEntrada.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="eSTOQUEEntradaNomesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>416, 17</value>
+  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAkqMAAAEAIAC8gAEAFgAAACgAAACSAAAARgEAAAEAIAAAAAAA2HMBAMMOAADDDgAAAAAAAAAA

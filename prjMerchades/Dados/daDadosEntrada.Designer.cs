@@ -36,6 +36,8 @@ namespace prjMerchades.Dados {
         
         private comprasAntigasDataTable tablecomprasAntigas;
         
+        private ESTOQUEEntradaNomesDataTable tableESTOQUEEntradaNomes;
+        
         private global::System.Data.DataRelation relationFK__ESTOQUE__ID_PROD__05C3D225;
         
         private global::System.Data.DataRelation relationFK__ESTOQUE__ID_NOTA__06B7F65E1;
@@ -87,6 +89,9 @@ namespace prjMerchades.Dados {
                 }
                 if ((ds.Tables["comprasAntigas"] != null)) {
                     base.Tables.Add(new comprasAntigasDataTable(ds.Tables["comprasAntigas"]));
+                }
+                if ((ds.Tables["ESTOQUEEntradaNomes"] != null)) {
+                    base.Tables.Add(new ESTOQUEEntradaNomesDataTable(ds.Tables["ESTOQUEEntradaNomes"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -163,6 +168,16 @@ namespace prjMerchades.Dados {
         public comprasAntigasDataTable comprasAntigas {
             get {
                 return this.tablecomprasAntigas;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ESTOQUEEntradaNomesDataTable ESTOQUEEntradaNomes {
+            get {
+                return this.tableESTOQUEEntradaNomes;
             }
         }
         
@@ -251,6 +266,9 @@ namespace prjMerchades.Dados {
                 if ((ds.Tables["comprasAntigas"] != null)) {
                     base.Tables.Add(new comprasAntigasDataTable(ds.Tables["comprasAntigas"]));
                 }
+                if ((ds.Tables["ESTOQUEEntradaNomes"] != null)) {
+                    base.Tables.Add(new ESTOQUEEntradaNomesDataTable(ds.Tables["ESTOQUEEntradaNomes"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -320,6 +338,12 @@ namespace prjMerchades.Dados {
                     this.tablecomprasAntigas.InitVars();
                 }
             }
+            this.tableESTOQUEEntradaNomes = ((ESTOQUEEntradaNomesDataTable)(base.Tables["ESTOQUEEntradaNomes"]));
+            if ((initTable == true)) {
+                if ((this.tableESTOQUEEntradaNomes != null)) {
+                    this.tableESTOQUEEntradaNomes.InitVars();
+                }
+            }
             this.relationFK__ESTOQUE__ID_PROD__05C3D225 = this.Relations["FK__ESTOQUE__ID_PROD__05C3D225"];
             this.relationFK__ESTOQUE__ID_NOTA__06B7F65E1 = this.Relations["FK__ESTOQUE__ID_NOTA__06B7F65E1"];
             this.relationFK__NOTA_FISC__ID_FO__7C3A67EB1 = this.Relations["FK__NOTA_FISC__ID_FO__7C3A67EB1"];
@@ -345,6 +369,8 @@ namespace prjMerchades.Dados {
             base.Tables.Add(this.tablecompraDividas);
             this.tablecomprasAntigas = new comprasAntigasDataTable();
             base.Tables.Add(this.tablecomprasAntigas);
+            this.tableESTOQUEEntradaNomes = new ESTOQUEEntradaNomesDataTable();
+            base.Tables.Add(this.tableESTOQUEEntradaNomes);
             this.relationFK__ESTOQUE__ID_PROD__05C3D225 = new global::System.Data.DataRelation("FK__ESTOQUE__ID_PROD__05C3D225", new global::System.Data.DataColumn[] {
                         this.tablePRODUTOSEntrada.ID_PRODUTOSColumn}, new global::System.Data.DataColumn[] {
                         this.tableESTOQUEEntrada.ID_PRODUTOSColumn}, false);
@@ -392,6 +418,12 @@ namespace prjMerchades.Dados {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private bool ShouldSerializecomprasAntigas() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeESTOQUEEntradaNomes() {
             return false;
         }
         
@@ -467,6 +499,9 @@ namespace prjMerchades.Dados {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void comprasAntigasRowChangeEventHandler(object sender, comprasAntigasRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void ESTOQUEEntradaNomesRowChangeEventHandler(object sender, ESTOQUEEntradaNomesRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -2458,6 +2493,312 @@ namespace prjMerchades.Dados {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ESTOQUEEntradaNomesDataTable : global::System.Data.TypedTableBase<ESTOQUEEntradaNomesRow> {
+            
+            private global::System.Data.DataColumn columnID_ESTOQUE;
+            
+            private global::System.Data.DataColumn columnQTD_ESTOQUE;
+            
+            private global::System.Data.DataColumn columnPRODUTO;
+            
+            private global::System.Data.DataColumn columnNOTA_FISCAL;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ESTOQUEEntradaNomesDataTable() {
+                this.TableName = "ESTOQUEEntradaNomes";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal ESTOQUEEntradaNomesDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected ESTOQUEEntradaNomesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ID_ESTOQUEColumn {
+                get {
+                    return this.columnID_ESTOQUE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn QTD_ESTOQUEColumn {
+                get {
+                    return this.columnQTD_ESTOQUE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PRODUTOColumn {
+                get {
+                    return this.columnPRODUTO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn NOTA_FISCALColumn {
+                get {
+                    return this.columnNOTA_FISCAL;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ESTOQUEEntradaNomesRow this[int index] {
+                get {
+                    return ((ESTOQUEEntradaNomesRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ESTOQUEEntradaNomesRowChangeEventHandler ESTOQUEEntradaNomesRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ESTOQUEEntradaNomesRowChangeEventHandler ESTOQUEEntradaNomesRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ESTOQUEEntradaNomesRowChangeEventHandler ESTOQUEEntradaNomesRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ESTOQUEEntradaNomesRowChangeEventHandler ESTOQUEEntradaNomesRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddESTOQUEEntradaNomesRow(ESTOQUEEntradaNomesRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ESTOQUEEntradaNomesRow AddESTOQUEEntradaNomesRow(int QTD_ESTOQUE, string PRODUTO, string NOTA_FISCAL) {
+                ESTOQUEEntradaNomesRow rowESTOQUEEntradaNomesRow = ((ESTOQUEEntradaNomesRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        QTD_ESTOQUE,
+                        PRODUTO,
+                        NOTA_FISCAL};
+                rowESTOQUEEntradaNomesRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowESTOQUEEntradaNomesRow);
+                return rowESTOQUEEntradaNomesRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ESTOQUEEntradaNomesRow FindByID_ESTOQUE(int ID_ESTOQUE) {
+                return ((ESTOQUEEntradaNomesRow)(this.Rows.Find(new object[] {
+                            ID_ESTOQUE})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ESTOQUEEntradaNomesDataTable cln = ((ESTOQUEEntradaNomesDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ESTOQUEEntradaNomesDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnID_ESTOQUE = base.Columns["ID_ESTOQUE"];
+                this.columnQTD_ESTOQUE = base.Columns["QTD_ESTOQUE"];
+                this.columnPRODUTO = base.Columns["PRODUTO"];
+                this.columnNOTA_FISCAL = base.Columns["NOTA_FISCAL"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnID_ESTOQUE = new global::System.Data.DataColumn("ID_ESTOQUE", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_ESTOQUE);
+                this.columnQTD_ESTOQUE = new global::System.Data.DataColumn("QTD_ESTOQUE", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQTD_ESTOQUE);
+                this.columnPRODUTO = new global::System.Data.DataColumn("PRODUTO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPRODUTO);
+                this.columnNOTA_FISCAL = new global::System.Data.DataColumn("NOTA_FISCAL", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTA_FISCAL);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID_ESTOQUE}, true));
+                this.columnID_ESTOQUE.AutoIncrement = true;
+                this.columnID_ESTOQUE.AutoIncrementSeed = -1;
+                this.columnID_ESTOQUE.AutoIncrementStep = -1;
+                this.columnID_ESTOQUE.AllowDBNull = false;
+                this.columnID_ESTOQUE.ReadOnly = true;
+                this.columnID_ESTOQUE.Unique = true;
+                this.columnPRODUTO.MaxLength = 70;
+                this.columnNOTA_FISCAL.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ESTOQUEEntradaNomesRow NewESTOQUEEntradaNomesRow() {
+                return ((ESTOQUEEntradaNomesRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ESTOQUEEntradaNomesRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ESTOQUEEntradaNomesRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ESTOQUEEntradaNomesRowChanged != null)) {
+                    this.ESTOQUEEntradaNomesRowChanged(this, new ESTOQUEEntradaNomesRowChangeEvent(((ESTOQUEEntradaNomesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ESTOQUEEntradaNomesRowChanging != null)) {
+                    this.ESTOQUEEntradaNomesRowChanging(this, new ESTOQUEEntradaNomesRowChangeEvent(((ESTOQUEEntradaNomesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ESTOQUEEntradaNomesRowDeleted != null)) {
+                    this.ESTOQUEEntradaNomesRowDeleted(this, new ESTOQUEEntradaNomesRowChangeEvent(((ESTOQUEEntradaNomesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ESTOQUEEntradaNomesRowDeleting != null)) {
+                    this.ESTOQUEEntradaNomesRowDeleting(this, new ESTOQUEEntradaNomesRowChangeEvent(((ESTOQUEEntradaNomesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveESTOQUEEntradaNomesRow(ESTOQUEEntradaNomesRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                daDadosEntrada ds = new daDadosEntrada();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ESTOQUEEntradaNomesDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class FORNECEDORRow : global::System.Data.DataRow {
@@ -3464,6 +3805,116 @@ namespace prjMerchades.Dados {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class ESTOQUEEntradaNomesRow : global::System.Data.DataRow {
+            
+            private ESTOQUEEntradaNomesDataTable tableESTOQUEEntradaNomes;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal ESTOQUEEntradaNomesRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableESTOQUEEntradaNomes = ((ESTOQUEEntradaNomesDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int ID_ESTOQUE {
+                get {
+                    return ((int)(this[this.tableESTOQUEEntradaNomes.ID_ESTOQUEColumn]));
+                }
+                set {
+                    this[this.tableESTOQUEEntradaNomes.ID_ESTOQUEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int QTD_ESTOQUE {
+                get {
+                    try {
+                        return ((int)(this[this.tableESTOQUEEntradaNomes.QTD_ESTOQUEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'QTD_ESTOQUE\' na tabela \'ESTOQUEEntradaNomes\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableESTOQUEEntradaNomes.QTD_ESTOQUEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PRODUTO {
+                get {
+                    try {
+                        return ((string)(this[this.tableESTOQUEEntradaNomes.PRODUTOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'PRODUTO\' na tabela \'ESTOQUEEntradaNomes\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableESTOQUEEntradaNomes.PRODUTOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string NOTA_FISCAL {
+                get {
+                    try {
+                        return ((string)(this[this.tableESTOQUEEntradaNomes.NOTA_FISCALColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'NOTA_FISCAL\' na tabela \'ESTOQUEEntradaNomes\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableESTOQUEEntradaNomes.NOTA_FISCALColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsQTD_ESTOQUENull() {
+                return this.IsNull(this.tableESTOQUEEntradaNomes.QTD_ESTOQUEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetQTD_ESTOQUENull() {
+                this[this.tableESTOQUEEntradaNomes.QTD_ESTOQUEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPRODUTONull() {
+                return this.IsNull(this.tableESTOQUEEntradaNomes.PRODUTOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPRODUTONull() {
+                this[this.tableESTOQUEEntradaNomes.PRODUTOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsNOTA_FISCALNull() {
+                return this.IsNull(this.tableESTOQUEEntradaNomes.NOTA_FISCALColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetNOTA_FISCALNull() {
+                this[this.tableESTOQUEEntradaNomes.NOTA_FISCALColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -3653,6 +4104,40 @@ namespace prjMerchades.Dados {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public comprasAntigasRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class ESTOQUEEntradaNomesRowChangeEvent : global::System.EventArgs {
+            
+            private ESTOQUEEntradaNomesRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ESTOQUEEntradaNomesRowChangeEvent(ESTOQUEEntradaNomesRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ESTOQUEEntradaNomesRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -5931,6 +6416,185 @@ SELECT ID_NOTA_FISCAL_FORNEC, DATA_EMISSAO, VALOR_COMPRA, COD_NOTA_FORN, OBSERVA
         public virtual daDadosEntrada.comprasAntigasDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             daDadosEntrada.comprasAntigasDataTable dataTable = new daDadosEntrada.comprasAntigasDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class ESTOQUEEntradaNomesTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public ESTOQUEEntradaNomesTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "ESTOQUEEntradaNomes";
+            tableMapping.ColumnMappings.Add("ID_ESTOQUE", "ID_ESTOQUE");
+            tableMapping.ColumnMappings.Add("QTD_ESTOQUE", "QTD_ESTOQUE");
+            tableMapping.ColumnMappings.Add("PRODUTO", "PRODUTO");
+            tableMapping.ColumnMappings.Add("NOTA_FISCAL", "NOTA_FISCAL");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::prjMerchades.Properties.Settings.Default.masterConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT
+    E.ID_ESTOQUE,
+    E.QTD_ESTOQUE,
+    P.NOME_PRODUTOS AS PRODUTO,
+    N.COD_NOTA_FORN AS NOTA_FISCAL
+FROM ESTOQUE E
+LEFT JOIN PRODUTOS P 
+       ON E.ID_PRODUTOS = P.ID_PRODUTOS
+LEFT JOIN NOTA_FISCAL_FORNECEDOR N
+       ON E.ID_NOTA_FISCAL_FORNEC = N.ID_NOTA_FISCAL_FORNEC;";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(daDadosEntrada.ESTOQUEEntradaNomesDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual daDadosEntrada.ESTOQUEEntradaNomesDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            daDadosEntrada.ESTOQUEEntradaNomesDataTable dataTable = new daDadosEntrada.ESTOQUEEntradaNomesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

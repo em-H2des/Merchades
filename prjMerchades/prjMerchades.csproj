@@ -225,6 +225,7 @@
     <EmbeddedResource Include="Properties\ResourcesSaida.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorio\relatorioEstoque.rdlc" />
     <None Include="Dados\daDadosEntrada.xsc">
       <DependentUpon>daDadosEntrada.xsd</DependentUpon>
     </None>
