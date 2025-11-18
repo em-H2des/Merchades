@@ -28,24 +28,53 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource9 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRelFinanceiro));
+            this.vwRELATORIOFINANCEIROGANHOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsDadosSaida1 = new prjMerchades.Dados.dsDadosSaida();
+            this.rELATORIOFINANCEIROBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsDadosSaida = new prjMerchades.Dados.dsDadosSaida();
+            this.vwRELATORIOFINANCEIRODESPESASBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl_Financeiro = new System.Windows.Forms.TabControl();
             this.tabPage_NF = new System.Windows.Forms.TabPage();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.btnGastosLimpar = new System.Windows.Forms.Button();
+            this.btnGastosFiltrar = new System.Windows.Forms.Button();
+            this.dtpGastosFimPeriodo = new System.Windows.Forms.DateTimePicker();
+            this.dtpGastosInicioPeriodo = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.rvGastos = new Microsoft.Reporting.WinForms.ReportViewer();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_Linha2 = new System.Windows.Forms.Label();
             this.tabPage_Divida = new System.Windows.Forms.TabPage();
-            this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnVendasLimpar = new System.Windows.Forms.Button();
+            this.btnVendasFiltrar = new System.Windows.Forms.Button();
+            this.dtpVendasFimPeriodo = new System.Windows.Forms.DateTimePicker();
+            this.dtpVendasInicioPeriodo = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
+            this.rvVendas = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.label6 = new System.Windows.Forms.Label();
             this.tabPage_CompraAntg = new System.Windows.Forms.TabPage();
-            this.reportViewer3 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.btnGeralLimpar = new System.Windows.Forms.Button();
+            this.btnGeralFiltrar = new System.Windows.Forms.Button();
+            this.dtpGeralFimPeriodo = new System.Windows.Forms.DateTimePicker();
+            this.dtpGeralInicioPeriodo = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
+            this.rvGeral = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.label7 = new System.Windows.Forms.Label();
             this.picBox_Logo = new System.Windows.Forms.PictureBox();
             this.btnConfirmaCompra = new System.Windows.Forms.Button();
+            this.rELATORIO_FINANCEIROTableAdapter = new prjMerchades.Dados.dsDadosSaidaTableAdapters.RELATORIO_FINANCEIROTableAdapter();
+            this.vw_RELATORIO_FINANCEIRO_DESPESASTableAdapter = new prjMerchades.Dados.dsDadosSaidaTableAdapters.Vw_RELATORIO_FINANCEIRO_DESPESASTableAdapter();
+            this.vw_RELATORIO_FINANCEIRO_GANHOSTableAdapter = new prjMerchades.Dados.dsDadosSaidaTableAdapters.Vw_RELATORIO_FINANCEIRO_GANHOSTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.vwRELATORIOFINANCEIROGANHOSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsDadosSaida1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rELATORIOFINANCEIROBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsDadosSaida)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwRELATORIOFINANCEIRODESPESASBindingSource)).BeginInit();
             this.tabControl_Financeiro.SuspendLayout();
             this.tabPage_NF.SuspendLayout();
             this.tabPage_Divida.SuspendLayout();
@@ -53,99 +82,162 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Logo)).BeginInit();
             this.SuspendLayout();
             // 
+            // vwRELATORIOFINANCEIROGANHOSBindingSource
+            // 
+            this.vwRELATORIOFINANCEIROGANHOSBindingSource.DataMember = "Vw_RELATORIO_FINANCEIRO_GANHOS";
+            this.vwRELATORIOFINANCEIROGANHOSBindingSource.DataSource = this.dsDadosSaida1;
+            // 
+            // dsDadosSaida1
+            // 
+            this.dsDadosSaida1.DataSetName = "dsDadosSaida";
+            this.dsDadosSaida1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // rELATORIOFINANCEIROBindingSource
+            // 
+            this.rELATORIOFINANCEIROBindingSource.DataMember = "RELATORIO_FINANCEIRO";
+            this.rELATORIOFINANCEIROBindingSource.DataSource = this.dsDadosSaida;
+            // 
+            // dsDadosSaida
+            // 
+            this.dsDadosSaida.DataSetName = "dsDadosSaida";
+            this.dsDadosSaida.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vwRELATORIOFINANCEIRODESPESASBindingSource
+            // 
+            this.vwRELATORIOFINANCEIRODESPESASBindingSource.DataMember = "Vw_RELATORIO_FINANCEIRO_DESPESAS";
+            this.vwRELATORIOFINANCEIRODESPESASBindingSource.DataSource = this.dsDadosSaida1;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(21, 14);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(14, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(508, 58);
+            this.label1.Size = new System.Drawing.Size(411, 46);
             this.label1.TabIndex = 6;
             this.label1.Text = "Relatório Financeiro ";
             // 
             // tabControl_Financeiro
             // 
+            this.tabControl_Financeiro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl_Financeiro.Controls.Add(this.tabPage_NF);
             this.tabControl_Financeiro.Controls.Add(this.tabPage_Divida);
             this.tabControl_Financeiro.Controls.Add(this.tabPage_CompraAntg);
-            this.tabControl_Financeiro.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tabControl_Financeiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl_Financeiro.Location = new System.Drawing.Point(0, 114);
-            this.tabControl_Financeiro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabControl_Financeiro.Location = new System.Drawing.Point(0, 98);
             this.tabControl_Financeiro.Name = "tabControl_Financeiro";
             this.tabControl_Financeiro.SelectedIndex = 0;
-            this.tabControl_Financeiro.Size = new System.Drawing.Size(1640, 935);
+            this.tabControl_Financeiro.Size = new System.Drawing.Size(1093, 589);
             this.tabControl_Financeiro.TabIndex = 5;
-            this.tabControl_Financeiro.SelectedIndexChanged += new System.EventHandler(this.tabControl_Financeiro_SelectedIndexChanged);
             // 
             // tabPage_NF
             // 
             this.tabPage_NF.BackColor = System.Drawing.Color.DarkGray;
-            this.tabPage_NF.Controls.Add(this.reportViewer1);
-            this.tabPage_NF.Controls.Add(this.comboBox2);
+            this.tabPage_NF.Controls.Add(this.btnGastosLimpar);
+            this.tabPage_NF.Controls.Add(this.btnGastosFiltrar);
+            this.tabPage_NF.Controls.Add(this.dtpGastosFimPeriodo);
+            this.tabPage_NF.Controls.Add(this.dtpGastosInicioPeriodo);
+            this.tabPage_NF.Controls.Add(this.label5);
+            this.tabPage_NF.Controls.Add(this.rvGastos);
             this.tabPage_NF.Controls.Add(this.label3);
             this.tabPage_NF.Controls.Add(this.lbl_Linha2);
-            this.tabPage_NF.Location = new System.Drawing.Point(4, 34);
-            this.tabPage_NF.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage_NF.Location = new System.Drawing.Point(4, 29);
             this.tabPage_NF.Name = "tabPage_NF";
-            this.tabPage_NF.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPage_NF.Size = new System.Drawing.Size(1632, 897);
+            this.tabPage_NF.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_NF.Size = new System.Drawing.Size(1085, 556);
             this.tabPage_NF.TabIndex = 0;
             this.tabPage_NF.Text = "Gastos";
-            this.tabPage_NF.Click += new System.EventHandler(this.tabPage_NF_Click);
             // 
-            // reportViewer1
+            // btnGastosLimpar
             // 
-            this.reportViewer1.Location = new System.Drawing.Point(4, 102);
-            this.reportViewer1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1614, 777);
-            this.reportViewer1.TabIndex = 42;
+            this.btnGastosLimpar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGastosLimpar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(231)))), ((int)(((byte)(127)))));
+            this.btnGastosLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGastosLimpar.ForeColor = System.Drawing.Color.Black;
+            this.btnGastosLimpar.Location = new System.Drawing.Point(811, 7);
+            this.btnGastosLimpar.Name = "btnGastosLimpar";
+            this.btnGastosLimpar.Size = new System.Drawing.Size(122, 38);
+            this.btnGastosLimpar.TabIndex = 45;
+            this.btnGastosLimpar.Text = "Ver Todos";
+            this.btnGastosLimpar.UseVisualStyleBackColor = false;
+            this.btnGastosLimpar.Click += new System.EventHandler(this.btnGastosLimpar_Click);
             // 
-            // comboBox2
+            // btnGastosFiltrar
             // 
-            this.comboBox2.AllowDrop = true;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Janeiro",
-            "Fevereiro",
-            "Março",
-            "Abril",
-            "Maio",
-            "Junho",
-            "Julho",
-            "Agosto",
-            "Setembro",
-            "Outubro",
-            "Novembro",
-            "Dezembro"});
-            this.comboBox2.Location = new System.Drawing.Point(364, 23);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(158, 33);
-            this.comboBox2.TabIndex = 41;
+            this.btnGastosFiltrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGastosFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(145)))), ((int)(((byte)(118)))));
+            this.btnGastosFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGastosFiltrar.ForeColor = System.Drawing.Color.Black;
+            this.btnGastosFiltrar.Location = new System.Drawing.Point(950, 7);
+            this.btnGastosFiltrar.Name = "btnGastosFiltrar";
+            this.btnGastosFiltrar.Size = new System.Drawing.Size(122, 38);
+            this.btnGastosFiltrar.TabIndex = 45;
+            this.btnGastosFiltrar.Text = "Filtrar";
+            this.btnGastosFiltrar.UseVisualStyleBackColor = false;
+            this.btnGastosFiltrar.Click += new System.EventHandler(this.btnGastosFiltrar_Click);
+            // 
+            // dtpGastosFimPeriodo
+            // 
+            this.dtpGastosFimPeriodo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpGastosFimPeriodo.Location = new System.Drawing.Point(468, 13);
+            this.dtpGastosFimPeriodo.Name = "dtpGastosFimPeriodo";
+            this.dtpGastosFimPeriodo.Size = new System.Drawing.Size(139, 26);
+            this.dtpGastosFimPeriodo.TabIndex = 44;
+            this.dtpGastosFimPeriodo.Value = new System.DateTime(2025, 11, 17, 23, 59, 0, 0);
+            // 
+            // dtpGastosInicioPeriodo
+            // 
+            this.dtpGastosInicioPeriodo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpGastosInicioPeriodo.Location = new System.Drawing.Point(282, 13);
+            this.dtpGastosInicioPeriodo.Name = "dtpGastosInicioPeriodo";
+            this.dtpGastosInicioPeriodo.Size = new System.Drawing.Size(139, 26);
+            this.dtpGastosInicioPeriodo.TabIndex = 44;
+            this.dtpGastosInicioPeriodo.Value = new System.DateTime(2025, 11, 17, 0, 0, 0, 0);
+            this.dtpGastosInicioPeriodo.ValueChanged += new System.EventHandler(this.dtpGastosInicioPeriodo_ValueChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(427, 18);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 20);
+            this.label5.TabIndex = 43;
+            this.label5.Text = "até";
+            // 
+            // rvGastos
+            // 
+            this.rvGastos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            reportDataSource8.Name = "DataSetReportViewerRelatorioFinanceiro";
+            reportDataSource8.Value = this.vwRELATORIOFINANCEIRODESPESASBindingSource;
+            this.rvGastos.LocalReport.DataSources.Add(reportDataSource8);
+            this.rvGastos.LocalReport.ReportEmbeddedResource = "prjMerchades.Formularios.Financeiro.ReportFinanceiro.rdlc";
+            this.rvGastos.Location = new System.Drawing.Point(3, 66);
+            this.rvGastos.Name = "rvGastos";
+            this.rvGastos.ServerReport.BearerToken = null;
+            this.rvGastos.Size = new System.Drawing.Size(1077, 506);
+            this.rvGastos.TabIndex = 42;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 28);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(8, 18);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(279, 25);
+            this.label3.Size = new System.Drawing.Size(256, 20);
             this.label3.TabIndex = 40;
-            this.label3.Text = "Selecione o mês desejado :";
+            this.label3.Text = "Selecione o período desejado :";
             // 
             // lbl_Linha2
             // 
             this.lbl_Linha2.AutoSize = true;
             this.lbl_Linha2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lbl_Linha2.Location = new System.Drawing.Point(38, 714);
-            this.lbl_Linha2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_Linha2.Location = new System.Drawing.Point(25, 464);
             this.lbl_Linha2.Name = "lbl_Linha2";
-            this.lbl_Linha2.Size = new System.Drawing.Size(1380, 25);
+            this.lbl_Linha2.Size = new System.Drawing.Size(1149, 20);
             this.lbl_Linha2.TabIndex = 34;
             this.lbl_Linha2.Text = "_________________________________________________________________________________" +
     "_________________________________";
@@ -153,123 +245,201 @@
             // tabPage_Divida
             // 
             this.tabPage_Divida.BackColor = System.Drawing.Color.DarkGray;
-            this.tabPage_Divida.Controls.Add(this.reportViewer2);
-            this.tabPage_Divida.Controls.Add(this.comboBox1);
+            this.tabPage_Divida.Controls.Add(this.btnVendasLimpar);
+            this.tabPage_Divida.Controls.Add(this.btnVendasFiltrar);
+            this.tabPage_Divida.Controls.Add(this.dtpVendasFimPeriodo);
+            this.tabPage_Divida.Controls.Add(this.dtpVendasInicioPeriodo);
             this.tabPage_Divida.Controls.Add(this.label2);
-            this.tabPage_Divida.Location = new System.Drawing.Point(4, 34);
-            this.tabPage_Divida.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage_Divida.Controls.Add(this.rvVendas);
+            this.tabPage_Divida.Controls.Add(this.label6);
+            this.tabPage_Divida.Location = new System.Drawing.Point(4, 29);
             this.tabPage_Divida.Name = "tabPage_Divida";
-            this.tabPage_Divida.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPage_Divida.Size = new System.Drawing.Size(1632, 897);
+            this.tabPage_Divida.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_Divida.Size = new System.Drawing.Size(1085, 556);
             this.tabPage_Divida.TabIndex = 1;
             this.tabPage_Divida.Text = "Vendas";
             // 
-            // reportViewer2
+            // btnVendasLimpar
             // 
-            this.reportViewer2.Location = new System.Drawing.Point(4, 102);
-            this.reportViewer2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.reportViewer2.Name = "reportViewer2";
-            this.reportViewer2.ServerReport.BearerToken = null;
-            this.reportViewer2.Size = new System.Drawing.Size(1614, 777);
-            this.reportViewer2.TabIndex = 43;
+            this.btnVendasLimpar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnVendasLimpar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(231)))), ((int)(((byte)(127)))));
+            this.btnVendasLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVendasLimpar.ForeColor = System.Drawing.Color.Black;
+            this.btnVendasLimpar.Location = new System.Drawing.Point(805, 5);
+            this.btnVendasLimpar.Name = "btnVendasLimpar";
+            this.btnVendasLimpar.Size = new System.Drawing.Size(122, 38);
+            this.btnVendasLimpar.TabIndex = 52;
+            this.btnVendasLimpar.Text = "Ver Todos";
+            this.btnVendasLimpar.UseVisualStyleBackColor = false;
+            this.btnVendasLimpar.Click += new System.EventHandler(this.btnVendasLimpar_Click);
             // 
-            // comboBox1
+            // btnVendasFiltrar
             // 
-            this.comboBox1.AllowDrop = true;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Janeiro",
-            "Fevereiro",
-            "Março",
-            "Abril",
-            "Maio",
-            "Junho",
-            "Julho",
-            "Agosto",
-            "Setembro",
-            "Outubro",
-            "Novembro",
-            "Dezembro"});
-            this.comboBox1.Location = new System.Drawing.Point(364, 23);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(158, 33);
-            this.comboBox1.TabIndex = 39;
+            this.btnVendasFiltrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnVendasFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(145)))), ((int)(((byte)(118)))));
+            this.btnVendasFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVendasFiltrar.Location = new System.Drawing.Point(951, 5);
+            this.btnVendasFiltrar.Name = "btnVendasFiltrar";
+            this.btnVendasFiltrar.Size = new System.Drawing.Size(122, 38);
+            this.btnVendasFiltrar.TabIndex = 51;
+            this.btnVendasFiltrar.Text = "Filtrar";
+            this.btnVendasFiltrar.UseVisualStyleBackColor = false;
+            this.btnVendasFiltrar.Click += new System.EventHandler(this.btnVendasFiltrar_Click);
+            // 
+            // dtpVendasFimPeriodo
+            // 
+            this.dtpVendasFimPeriodo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpVendasFimPeriodo.Location = new System.Drawing.Point(469, 11);
+            this.dtpVendasFimPeriodo.Name = "dtpVendasFimPeriodo";
+            this.dtpVendasFimPeriodo.Size = new System.Drawing.Size(139, 26);
+            this.dtpVendasFimPeriodo.TabIndex = 49;
+            this.dtpVendasFimPeriodo.Value = new System.DateTime(2025, 11, 17, 23, 59, 0, 0);
+            // 
+            // dtpVendasInicioPeriodo
+            // 
+            this.dtpVendasInicioPeriodo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpVendasInicioPeriodo.Location = new System.Drawing.Point(283, 11);
+            this.dtpVendasInicioPeriodo.Name = "dtpVendasInicioPeriodo";
+            this.dtpVendasInicioPeriodo.Size = new System.Drawing.Size(139, 26);
+            this.dtpVendasInicioPeriodo.TabIndex = 50;
+            this.dtpVendasInicioPeriodo.Value = new System.DateTime(2025, 11, 17, 0, 0, 0, 0);
+            this.dtpVendasInicioPeriodo.ValueChanged += new System.EventHandler(this.dtpVendasInicioPeriodo_ValueChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 28);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(428, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(279, 25);
-            this.label2.TabIndex = 38;
-            this.label2.Text = "Selecione o mês desejado :";
+            this.label2.Size = new System.Drawing.Size(35, 20);
+            this.label2.TabIndex = 48;
+            this.label2.Text = "até";
+            // 
+            // rvVendas
+            // 
+            this.rvVendas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            reportDataSource9.Name = "DataSetReportViewerRelatorioFinanceiro";
+            reportDataSource9.Value = this.vwRELATORIOFINANCEIROGANHOSBindingSource;
+            this.rvVendas.LocalReport.DataSources.Add(reportDataSource9);
+            this.rvVendas.LocalReport.ReportEmbeddedResource = "prjMerchades.Formularios.Financeiro.ReportFinanceiro.rdlc";
+            this.rvVendas.Location = new System.Drawing.Point(4, 64);
+            this.rvVendas.Name = "rvVendas";
+            this.rvVendas.ServerReport.BearerToken = null;
+            this.rvVendas.Size = new System.Drawing.Size(1077, 506);
+            this.rvVendas.TabIndex = 47;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(9, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(256, 20);
+            this.label6.TabIndex = 46;
+            this.label6.Text = "Selecione o período desejado :";
             // 
             // tabPage_CompraAntg
             // 
             this.tabPage_CompraAntg.BackColor = System.Drawing.Color.DarkGray;
-            this.tabPage_CompraAntg.Controls.Add(this.reportViewer3);
-            this.tabPage_CompraAntg.Controls.Add(this.comboBox3);
+            this.tabPage_CompraAntg.Controls.Add(this.btnGeralLimpar);
+            this.tabPage_CompraAntg.Controls.Add(this.btnGeralFiltrar);
+            this.tabPage_CompraAntg.Controls.Add(this.dtpGeralFimPeriodo);
+            this.tabPage_CompraAntg.Controls.Add(this.dtpGeralInicioPeriodo);
             this.tabPage_CompraAntg.Controls.Add(this.label4);
-            this.tabPage_CompraAntg.Location = new System.Drawing.Point(4, 34);
-            this.tabPage_CompraAntg.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage_CompraAntg.Controls.Add(this.rvGeral);
+            this.tabPage_CompraAntg.Controls.Add(this.label7);
+            this.tabPage_CompraAntg.Location = new System.Drawing.Point(4, 29);
             this.tabPage_CompraAntg.Name = "tabPage_CompraAntg";
-            this.tabPage_CompraAntg.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPage_CompraAntg.Size = new System.Drawing.Size(1632, 897);
+            this.tabPage_CompraAntg.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_CompraAntg.Size = new System.Drawing.Size(1085, 556);
             this.tabPage_CompraAntg.TabIndex = 2;
             this.tabPage_CompraAntg.Text = "Geral";
             // 
-            // reportViewer3
+            // btnGeralLimpar
             // 
-            this.reportViewer3.Location = new System.Drawing.Point(4, 102);
-            this.reportViewer3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.reportViewer3.Name = "reportViewer3";
-            this.reportViewer3.ServerReport.BearerToken = null;
-            this.reportViewer3.Size = new System.Drawing.Size(1614, 777);
-            this.reportViewer3.TabIndex = 43;
+            this.btnGeralLimpar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGeralLimpar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(231)))), ((int)(((byte)(127)))));
+            this.btnGeralLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGeralLimpar.ForeColor = System.Drawing.Color.Black;
+            this.btnGeralLimpar.Location = new System.Drawing.Point(804, 5);
+            this.btnGeralLimpar.Name = "btnGeralLimpar";
+            this.btnGeralLimpar.Size = new System.Drawing.Size(122, 38);
+            this.btnGeralLimpar.TabIndex = 58;
+            this.btnGeralLimpar.Text = "Ver Todos";
+            this.btnGeralLimpar.UseVisualStyleBackColor = false;
+            this.btnGeralLimpar.Click += new System.EventHandler(this.btnGeralLimpar_Click);
             // 
-            // comboBox3
+            // btnGeralFiltrar
             // 
-            this.comboBox3.AllowDrop = true;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Janeiro",
-            "Fevereiro",
-            "Março",
-            "Abril",
-            "Maio",
-            "Junho",
-            "Julho",
-            "Agosto",
-            "Setembro",
-            "Outubro",
-            "Novembro",
-            "Dezembro"});
-            this.comboBox3.Location = new System.Drawing.Point(364, 23);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(158, 33);
-            this.comboBox3.TabIndex = 41;
+            this.btnGeralFiltrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGeralFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(145)))), ((int)(((byte)(118)))));
+            this.btnGeralFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGeralFiltrar.Location = new System.Drawing.Point(951, 5);
+            this.btnGeralFiltrar.Name = "btnGeralFiltrar";
+            this.btnGeralFiltrar.Size = new System.Drawing.Size(122, 38);
+            this.btnGeralFiltrar.TabIndex = 57;
+            this.btnGeralFiltrar.Text = "Filtrar";
+            this.btnGeralFiltrar.UseVisualStyleBackColor = false;
+            this.btnGeralFiltrar.Click += new System.EventHandler(this.btnGeralFiltrar_Click);
+            // 
+            // dtpGeralFimPeriodo
+            // 
+            this.dtpGeralFimPeriodo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpGeralFimPeriodo.Location = new System.Drawing.Point(469, 11);
+            this.dtpGeralFimPeriodo.Name = "dtpGeralFimPeriodo";
+            this.dtpGeralFimPeriodo.Size = new System.Drawing.Size(139, 26);
+            this.dtpGeralFimPeriodo.TabIndex = 55;
+            this.dtpGeralFimPeriodo.Value = new System.DateTime(2025, 11, 17, 23, 59, 0, 0);
+            // 
+            // dtpGeralInicioPeriodo
+            // 
+            this.dtpGeralInicioPeriodo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpGeralInicioPeriodo.Location = new System.Drawing.Point(283, 11);
+            this.dtpGeralInicioPeriodo.Name = "dtpGeralInicioPeriodo";
+            this.dtpGeralInicioPeriodo.Size = new System.Drawing.Size(139, 26);
+            this.dtpGeralInicioPeriodo.TabIndex = 56;
+            this.dtpGeralInicioPeriodo.Value = new System.DateTime(2025, 11, 17, 0, 0, 0, 0);
+            this.dtpGeralInicioPeriodo.ValueChanged += new System.EventHandler(this.dtpGeralInicioPeriodo_ValueChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 28);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(428, 16);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(279, 25);
-            this.label4.TabIndex = 40;
-            this.label4.Text = "Selecione o mês desejado :";
+            this.label4.Size = new System.Drawing.Size(35, 20);
+            this.label4.TabIndex = 54;
+            this.label4.Text = "até";
+            // 
+            // rvGeral
+            // 
+            this.rvGeral.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            reportDataSource7.Name = "DataSetReportViewerRelatorioFinanceiro";
+            reportDataSource7.Value = this.rELATORIOFINANCEIROBindingSource;
+            this.rvGeral.LocalReport.DataSources.Add(reportDataSource7);
+            this.rvGeral.LocalReport.ReportEmbeddedResource = "prjMerchades.Formularios.Financeiro.ReportFinanceiro.rdlc";
+            this.rvGeral.Location = new System.Drawing.Point(4, 64);
+            this.rvGeral.Name = "rvGeral";
+            this.rvGeral.ServerReport.BearerToken = null;
+            this.rvGeral.Size = new System.Drawing.Size(1077, 506);
+            this.rvGeral.TabIndex = 53;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(9, 16);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(256, 20);
+            this.label7.TabIndex = 52;
+            this.label7.Text = "Selecione o período desejado :";
             // 
             // picBox_Logo
             // 
+            this.picBox_Logo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picBox_Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picBox_Logo.Image = ((System.Drawing.Image)(resources.GetObject("picBox_Logo.Image")));
-            this.picBox_Logo.Location = new System.Drawing.Point(1446, 8);
-            this.picBox_Logo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.picBox_Logo.Location = new System.Drawing.Point(964, 5);
             this.picBox_Logo.Name = "picBox_Logo";
-            this.picBox_Logo.Size = new System.Drawing.Size(150, 134);
+            this.picBox_Logo.Size = new System.Drawing.Size(100, 87);
             this.picBox_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBox_Logo.TabIndex = 7;
             this.picBox_Logo.TabStop = false;
@@ -281,31 +451,48 @@
             this.btnConfirmaCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(46)))), ((int)(((byte)(28)))));
             this.btnConfirmaCompra.FlatAppearance.BorderSize = 0;
             this.btnConfirmaCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmaCompra.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmaCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmaCompra.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnConfirmaCompra.Location = new System.Drawing.Point(1194, 17);
-            this.btnConfirmaCompra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnConfirmaCompra.MinimumSize = new System.Drawing.Size(183, 55);
+            this.btnConfirmaCompra.Location = new System.Drawing.Point(796, 11);
+            this.btnConfirmaCompra.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btnConfirmaCompra.MinimumSize = new System.Drawing.Size(122, 36);
             this.btnConfirmaCompra.Name = "btnConfirmaCompra";
-            this.btnConfirmaCompra.Size = new System.Drawing.Size(183, 55);
+            this.btnConfirmaCompra.Size = new System.Drawing.Size(122, 36);
             this.btnConfirmaCompra.TabIndex = 31;
             this.btnConfirmaCompra.Text = "Deslogar";
             this.btnConfirmaCompra.UseVisualStyleBackColor = false;
             // 
+            // rELATORIO_FINANCEIROTableAdapter
+            // 
+            this.rELATORIO_FINANCEIROTableAdapter.ClearBeforeFill = true;
+            // 
+            // vw_RELATORIO_FINANCEIRO_DESPESASTableAdapter
+            // 
+            this.vw_RELATORIO_FINANCEIRO_DESPESASTableAdapter.ClearBeforeFill = true;
+            // 
+            // vw_RELATORIO_FINANCEIRO_GANHOSTableAdapter
+            // 
+            this.vw_RELATORIO_FINANCEIRO_GANHOSTableAdapter.ClearBeforeFill = true;
+            // 
             // frmRelFinanceiro
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
-            this.ClientSize = new System.Drawing.Size(1640, 1049);
+            this.ClientSize = new System.Drawing.Size(1093, 687);
             this.Controls.Add(this.btnConfirmaCompra);
             this.Controls.Add(this.picBox_Logo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl_Financeiro);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmRelFinanceiro";
             this.Text = "Relatórios Financeiros";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmRelFinanceiro_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.vwRELATORIOFINANCEIROGANHOSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsDadosSaida1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rELATORIOFINANCEIROBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsDadosSaida)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwRELATORIOFINANCEIRODESPESASBindingSource)).EndInit();
             this.tabControl_Financeiro.ResumeLayout(false);
             this.tabPage_NF.ResumeLayout(false);
             this.tabPage_NF.PerformLayout();
@@ -328,15 +515,35 @@
         private System.Windows.Forms.Label lbl_Linha2;
         private System.Windows.Forms.TabPage tabPage_Divida;
         private System.Windows.Forms.TabPage tabPage_CompraAntg;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label4;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer2;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer3;
         private System.Windows.Forms.Button btnConfirmaCompra;
+        private System.Windows.Forms.DateTimePicker dtpGastosFimPeriodo;
+        private System.Windows.Forms.DateTimePicker dtpGastosInicioPeriodo;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnGastosFiltrar;
+        private System.Windows.Forms.Button btnVendasFiltrar;
+        private System.Windows.Forms.DateTimePicker dtpVendasFimPeriodo;
+        private System.Windows.Forms.DateTimePicker dtpVendasInicioPeriodo;
+        private System.Windows.Forms.Label label2;
+        private Microsoft.Reporting.WinForms.ReportViewer rvVendas;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnGeralFiltrar;
+        private System.Windows.Forms.DateTimePicker dtpGeralFimPeriodo;
+        private System.Windows.Forms.DateTimePicker dtpGeralInicioPeriodo;
+        private System.Windows.Forms.Label label4;
+        private Microsoft.Reporting.WinForms.ReportViewer rvGeral;
+        private System.Windows.Forms.Label label7;
+        private Microsoft.Reporting.WinForms.ReportViewer rvGastos;
+        private Dados.dsDadosSaida dsDadosSaida;
+        private System.Windows.Forms.BindingSource rELATORIOFINANCEIROBindingSource;
+        private Dados.dsDadosSaidaTableAdapters.RELATORIO_FINANCEIROTableAdapter rELATORIO_FINANCEIROTableAdapter;
+        private Dados.dsDadosSaida dsDadosSaida1;
+        private System.Windows.Forms.BindingSource vwRELATORIOFINANCEIRODESPESASBindingSource;
+        private Dados.dsDadosSaidaTableAdapters.Vw_RELATORIO_FINANCEIRO_DESPESASTableAdapter vw_RELATORIO_FINANCEIRO_DESPESASTableAdapter;
+        private System.Windows.Forms.BindingSource vwRELATORIOFINANCEIROGANHOSBindingSource;
+        private Dados.dsDadosSaidaTableAdapters.Vw_RELATORIO_FINANCEIRO_GANHOSTableAdapter vw_RELATORIO_FINANCEIRO_GANHOSTableAdapter;
+        private System.Windows.Forms.Button btnGastosLimpar;
+        private System.Windows.Forms.Button btnVendasLimpar;
+        private System.Windows.Forms.Button btnGeralLimpar;
     }
 }
