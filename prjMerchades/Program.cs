@@ -1,4 +1,5 @@
-﻿using prjMerchades.Formularios;
+﻿using Merchades;
+using prjMerchades.Formularios;
 using prjMerchades.Formularios.Entrada;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace prjMerchades
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SplashScreen());
+            Application.Run(new frmNotaFiscal());
         }
     }
 }
