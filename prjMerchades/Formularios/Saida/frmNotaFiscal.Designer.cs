@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNotaFiscal));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblCpfNF = new System.Windows.Forms.Label();
+            this.lblLabelCpf = new System.Windows.Forms.Label();
             this.lblTituloDetalhes = new System.Windows.Forms.Label();
             this.lblDataEmissaoNF = new System.Windows.Forms.Label();
             this.lblClienteNF = new System.Windows.Forms.Label();
@@ -45,6 +47,10 @@
             this.lblExeploQuantidade = new System.Windows.Forms.Label();
             this.lblExemploProdutoCampo = new System.Windows.Forms.Label();
             this.pnNotasFiscais = new System.Windows.Forms.Panel();
+            this.btnLimparFiltro = new System.Windows.Forms.Button();
+            this.btnAplicarFiltro = new System.Windows.Forms.Button();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblLabelCliente = new System.Windows.Forms.Label();
             this.lblLabelDataEmissao = new System.Windows.Forms.Label();
             this.lblLabelParcelas = new System.Windows.Forms.Label();
@@ -52,12 +58,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnVoltarTelaInicial = new System.Windows.Forms.Button();
-            this.lblCpfNF = new System.Windows.Forms.Label();
-            this.lblLabelCpf = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtFiltro = new System.Windows.Forms.TextBox();
-            this.btnAplicarFiltro = new System.Windows.Forms.Button();
-            this.btnLimparFiltro = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnDetalheslProdutos.SuspendLayout();
             this.pnNotasFiscais.SuspendLayout();
@@ -91,6 +91,37 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1020, 363);
             this.panel1.TabIndex = 0;
+            // 
+            // lblCpfNF
+            // 
+            this.lblCpfNF.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCpfNF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
+            this.lblCpfNF.Font = new System.Drawing.Font("Calibri", 13.8F);
+            this.lblCpfNF.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblCpfNF.Location = new System.Drawing.Point(317, 90);
+            this.lblCpfNF.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCpfNF.Name = "lblCpfNF";
+            this.lblCpfNF.Size = new System.Drawing.Size(88, 25);
+            this.lblCpfNF.TabIndex = 140;
+            this.lblCpfNF.Text = "xxxxxx";
+            this.lblCpfNF.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCpfNF.Visible = false;
+            // 
+            // lblLabelCpf
+            // 
+            this.lblLabelCpf.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblLabelCpf.AutoSize = true;
+            this.lblLabelCpf.Font = new System.Drawing.Font("Calibri", 13.8F);
+            this.lblLabelCpf.ForeColor = System.Drawing.Color.White;
+            this.lblLabelCpf.Location = new System.Drawing.Point(226, 90);
+            this.lblLabelCpf.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLabelCpf.Name = "lblLabelCpf";
+            this.lblLabelCpf.Size = new System.Drawing.Size(87, 23);
+            this.lblLabelCpf.TabIndex = 141;
+            this.lblLabelCpf.Text = "CPF/CNPJ:";
+            this.lblLabelCpf.Visible = false;
             // 
             // lblTituloDetalhes
             // 
@@ -316,6 +347,66 @@
             this.pnNotasFiscais.Size = new System.Drawing.Size(290, 360);
             this.pnNotasFiscais.TabIndex = 7;
             // 
+            // btnLimparFiltro
+            // 
+            this.btnLimparFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLimparFiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(145)))), ((int)(((byte)(118)))));
+            this.btnLimparFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimparFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F);
+            this.btnLimparFiltro.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnLimparFiltro.Location = new System.Drawing.Point(150, 79);
+            this.btnLimparFiltro.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btnLimparFiltro.MaximumSize = new System.Drawing.Size(192, 46);
+            this.btnLimparFiltro.MinimumSize = new System.Drawing.Size(74, 27);
+            this.btnLimparFiltro.Name = "btnLimparFiltro";
+            this.btnLimparFiltro.Size = new System.Drawing.Size(134, 46);
+            this.btnLimparFiltro.TabIndex = 42;
+            this.btnLimparFiltro.Text = "Limpar";
+            this.btnLimparFiltro.UseVisualStyleBackColor = false;
+            this.btnLimparFiltro.Click += new System.EventHandler(this.btnLimparFiltro_Click);
+            // 
+            // btnAplicarFiltro
+            // 
+            this.btnAplicarFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAplicarFiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
+            this.btnAplicarFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAplicarFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F);
+            this.btnAplicarFiltro.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAplicarFiltro.Location = new System.Drawing.Point(2, 79);
+            this.btnAplicarFiltro.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btnAplicarFiltro.MaximumSize = new System.Drawing.Size(192, 46);
+            this.btnAplicarFiltro.MinimumSize = new System.Drawing.Size(74, 27);
+            this.btnAplicarFiltro.Name = "btnAplicarFiltro";
+            this.btnAplicarFiltro.Size = new System.Drawing.Size(140, 46);
+            this.btnAplicarFiltro.TabIndex = 42;
+            this.btnAplicarFiltro.Text = "Aplicar";
+            this.btnAplicarFiltro.UseVisualStyleBackColor = false;
+            this.btnAplicarFiltro.Click += new System.EventHandler(this.btnAplicarFiltro_Click);
+            // 
+            // txtFiltro
+            // 
+            this.txtFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtFiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
+            this.txtFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFiltro.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFiltro.ForeColor = System.Drawing.Color.White;
+            this.txtFiltro.Location = new System.Drawing.Point(3, 40);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(281, 29);
+            this.txtFiltro.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(16, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(258, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Buscar CPF/CNPJ ou NF:";
+            // 
             // lblLabelCliente
             // 
             this.lblLabelCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -420,96 +511,6 @@
             this.btnVoltarTelaInicial.Text = "↺  Voltar";
             this.btnVoltarTelaInicial.UseVisualStyleBackColor = false;
             this.btnVoltarTelaInicial.Click += new System.EventHandler(this.btnVoltarTelaInicial_Click);
-            // 
-            // lblCpfNF
-            // 
-            this.lblCpfNF.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCpfNF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
-            this.lblCpfNF.Font = new System.Drawing.Font("Calibri", 13.8F);
-            this.lblCpfNF.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCpfNF.Location = new System.Drawing.Point(317, 90);
-            this.lblCpfNF.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblCpfNF.Name = "lblCpfNF";
-            this.lblCpfNF.Size = new System.Drawing.Size(88, 25);
-            this.lblCpfNF.TabIndex = 140;
-            this.lblCpfNF.Text = "xxxxxx";
-            this.lblCpfNF.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblCpfNF.Visible = false;
-            // 
-            // lblLabelCpf
-            // 
-            this.lblLabelCpf.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblLabelCpf.AutoSize = true;
-            this.lblLabelCpf.Font = new System.Drawing.Font("Calibri", 13.8F);
-            this.lblLabelCpf.ForeColor = System.Drawing.Color.White;
-            this.lblLabelCpf.Location = new System.Drawing.Point(226, 90);
-            this.lblLabelCpf.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblLabelCpf.Name = "lblLabelCpf";
-            this.lblLabelCpf.Size = new System.Drawing.Size(87, 23);
-            this.lblLabelCpf.TabIndex = 141;
-            this.lblLabelCpf.Text = "CPF/CNPJ:";
-            this.lblLabelCpf.Visible = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(16, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(258, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Buscar CPF/CNPJ ou NF:";
-            // 
-            // txtFiltro
-            // 
-            this.txtFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
-            this.txtFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFiltro.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFiltro.ForeColor = System.Drawing.Color.White;
-            this.txtFiltro.Location = new System.Drawing.Point(3, 40);
-            this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(281, 29);
-            this.txtFiltro.TabIndex = 1;
-            // 
-            // btnAplicarFiltro
-            // 
-            this.btnAplicarFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAplicarFiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.btnAplicarFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAplicarFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F);
-            this.btnAplicarFiltro.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnAplicarFiltro.Location = new System.Drawing.Point(2, 79);
-            this.btnAplicarFiltro.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.btnAplicarFiltro.MaximumSize = new System.Drawing.Size(192, 46);
-            this.btnAplicarFiltro.MinimumSize = new System.Drawing.Size(74, 27);
-            this.btnAplicarFiltro.Name = "btnAplicarFiltro";
-            this.btnAplicarFiltro.Size = new System.Drawing.Size(140, 46);
-            this.btnAplicarFiltro.TabIndex = 42;
-            this.btnAplicarFiltro.Text = "Aplicar";
-            this.btnAplicarFiltro.UseVisualStyleBackColor = false;
-            this.btnAplicarFiltro.Click += new System.EventHandler(this.btnAplicarFiltro_Click);
-            // 
-            // btnLimparFiltro
-            // 
-            this.btnLimparFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLimparFiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(145)))), ((int)(((byte)(118)))));
-            this.btnLimparFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimparFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F);
-            this.btnLimparFiltro.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnLimparFiltro.Location = new System.Drawing.Point(150, 79);
-            this.btnLimparFiltro.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.btnLimparFiltro.MaximumSize = new System.Drawing.Size(192, 46);
-            this.btnLimparFiltro.MinimumSize = new System.Drawing.Size(74, 27);
-            this.btnLimparFiltro.Name = "btnLimparFiltro";
-            this.btnLimparFiltro.Size = new System.Drawing.Size(134, 46);
-            this.btnLimparFiltro.TabIndex = 42;
-            this.btnLimparFiltro.Text = "Limpar";
-            this.btnLimparFiltro.UseVisualStyleBackColor = false;
             // 
             // frmNotaFiscal
             // 

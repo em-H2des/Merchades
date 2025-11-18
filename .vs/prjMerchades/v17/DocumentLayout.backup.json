@@ -24,10 +24,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjmerchades\\dados\\dsdadossaida.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}",
       "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\dados\\dsdadossaida.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|c:\\users\\labinfo\\documents\\github\\merchades\\prjmerchades\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,7 +43,7 @@
               "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Saida\\frmNotaFiscal.cs",
               "ToolTip": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Saida\\frmNotaFiscal.cs",
               "RelativeToolTip": "prjMerchades\\Formularios\\Saida\\frmNotaFiscal.cs",
-              "ViewState": "AgIAACEBAAAAAAAAAAAIwDUBAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAEABAAAAAAAAAAAQwFQBAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-18T00:39:29.348Z",
               "EditorCaption": ""
@@ -73,8 +69,7 @@
               "ToolTip": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\prjMerchades.csproj",
               "RelativeToolTip": "prjMerchades\\prjMerchades.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-11-18T00:38:44.088Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-18T00:38:44.088Z"
             },
             {
               "$type": "Document",
@@ -86,8 +81,7 @@
               "RelativeToolTip": "prjMerchades\\Formularios\\Saida\\frmMenu.cs",
               "ViewState": "AgIAAEQAAAAAAAAAAAAWwGQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T12:01:00.992Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-01T12:01:00.992Z"
             },
             {
               "$type": "Document",
@@ -98,8 +92,7 @@
               "ToolTip": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Saida\\frmMenu.cs [Design]",
               "RelativeToolTip": "prjMerchades\\Formularios\\Saida\\frmMenu.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T12:47:27.398Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-29T12:47:27.398Z"
             },
             {
               "$type": "Document",
@@ -110,8 +103,7 @@
               "ToolTip": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Dados\\dsDadosSaida.xsd",
               "RelativeToolTip": "prjMerchades\\Dados\\dsDadosSaida.xsd",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003579|",
-              "WhenOpened": "2025-11-01T11:44:56.45Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-01T11:44:56.45Z"
             }
           ]
         }

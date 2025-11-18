@@ -33,62 +33,7 @@ namespace Merchades
         string connectionString = prjMerchades.Properties.Settings.Default.db_240098_66_A_1_2024ConnectionString;
         private void frmNotaFiscal_Load(object sender, EventArgs e)
         {
-            //Cria a query que será usada para puxar as notas fiscais de venda do banco de dados
-            string query = "SELECT ID_NOTA_VENDA, COD_NOTA_VENDA, CPF_CNPJ_VENDA FROM NOTA_FISCAL_VENDA";
-
-            using (SqlConnection con = new SqlConnection(connectionString))
-            using (SqlCommand cmd = new SqlCommand(query, con))
-            {
-                con.Open();
-                SqlDataReader dr = cmd.ExecuteReader();
-
-                int posY = 130; // posição inicial no panel
-
-                while (dr.Read())
-                {
-                    int id = dr.GetInt32(0);
-                    string cod = dr.GetString(1);
-                    string cpf = dr.GetString(2);
-
-                    // Criar o GroupBox
-                    GroupBox gb = new GroupBox();
-                    gb.Width = pnNotasFiscais.Width-5;
-                    gb.Height = 55;
-                    gb.Left = 0;
-                    gb.Top = posY;
-                    gb.BackColor = Color.FromArgb(58, 147, 116);
-
-                    // Criar Label
-                    Label lbl = new Label();
-                    lbl.Text = $"{cod} - {cpf}";
-                    lbl.ForeColor = Color.White;
-                    lbl.Font = new Font("Microsoft Sans Serif", 12, FontStyle.Regular);
-                    lbl.AutoSize = true;
-                    lbl.Left = 5;
-                    lbl.Top = 20;
-
-                    // Criar Botão
-                    Button btn = new Button();
-                    btn.Text = "Ver venda";
-                    btn.Width = 83;
-                    btn.Height = 27;
-                    btn.Top = 16;
-                    btn.Left = 200;
-                    btn.BackColor = Color.White;
-                    btn.FlatStyle = FlatStyle.Flat;
-                    btn.Click += (sen, ev) => MostrarVenda(id);
-
-                    // Adicionar itens ao GroupBox
-                    gb.Controls.Add(lbl);
-                    gb.Controls.Add(btn);
-
-                    // Adicionar ao Panel
-                    pnNotasFiscais.Controls.Add(gb);
-
-                    // Atualizar posição vertical
-                    posY += gb.Height + 15;
-                }
-            }
+            CarregarNotasFiscaisComFiltro();
         }
 
         //Varíavel global da função que serve para somar o total do valor de todos os itens do pedido
@@ -285,7 +230,114 @@ namespace Merchades
         //======================FUNÇÕES DE FILTRO======================
         private void btnAplicarFiltro_Click(object sender, EventArgs e)
         {
-            
+            CarregarNotasFiscaisComFiltro();
+        }
+
+        private void CarregarNotasFiscaisComFiltro()
+        {
+            // Limpa as notas fiscais atuais
+            LimparNotasFiscaisAnteriores();
+
+            // Obtém o texto do filtro
+            string filtro = txtFiltro.Text.Trim();
+
+            // Constrói a query base
+            string query = "SELECT ID_NOTA_VENDA, COD_NOTA_VENDA, CPF_CNPJ_VENDA FROM NOTA_FISCAL_VENDA";
+
+            // Adiciona o filtro se houver texto
+            if (!string.IsNullOrEmpty(filtro))
+            {
+                query += " WHERE COD_NOTA_VENDA LIKE @filtro OR CPF_CNPJ_VENDA LIKE @filtro";
+            }
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                // Adiciona o parâmetro do filtro se necessário
+                if (!string.IsNullOrEmpty(filtro))
+                {
+                    cmd.Parameters.AddWithValue("@filtro", $"%{filtro}%");
+                }
+
+                con.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                int posY = 130; // posição inicial no panel
+
+                while (dr.Read())
+                {
+                    int id = dr.GetInt32(0);
+                    string cod = dr.GetString(1);
+                    string cpf = dr.GetString(2);
+
+                    // Criar o GroupBox
+                    GroupBox gb = new GroupBox();
+                    gb.Width = pnNotasFiscais.Width - 5;
+                    gb.Height = 55;
+                    gb.Left = 0;
+                    gb.Top = posY;
+                    gb.BackColor = Color.FromArgb(58, 147, 116);
+
+                    // Criar Label
+                    Label lbl = new Label();
+                    lbl.Text = $"{cod} - {cpf}";
+                    lbl.ForeColor = Color.White;
+                    lbl.Font = new Font("Microsoft Sans Serif", 12, FontStyle.Regular);
+                    lbl.AutoSize = true;
+                    lbl.Left = 5;
+                    lbl.Top = 20;
+
+                    // Criar Botão
+                    Button btn = new Button();
+                    btn.Text = "Ver venda";
+                    btn.Width = 83;
+                    btn.Height = 27;
+                    btn.Top = 16;
+                    btn.Left = 200;
+                    btn.BackColor = Color.White;
+                    btn.FlatStyle = FlatStyle.Flat;
+                    btn.Click += (sen, ev) => MostrarVenda(id);
+
+                    // Adicionar itens ao GroupBox
+                    gb.Controls.Add(lbl);
+                    gb.Controls.Add(btn);
+
+                    // Adicionar ao Panel
+                    pnNotasFiscais.Controls.Add(gb);
+
+                    // Atualizar posição vertical
+                    posY += gb.Height + 15;
+                }
+            }
+        }
+
+        private void LimparNotasFiscaisAnteriores()
+        {
+            // Remove todos os GroupBoxes do panel
+            var controlesParaRemover = new List<Control>();
+
+            foreach (Control control in pnNotasFiscais.Controls)
+            {
+                if (control is GroupBox)
+                {
+                    controlesParaRemover.Add(control);
+                }
+            }
+
+            foreach (Control control in controlesParaRemover)
+            {
+                pnNotasFiscais.Controls.Remove(control);
+                control.Dispose();
+            }
+        }
+
+        private void btnLimparFiltro_Click(object sender, EventArgs e)
+        {
+            // Limpa o texto do filtro
+            txtFiltro.Text = "";
+
+            // Recarrega todas as notas fiscais sem filtro
+            CarregarNotasFiscaisComFiltro();
         }
     }
 }
