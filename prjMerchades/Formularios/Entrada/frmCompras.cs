@@ -44,12 +44,13 @@ namespace prjMerchades.Formularios.Entrada
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-            var fornecedorTA = new Dados.daDadosEntradaTableAdapters.FORNECEDORTableAdapter();
-
+            //colocando o table adapter de "Fornecedor" em uma variavel e preenchendo a tabela com os dados
+            var fornecedorTA = new Dados.daDadosEntradaTableAdapters.FORNECEDORTableAdapter(); 
             fornecedorTA.Fill(daDadosEntrada.FORNECEDOR);
 
             int codigoFornecedor =  int.Parse(txtCodFornecedor.Text);
 
+            //verificando se o fornecedor digitado ja existe no banco, se nao existe abre tela de cadastro
             var fornecedor = daDadosEntrada.FORNECEDOR.FindByID_FORNECEDOR(codigoFornecedor);
         
             if (fornecedor == null)
@@ -62,6 +63,7 @@ namespace prjMerchades.Formularios.Entrada
                 return; //intemrrompe a execução
             }
 
+            //table adapters
             var notaFiscalFornecedor = new Dados.daDadosEntradaTableAdapters.NOTA_FISCAL_FORNECEDORTableAdapter();
             var produtos = new Dados.daDadosEntradaTableAdapters.PRODUTOSEntradaTableAdapter();
             var estoque = new Dados.daDadosEntradaTableAdapters.ESTOQUEEntradaTableAdapter();
@@ -86,6 +88,7 @@ namespace prjMerchades.Formularios.Entrada
                 int.Parse(txtCodBarras.Text)
              );
 
+            //recuperando os IDs para dar insert na tabela "Estoque"
             int idProduto = int.Parse(produtos.ultimoId().ToString());
             int idNF = int.Parse(notaFiscalFornecedor.ultimoId().ToString());
             int qtd = (int)numQtd.Value;
@@ -106,8 +109,8 @@ namespace prjMerchades.Formularios.Entrada
         {
             string coluna, filtro, resultado;
 
-            coluna = cmbFiltro.Text;
-            filtro = txtFiltro.Text;
+            coluna = cmbFiltro.Text; //qual coluna da tabela sera aplicado o filtro
+            filtro = txtFiltro.Text; //filtragem
 
             if (coluna == "Fornecedor") 
             {
