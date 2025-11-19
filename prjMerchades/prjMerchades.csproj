@@ -240,6 +240,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorio\relatorioEstoque.rdlc" />
+    <EmbeddedResource Include="Relatorio\RelatorioFornecedores.rdlc" />
     <None Include="Dados\daDadosEntrada.xsc">
       <DependentUpon>daDadosEntrada.xsd</DependentUpon>
     </None>

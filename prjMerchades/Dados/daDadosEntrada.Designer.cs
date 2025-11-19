@@ -24,8 +24,6 @@ namespace prjMerchades.Dados {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class daDadosEntrada : global::System.Data.DataSet {
         
-        private FORNECEDORDataTable tableFORNECEDOR;
-        
         private PRODUTOSEntradaDataTable tablePRODUTOSEntrada;
         
         private ESTOQUEEntradaDataTable tableESTOQUEEntrada;
@@ -38,11 +36,13 @@ namespace prjMerchades.Dados {
         
         private ESTOQUEEntradaNomesDataTable tableESTOQUEEntradaNomes;
         
+        private FORNECEDORDataTable tableFORNECEDOR;
+        
         private global::System.Data.DataRelation relationFK__ESTOQUE__ID_PROD__05C3D225;
         
         private global::System.Data.DataRelation relationFK__ESTOQUE__ID_NOTA__06B7F65E1;
         
-        private global::System.Data.DataRelation relationFK__NOTA_FISC__ID_FO__7C3A67EB1;
+        private global::System.Data.DataRelation relationFK__NOTA_FISC__ID_FO__0C50D423;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -72,9 +72,6 @@ namespace prjMerchades.Dados {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["FORNECEDOR"] != null)) {
-                    base.Tables.Add(new FORNECEDORDataTable(ds.Tables["FORNECEDOR"]));
-                }
                 if ((ds.Tables["PRODUTOSEntrada"] != null)) {
                     base.Tables.Add(new PRODUTOSEntradaDataTable(ds.Tables["PRODUTOSEntrada"]));
                 }
@@ -93,6 +90,9 @@ namespace prjMerchades.Dados {
                 if ((ds.Tables["ESTOQUEEntradaNomes"] != null)) {
                     base.Tables.Add(new ESTOQUEEntradaNomesDataTable(ds.Tables["ESTOQUEEntradaNomes"]));
                 }
+                if ((ds.Tables["FORNECEDOR"] != null)) {
+                    base.Tables.Add(new FORNECEDORDataTable(ds.Tables["FORNECEDOR"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -109,16 +109,6 @@ namespace prjMerchades.Dados {
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
             base.Tables.CollectionChanged += schemaChangedHandler;
             this.Relations.CollectionChanged += schemaChangedHandler;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public FORNECEDORDataTable FORNECEDOR {
-            get {
-                return this.tableFORNECEDOR;
-            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -178,6 +168,16 @@ namespace prjMerchades.Dados {
         public ESTOQUEEntradaNomesDataTable ESTOQUEEntradaNomes {
             get {
                 return this.tableESTOQUEEntradaNomes;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public FORNECEDORDataTable FORNECEDOR {
+            get {
+                return this.tableFORNECEDOR;
             }
         }
         
@@ -248,9 +248,6 @@ namespace prjMerchades.Dados {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["FORNECEDOR"] != null)) {
-                    base.Tables.Add(new FORNECEDORDataTable(ds.Tables["FORNECEDOR"]));
-                }
                 if ((ds.Tables["PRODUTOSEntrada"] != null)) {
                     base.Tables.Add(new PRODUTOSEntradaDataTable(ds.Tables["PRODUTOSEntrada"]));
                 }
@@ -268,6 +265,9 @@ namespace prjMerchades.Dados {
                 }
                 if ((ds.Tables["ESTOQUEEntradaNomes"] != null)) {
                     base.Tables.Add(new ESTOQUEEntradaNomesDataTable(ds.Tables["ESTOQUEEntradaNomes"]));
+                }
+                if ((ds.Tables["FORNECEDOR"] != null)) {
+                    base.Tables.Add(new FORNECEDORDataTable(ds.Tables["FORNECEDOR"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -302,12 +302,6 @@ namespace prjMerchades.Dados {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableFORNECEDOR = ((FORNECEDORDataTable)(base.Tables["FORNECEDOR"]));
-            if ((initTable == true)) {
-                if ((this.tableFORNECEDOR != null)) {
-                    this.tableFORNECEDOR.InitVars();
-                }
-            }
             this.tablePRODUTOSEntrada = ((PRODUTOSEntradaDataTable)(base.Tables["PRODUTOSEntrada"]));
             if ((initTable == true)) {
                 if ((this.tablePRODUTOSEntrada != null)) {
@@ -344,9 +338,15 @@ namespace prjMerchades.Dados {
                     this.tableESTOQUEEntradaNomes.InitVars();
                 }
             }
+            this.tableFORNECEDOR = ((FORNECEDORDataTable)(base.Tables["FORNECEDOR"]));
+            if ((initTable == true)) {
+                if ((this.tableFORNECEDOR != null)) {
+                    this.tableFORNECEDOR.InitVars();
+                }
+            }
             this.relationFK__ESTOQUE__ID_PROD__05C3D225 = this.Relations["FK__ESTOQUE__ID_PROD__05C3D225"];
             this.relationFK__ESTOQUE__ID_NOTA__06B7F65E1 = this.Relations["FK__ESTOQUE__ID_NOTA__06B7F65E1"];
-            this.relationFK__NOTA_FISC__ID_FO__7C3A67EB1 = this.Relations["FK__NOTA_FISC__ID_FO__7C3A67EB1"];
+            this.relationFK__NOTA_FISC__ID_FO__0C50D423 = this.Relations["FK__NOTA_FISC__ID_FO__0C50D423"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -357,8 +357,6 @@ namespace prjMerchades.Dados {
             this.Namespace = "http://tempuri.org/daDadosEntrada.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableFORNECEDOR = new FORNECEDORDataTable();
-            base.Tables.Add(this.tableFORNECEDOR);
             this.tablePRODUTOSEntrada = new PRODUTOSEntradaDataTable();
             base.Tables.Add(this.tablePRODUTOSEntrada);
             this.tableESTOQUEEntrada = new ESTOQUEEntradaDataTable();
@@ -371,6 +369,8 @@ namespace prjMerchades.Dados {
             base.Tables.Add(this.tablecomprasAntigas);
             this.tableESTOQUEEntradaNomes = new ESTOQUEEntradaNomesDataTable();
             base.Tables.Add(this.tableESTOQUEEntradaNomes);
+            this.tableFORNECEDOR = new FORNECEDORDataTable();
+            base.Tables.Add(this.tableFORNECEDOR);
             this.relationFK__ESTOQUE__ID_PROD__05C3D225 = new global::System.Data.DataRelation("FK__ESTOQUE__ID_PROD__05C3D225", new global::System.Data.DataColumn[] {
                         this.tablePRODUTOSEntrada.ID_PRODUTOSColumn}, new global::System.Data.DataColumn[] {
                         this.tableESTOQUEEntrada.ID_PRODUTOSColumn}, false);
@@ -379,16 +379,10 @@ namespace prjMerchades.Dados {
                         this.tableNOTA_FISCAL_FORNECEDOR.ID_NOTA_FISCAL_FORNECColumn}, new global::System.Data.DataColumn[] {
                         this.tableESTOQUEEntrada.ID_NOTA_FISCAL_FORNECColumn}, false);
             this.Relations.Add(this.relationFK__ESTOQUE__ID_NOTA__06B7F65E1);
-            this.relationFK__NOTA_FISC__ID_FO__7C3A67EB1 = new global::System.Data.DataRelation("FK__NOTA_FISC__ID_FO__7C3A67EB1", new global::System.Data.DataColumn[] {
+            this.relationFK__NOTA_FISC__ID_FO__0C50D423 = new global::System.Data.DataRelation("FK__NOTA_FISC__ID_FO__0C50D423", new global::System.Data.DataColumn[] {
                         this.tableFORNECEDOR.ID_FORNECEDORColumn}, new global::System.Data.DataColumn[] {
                         this.tableNOTA_FISCAL_FORNECEDOR.ID_FORNECEDORColumn}, false);
-            this.Relations.Add(this.relationFK__NOTA_FISC__ID_FO__7C3A67EB1);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeFORNECEDOR() {
-            return false;
+            this.Relations.Add(this.relationFK__NOTA_FISC__ID_FO__0C50D423);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -424,6 +418,12 @@ namespace prjMerchades.Dados {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private bool ShouldSerializeESTOQUEEntradaNomes() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeFORNECEDOR() {
             return false;
         }
         
@@ -483,9 +483,6 @@ namespace prjMerchades.Dados {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void FORNECEDORRowChangeEventHandler(object sender, FORNECEDORRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void PRODUTOSEntradaRowChangeEventHandler(object sender, PRODUTOSEntradaRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -503,357 +500,8 @@ namespace prjMerchades.Dados {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void ESTOQUEEntradaNomesRowChangeEventHandler(object sender, ESTOQUEEntradaNomesRowChangeEvent e);
         
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class FORNECEDORDataTable : global::System.Data.TypedTableBase<FORNECEDORRow> {
-            
-            private global::System.Data.DataColumn columnID_FORNECEDOR;
-            
-            private global::System.Data.DataColumn columnNOME_FORNECEDOR;
-            
-            private global::System.Data.DataColumn columnTELEFONE_FORNECEDOR;
-            
-            private global::System.Data.DataColumn columnEMAIL_FORNECEDOR;
-            
-            private global::System.Data.DataColumn columnESTADO_FORNECEDOR;
-            
-            private global::System.Data.DataColumn columnCEP_FORNECEDOR;
-            
-            private global::System.Data.DataColumn columnCNPJ_FORNECEDOR;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public FORNECEDORDataTable() {
-                this.TableName = "FORNECEDOR";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal FORNECEDORDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected FORNECEDORDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ID_FORNECEDORColumn {
-                get {
-                    return this.columnID_FORNECEDOR;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn NOME_FORNECEDORColumn {
-                get {
-                    return this.columnNOME_FORNECEDOR;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn TELEFONE_FORNECEDORColumn {
-                get {
-                    return this.columnTELEFONE_FORNECEDOR;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn EMAIL_FORNECEDORColumn {
-                get {
-                    return this.columnEMAIL_FORNECEDOR;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ESTADO_FORNECEDORColumn {
-                get {
-                    return this.columnESTADO_FORNECEDOR;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn CEP_FORNECEDORColumn {
-                get {
-                    return this.columnCEP_FORNECEDOR;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn CNPJ_FORNECEDORColumn {
-                get {
-                    return this.columnCNPJ_FORNECEDOR;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public FORNECEDORRow this[int index] {
-                get {
-                    return ((FORNECEDORRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event FORNECEDORRowChangeEventHandler FORNECEDORRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event FORNECEDORRowChangeEventHandler FORNECEDORRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event FORNECEDORRowChangeEventHandler FORNECEDORRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event FORNECEDORRowChangeEventHandler FORNECEDORRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddFORNECEDORRow(FORNECEDORRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public FORNECEDORRow AddFORNECEDORRow(string NOME_FORNECEDOR, string TELEFONE_FORNECEDOR, string EMAIL_FORNECEDOR, string ESTADO_FORNECEDOR, string CEP_FORNECEDOR, string CNPJ_FORNECEDOR) {
-                FORNECEDORRow rowFORNECEDORRow = ((FORNECEDORRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        NOME_FORNECEDOR,
-                        TELEFONE_FORNECEDOR,
-                        EMAIL_FORNECEDOR,
-                        ESTADO_FORNECEDOR,
-                        CEP_FORNECEDOR,
-                        CNPJ_FORNECEDOR};
-                rowFORNECEDORRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowFORNECEDORRow);
-                return rowFORNECEDORRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public FORNECEDORRow FindByID_FORNECEDOR(int ID_FORNECEDOR) {
-                return ((FORNECEDORRow)(this.Rows.Find(new object[] {
-                            ID_FORNECEDOR})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                FORNECEDORDataTable cln = ((FORNECEDORDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new FORNECEDORDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal void InitVars() {
-                this.columnID_FORNECEDOR = base.Columns["ID_FORNECEDOR"];
-                this.columnNOME_FORNECEDOR = base.Columns["NOME_FORNECEDOR"];
-                this.columnTELEFONE_FORNECEDOR = base.Columns["TELEFONE_FORNECEDOR"];
-                this.columnEMAIL_FORNECEDOR = base.Columns["EMAIL_FORNECEDOR"];
-                this.columnESTADO_FORNECEDOR = base.Columns["ESTADO_FORNECEDOR"];
-                this.columnCEP_FORNECEDOR = base.Columns["CEP_FORNECEDOR"];
-                this.columnCNPJ_FORNECEDOR = base.Columns["CNPJ_FORNECEDOR"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            private void InitClass() {
-                this.columnID_FORNECEDOR = new global::System.Data.DataColumn("ID_FORNECEDOR", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID_FORNECEDOR);
-                this.columnNOME_FORNECEDOR = new global::System.Data.DataColumn("NOME_FORNECEDOR", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNOME_FORNECEDOR);
-                this.columnTELEFONE_FORNECEDOR = new global::System.Data.DataColumn("TELEFONE_FORNECEDOR", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTELEFONE_FORNECEDOR);
-                this.columnEMAIL_FORNECEDOR = new global::System.Data.DataColumn("EMAIL_FORNECEDOR", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEMAIL_FORNECEDOR);
-                this.columnESTADO_FORNECEDOR = new global::System.Data.DataColumn("ESTADO_FORNECEDOR", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnESTADO_FORNECEDOR);
-                this.columnCEP_FORNECEDOR = new global::System.Data.DataColumn("CEP_FORNECEDOR", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCEP_FORNECEDOR);
-                this.columnCNPJ_FORNECEDOR = new global::System.Data.DataColumn("CNPJ_FORNECEDOR", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCNPJ_FORNECEDOR);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID_FORNECEDOR}, true));
-                this.columnID_FORNECEDOR.AutoIncrement = true;
-                this.columnID_FORNECEDOR.AutoIncrementSeed = -1;
-                this.columnID_FORNECEDOR.AutoIncrementStep = -1;
-                this.columnID_FORNECEDOR.AllowDBNull = false;
-                this.columnID_FORNECEDOR.ReadOnly = true;
-                this.columnID_FORNECEDOR.Unique = true;
-                this.columnNOME_FORNECEDOR.MaxLength = 50;
-                this.columnTELEFONE_FORNECEDOR.MaxLength = 15;
-                this.columnEMAIL_FORNECEDOR.MaxLength = 180;
-                this.columnESTADO_FORNECEDOR.MaxLength = 2;
-                this.columnCEP_FORNECEDOR.MaxLength = 8;
-                this.columnCNPJ_FORNECEDOR.MaxLength = 14;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public FORNECEDORRow NewFORNECEDORRow() {
-                return ((FORNECEDORRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new FORNECEDORRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(FORNECEDORRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.FORNECEDORRowChanged != null)) {
-                    this.FORNECEDORRowChanged(this, new FORNECEDORRowChangeEvent(((FORNECEDORRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.FORNECEDORRowChanging != null)) {
-                    this.FORNECEDORRowChanging(this, new FORNECEDORRowChangeEvent(((FORNECEDORRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.FORNECEDORRowDeleted != null)) {
-                    this.FORNECEDORRowDeleted(this, new FORNECEDORRowChangeEvent(((FORNECEDORRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.FORNECEDORRowDeleting != null)) {
-                    this.FORNECEDORRowDeleting(this, new FORNECEDORRowChangeEvent(((FORNECEDORRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveFORNECEDORRow(FORNECEDORRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                daDadosEntrada ds = new daDadosEntrada();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "FORNECEDORDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void FORNECEDORRowChangeEventHandler(object sender, FORNECEDORRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1647,7 +1295,7 @@ namespace prjMerchades.Dados {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public NOTA_FISCAL_FORNECEDORRow AddNOTA_FISCAL_FORNECEDORRow(System.DateTime DATA_EMISSAO, decimal VALOR_COMPRA, string COD_NOTA_FORN, string OBSERVACAO, FORNECEDORRow parentFORNECEDORRowByFK__NOTA_FISC__ID_FO__7C3A67EB1, string PAGO) {
+            public NOTA_FISCAL_FORNECEDORRow AddNOTA_FISCAL_FORNECEDORRow(System.DateTime DATA_EMISSAO, decimal VALOR_COMPRA, string COD_NOTA_FORN, string OBSERVACAO, FORNECEDORRow parentFORNECEDORRowByFK__NOTA_FISC__ID_FO__0C50D423, string PAGO) {
                 NOTA_FISCAL_FORNECEDORRow rowNOTA_FISCAL_FORNECEDORRow = ((NOTA_FISCAL_FORNECEDORRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1657,8 +1305,8 @@ namespace prjMerchades.Dados {
                         OBSERVACAO,
                         null,
                         PAGO};
-                if ((parentFORNECEDORRowByFK__NOTA_FISC__ID_FO__7C3A67EB1 != null)) {
-                    columnValuesArray[5] = parentFORNECEDORRowByFK__NOTA_FISC__ID_FO__7C3A67EB1[0];
+                if ((parentFORNECEDORRowByFK__NOTA_FISC__ID_FO__0C50D423 != null)) {
+                    columnValuesArray[5] = parentFORNECEDORRowByFK__NOTA_FISC__ID_FO__0C50D423[0];
                 }
                 rowNOTA_FISCAL_FORNECEDORRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowNOTA_FISCAL_FORNECEDORRow);
@@ -2799,207 +2447,354 @@ namespace prjMerchades.Dados {
         }
         
         /// <summary>
-        ///Represents strongly named DataRow class.
+        ///Represents the strongly named DataTable class.
         ///</summary>
-        public partial class FORNECEDORRow : global::System.Data.DataRow {
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class FORNECEDORDataTable : global::System.Data.TypedTableBase<FORNECEDORRow> {
             
-            private FORNECEDORDataTable tableFORNECEDOR;
+            private global::System.Data.DataColumn columnID_FORNECEDOR;
+            
+            private global::System.Data.DataColumn columnNOME_FORNECEDOR;
+            
+            private global::System.Data.DataColumn columnTELEFONE_FORNECEDOR;
+            
+            private global::System.Data.DataColumn columnEMAIL_FORNECEDOR;
+            
+            private global::System.Data.DataColumn columnESTADO_FORNECEDOR;
+            
+            private global::System.Data.DataColumn columnCEP_FORNECEDOR;
+            
+            private global::System.Data.DataColumn columnCNPJ_FORNECEDOR;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal FORNECEDORRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableFORNECEDOR = ((FORNECEDORDataTable)(this.Table));
+            public FORNECEDORDataTable() {
+                this.TableName = "FORNECEDOR";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int ID_FORNECEDOR {
-                get {
-                    return ((int)(this[this.tableFORNECEDOR.ID_FORNECEDORColumn]));
+            internal FORNECEDORDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
                 }
-                set {
-                    this[this.tableFORNECEDOR.ID_FORNECEDORColumn] = value;
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected FORNECEDORDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ID_FORNECEDORColumn {
+                get {
+                    return this.columnID_FORNECEDOR;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string NOME_FORNECEDOR {
+            public global::System.Data.DataColumn NOME_FORNECEDORColumn {
                 get {
+                    return this.columnNOME_FORNECEDOR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TELEFONE_FORNECEDORColumn {
+                get {
+                    return this.columnTELEFONE_FORNECEDOR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn EMAIL_FORNECEDORColumn {
+                get {
+                    return this.columnEMAIL_FORNECEDOR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ESTADO_FORNECEDORColumn {
+                get {
+                    return this.columnESTADO_FORNECEDOR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CEP_FORNECEDORColumn {
+                get {
+                    return this.columnCEP_FORNECEDOR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CNPJ_FORNECEDORColumn {
+                get {
+                    return this.columnCNPJ_FORNECEDOR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public FORNECEDORRow this[int index] {
+                get {
+                    return ((FORNECEDORRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event FORNECEDORRowChangeEventHandler FORNECEDORRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event FORNECEDORRowChangeEventHandler FORNECEDORRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event FORNECEDORRowChangeEventHandler FORNECEDORRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event FORNECEDORRowChangeEventHandler FORNECEDORRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddFORNECEDORRow(FORNECEDORRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public FORNECEDORRow AddFORNECEDORRow(string NOME_FORNECEDOR, string TELEFONE_FORNECEDOR, string EMAIL_FORNECEDOR, string ESTADO_FORNECEDOR, string CEP_FORNECEDOR, string CNPJ_FORNECEDOR) {
+                FORNECEDORRow rowFORNECEDORRow = ((FORNECEDORRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        NOME_FORNECEDOR,
+                        TELEFONE_FORNECEDOR,
+                        EMAIL_FORNECEDOR,
+                        ESTADO_FORNECEDOR,
+                        CEP_FORNECEDOR,
+                        CNPJ_FORNECEDOR};
+                rowFORNECEDORRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowFORNECEDORRow);
+                return rowFORNECEDORRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public FORNECEDORRow FindByID_FORNECEDOR(int ID_FORNECEDOR) {
+                return ((FORNECEDORRow)(this.Rows.Find(new object[] {
+                            ID_FORNECEDOR})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                FORNECEDORDataTable cln = ((FORNECEDORDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new FORNECEDORDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnID_FORNECEDOR = base.Columns["ID_FORNECEDOR"];
+                this.columnNOME_FORNECEDOR = base.Columns["NOME_FORNECEDOR"];
+                this.columnTELEFONE_FORNECEDOR = base.Columns["TELEFONE_FORNECEDOR"];
+                this.columnEMAIL_FORNECEDOR = base.Columns["EMAIL_FORNECEDOR"];
+                this.columnESTADO_FORNECEDOR = base.Columns["ESTADO_FORNECEDOR"];
+                this.columnCEP_FORNECEDOR = base.Columns["CEP_FORNECEDOR"];
+                this.columnCNPJ_FORNECEDOR = base.Columns["CNPJ_FORNECEDOR"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnID_FORNECEDOR = new global::System.Data.DataColumn("ID_FORNECEDOR", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_FORNECEDOR);
+                this.columnNOME_FORNECEDOR = new global::System.Data.DataColumn("NOME_FORNECEDOR", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOME_FORNECEDOR);
+                this.columnTELEFONE_FORNECEDOR = new global::System.Data.DataColumn("TELEFONE_FORNECEDOR", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTELEFONE_FORNECEDOR);
+                this.columnEMAIL_FORNECEDOR = new global::System.Data.DataColumn("EMAIL_FORNECEDOR", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEMAIL_FORNECEDOR);
+                this.columnESTADO_FORNECEDOR = new global::System.Data.DataColumn("ESTADO_FORNECEDOR", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnESTADO_FORNECEDOR);
+                this.columnCEP_FORNECEDOR = new global::System.Data.DataColumn("CEP_FORNECEDOR", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCEP_FORNECEDOR);
+                this.columnCNPJ_FORNECEDOR = new global::System.Data.DataColumn("CNPJ_FORNECEDOR", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCNPJ_FORNECEDOR);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID_FORNECEDOR}, true));
+                this.columnID_FORNECEDOR.AutoIncrement = true;
+                this.columnID_FORNECEDOR.AutoIncrementSeed = -1;
+                this.columnID_FORNECEDOR.AutoIncrementStep = -1;
+                this.columnID_FORNECEDOR.AllowDBNull = false;
+                this.columnID_FORNECEDOR.ReadOnly = true;
+                this.columnID_FORNECEDOR.Unique = true;
+                this.columnNOME_FORNECEDOR.MaxLength = 50;
+                this.columnTELEFONE_FORNECEDOR.MaxLength = 15;
+                this.columnEMAIL_FORNECEDOR.MaxLength = 180;
+                this.columnESTADO_FORNECEDOR.MaxLength = 2;
+                this.columnCEP_FORNECEDOR.MaxLength = 8;
+                this.columnCNPJ_FORNECEDOR.MaxLength = 14;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public FORNECEDORRow NewFORNECEDORRow() {
+                return ((FORNECEDORRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new FORNECEDORRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(FORNECEDORRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.FORNECEDORRowChanged != null)) {
+                    this.FORNECEDORRowChanged(this, new FORNECEDORRowChangeEvent(((FORNECEDORRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.FORNECEDORRowChanging != null)) {
+                    this.FORNECEDORRowChanging(this, new FORNECEDORRowChangeEvent(((FORNECEDORRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.FORNECEDORRowDeleted != null)) {
+                    this.FORNECEDORRowDeleted(this, new FORNECEDORRowChangeEvent(((FORNECEDORRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.FORNECEDORRowDeleting != null)) {
+                    this.FORNECEDORRowDeleting(this, new FORNECEDORRowChangeEvent(((FORNECEDORRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveFORNECEDORRow(FORNECEDORRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                daDadosEntrada ds = new daDadosEntrada();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "FORNECEDORDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
                     try {
-                        return ((string)(this[this.tableFORNECEDOR.NOME_FORNECEDORColumn]));
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'NOME_FORNECEDOR\' na tabela \'FORNECEDOR\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableFORNECEDOR.NOME_FORNECEDORColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string TELEFONE_FORNECEDOR {
-                get {
-                    try {
-                        return ((string)(this[this.tableFORNECEDOR.TELEFONE_FORNECEDORColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'TELEFONE_FORNECEDOR\' na tabela \'FORNECEDOR\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableFORNECEDOR.TELEFONE_FORNECEDORColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string EMAIL_FORNECEDOR {
-                get {
-                    try {
-                        return ((string)(this[this.tableFORNECEDOR.EMAIL_FORNECEDORColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'EMAIL_FORNECEDOR\' na tabela \'FORNECEDOR\' é DBNull.", e);
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
                     }
                 }
-                set {
-                    this[this.tableFORNECEDOR.EMAIL_FORNECEDORColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string ESTADO_FORNECEDOR {
-                get {
-                    try {
-                        return ((string)(this[this.tableFORNECEDOR.ESTADO_FORNECEDORColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'ESTADO_FORNECEDOR\' na tabela \'FORNECEDOR\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableFORNECEDOR.ESTADO_FORNECEDORColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string CEP_FORNECEDOR {
-                get {
-                    try {
-                        return ((string)(this[this.tableFORNECEDOR.CEP_FORNECEDORColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'CEP_FORNECEDOR\' na tabela \'FORNECEDOR\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableFORNECEDOR.CEP_FORNECEDORColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string CNPJ_FORNECEDOR {
-                get {
-                    try {
-                        return ((string)(this[this.tableFORNECEDOR.CNPJ_FORNECEDORColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'CNPJ_FORNECEDOR\' na tabela \'FORNECEDOR\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableFORNECEDOR.CNPJ_FORNECEDORColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsNOME_FORNECEDORNull() {
-                return this.IsNull(this.tableFORNECEDOR.NOME_FORNECEDORColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetNOME_FORNECEDORNull() {
-                this[this.tableFORNECEDOR.NOME_FORNECEDORColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsTELEFONE_FORNECEDORNull() {
-                return this.IsNull(this.tableFORNECEDOR.TELEFONE_FORNECEDORColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetTELEFONE_FORNECEDORNull() {
-                this[this.tableFORNECEDOR.TELEFONE_FORNECEDORColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsEMAIL_FORNECEDORNull() {
-                return this.IsNull(this.tableFORNECEDOR.EMAIL_FORNECEDORColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetEMAIL_FORNECEDORNull() {
-                this[this.tableFORNECEDOR.EMAIL_FORNECEDORColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsESTADO_FORNECEDORNull() {
-                return this.IsNull(this.tableFORNECEDOR.ESTADO_FORNECEDORColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetESTADO_FORNECEDORNull() {
-                this[this.tableFORNECEDOR.ESTADO_FORNECEDORColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsCEP_FORNECEDORNull() {
-                return this.IsNull(this.tableFORNECEDOR.CEP_FORNECEDORColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetCEP_FORNECEDORNull() {
-                this[this.tableFORNECEDOR.CEP_FORNECEDORColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsCNPJ_FORNECEDORNull() {
-                return this.IsNull(this.tableFORNECEDOR.CNPJ_FORNECEDORColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetCNPJ_FORNECEDORNull() {
-                this[this.tableFORNECEDOR.CNPJ_FORNECEDORColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public NOTA_FISCAL_FORNECEDORRow[] GetNOTA_FISCAL_FORNECEDORRows() {
-                if ((this.Table.ChildRelations["FK__NOTA_FISC__ID_FO__7C3A67EB1"] == null)) {
-                    return new NOTA_FISCAL_FORNECEDORRow[0];
-                }
-                else {
-                    return ((NOTA_FISCAL_FORNECEDORRow[])(base.GetChildRows(this.Table.ChildRelations["FK__NOTA_FISC__ID_FO__7C3A67EB1"])));
-                }
+                xs.Add(dsSchema);
+                return type;
             }
         }
         
@@ -3437,10 +3232,10 @@ namespace prjMerchades.Dados {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public FORNECEDORRow FORNECEDORRow {
                 get {
-                    return ((FORNECEDORRow)(this.GetParentRow(this.Table.ParentRelations["FK__NOTA_FISC__ID_FO__7C3A67EB1"])));
+                    return ((FORNECEDORRow)(this.GetParentRow(this.Table.ParentRelations["FK__NOTA_FISC__ID_FO__0C50D423"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__NOTA_FISC__ID_FO__7C3A67EB1"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__NOTA_FISC__ID_FO__0C50D423"]);
                 }
             }
             
@@ -3915,35 +3710,206 @@ namespace prjMerchades.Dados {
         }
         
         /// <summary>
-        ///Row event argument class
+        ///Represents strongly named DataRow class.
         ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class FORNECEDORRowChangeEvent : global::System.EventArgs {
+        public partial class FORNECEDORRow : global::System.Data.DataRow {
             
-            private FORNECEDORRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
+            private FORNECEDORDataTable tableFORNECEDOR;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public FORNECEDORRowChangeEvent(FORNECEDORRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
+            internal FORNECEDORRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableFORNECEDOR = ((FORNECEDORDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public FORNECEDORRow Row {
+            public int ID_FORNECEDOR {
                 get {
-                    return this.eventRow;
+                    return ((int)(this[this.tableFORNECEDOR.ID_FORNECEDORColumn]));
+                }
+                set {
+                    this[this.tableFORNECEDOR.ID_FORNECEDORColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataRowAction Action {
+            public string NOME_FORNECEDOR {
                 get {
-                    return this.eventAction;
+                    try {
+                        return ((string)(this[this.tableFORNECEDOR.NOME_FORNECEDORColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'NOME_FORNECEDOR\' na tabela \'FORNECEDOR\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFORNECEDOR.NOME_FORNECEDORColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string TELEFONE_FORNECEDOR {
+                get {
+                    try {
+                        return ((string)(this[this.tableFORNECEDOR.TELEFONE_FORNECEDORColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'TELEFONE_FORNECEDOR\' na tabela \'FORNECEDOR\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFORNECEDOR.TELEFONE_FORNECEDORColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string EMAIL_FORNECEDOR {
+                get {
+                    try {
+                        return ((string)(this[this.tableFORNECEDOR.EMAIL_FORNECEDORColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'EMAIL_FORNECEDOR\' na tabela \'FORNECEDOR\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFORNECEDOR.EMAIL_FORNECEDORColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ESTADO_FORNECEDOR {
+                get {
+                    try {
+                        return ((string)(this[this.tableFORNECEDOR.ESTADO_FORNECEDORColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'ESTADO_FORNECEDOR\' na tabela \'FORNECEDOR\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFORNECEDOR.ESTADO_FORNECEDORColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CEP_FORNECEDOR {
+                get {
+                    try {
+                        return ((string)(this[this.tableFORNECEDOR.CEP_FORNECEDORColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'CEP_FORNECEDOR\' na tabela \'FORNECEDOR\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFORNECEDOR.CEP_FORNECEDORColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CNPJ_FORNECEDOR {
+                get {
+                    try {
+                        return ((string)(this[this.tableFORNECEDOR.CNPJ_FORNECEDORColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'CNPJ_FORNECEDOR\' na tabela \'FORNECEDOR\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFORNECEDOR.CNPJ_FORNECEDORColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsNOME_FORNECEDORNull() {
+                return this.IsNull(this.tableFORNECEDOR.NOME_FORNECEDORColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetNOME_FORNECEDORNull() {
+                this[this.tableFORNECEDOR.NOME_FORNECEDORColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTELEFONE_FORNECEDORNull() {
+                return this.IsNull(this.tableFORNECEDOR.TELEFONE_FORNECEDORColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTELEFONE_FORNECEDORNull() {
+                this[this.tableFORNECEDOR.TELEFONE_FORNECEDORColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsEMAIL_FORNECEDORNull() {
+                return this.IsNull(this.tableFORNECEDOR.EMAIL_FORNECEDORColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetEMAIL_FORNECEDORNull() {
+                this[this.tableFORNECEDOR.EMAIL_FORNECEDORColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsESTADO_FORNECEDORNull() {
+                return this.IsNull(this.tableFORNECEDOR.ESTADO_FORNECEDORColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetESTADO_FORNECEDORNull() {
+                this[this.tableFORNECEDOR.ESTADO_FORNECEDORColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCEP_FORNECEDORNull() {
+                return this.IsNull(this.tableFORNECEDOR.CEP_FORNECEDORColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCEP_FORNECEDORNull() {
+                this[this.tableFORNECEDOR.CEP_FORNECEDORColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCNPJ_FORNECEDORNull() {
+                return this.IsNull(this.tableFORNECEDOR.CNPJ_FORNECEDORColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCNPJ_FORNECEDORNull() {
+                this[this.tableFORNECEDOR.CNPJ_FORNECEDORColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public NOTA_FISCAL_FORNECEDORRow[] GetNOTA_FISCAL_FORNECEDORRows() {
+                if ((this.Table.ChildRelations["FK__NOTA_FISC__ID_FO__0C50D423"] == null)) {
+                    return new NOTA_FISCAL_FORNECEDORRow[0];
+                }
+                else {
+                    return ((NOTA_FISCAL_FORNECEDORRow[])(base.GetChildRows(this.Table.ChildRelations["FK__NOTA_FISC__ID_FO__0C50D423"])));
                 }
             }
         }
@@ -4151,509 +4117,44 @@ namespace prjMerchades.Dados {
                 }
             }
         }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class FORNECEDORRowChangeEvent : global::System.EventArgs {
+            
+            private FORNECEDORRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public FORNECEDORRowChangeEvent(FORNECEDORRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public FORNECEDORRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
     }
 }
 namespace prjMerchades.Dados.daDadosEntradaTableAdapters {
     
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class FORNECEDORTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public FORNECEDORTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "FORNECEDOR";
-            tableMapping.ColumnMappings.Add("ID_FORNECEDOR", "ID_FORNECEDOR");
-            tableMapping.ColumnMappings.Add("NOME_FORNECEDOR", "NOME_FORNECEDOR");
-            tableMapping.ColumnMappings.Add("TELEFONE_FORNECEDOR", "TELEFONE_FORNECEDOR");
-            tableMapping.ColumnMappings.Add("EMAIL_FORNECEDOR", "EMAIL_FORNECEDOR");
-            tableMapping.ColumnMappings.Add("ESTADO_FORNECEDOR", "ESTADO_FORNECEDOR");
-            tableMapping.ColumnMappings.Add("CEP_FORNECEDOR", "CEP_FORNECEDOR");
-            tableMapping.ColumnMappings.Add("CNPJ_FORNECEDOR", "CNPJ_FORNECEDOR");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [FORNECEDOR] WHERE (([ID_FORNECEDOR] = @Original_ID_FORNECEDOR) AND ((@IsNull_NOME_FORNECEDOR = 1 AND [NOME_FORNECEDOR] IS NULL) OR ([NOME_FORNECEDOR] = @Original_NOME_FORNECEDOR)) AND ((@IsNull_TELEFONE_FORNECEDOR = 1 AND [TELEFONE_FORNECEDOR] IS NULL) OR ([TELEFONE_FORNECEDOR] = @Original_TELEFONE_FORNECEDOR)) AND ((@IsNull_EMAIL_FORNECEDOR = 1 AND [EMAIL_FORNECEDOR] IS NULL) OR ([EMAIL_FORNECEDOR] = @Original_EMAIL_FORNECEDOR)) AND ((@IsNull_ESTADO_FORNECEDOR = 1 AND [ESTADO_FORNECEDOR] IS NULL) OR ([ESTADO_FORNECEDOR] = @Original_ESTADO_FORNECEDOR)) AND ((@IsNull_CEP_FORNECEDOR = 1 AND [CEP_FORNECEDOR] IS NULL) OR ([CEP_FORNECEDOR] = @Original_CEP_FORNECEDOR)) AND ((@IsNull_CNPJ_FORNECEDOR = 1 AND [CNPJ_FORNECEDOR] IS NULL) OR ([CNPJ_FORNECEDOR] = @Original_CNPJ_FORNECEDOR)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NOME_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOME_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NOME_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOME_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TELEFONE_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TELEFONE_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TELEFONE_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TELEFONE_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EMAIL_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMAIL_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EMAIL_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMAIL_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ESTADO_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESTADO_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ESTADO_FORNECEDOR", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESTADO_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CEP_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CEP_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CEP_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CEP_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CNPJ_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CNPJ_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CNPJ_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CNPJ_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [FORNECEDOR] ([NOME_FORNECEDOR], [TELEFONE_FORNECEDOR], [EMAIL_FORNECEDOR], [ESTADO_FORNECEDOR], [CEP_FORNECEDOR], [CNPJ_FORNECEDOR]) VALUES (@NOME_FORNECEDOR, @TELEFONE_FORNECEDOR, @EMAIL_FORNECEDOR, @ESTADO_FORNECEDOR, @CEP_FORNECEDOR, @CNPJ_FORNECEDOR);
-SELECT ID_FORNECEDOR, NOME_FORNECEDOR, TELEFONE_FORNECEDOR, EMAIL_FORNECEDOR, ESTADO_FORNECEDOR, CEP_FORNECEDOR, CNPJ_FORNECEDOR FROM FORNECEDOR WHERE (ID_FORNECEDOR = SCOPE_IDENTITY())";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOME_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOME_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TELEFONE_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TELEFONE_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EMAIL_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMAIL_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ESTADO_FORNECEDOR", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESTADO_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CEP_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CEP_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CNPJ_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CNPJ_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [FORNECEDOR] SET [NOME_FORNECEDOR] = @NOME_FORNECEDOR, [TELEFONE_FORNECEDOR] = @TELEFONE_FORNECEDOR, [EMAIL_FORNECEDOR] = @EMAIL_FORNECEDOR, [ESTADO_FORNECEDOR] = @ESTADO_FORNECEDOR, [CEP_FORNECEDOR] = @CEP_FORNECEDOR, [CNPJ_FORNECEDOR] = @CNPJ_FORNECEDOR WHERE (([ID_FORNECEDOR] = @Original_ID_FORNECEDOR) AND ((@IsNull_NOME_FORNECEDOR = 1 AND [NOME_FORNECEDOR] IS NULL) OR ([NOME_FORNECEDOR] = @Original_NOME_FORNECEDOR)) AND ((@IsNull_TELEFONE_FORNECEDOR = 1 AND [TELEFONE_FORNECEDOR] IS NULL) OR ([TELEFONE_FORNECEDOR] = @Original_TELEFONE_FORNECEDOR)) AND ((@IsNull_EMAIL_FORNECEDOR = 1 AND [EMAIL_FORNECEDOR] IS NULL) OR ([EMAIL_FORNECEDOR] = @Original_EMAIL_FORNECEDOR)) AND ((@IsNull_ESTADO_FORNECEDOR = 1 AND [ESTADO_FORNECEDOR] IS NULL) OR ([ESTADO_FORNECEDOR] = @Original_ESTADO_FORNECEDOR)) AND ((@IsNull_CEP_FORNECEDOR = 1 AND [CEP_FORNECEDOR] IS NULL) OR ([CEP_FORNECEDOR] = @Original_CEP_FORNECEDOR)) AND ((@IsNull_CNPJ_FORNECEDOR = 1 AND [CNPJ_FORNECEDOR] IS NULL) OR ([CNPJ_FORNECEDOR] = @Original_CNPJ_FORNECEDOR)));
-SELECT ID_FORNECEDOR, NOME_FORNECEDOR, TELEFONE_FORNECEDOR, EMAIL_FORNECEDOR, ESTADO_FORNECEDOR, CEP_FORNECEDOR, CNPJ_FORNECEDOR FROM FORNECEDOR WHERE (ID_FORNECEDOR = @ID_FORNECEDOR)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOME_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOME_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TELEFONE_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TELEFONE_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EMAIL_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMAIL_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ESTADO_FORNECEDOR", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESTADO_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CEP_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CEP_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CNPJ_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CNPJ_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NOME_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOME_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NOME_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOME_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TELEFONE_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TELEFONE_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TELEFONE_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TELEFONE_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EMAIL_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMAIL_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EMAIL_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMAIL_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ESTADO_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESTADO_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ESTADO_FORNECEDOR", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESTADO_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CEP_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CEP_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CEP_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CEP_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CNPJ_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CNPJ_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CNPJ_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CNPJ_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_FORNECEDOR", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::prjMerchades.Properties.Settings.Default.masterConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        ID_FORNECEDOR, NOME_FORNECEDOR, TELEFONE_FORNECEDOR, EMAIL_FORNECED" +
-                "OR, ESTADO_FORNECEDOR, CEP_FORNECEDOR, CNPJ_FORNECEDOR\r\nFROM            FORNECED" +
-                "OR";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(daDadosEntrada.FORNECEDORDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual daDadosEntrada.FORNECEDORDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            daDadosEntrada.FORNECEDORDataTable dataTable = new daDadosEntrada.FORNECEDORDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(daDadosEntrada.FORNECEDORDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(daDadosEntrada dataSet) {
-            return this.Adapter.Update(dataSet, "FORNECEDOR");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID_FORNECEDOR, string Original_NOME_FORNECEDOR, string Original_TELEFONE_FORNECEDOR, string Original_EMAIL_FORNECEDOR, string Original_ESTADO_FORNECEDOR, string Original_CEP_FORNECEDOR, string Original_CNPJ_FORNECEDOR) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_FORNECEDOR));
-            if ((Original_NOME_FORNECEDOR == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_NOME_FORNECEDOR));
-            }
-            if ((Original_TELEFONE_FORNECEDOR == null)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_TELEFONE_FORNECEDOR));
-            }
-            if ((Original_EMAIL_FORNECEDOR == null)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_EMAIL_FORNECEDOR));
-            }
-            if ((Original_ESTADO_FORNECEDOR == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_ESTADO_FORNECEDOR));
-            }
-            if ((Original_CEP_FORNECEDOR == null)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_CEP_FORNECEDOR));
-            }
-            if ((Original_CNPJ_FORNECEDOR == null)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_CNPJ_FORNECEDOR));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string NOME_FORNECEDOR, string TELEFONE_FORNECEDOR, string EMAIL_FORNECEDOR, string ESTADO_FORNECEDOR, string CEP_FORNECEDOR, string CNPJ_FORNECEDOR) {
-            if ((NOME_FORNECEDOR == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(NOME_FORNECEDOR));
-            }
-            if ((TELEFONE_FORNECEDOR == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(TELEFONE_FORNECEDOR));
-            }
-            if ((EMAIL_FORNECEDOR == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(EMAIL_FORNECEDOR));
-            }
-            if ((ESTADO_FORNECEDOR == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(ESTADO_FORNECEDOR));
-            }
-            if ((CEP_FORNECEDOR == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(CEP_FORNECEDOR));
-            }
-            if ((CNPJ_FORNECEDOR == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(CNPJ_FORNECEDOR));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string NOME_FORNECEDOR, string TELEFONE_FORNECEDOR, string EMAIL_FORNECEDOR, string ESTADO_FORNECEDOR, string CEP_FORNECEDOR, string CNPJ_FORNECEDOR, int Original_ID_FORNECEDOR, string Original_NOME_FORNECEDOR, string Original_TELEFONE_FORNECEDOR, string Original_EMAIL_FORNECEDOR, string Original_ESTADO_FORNECEDOR, string Original_CEP_FORNECEDOR, string Original_CNPJ_FORNECEDOR, int ID_FORNECEDOR) {
-            if ((NOME_FORNECEDOR == null)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(NOME_FORNECEDOR));
-            }
-            if ((TELEFONE_FORNECEDOR == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(TELEFONE_FORNECEDOR));
-            }
-            if ((EMAIL_FORNECEDOR == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(EMAIL_FORNECEDOR));
-            }
-            if ((ESTADO_FORNECEDOR == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(ESTADO_FORNECEDOR));
-            }
-            if ((CEP_FORNECEDOR == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(CEP_FORNECEDOR));
-            }
-            if ((CNPJ_FORNECEDOR == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(CNPJ_FORNECEDOR));
-            }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_ID_FORNECEDOR));
-            if ((Original_NOME_FORNECEDOR == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_NOME_FORNECEDOR));
-            }
-            if ((Original_TELEFONE_FORNECEDOR == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_TELEFONE_FORNECEDOR));
-            }
-            if ((Original_EMAIL_FORNECEDOR == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_EMAIL_FORNECEDOR));
-            }
-            if ((Original_ESTADO_FORNECEDOR == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_ESTADO_FORNECEDOR));
-            }
-            if ((Original_CEP_FORNECEDOR == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_CEP_FORNECEDOR));
-            }
-            if ((Original_CNPJ_FORNECEDOR == null)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_CNPJ_FORNECEDOR));
-            }
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(ID_FORNECEDOR));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string NOME_FORNECEDOR, string TELEFONE_FORNECEDOR, string EMAIL_FORNECEDOR, string ESTADO_FORNECEDOR, string CEP_FORNECEDOR, string CNPJ_FORNECEDOR, int Original_ID_FORNECEDOR, string Original_NOME_FORNECEDOR, string Original_TELEFONE_FORNECEDOR, string Original_EMAIL_FORNECEDOR, string Original_ESTADO_FORNECEDOR, string Original_CEP_FORNECEDOR, string Original_CNPJ_FORNECEDOR) {
-            return this.Update(NOME_FORNECEDOR, TELEFONE_FORNECEDOR, EMAIL_FORNECEDOR, ESTADO_FORNECEDOR, CEP_FORNECEDOR, CNPJ_FORNECEDOR, Original_ID_FORNECEDOR, Original_NOME_FORNECEDOR, Original_TELEFONE_FORNECEDOR, Original_EMAIL_FORNECEDOR, Original_ESTADO_FORNECEDOR, Original_CEP_FORNECEDOR, Original_CNPJ_FORNECEDOR, Original_ID_FORNECEDOR);
-        }
-    }
     
     /// <summary>
     ///Represents the connection and commands used to retrieve and save data.
@@ -6601,6 +6102,504 @@ LEFT JOIN NOTA_FISCAL_FORNECEDOR N
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class FORNECEDORTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public FORNECEDORTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "FORNECEDOR";
+            tableMapping.ColumnMappings.Add("ID_FORNECEDOR", "ID_FORNECEDOR");
+            tableMapping.ColumnMappings.Add("NOME_FORNECEDOR", "NOME_FORNECEDOR");
+            tableMapping.ColumnMappings.Add("TELEFONE_FORNECEDOR", "TELEFONE_FORNECEDOR");
+            tableMapping.ColumnMappings.Add("EMAIL_FORNECEDOR", "EMAIL_FORNECEDOR");
+            tableMapping.ColumnMappings.Add("ESTADO_FORNECEDOR", "ESTADO_FORNECEDOR");
+            tableMapping.ColumnMappings.Add("CEP_FORNECEDOR", "CEP_FORNECEDOR");
+            tableMapping.ColumnMappings.Add("CNPJ_FORNECEDOR", "CNPJ_FORNECEDOR");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[FORNECEDOR] WHERE (([ID_FORNECEDOR] = @Original_ID_FORNECEDOR) AND ((@IsNull_NOME_FORNECEDOR = 1 AND [NOME_FORNECEDOR] IS NULL) OR ([NOME_FORNECEDOR] = @Original_NOME_FORNECEDOR)) AND ((@IsNull_TELEFONE_FORNECEDOR = 1 AND [TELEFONE_FORNECEDOR] IS NULL) OR ([TELEFONE_FORNECEDOR] = @Original_TELEFONE_FORNECEDOR)) AND ((@IsNull_EMAIL_FORNECEDOR = 1 AND [EMAIL_FORNECEDOR] IS NULL) OR ([EMAIL_FORNECEDOR] = @Original_EMAIL_FORNECEDOR)) AND ((@IsNull_ESTADO_FORNECEDOR = 1 AND [ESTADO_FORNECEDOR] IS NULL) OR ([ESTADO_FORNECEDOR] = @Original_ESTADO_FORNECEDOR)) AND ((@IsNull_CEP_FORNECEDOR = 1 AND [CEP_FORNECEDOR] IS NULL) OR ([CEP_FORNECEDOR] = @Original_CEP_FORNECEDOR)) AND ((@IsNull_CNPJ_FORNECEDOR = 1 AND [CNPJ_FORNECEDOR] IS NULL) OR ([CNPJ_FORNECEDOR] = @Original_CNPJ_FORNECEDOR)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NOME_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOME_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NOME_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOME_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TELEFONE_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TELEFONE_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TELEFONE_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TELEFONE_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EMAIL_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMAIL_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EMAIL_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMAIL_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ESTADO_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESTADO_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ESTADO_FORNECEDOR", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESTADO_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CEP_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CEP_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CEP_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CEP_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CNPJ_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CNPJ_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CNPJ_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CNPJ_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[FORNECEDOR] ([NOME_FORNECEDOR], [TELEFONE_FORNECEDOR], [EMAIL_FORNECEDOR], [ESTADO_FORNECEDOR], [CEP_FORNECEDOR], [CNPJ_FORNECEDOR]) VALUES (@NOME_FORNECEDOR, @TELEFONE_FORNECEDOR, @EMAIL_FORNECEDOR, @ESTADO_FORNECEDOR, @CEP_FORNECEDOR, @CNPJ_FORNECEDOR);
+SELECT ID_FORNECEDOR, NOME_FORNECEDOR, TELEFONE_FORNECEDOR, EMAIL_FORNECEDOR, ESTADO_FORNECEDOR, CEP_FORNECEDOR, CNPJ_FORNECEDOR FROM FORNECEDOR WHERE (ID_FORNECEDOR = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOME_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOME_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TELEFONE_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TELEFONE_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EMAIL_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMAIL_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ESTADO_FORNECEDOR", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESTADO_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CEP_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CEP_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CNPJ_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CNPJ_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[FORNECEDOR] SET [NOME_FORNECEDOR] = @NOME_FORNECEDOR, [TELEFONE_FORNECEDOR] = @TELEFONE_FORNECEDOR, [EMAIL_FORNECEDOR] = @EMAIL_FORNECEDOR, [ESTADO_FORNECEDOR] = @ESTADO_FORNECEDOR, [CEP_FORNECEDOR] = @CEP_FORNECEDOR, [CNPJ_FORNECEDOR] = @CNPJ_FORNECEDOR WHERE (([ID_FORNECEDOR] = @Original_ID_FORNECEDOR) AND ((@IsNull_NOME_FORNECEDOR = 1 AND [NOME_FORNECEDOR] IS NULL) OR ([NOME_FORNECEDOR] = @Original_NOME_FORNECEDOR)) AND ((@IsNull_TELEFONE_FORNECEDOR = 1 AND [TELEFONE_FORNECEDOR] IS NULL) OR ([TELEFONE_FORNECEDOR] = @Original_TELEFONE_FORNECEDOR)) AND ((@IsNull_EMAIL_FORNECEDOR = 1 AND [EMAIL_FORNECEDOR] IS NULL) OR ([EMAIL_FORNECEDOR] = @Original_EMAIL_FORNECEDOR)) AND ((@IsNull_ESTADO_FORNECEDOR = 1 AND [ESTADO_FORNECEDOR] IS NULL) OR ([ESTADO_FORNECEDOR] = @Original_ESTADO_FORNECEDOR)) AND ((@IsNull_CEP_FORNECEDOR = 1 AND [CEP_FORNECEDOR] IS NULL) OR ([CEP_FORNECEDOR] = @Original_CEP_FORNECEDOR)) AND ((@IsNull_CNPJ_FORNECEDOR = 1 AND [CNPJ_FORNECEDOR] IS NULL) OR ([CNPJ_FORNECEDOR] = @Original_CNPJ_FORNECEDOR)));
+SELECT ID_FORNECEDOR, NOME_FORNECEDOR, TELEFONE_FORNECEDOR, EMAIL_FORNECEDOR, ESTADO_FORNECEDOR, CEP_FORNECEDOR, CNPJ_FORNECEDOR FROM FORNECEDOR WHERE (ID_FORNECEDOR = @ID_FORNECEDOR)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOME_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOME_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TELEFONE_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TELEFONE_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EMAIL_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMAIL_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ESTADO_FORNECEDOR", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESTADO_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CEP_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CEP_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CNPJ_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CNPJ_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NOME_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOME_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NOME_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NOME_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TELEFONE_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TELEFONE_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TELEFONE_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TELEFONE_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EMAIL_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMAIL_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EMAIL_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMAIL_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ESTADO_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESTADO_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ESTADO_FORNECEDOR", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ESTADO_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CEP_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CEP_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CEP_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CEP_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CNPJ_FORNECEDOR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CNPJ_FORNECEDOR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CNPJ_FORNECEDOR", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CNPJ_FORNECEDOR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_FORNECEDOR", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_FORNECEDOR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::prjMerchades.Properties.Settings.Default.masterConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT ID_FORNECEDOR, NOME_FORNECEDOR, TELEFONE_FORNECEDOR, EMAIL_FORNECEDOR, EST" +
+                "ADO_FORNECEDOR, CEP_FORNECEDOR, CNPJ_FORNECEDOR FROM dbo.FORNECEDOR";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(daDadosEntrada.FORNECEDORDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual daDadosEntrada.FORNECEDORDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            daDadosEntrada.FORNECEDORDataTable dataTable = new daDadosEntrada.FORNECEDORDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(daDadosEntrada.FORNECEDORDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(daDadosEntrada dataSet) {
+            return this.Adapter.Update(dataSet, "FORNECEDOR");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_ID_FORNECEDOR, string Original_NOME_FORNECEDOR, string Original_TELEFONE_FORNECEDOR, string Original_EMAIL_FORNECEDOR, string Original_ESTADO_FORNECEDOR, string Original_CEP_FORNECEDOR, string Original_CNPJ_FORNECEDOR) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_FORNECEDOR));
+            if ((Original_NOME_FORNECEDOR == null)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_NOME_FORNECEDOR));
+            }
+            if ((Original_TELEFONE_FORNECEDOR == null)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_TELEFONE_FORNECEDOR));
+            }
+            if ((Original_EMAIL_FORNECEDOR == null)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_EMAIL_FORNECEDOR));
+            }
+            if ((Original_ESTADO_FORNECEDOR == null)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_ESTADO_FORNECEDOR));
+            }
+            if ((Original_CEP_FORNECEDOR == null)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_CEP_FORNECEDOR));
+            }
+            if ((Original_CNPJ_FORNECEDOR == null)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_CNPJ_FORNECEDOR));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string NOME_FORNECEDOR, string TELEFONE_FORNECEDOR, string EMAIL_FORNECEDOR, string ESTADO_FORNECEDOR, string CEP_FORNECEDOR, string CNPJ_FORNECEDOR) {
+            if ((NOME_FORNECEDOR == null)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(NOME_FORNECEDOR));
+            }
+            if ((TELEFONE_FORNECEDOR == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(TELEFONE_FORNECEDOR));
+            }
+            if ((EMAIL_FORNECEDOR == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(EMAIL_FORNECEDOR));
+            }
+            if ((ESTADO_FORNECEDOR == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(ESTADO_FORNECEDOR));
+            }
+            if ((CEP_FORNECEDOR == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(CEP_FORNECEDOR));
+            }
+            if ((CNPJ_FORNECEDOR == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(CNPJ_FORNECEDOR));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string NOME_FORNECEDOR, string TELEFONE_FORNECEDOR, string EMAIL_FORNECEDOR, string ESTADO_FORNECEDOR, string CEP_FORNECEDOR, string CNPJ_FORNECEDOR, int Original_ID_FORNECEDOR, string Original_NOME_FORNECEDOR, string Original_TELEFONE_FORNECEDOR, string Original_EMAIL_FORNECEDOR, string Original_ESTADO_FORNECEDOR, string Original_CEP_FORNECEDOR, string Original_CNPJ_FORNECEDOR, int ID_FORNECEDOR) {
+            if ((NOME_FORNECEDOR == null)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(NOME_FORNECEDOR));
+            }
+            if ((TELEFONE_FORNECEDOR == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(TELEFONE_FORNECEDOR));
+            }
+            if ((EMAIL_FORNECEDOR == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(EMAIL_FORNECEDOR));
+            }
+            if ((ESTADO_FORNECEDOR == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(ESTADO_FORNECEDOR));
+            }
+            if ((CEP_FORNECEDOR == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(CEP_FORNECEDOR));
+            }
+            if ((CNPJ_FORNECEDOR == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(CNPJ_FORNECEDOR));
+            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_ID_FORNECEDOR));
+            if ((Original_NOME_FORNECEDOR == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_NOME_FORNECEDOR));
+            }
+            if ((Original_TELEFONE_FORNECEDOR == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_TELEFONE_FORNECEDOR));
+            }
+            if ((Original_EMAIL_FORNECEDOR == null)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_EMAIL_FORNECEDOR));
+            }
+            if ((Original_ESTADO_FORNECEDOR == null)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_ESTADO_FORNECEDOR));
+            }
+            if ((Original_CEP_FORNECEDOR == null)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_CEP_FORNECEDOR));
+            }
+            if ((Original_CNPJ_FORNECEDOR == null)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_CNPJ_FORNECEDOR));
+            }
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(ID_FORNECEDOR));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string NOME_FORNECEDOR, string TELEFONE_FORNECEDOR, string EMAIL_FORNECEDOR, string ESTADO_FORNECEDOR, string CEP_FORNECEDOR, string CNPJ_FORNECEDOR, int Original_ID_FORNECEDOR, string Original_NOME_FORNECEDOR, string Original_TELEFONE_FORNECEDOR, string Original_EMAIL_FORNECEDOR, string Original_ESTADO_FORNECEDOR, string Original_CEP_FORNECEDOR, string Original_CNPJ_FORNECEDOR) {
+            return this.Update(NOME_FORNECEDOR, TELEFONE_FORNECEDOR, EMAIL_FORNECEDOR, ESTADO_FORNECEDOR, CEP_FORNECEDOR, CNPJ_FORNECEDOR, Original_ID_FORNECEDOR, Original_NOME_FORNECEDOR, Original_TELEFONE_FORNECEDOR, Original_EMAIL_FORNECEDOR, Original_ESTADO_FORNECEDOR, Original_CEP_FORNECEDOR, Original_CNPJ_FORNECEDOR, Original_ID_FORNECEDOR);
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6612,13 +6611,13 @@ LEFT JOIN NOTA_FISCAL_FORNECEDOR N
         
         private UpdateOrderOption _updateOrder;
         
-        private FORNECEDORTableAdapter _fORNECEDORTableAdapter;
-        
         private PRODUTOSEntradaTableAdapter _pRODUTOSEntradaTableAdapter;
         
         private ESTOQUEEntradaTableAdapter _eSTOQUEEntradaTableAdapter;
         
         private NOTA_FISCAL_FORNECEDORTableAdapter _nOTA_FISCAL_FORNECEDORTableAdapter;
+        
+        private FORNECEDORTableAdapter _fORNECEDORTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -6632,20 +6631,6 @@ LEFT JOIN NOTA_FISCAL_FORNECEDOR N
             }
             set {
                 this._updateOrder = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public FORNECEDORTableAdapter FORNECEDORTableAdapter {
-            get {
-                return this._fORNECEDORTableAdapter;
-            }
-            set {
-                this._fORNECEDORTableAdapter = value;
             }
         }
         
@@ -6693,6 +6678,20 @@ LEFT JOIN NOTA_FISCAL_FORNECEDOR N
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public FORNECEDORTableAdapter FORNECEDORTableAdapter {
+            get {
+                return this._fORNECEDORTableAdapter;
+            }
+            set {
+                this._fORNECEDORTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -6710,10 +6709,6 @@ LEFT JOIN NOTA_FISCAL_FORNECEDOR N
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._fORNECEDORTableAdapter != null) 
-                            && (this._fORNECEDORTableAdapter.Connection != null))) {
-                    return this._fORNECEDORTableAdapter.Connection;
-                }
                 if (((this._pRODUTOSEntradaTableAdapter != null) 
                             && (this._pRODUTOSEntradaTableAdapter.Connection != null))) {
                     return this._pRODUTOSEntradaTableAdapter.Connection;
@@ -6725,6 +6720,10 @@ LEFT JOIN NOTA_FISCAL_FORNECEDOR N
                 if (((this._nOTA_FISCAL_FORNECEDORTableAdapter != null) 
                             && (this._nOTA_FISCAL_FORNECEDORTableAdapter.Connection != null))) {
                     return this._nOTA_FISCAL_FORNECEDORTableAdapter.Connection;
+                }
+                if (((this._fORNECEDORTableAdapter != null) 
+                            && (this._fORNECEDORTableAdapter.Connection != null))) {
+                    return this._fORNECEDORTableAdapter.Connection;
                 }
                 return null;
             }
@@ -6739,9 +6738,6 @@ LEFT JOIN NOTA_FISCAL_FORNECEDOR N
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._fORNECEDORTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 if ((this._pRODUTOSEntradaTableAdapter != null)) {
                     count = (count + 1);
                 }
@@ -6749,6 +6745,9 @@ LEFT JOIN NOTA_FISCAL_FORNECEDOR N
                     count = (count + 1);
                 }
                 if ((this._nOTA_FISCAL_FORNECEDORTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._fORNECEDORTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -6921,11 +6920,6 @@ LEFT JOIN NOTA_FISCAL_FORNECEDOR N
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._fORNECEDORTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._fORNECEDORTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("Todos os TableAdapters gerenciados por um TableAdapterManager devem usar a mesma " +
-                        "cadeia de conexão.");
-            }
             if (((this._pRODUTOSEntradaTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._pRODUTOSEntradaTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Todos os TableAdapters gerenciados por um TableAdapterManager devem usar a mesma " +
@@ -6938,6 +6932,11 @@ LEFT JOIN NOTA_FISCAL_FORNECEDOR N
             }
             if (((this._nOTA_FISCAL_FORNECEDORTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._nOTA_FISCAL_FORNECEDORTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Todos os TableAdapters gerenciados por um TableAdapterManager devem usar a mesma " +
+                        "cadeia de conexão.");
+            }
+            if (((this._fORNECEDORTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._fORNECEDORTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Todos os TableAdapters gerenciados por um TableAdapterManager devem usar a mesma " +
                         "cadeia de conexão.");
             }
@@ -6973,15 +6972,6 @@ LEFT JOIN NOTA_FISCAL_FORNECEDOR N
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._fORNECEDORTableAdapter != null)) {
-                    revertConnections.Add(this._fORNECEDORTableAdapter, this._fORNECEDORTableAdapter.Connection);
-                    this._fORNECEDORTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._fORNECEDORTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._fORNECEDORTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._fORNECEDORTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._fORNECEDORTableAdapter.Adapter);
-                    }
-                }
                 if ((this._pRODUTOSEntradaTableAdapter != null)) {
                     revertConnections.Add(this._pRODUTOSEntradaTableAdapter, this._pRODUTOSEntradaTableAdapter.Connection);
                     this._pRODUTOSEntradaTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
@@ -7007,6 +6997,15 @@ LEFT JOIN NOTA_FISCAL_FORNECEDOR N
                     if (this._nOTA_FISCAL_FORNECEDORTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._nOTA_FISCAL_FORNECEDORTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._nOTA_FISCAL_FORNECEDORTableAdapter.Adapter);
+                    }
+                }
+                if ((this._fORNECEDORTableAdapter != null)) {
+                    revertConnections.Add(this._fORNECEDORTableAdapter, this._fORNECEDORTableAdapter.Connection);
+                    this._fORNECEDORTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._fORNECEDORTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._fORNECEDORTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._fORNECEDORTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._fORNECEDORTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -7067,10 +7066,6 @@ LEFT JOIN NOTA_FISCAL_FORNECEDOR N
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._fORNECEDORTableAdapter != null)) {
-                    this._fORNECEDORTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._fORNECEDORTableAdapter]));
-                    this._fORNECEDORTableAdapter.Transaction = null;
-                }
                 if ((this._pRODUTOSEntradaTableAdapter != null)) {
                     this._pRODUTOSEntradaTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._pRODUTOSEntradaTableAdapter]));
                     this._pRODUTOSEntradaTableAdapter.Transaction = null;
@@ -7082,6 +7077,10 @@ LEFT JOIN NOTA_FISCAL_FORNECEDOR N
                 if ((this._nOTA_FISCAL_FORNECEDORTableAdapter != null)) {
                     this._nOTA_FISCAL_FORNECEDORTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._nOTA_FISCAL_FORNECEDORTableAdapter]));
                     this._nOTA_FISCAL_FORNECEDORTableAdapter.Transaction = null;
+                }
+                if ((this._fORNECEDORTableAdapter != null)) {
+                    this._fORNECEDORTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._fORNECEDORTableAdapter]));
+                    this._fORNECEDORTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
