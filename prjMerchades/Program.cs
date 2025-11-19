@@ -20,7 +20,11 @@ namespace prjMerchades
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Application.Run(new frmMenuSaida());
+=======
+            Application.Run(new frmNotaFiscal());
+>>>>>>> Tela-NOTA-FISCAL
         }
     }
 }
