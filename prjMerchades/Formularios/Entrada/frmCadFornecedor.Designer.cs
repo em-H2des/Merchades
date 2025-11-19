@@ -53,115 +53,115 @@
             // 
             // txtBox_CEP
             // 
-            this.txtBox_CEP.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBox_CEP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBox_CEP.Location = new System.Drawing.Point(477, 162);
             this.txtBox_CEP.Name = "txtBox_CEP";
-            this.txtBox_CEP.Size = new System.Drawing.Size(187, 29);
+            this.txtBox_CEP.Size = new System.Drawing.Size(187, 26);
             this.txtBox_CEP.TabIndex = 38;
             // 
             // lbl_CEP
             // 
             this.lbl_CEP.AutoSize = true;
-            this.lbl_CEP.Font = new System.Drawing.Font("Open Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CEP.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_CEP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
             this.lbl_CEP.Location = new System.Drawing.Point(471, 128);
             this.lbl_CEP.Name = "lbl_CEP";
-            this.lbl_CEP.Size = new System.Drawing.Size(58, 31);
+            this.lbl_CEP.Size = new System.Drawing.Size(65, 25);
             this.lbl_CEP.TabIndex = 37;
             this.lbl_CEP.Text = "CEP:";
             // 
             // txtBox_Estado
             // 
-            this.txtBox_Estado.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBox_Estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBox_Estado.Location = new System.Drawing.Point(362, 162);
             this.txtBox_Estado.Name = "txtBox_Estado";
-            this.txtBox_Estado.Size = new System.Drawing.Size(87, 29);
+            this.txtBox_Estado.Size = new System.Drawing.Size(87, 26);
             this.txtBox_Estado.TabIndex = 36;
             // 
             // lbl_Estado
             // 
             this.lbl_Estado.AutoSize = true;
-            this.lbl_Estado.Font = new System.Drawing.Font("Open Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Estado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
             this.lbl_Estado.Location = new System.Drawing.Point(356, 128);
             this.lbl_Estado.Name = "lbl_Estado";
-            this.lbl_Estado.Size = new System.Drawing.Size(90, 31);
+            this.lbl_Estado.Size = new System.Drawing.Size(92, 25);
             this.lbl_Estado.TabIndex = 35;
             this.lbl_Estado.Text = "Estado:";
             // 
             // txtBox_Email
             // 
-            this.txtBox_Email.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBox_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBox_Email.Location = new System.Drawing.Point(34, 162);
             this.txtBox_Email.Name = "txtBox_Email";
-            this.txtBox_Email.Size = new System.Drawing.Size(298, 29);
+            this.txtBox_Email.Size = new System.Drawing.Size(298, 26);
             this.txtBox_Email.TabIndex = 34;
             // 
             // lbl_Email
             // 
             this.lbl_Email.AutoSize = true;
-            this.lbl_Email.Font = new System.Drawing.Font("Open Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Email.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
             this.lbl_Email.Location = new System.Drawing.Point(28, 128);
             this.lbl_Email.Name = "lbl_Email";
-            this.lbl_Email.Size = new System.Drawing.Size(78, 31);
+            this.lbl_Email.Size = new System.Drawing.Size(77, 25);
             this.lbl_Email.TabIndex = 33;
             this.lbl_Email.Text = "Email:";
             // 
             // txtBox_Telefone
             // 
-            this.txtBox_Telefone.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBox_Telefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBox_Telefone.Location = new System.Drawing.Point(486, 77);
             this.txtBox_Telefone.Name = "txtBox_Telefone";
-            this.txtBox_Telefone.Size = new System.Drawing.Size(178, 29);
+            this.txtBox_Telefone.Size = new System.Drawing.Size(178, 26);
             this.txtBox_Telefone.TabIndex = 32;
             // 
             // lbl_Telefone
             // 
             this.lbl_Telefone.AutoSize = true;
-            this.lbl_Telefone.Font = new System.Drawing.Font("Open Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Telefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Telefone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
             this.lbl_Telefone.Location = new System.Drawing.Point(480, 43);
             this.lbl_Telefone.Name = "lbl_Telefone";
-            this.lbl_Telefone.Size = new System.Drawing.Size(109, 31);
+            this.lbl_Telefone.Size = new System.Drawing.Size(111, 25);
             this.lbl_Telefone.TabIndex = 31;
             this.lbl_Telefone.Text = "Telefone:";
             // 
             // txtBox_CNPJ
             // 
-            this.txtBox_CNPJ.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBox_CNPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBox_CNPJ.Location = new System.Drawing.Point(298, 77);
             this.txtBox_CNPJ.Name = "txtBox_CNPJ";
-            this.txtBox_CNPJ.Size = new System.Drawing.Size(161, 29);
+            this.txtBox_CNPJ.Size = new System.Drawing.Size(161, 26);
             this.txtBox_CNPJ.TabIndex = 30;
             // 
             // lbl_CNPJ
             // 
             this.lbl_CNPJ.AutoSize = true;
-            this.lbl_CNPJ.Font = new System.Drawing.Font("Open Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CNPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_CNPJ.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
             this.lbl_CNPJ.Location = new System.Drawing.Point(292, 43);
             this.lbl_CNPJ.Name = "lbl_CNPJ";
-            this.lbl_CNPJ.Size = new System.Drawing.Size(70, 31);
+            this.lbl_CNPJ.Size = new System.Drawing.Size(78, 25);
             this.lbl_CNPJ.TabIndex = 29;
             this.lbl_CNPJ.Text = "CNPJ:";
             // 
             // txtBox_Fornecedor
             // 
-            this.txtBox_Fornecedor.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBox_Fornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBox_Fornecedor.Location = new System.Drawing.Point(34, 77);
             this.txtBox_Fornecedor.Name = "txtBox_Fornecedor";
-            this.txtBox_Fornecedor.Size = new System.Drawing.Size(237, 29);
+            this.txtBox_Fornecedor.Size = new System.Drawing.Size(237, 26);
             this.txtBox_Fornecedor.TabIndex = 28;
             // 
             // lbl_Fornecedor
             // 
             this.lbl_Fornecedor.AutoSize = true;
-            this.lbl_Fornecedor.Font = new System.Drawing.Font("Open Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Fornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Fornecedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
             this.lbl_Fornecedor.Location = new System.Drawing.Point(28, 43);
             this.lbl_Fornecedor.Name = "lbl_Fornecedor";
-            this.lbl_Fornecedor.Size = new System.Drawing.Size(140, 31);
+            this.lbl_Fornecedor.Size = new System.Drawing.Size(139, 25);
             this.lbl_Fornecedor.TabIndex = 27;
             this.lbl_Fornecedor.Text = "Fornecedor:";
             // 
@@ -217,7 +217,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.button1.Location = new System.Drawing.Point(564, 236);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
@@ -226,16 +226,17 @@
             this.button1.TabIndex = 39;
             this.button1.Text = "Cadastrar";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lbl_Titulo
             // 
             this.lbl_Titulo.AutoSize = true;
-            this.lbl_Titulo.Font = new System.Drawing.Font("Open Sans", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Titulo.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lbl_Titulo.Location = new System.Drawing.Point(11, 13);
             this.lbl_Titulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Titulo.Name = "lbl_Titulo";
-            this.lbl_Titulo.Size = new System.Drawing.Size(552, 69);
+            this.lbl_Titulo.Size = new System.Drawing.Size(516, 55);
             this.lbl_Titulo.TabIndex = 40;
             this.lbl_Titulo.Text = "Cadastrar Fornecedor";
             // 

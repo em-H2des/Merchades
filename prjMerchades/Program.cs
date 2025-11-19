@@ -1,5 +1,7 @@
-﻿using prjMerchades.Formularios;
+﻿using Merchades;
+using prjMerchades.Formularios;
 using prjMerchades.Formularios.Entrada;
+using prjMerchades.Formularios.Financeiro;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,11 +16,11 @@ namespace prjMerchades
         /// Ponto de entrada principal para o aplicativo.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main()  
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SplashScreen());
+            Application.Run(new frmMenuSaida());
         }
     }
 }
