@@ -834,3 +834,4 @@ C:\Users\LabInfo\Documents\GitHub\Merchades\prjMerchades\obj\Debug\prjMerchades.
 C:\Users\LabInfo\Documents\GitHub\Merchades\prjMerchades\obj\Debug\prjMerch.B26AA8EB.Up2Date
 C:\Users\LabInfo\Documents\GitHub\Merchades\prjMerchades\obj\Debug\prjMerchades.exe
 C:\Users\LabInfo\Documents\GitHub\Merchades\prjMerchades\obj\Debug\prjMerchades.pdb
+C:\Users\LabInfo\Documents\GitHub\Merchades\prjMerchades\bin\Debug\stdole.dll
