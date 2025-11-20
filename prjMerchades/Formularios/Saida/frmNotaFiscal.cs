@@ -42,7 +42,7 @@ namespace Merchades
         private void MostrarVenda(int id)
         {
 
-            string queryDadosGerais = "SELECT N.COD_NOTA_VENDA, N.DATA_EMISSAO, N.QTD_PARCELAS, C.NOME_CLIENTE, N.CPF_CNPJ_VENDA FROM NOTA_FISCAL_VENDA N INNER JOIN CLIENTE C ON C.ID_CLIENTE = N.ID_CLIENTE WHERE N.ID_NOTA_VENDA = @id";
+            string queryDadosGerais = "SELECT N.COD_NOTA_VENDA, N.DATA_EMISSAO, N.QTD_PARCELAS, N.CPF_CNPJ_VENDA FROM NOTA_FISCAL_VENDA N INNER JOIN CLIENTE C ON C.CPF_CNPJ_CLIENTE = N.CPF_CNPJ_VENDA WHERE N.ID_NOTA_VENDA = @id";
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -59,23 +59,19 @@ namespace Merchades
                         string codNota = dr.GetString(0);
                         DateTime emissao = dr.GetDateTime(1);
                         int parcelas = dr.GetInt32(2);
-                        string cliente = dr.GetString(3);
-                        string cpf = dr.GetString(4);
+                        string cpf = dr.GetString(3);
 
                         // Mostra os elementos gerais da venda
                         lblLabelId.Visible = true;
                         lblIdNF.Visible = true;
                         lblLabelDataEmissao.Visible = true;
                         lblDataEmissaoNF.Visible = true;
-                        lblLabelCliente.Visible = true;
-                        lblClienteNF.Visible = true;
                         lblLabelCpf.Visible = true;
                         lblCpfNF.Visible = true;
 
                         lblTituloDetalhes.Text = $"Venda {codNota}";
                         lblIdNF.Text = id.ToString();
                         lblDataEmissaoNF.Text = emissao.ToString();
-                        lblClienteNF.Text = cliente;
                         lblCpfNF.Text = cpf;
 
                         if (parcelas > 1)
@@ -267,6 +263,7 @@ namespace Merchades
                 while (dr.Read())
                 {
                     int id = dr.GetInt32(0);
+                    MessageBox.Show(id.ToString());
                     string cod = dr.GetString(1);
                     string cpf = dr.GetString(2);
 
@@ -280,7 +277,7 @@ namespace Merchades
 
                     // Criar Label
                     Label lbl = new Label();
-                    lbl.Text = $"{cod} - {cpf}";
+                    lbl.Text = $"{cod}";
                     lbl.ForeColor = Color.White;
                     lbl.Font = new Font("Microsoft Sans Serif", 12, FontStyle.Regular);
                     lbl.AutoSize = true;

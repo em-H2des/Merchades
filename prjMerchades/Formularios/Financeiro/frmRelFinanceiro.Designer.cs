@@ -29,10 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRelFinanceiro));
+            this.vwRELATORIOFINANCEIRODESPESASBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsDadosFinanceiro = new prjMerchades.Dados.dsDadosFinanceiro();
+            this.vwRELATORIOFINANCEIROGANHOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rELATORIOFINANCEIROBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsDadosSaida1 = new prjMerchades.Dados.dsDadosSaida();
             this.dsDadosSaida = new prjMerchades.Dados.dsDadosSaida();
             this.label1 = new System.Windows.Forms.Label();
@@ -64,13 +68,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.picBox_Logo = new System.Windows.Forms.PictureBox();
             this.btnConfirmaCompra = new System.Windows.Forms.Button();
-            this.dsDadosFinanceiro = new prjMerchades.Dados.dsDadosFinanceiro();
-            this.vwRELATORIOFINANCEIRODESPESASBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vw_RELATORIO_FINANCEIRO_DESPESASTableAdapter = new prjMerchades.Dados.dsDadosFinanceiroTableAdapters.Vw_RELATORIO_FINANCEIRO_DESPESASTableAdapter();
-            this.vwRELATORIOFINANCEIROGANHOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vw_RELATORIO_FINANCEIRO_GANHOSTableAdapter = new prjMerchades.Dados.dsDadosFinanceiroTableAdapters.Vw_RELATORIO_FINANCEIRO_GANHOSTableAdapter();
-            this.rELATORIOFINANCEIROBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rELATORIO_FINANCEIROTableAdapter = new prjMerchades.Dados.dsDadosFinanceiroTableAdapters.RELATORIO_FINANCEIROTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.vwRELATORIOFINANCEIRODESPESASBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsDadosFinanceiro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwRELATORIOFINANCEIROGANHOSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rELATORIOFINANCEIROBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsDadosSaida1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsDadosSaida)).BeginInit();
             this.tabControl_Financeiro.SuspendLayout();
@@ -78,11 +82,27 @@
             this.tabPage_Divida.SuspendLayout();
             this.tabPage_CompraAntg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Logo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsDadosFinanceiro)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vwRELATORIOFINANCEIRODESPESASBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vwRELATORIOFINANCEIROGANHOSBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rELATORIOFINANCEIROBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // vwRELATORIOFINANCEIRODESPESASBindingSource
+            // 
+            this.vwRELATORIOFINANCEIRODESPESASBindingSource.DataMember = "Vw_RELATORIO_FINANCEIRO_DESPESAS";
+            this.vwRELATORIOFINANCEIRODESPESASBindingSource.DataSource = this.dsDadosFinanceiro;
+            // 
+            // dsDadosFinanceiro
+            // 
+            this.dsDadosFinanceiro.DataSetName = "dsDadosFinanceiro";
+            this.dsDadosFinanceiro.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vwRELATORIOFINANCEIROGANHOSBindingSource
+            // 
+            this.vwRELATORIOFINANCEIROGANHOSBindingSource.DataMember = "Vw_RELATORIO_FINANCEIRO_GANHOS";
+            this.vwRELATORIOFINANCEIROGANHOSBindingSource.DataSource = this.dsDadosFinanceiro;
+            // 
+            // rELATORIOFINANCEIROBindingSource
+            // 
+            this.rELATORIOFINANCEIROBindingSource.DataMember = "RELATORIO_FINANCEIRO";
+            this.rELATORIOFINANCEIROBindingSource.DataSource = this.dsDadosFinanceiro;
             // 
             // dsDadosSaida1
             // 
@@ -199,9 +219,9 @@
             this.rvGastos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource1.Name = "DataSetReportViewerRelatorioFinanceiro";
-            reportDataSource1.Value = this.vwRELATORIOFINANCEIRODESPESASBindingSource;
-            this.rvGastos.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource4.Name = "DataSetReportViewerRelatorioFinanceiro";
+            reportDataSource4.Value = this.vwRELATORIOFINANCEIRODESPESASBindingSource;
+            this.rvGastos.LocalReport.DataSources.Add(reportDataSource4);
             this.rvGastos.LocalReport.ReportEmbeddedResource = "prjMerchades.Formularios.Financeiro.ReportFinanceiro.rdlc";
             this.rvGastos.Location = new System.Drawing.Point(3, 66);
             this.rvGastos.Name = "rvGastos";
@@ -305,9 +325,9 @@
             // 
             this.rvVendas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource2.Name = "DataSetReportViewerRelatorioFinanceiro";
-            reportDataSource2.Value = this.vwRELATORIOFINANCEIROGANHOSBindingSource;
-            this.rvVendas.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource5.Name = "DataSetReportViewerRelatorioFinanceiro";
+            reportDataSource5.Value = this.vwRELATORIOFINANCEIROGANHOSBindingSource;
+            this.rvVendas.LocalReport.DataSources.Add(reportDataSource5);
             this.rvVendas.LocalReport.ReportEmbeddedResource = "prjMerchades.Formularios.Financeiro.ReportFinanceiro.rdlc";
             this.rvVendas.Location = new System.Drawing.Point(4, 64);
             this.rvVendas.Name = "rvVendas";
@@ -400,9 +420,9 @@
             // 
             this.rvGeral.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource3.Name = "DataSetReportViewerRelatorioFinanceiro";
-            reportDataSource3.Value = this.rELATORIOFINANCEIROBindingSource;
-            this.rvGeral.LocalReport.DataSources.Add(reportDataSource3);
+            reportDataSource6.Name = "DataSetReportViewerRelatorioFinanceiro";
+            reportDataSource6.Value = this.rELATORIOFINANCEIROBindingSource;
+            this.rvGeral.LocalReport.DataSources.Add(reportDataSource6);
             this.rvGeral.LocalReport.ReportEmbeddedResource = "prjMerchades.Formularios.Financeiro.ReportFinanceiro.rdlc";
             this.rvGeral.Location = new System.Drawing.Point(4, 64);
             this.rvGeral.Name = "rvGeral";
@@ -449,33 +469,13 @@
             this.btnConfirmaCompra.Text = "Deslogar";
             this.btnConfirmaCompra.UseVisualStyleBackColor = false;
             // 
-            // dsDadosFinanceiro
-            // 
-            this.dsDadosFinanceiro.DataSetName = "dsDadosFinanceiro";
-            this.dsDadosFinanceiro.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vwRELATORIOFINANCEIRODESPESASBindingSource
-            // 
-            this.vwRELATORIOFINANCEIRODESPESASBindingSource.DataMember = "Vw_RELATORIO_FINANCEIRO_DESPESAS";
-            this.vwRELATORIOFINANCEIRODESPESASBindingSource.DataSource = this.dsDadosFinanceiro;
-            // 
             // vw_RELATORIO_FINANCEIRO_DESPESASTableAdapter
             // 
             this.vw_RELATORIO_FINANCEIRO_DESPESASTableAdapter.ClearBeforeFill = true;
             // 
-            // vwRELATORIOFINANCEIROGANHOSBindingSource
-            // 
-            this.vwRELATORIOFINANCEIROGANHOSBindingSource.DataMember = "Vw_RELATORIO_FINANCEIRO_GANHOS";
-            this.vwRELATORIOFINANCEIROGANHOSBindingSource.DataSource = this.dsDadosFinanceiro;
-            // 
             // vw_RELATORIO_FINANCEIRO_GANHOSTableAdapter
             // 
             this.vw_RELATORIO_FINANCEIRO_GANHOSTableAdapter.ClearBeforeFill = true;
-            // 
-            // rELATORIOFINANCEIROBindingSource
-            // 
-            this.rELATORIOFINANCEIROBindingSource.DataMember = "RELATORIO_FINANCEIRO";
-            this.rELATORIOFINANCEIROBindingSource.DataSource = this.dsDadosFinanceiro;
             // 
             // rELATORIO_FINANCEIROTableAdapter
             // 
@@ -495,6 +495,10 @@
             this.Text = "Relatórios Financeiros";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmRelFinanceiro_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.vwRELATORIOFINANCEIRODESPESASBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsDadosFinanceiro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwRELATORIOFINANCEIROGANHOSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rELATORIOFINANCEIROBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsDadosSaida1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsDadosSaida)).EndInit();
             this.tabControl_Financeiro.ResumeLayout(false);
@@ -505,10 +509,6 @@
             this.tabPage_CompraAntg.ResumeLayout(false);
             this.tabPage_CompraAntg.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Logo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsDadosFinanceiro)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vwRELATORIOFINANCEIRODESPESASBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vwRELATORIOFINANCEIROGANHOSBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rELATORIOFINANCEIROBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

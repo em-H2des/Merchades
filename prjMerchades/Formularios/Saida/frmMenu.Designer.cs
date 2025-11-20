@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.tabControlSaida = new System.Windows.Forms.TabControl();
             this.tabCaixa = new System.Windows.Forms.TabPage();
@@ -49,10 +49,6 @@
             this.btnExcluirItem = new System.Windows.Forms.Button();
             this.btnAdicionarItem = new System.Windows.Forms.Button();
             this.dataGridViewProdutosCarrinho = new System.Windows.Forms.DataGridView();
-            this.ColumnDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnValUni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabProdutos = new System.Windows.Forms.TabPage();
             this.btnLimparFiltro = new System.Windows.Forms.Button();
             this.txtBuscarEstoque = new System.Windows.Forms.TextBox();
@@ -65,24 +61,30 @@
             this.cmbOrdenar = new System.Windows.Forms.ComboBox();
             this.cmbFiltro = new System.Windows.Forms.ComboBox();
             this.dataGridViewProdutosDisponiveis = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.resumoEstoqueBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsDadosSaida = new prjMerchades.Dados.dsDadosSaida();
+            this.resumoEstoqueTableAdapter = new prjMerchades.Dados.dsDadosSaidaTableAdapters.ResumoEstoqueTableAdapter();
             this.cODIGODEBARRASDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nOMEPRODUTOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tIPOUNITARIODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tIPOPRODUTOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qTDESTOQUEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pRECO_PRODUTOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.resumoEstoqueBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsDadosSaida = new prjMerchades.Dados.dsDadosSaida();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.resumoEstoqueTableAdapter = new prjMerchades.Dados.dsDadosSaidaTableAdapters.ResumoEstoqueTableAdapter();
+            this.ID_PRODUTOS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnValUni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_PRODUTOS_CAIXA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlSaida.SuspendLayout();
             this.tabCaixa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProdutosCarrinho)).BeginInit();
             this.tabProdutos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProdutosDisponiveis)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resumoEstoqueBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsDadosSaida)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlSaida
@@ -339,7 +341,8 @@
             this.ColumnDesc,
             this.ColumnQtd,
             this.ColumnValUni,
-            this.ColumnTotal});
+            this.ColumnTotal,
+            this.ID_PRODUTOS_CAIXA});
             this.dataGridViewProdutosCarrinho.Location = new System.Drawing.Point(17, 84);
             this.dataGridViewProdutosCarrinho.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dataGridViewProdutosCarrinho.MinimumSize = new System.Drawing.Size(439, 110);
@@ -350,42 +353,6 @@
             this.dataGridViewProdutosCarrinho.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProdutosCarrinho.Size = new System.Drawing.Size(558, 240);
             this.dataGridViewProdutosCarrinho.TabIndex = 37;
-            // 
-            // ColumnDesc
-            // 
-            this.ColumnDesc.HeaderText = "Produto";
-            this.ColumnDesc.MinimumWidth = 8;
-            this.ColumnDesc.Name = "ColumnDesc";
-            this.ColumnDesc.ReadOnly = true;
-            this.ColumnDesc.Width = 150;
-            // 
-            // ColumnQtd
-            // 
-            this.ColumnQtd.HeaderText = "Quantidade";
-            this.ColumnQtd.MinimumWidth = 8;
-            this.ColumnQtd.Name = "ColumnQtd";
-            this.ColumnQtd.ReadOnly = true;
-            this.ColumnQtd.Width = 150;
-            // 
-            // ColumnValUni
-            // 
-            dataGridViewCellStyle1.Format = "C2";
-            this.ColumnValUni.DefaultCellStyle = dataGridViewCellStyle1;
-            this.ColumnValUni.HeaderText = "Preço Unitário";
-            this.ColumnValUni.MinimumWidth = 8;
-            this.ColumnValUni.Name = "ColumnValUni";
-            this.ColumnValUni.ReadOnly = true;
-            this.ColumnValUni.Width = 150;
-            // 
-            // ColumnTotal
-            // 
-            dataGridViewCellStyle2.Format = "C2";
-            this.ColumnTotal.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ColumnTotal.HeaderText = "Total";
-            this.ColumnTotal.MinimumWidth = 8;
-            this.ColumnTotal.Name = "ColumnTotal";
-            this.ColumnTotal.ReadOnly = true;
-            this.ColumnTotal.Width = 150;
             // 
             // tabProdutos
             // 
@@ -599,7 +566,8 @@
             this.tIPOUNITARIODataGridViewTextBoxColumn,
             this.tIPOPRODUTOSDataGridViewTextBoxColumn,
             this.qTDESTOQUEDataGridViewTextBoxColumn,
-            this.pRECO_PRODUTOSDataGridViewTextBoxColumn});
+            this.pRECO_PRODUTOSDataGridViewTextBoxColumn,
+            this.ID_PRODUTOS});
             this.dataGridViewProdutosDisponiveis.DataSource = this.resumoEstoqueBindingSource;
             this.dataGridViewProdutosDisponiveis.Location = new System.Drawing.Point(7, 21);
             this.dataGridViewProdutosDisponiveis.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -610,6 +578,32 @@
             this.dataGridViewProdutosDisponiveis.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProdutosDisponiveis.Size = new System.Drawing.Size(600, 412);
             this.dataGridViewProdutosDisponiveis.TabIndex = 8;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pictureBox1.Image = global::prjMerchades.Properties.Resources.logoMerchades1;
+            this.pictureBox1.Location = new System.Drawing.Point(785, 1);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(236, 85);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // resumoEstoqueBindingSource
+            // 
+            this.resumoEstoqueBindingSource.DataMember = "ResumoEstoque";
+            this.resumoEstoqueBindingSource.DataSource = this.dsDadosSaida;
+            // 
+            // dsDadosSaida
+            // 
+            this.dsDadosSaida.DataSetName = "dsDadosSaida";
+            this.dsDadosSaida.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // resumoEstoqueTableAdapter
+            // 
+            this.resumoEstoqueTableAdapter.ClearBeforeFill = true;
             // 
             // cODIGODEBARRASDataGridViewTextBoxColumn
             // 
@@ -655,31 +649,56 @@
             this.pRECO_PRODUTOSDataGridViewTextBoxColumn.Name = "pRECO_PRODUTOSDataGridViewTextBoxColumn";
             this.pRECO_PRODUTOSDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // resumoEstoqueBindingSource
+            // ID_PRODUTOS
             // 
-            this.resumoEstoqueBindingSource.DataMember = "ResumoEstoque";
-            this.resumoEstoqueBindingSource.DataSource = this.dsDadosSaida;
+            this.ID_PRODUTOS.DataPropertyName = "ID_PRODUTOS";
+            this.ID_PRODUTOS.HeaderText = "ID_PRODUTOS";
+            this.ID_PRODUTOS.Name = "ID_PRODUTOS";
+            this.ID_PRODUTOS.ReadOnly = true;
+            this.ID_PRODUTOS.Visible = false;
             // 
-            // dsDadosSaida
+            // ColumnDesc
             // 
-            this.dsDadosSaida.DataSetName = "dsDadosSaida";
-            this.dsDadosSaida.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.ColumnDesc.HeaderText = "Produto";
+            this.ColumnDesc.MinimumWidth = 8;
+            this.ColumnDesc.Name = "ColumnDesc";
+            this.ColumnDesc.ReadOnly = true;
+            this.ColumnDesc.Width = 150;
             // 
-            // pictureBox1
+            // ColumnQtd
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pictureBox1.Image = global::prjMerchades.Properties.Resources.logoMerchades1;
-            this.pictureBox1.Location = new System.Drawing.Point(785, 1);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(236, 85);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.ColumnQtd.HeaderText = "Quantidade";
+            this.ColumnQtd.MinimumWidth = 8;
+            this.ColumnQtd.Name = "ColumnQtd";
+            this.ColumnQtd.ReadOnly = true;
+            this.ColumnQtd.Width = 150;
             // 
-            // resumoEstoqueTableAdapter
+            // ColumnValUni
             // 
-            this.resumoEstoqueTableAdapter.ClearBeforeFill = true;
+            dataGridViewCellStyle1.Format = "C2";
+            this.ColumnValUni.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ColumnValUni.HeaderText = "Preço Unitário";
+            this.ColumnValUni.MinimumWidth = 8;
+            this.ColumnValUni.Name = "ColumnValUni";
+            this.ColumnValUni.ReadOnly = true;
+            this.ColumnValUni.Width = 150;
+            // 
+            // ColumnTotal
+            // 
+            dataGridViewCellStyle2.Format = "C2";
+            this.ColumnTotal.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ColumnTotal.HeaderText = "Total";
+            this.ColumnTotal.MinimumWidth = 8;
+            this.ColumnTotal.Name = "ColumnTotal";
+            this.ColumnTotal.ReadOnly = true;
+            this.ColumnTotal.Width = 150;
+            // 
+            // ID_PRODUTOS_CAIXA
+            // 
+            this.ID_PRODUTOS_CAIXA.HeaderText = "ID_PRODUTOS";
+            this.ID_PRODUTOS_CAIXA.Name = "ID_PRODUTOS_CAIXA";
+            this.ID_PRODUTOS_CAIXA.ReadOnly = true;
+            this.ID_PRODUTOS_CAIXA.Visible = false;
             // 
             // frmMenu
             // 
@@ -701,9 +720,9 @@
             this.tabProdutos.ResumeLayout(false);
             this.tabProdutos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProdutosDisponiveis)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resumoEstoqueBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsDadosSaida)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -739,18 +758,20 @@
         private prjMerchades.Dados.dsDadosSaidaTableAdapters.ResumoEstoqueTableAdapter resumoEstoqueTableAdapter;
         private System.Windows.Forms.TextBox txtBuscarEstoque;
         private System.Windows.Forms.Button btnLimparFiltro;
+        private System.Windows.Forms.TextBox txtCpf;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblCodFiscal;
         private System.Windows.Forms.DataGridViewTextBoxColumn cODIGODEBARRASDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nOMEPRODUTOSDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tIPOUNITARIODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tIPOPRODUTOSDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn qTDESTOQUEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pRECO_PRODUTOSDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_PRODUTOS;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDesc;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnQtd;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnValUni;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTotal;
-        private System.Windows.Forms.TextBox txtCpf;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label lblCodFiscal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_PRODUTOS_CAIXA;
     }
 }

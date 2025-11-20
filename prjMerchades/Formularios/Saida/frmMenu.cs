@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,8 +21,9 @@ namespace Merchades
                 InitializeComponent();
                 this.WindowState = FormWindowState.Maximized; // abre em tela cheia
             }
-            //variável pública para passar o total da compra para a tela de pagamento
-            public string ValorTotal
+
+        //variável pública para passar o total da compra para a tela de pagamento
+        public string ValorTotal
             {
                 get { return lblTotalFinal.Text; }
             }
@@ -82,7 +84,9 @@ namespace Merchades
                 //Passa o cpf pra tela de pagamento
                 string cpf = txtCpf.Text;
 
-                frmPagamento novoForm = new frmPagamento(this, codFiscal, cpf);
+                //passa o objeto do item para a tela de pagamento
+                DataGridViewRowCollection infoProdutos = dataGridViewProdutosCarrinho.Rows;
+                frmPagamento novoForm = new frmPagamento(this, codFiscal, cpf, infoProdutos);
                 novoForm.Show();//Abre uma tela do formProdutos
             }
        
@@ -362,14 +366,16 @@ namespace Merchades
             }
             else
             {
+
                 //Cria um array que aceita vários tipos de dados para armazenar os dados de um produto
-                object[] informacoesDoProduto = new object[4];
+                object[] informacoesDoProduto = new object[5];
 
                 //Segue abaixo o index de cada informação dentro do array:
                 //informacoesDoProduto[0] = Nome do produto
                 //informacoesDoProduto[1] = Quantidade do produto
                 //informacoesDoProduto[2] = Preço unitário do produto
                 //informacoesDoProduto[3] = Preço Total
+                //informacoesDoProduto[4] = ID_PRODUTOS
 
                 //Se selecionou mais de um produto, vai enviar todos para o carrinho, um em cada ciclo do int i
                 for (int i=dataGridViewProdutosDisponiveis.SelectedRows.Count-1; i>=0; i--)
@@ -397,7 +403,8 @@ namespace Merchades
                         informacoesDoProduto[0] = dataGridViewProdutosDisponiveis.SelectedRows[i].Cells[1].Value; //Pega o valor da célula de index [1] da linha, que no caso é a coluna Nome
                         informacoesDoProduto[1] = 1; // Envia uma unidade do produto para o carrinho, onde a quantidade pode ser alterada facilmente
                         informacoesDoProduto[2] = dataGridViewProdutosDisponiveis.SelectedRows[i].Cells[5].Value; //Pega o preço de venda do produto
-                        informacoesDoProduto[3] = dataGridViewProdutosDisponiveis.SelectedRows[i].Cells[5].Value;
+                        informacoesDoProduto[3] = dataGridViewProdutosDisponiveis.SelectedRows[i].Cells[5].Value; //Total
+                        informacoesDoProduto[4] = dataGridViewProdutosDisponiveis.SelectedRows[i].Cells[6].Value; //ID_PRODUTOS
                         //Envia para o DataGrid de carrinho
                         dataGridViewProdutosCarrinho.Rows.Add(informacoesDoProduto);
                     }
@@ -411,6 +418,8 @@ namespace Merchades
                     }
                     lblTotalFinal.Text = somaTotal.ToString();
                 }
+                //Faz um sonzinho de caixa bacana
+                Console.Beep(1000, 500);
             }
         }
     }

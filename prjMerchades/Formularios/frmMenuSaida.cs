@@ -18,12 +18,6 @@ namespace prjMerchades.Formularios
             InitializeComponent();
         }
 
-
-        private void FormMerchades_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnVercompra_Click(object sender, EventArgs e)
         {
             frmNotaFiscal novoForm = new frmNotaFiscal();
@@ -50,6 +44,20 @@ namespace prjMerchades.Formularios
                 menuAberto.Show();
                 menuAberto.BringToFront();
             }
+        }
+
+        private void btnDeslogar_Click(object sender, EventArgs e)
+        {
+            prjMerchades.Properties.Settings.Default.usuarioNome = "";
+            prjMerchades.Properties.Settings.Default.usuarioNivel = "";
+            Login telaLogin = new Login();
+            telaLogin.Show();
+            this.Hide();
+        }
+
+        private void frmMenuSaida_Load(object sender, EventArgs e)
+        {
+            lblNomeUsuario.Text += prjMerchades.Properties.Settings.Default.usuarioNome;
         }
     }
     

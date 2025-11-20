@@ -915,7 +915,6 @@ C:\Users\agapi\Documents\GitHub\Merchades\prjMerchades\bin\Debug\zh-CHT\Microsof
 C:\Users\agapi\Documents\GitHub\Merchades\prjMerchades\obj\Debug\prjMerch.B26AA8EB.Up2Date
 C:\Users\agapi\Documents\GitHub\Merchades\prjMerchades\bin\Debug\App.config
 C:\Users\LabInfo\Documents\GitHub\Merchades\prjMerchades\bin\Debug\App.config
-C:\Users\LabInfo\Documents\GitHub\Merchades\prjMerchades\bin\Debug\stdole.dll
 C:\Users\LabInfo\Documents\GitHub\Merchades\prjMerchades\bin\Debug\System.Configuration.ConfigurationManager.dll
 C:\Users\LabInfo\Documents\GitHub\Merchades\prjMerchades\bin\Debug\System.Configuration.ConfigurationManager.xml
 C:\Users\LabInfo\Documents\GitHub\Merchades\prjMerchades\obj\Debug\prjMerchades.Formularios.Financeiro.frmParcelasVenda.resources

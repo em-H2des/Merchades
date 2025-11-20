@@ -31,7 +31,8 @@
             this.btnNovaCompra = new System.Windows.Forms.Button();
             this.btnVercompra = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnConfirmaCompra = new System.Windows.Forms.Button();
+            this.btnDeslogar = new System.Windows.Forms.Button();
+            this.lblNomeUsuario = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,23 +89,37 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // btnConfirmaCompra
+            // btnDeslogar
             // 
-            this.btnConfirmaCompra.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnConfirmaCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnConfirmaCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(46)))), ((int)(((byte)(28)))));
-            this.btnConfirmaCompra.FlatAppearance.BorderSize = 0;
-            this.btnConfirmaCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmaCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmaCompra.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnConfirmaCompra.Location = new System.Drawing.Point(1045, 17);
-            this.btnConfirmaCompra.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.btnConfirmaCompra.MinimumSize = new System.Drawing.Size(122, 36);
-            this.btnConfirmaCompra.Name = "btnConfirmaCompra";
-            this.btnConfirmaCompra.Size = new System.Drawing.Size(122, 36);
-            this.btnConfirmaCompra.TabIndex = 30;
-            this.btnConfirmaCompra.Text = "Deslogar";
-            this.btnConfirmaCompra.UseVisualStyleBackColor = false;
+            this.btnDeslogar.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnDeslogar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeslogar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(46)))), ((int)(((byte)(28)))));
+            this.btnDeslogar.FlatAppearance.BorderSize = 0;
+            this.btnDeslogar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeslogar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeslogar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDeslogar.Location = new System.Drawing.Point(1045, 17);
+            this.btnDeslogar.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btnDeslogar.MinimumSize = new System.Drawing.Size(122, 36);
+            this.btnDeslogar.Name = "btnDeslogar";
+            this.btnDeslogar.Size = new System.Drawing.Size(122, 36);
+            this.btnDeslogar.TabIndex = 30;
+            this.btnDeslogar.Text = "Deslogar";
+            this.btnDeslogar.UseVisualStyleBackColor = false;
+            this.btnDeslogar.Click += new System.EventHandler(this.btnDeslogar_Click);
+            // 
+            // lblNomeUsuario
+            // 
+            this.lblNomeUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblNomeUsuario.AutoSize = true;
+            this.lblNomeUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
+            this.lblNomeUsuario.ForeColor = System.Drawing.Color.White;
+            this.lblNomeUsuario.Location = new System.Drawing.Point(872, 24);
+            this.lblNomeUsuario.Name = "lblNomeUsuario";
+            this.lblNomeUsuario.Size = new System.Drawing.Size(136, 24);
+            this.lblNomeUsuario.TabIndex = 31;
+            this.lblNomeUsuario.Text = "Bem Vindo(a), ";
             // 
             // frmMenuSaida
             // 
@@ -112,13 +127,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
             this.ClientSize = new System.Drawing.Size(1175, 609);
-            this.Controls.Add(this.btnConfirmaCompra);
+            this.Controls.Add(this.lblNomeUsuario);
+            this.Controls.Add(this.btnDeslogar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnNovaCompra);
             this.Controls.Add(this.btnVercompra);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMenuSaida";
             this.Text = "frmMenuSaida";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmMenuSaida_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -130,6 +148,7 @@
         private System.Windows.Forms.Button btnNovaCompra;
         private System.Windows.Forms.Button btnVercompra;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnConfirmaCompra;
+        private System.Windows.Forms.Button btnDeslogar;
+        private System.Windows.Forms.Label lblNomeUsuario;
     }
 }

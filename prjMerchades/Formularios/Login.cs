@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -71,6 +72,7 @@ namespace prjMerchades.Formularios
             }
         }
 
+        string connectionString = prjMerchades.Properties.Settings.Default.ConnectionString;
 
         private void Btn_Ok_Click(object sender, EventArgs e)
         {
@@ -79,26 +81,38 @@ namespace prjMerchades.Formularios
                 string usuario = TextBox_NomeUsuario.Text.Trim().ToLower();
                 string senha = TextBox_Senha.Text;
 
-                if (usuario == "entrada" && senha == "123")
+                // Buscar usuário no banco de dados
+                Usuario usuarioEncontrado = BuscarUsuario(usuario, senha);
+
+                if (usuarioEncontrado != null)
                 {
-                    // Abre o MDIEntrada
-                    MDIEntrada frmEntrada = new MDIEntrada();
-                    frmEntrada.Show();
-                    this.Hide(); // ou Close() se preferir
-                }
-                else if (usuario == "saida" && senha == "123")
-                {
-                    // Abre o MDISaida
-                    frmMenuSaida frmMenuSaida = new frmMenuSaida();
-                    frmMenuSaida.Show();
-                    this.Hide();
-                }
-                else if (usuario == "financeiro" && senha == "123")
-                {
-                    // Abre o MDIfinanceiro
-                    MDIFinanceiro frmFinanceiro = new MDIFinanceiro();
-                    frmFinanceiro.Show();
-                    this.Hide();
+                    prjMerchades.Properties.Settings.Default.usuarioNome = usuarioEncontrado.NomeCadastrado;
+                    prjMerchades.Properties.Settings.Default.usuarioNivel = usuarioEncontrado.Nivel.ToString();
+                    // Redirecionar baseado no nível do usuário
+                    switch (usuarioEncontrado.Nivel)
+                    {
+                        case 1: // Nível 1 - Entrada
+                            MDIEntrada frmEntrada = new MDIEntrada();
+                            frmEntrada.Show();
+                            this.Hide();
+                            break;
+
+                        case 2: // Nível 2 - Saída
+                            frmMenuSaida frmMenuSaida = new frmMenuSaida();
+                            frmMenuSaida.Show();
+                            this.Hide();
+                            break;
+
+                        case 3: // Nível 3 - Financeiro
+                            MDIFinanceiro frmFinanceiro = new MDIFinanceiro();
+                            frmFinanceiro.Show();
+                            this.Hide();
+                            break;
+
+                        default:
+                            MessageBox.Show("Nível de usuário não configurado!");
+                            break;
+                    }
                 }
                 else
                 {
@@ -112,6 +126,58 @@ namespace prjMerchades.Formularios
                     }
                 }
             }
+        }
+
+        // Método para buscar usuário no banco
+        private Usuario BuscarUsuario(string usuario, string senha)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = @"SELECT ID_USUARIO, NOME_CADASTRADO, USUARIO, SENHA_USUARIO, NIVEL_USUARIO 
+                           FROM LOGIN_USUARIO 
+                           WHERE USUARIO = @Usuario AND SENHA_USUARIO = @Senha";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Usuario", usuario);
+                        command.Parameters.AddWithValue("@Senha", senha);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                return new Usuario
+                                {
+                                    Id = reader.GetInt32(0),
+                                    NomeCadastrado = reader.GetString(1),
+                                    UsuarioLogin = reader.GetString(2),
+                                    Senha = reader.GetString(3),
+                                    Nivel = reader.GetInt32(4)
+                                };
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erro ao acessar o banco de dados: {ex.Message}");
+                }
+            }
+
+            return null;
+        }
+
+        // Classe para representar o usuário
+        public class Usuario
+        {
+            public int Id { get; set; }
+            public string NomeCadastrado { get; set; }
+            public string UsuarioLogin { get; set; }
+            public string Senha { get; set; }
+            public int Nivel { get; set; }
         }
 
         private void Login_Load(object sender, EventArgs e)

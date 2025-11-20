@@ -34,8 +34,8 @@
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.notasFiscaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RelFinanceiro = new System.Windows.Forms.ToolStripMenuItem();
+            this.parcelasClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fecharToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
@@ -66,7 +66,7 @@
             this.menuStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.RelFinanceiro,
-            this.notasFiscaisToolStripMenuItem,
+            this.parcelasClientesToolStripMenuItem,
             this.fecharToolStripMenuItem,
             this.logoToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
@@ -74,15 +74,6 @@
             this.menuStrip.Size = new System.Drawing.Size(1184, 32);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
-            // 
-            // notasFiscaisToolStripMenuItem
-            // 
-            this.notasFiscaisToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
-            this.notasFiscaisToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.notasFiscaisToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.notasFiscaisToolStripMenuItem.Name = "notasFiscaisToolStripMenuItem";
-            this.notasFiscaisToolStripMenuItem.Size = new System.Drawing.Size(146, 28);
-            this.notasFiscaisToolStripMenuItem.Text = "Notas Fiscais";
             // 
             // RelFinanceiro
             // 
@@ -93,6 +84,16 @@
             this.RelFinanceiro.Size = new System.Drawing.Size(211, 28);
             this.RelFinanceiro.Text = "Relatório Financeiro";
             this.RelFinanceiro.Click += new System.EventHandler(this.RelFinanceiro_Click);
+            // 
+            // parcelasClientesToolStripMenuItem
+            // 
+            this.parcelasClientesToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.parcelasClientesToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.parcelasClientesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.parcelasClientesToolStripMenuItem.Name = "parcelasClientesToolStripMenuItem";
+            this.parcelasClientesToolStripMenuItem.Size = new System.Drawing.Size(183, 28);
+            this.parcelasClientesToolStripMenuItem.Text = "Parcelas Clientes";
+            this.parcelasClientesToolStripMenuItem.Click += new System.EventHandler(this.parcelasClientesToolStripMenuItem_Click);
             // 
             // fecharToolStripMenuItem
             // 
@@ -133,6 +134,7 @@
             this.Name = "MDIFinanceiro";
             this.Text = "MDIFinanceiro";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MDIFinanceiro_Load);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             this.menuStrip.ResumeLayout(false);
@@ -147,7 +149,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.MenuStrip menuStrip;
-        private System.Windows.Forms.ToolStripMenuItem notasFiscaisToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem parcelasClientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem RelFinanceiro;
         private System.Windows.Forms.ToolStripMenuItem fecharToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoToolStripMenuItem;

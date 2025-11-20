@@ -20,13 +20,15 @@ namespace Merchades
         private frmMenu _valorTotal;
         private string _codFiscal;
         private string _cpf;
-        public frmPagamento(frmMenu valorTotal, string codFiscal, string cpf)
+        public DataGridViewRowCollection _infoProdutos;
+        public frmPagamento(frmMenu valorTotal, string codFiscal, string cpf, DataGridViewRowCollection infoProdutos)
         {
             InitializeComponent();
             //Armazena o valor e código
             _valorTotal = valorTotal;
             _codFiscal = codFiscal;
             _cpf = cpf;
+            _infoProdutos = infoProdutos;
         }
         private void btnCancelaVenda_Click(object sender, EventArgs e)
         {
@@ -72,14 +74,37 @@ namespace Merchades
             //idPagamento
             int idPagamento = (cmbFormaPagamento.SelectedIndex) + 1;
 
-            bool sucesso = SalvarNotaFiscal(stringDeConexao, dataEmissao, valorVendaDecimal, codNotaVenda, qtdParcelas, cpf, idPagamento);
+            int idNotaVenda = SalvarNotaFiscal(stringDeConexao, dataEmissao, valorVendaDecimal, codNotaVenda, qtdParcelas, cpf, idPagamento);
 
-            if (sucesso)
+
+            if (idNotaVenda > 0)
             {
-                MessageBox.Show("Venda cadastrada com sucesso!");
+                bool deuErro = false;
+                foreach (DataGridViewRow linhaProduto in _infoProdutos)
+                {
+                    //qtdProduto
+                    int qtdProduto = Convert.ToInt32(linhaProduto.Cells[1].Value);
+
+                    //idProduto
+                    int idProduto = Convert.ToInt32(linhaProduto.Cells[4].Value);
+
+                    bool produto = SalvarItensNotaVenda(stringDeConexao, codNotaVenda, qtdProduto, idProduto, idNotaVenda);
+                    if (!produto)
+                    {
+                        deuErro = true;
+                    }
+                }
+                if (!deuErro)
+                {
+                    MessageBox.Show("Venda e Produtos cadastrados com sucesso!");
+                }
+                else
+                {
+                    MessageBox.Show("Algo explodiu os produtos");
+                }
             }
             else {
-                MessageBox.Show("Algo deu errado no cadastro da venda");
+                MessageBox.Show("Algo deu errado no cadastro da nota fiscal de venda");
             }
 
             frmMenu menuCarrinhoAberto = Application.OpenForms.OfType<frmMenu>().FirstOrDefault();
@@ -95,7 +120,7 @@ namespace Merchades
         }
 
         //Método para salvar a notaFiscal 
-        public bool SalvarNotaFiscal(string StringConexao, System.DateTime dataEmissao, decimal valorVenda, string codNotaVenda, int qtdParcelas, string cpf, int idPagamento)
+        public int SalvarNotaFiscal(string StringConexao, System.DateTime dataEmissao, decimal valorVenda, string codNotaVenda, int qtdParcelas, string cpf, int idPagamento)
         {
 
             string sqlInsert = @"
@@ -119,6 +144,7 @@ namespace Merchades
                     @Status,
                     @IdMetodoPagamento
                 );
+                SELECT CAST(SCOPE_IDENTITY() AS INT)
             ";
 
             try
@@ -136,6 +162,43 @@ namespace Merchades
                         cmd.Parameters.AddWithValue("@Observacao", "Venda de Arroz");
                         cmd.Parameters.AddWithValue("@Status", "F");
                         cmd.Parameters.AddWithValue("@IdMetodoPagamento", idPagamento);
+                        conn.Open();
+                        int novoIdGerado = Convert.ToInt32(cmd.ExecuteScalar());
+                        return novoIdGerado;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao salvar nota: " + ex.Message);
+                return 0;
+            }
+        }
+
+        public bool SalvarItensNotaVenda(string stringDeConexao, string codNotaVenda, int qtdProduto, int idProduto, int idNotaVenda)
+        {
+            string sqlInsert = @"
+                INSERT INTO ITENS_NOTA_VENDA (
+                    QTD_PRODUTO,
+                    ID_PRODUTOS,
+                    ID_NOTA_VENDA
+                )
+                VALUES (
+                    @qtdProduto,
+                    @idProduto,
+                    @idNotaVenda
+                );
+            ";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(stringDeConexao))
+                {
+                    using (SqlCommand cmd = new SqlCommand(sqlInsert, conn))
+                    {
+
+                        cmd.Parameters.AddWithValue("@qtdProduto", qtdProduto);
+                        cmd.Parameters.AddWithValue("@idProduto", idProduto);
+                        cmd.Parameters.AddWithValue("@idNotaVenda", idNotaVenda);
                         conn.Open();
                         cmd.ExecuteNonQuery();
                         return true;

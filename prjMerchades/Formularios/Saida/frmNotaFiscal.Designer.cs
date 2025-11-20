@@ -34,7 +34,6 @@
             this.lblLabelCpf = new System.Windows.Forms.Label();
             this.lblTituloDetalhes = new System.Windows.Forms.Label();
             this.lblDataEmissaoNF = new System.Windows.Forms.Label();
-            this.lblClienteNF = new System.Windows.Forms.Label();
             this.lblValorParcelas = new System.Windows.Forms.Label();
             this.lblIdNF = new System.Windows.Forms.Label();
             this.lblValorTotalNF = new System.Windows.Forms.Label();
@@ -51,7 +50,6 @@
             this.btnAplicarFiltro = new System.Windows.Forms.Button();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblLabelCliente = new System.Windows.Forms.Label();
             this.lblLabelDataEmissao = new System.Windows.Forms.Label();
             this.lblLabelParcelas = new System.Windows.Forms.Label();
             this.lblLabelId = new System.Windows.Forms.Label();
@@ -67,22 +65,20 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
             this.panel1.Controls.Add(this.lblCpfNF);
             this.panel1.Controls.Add(this.lblLabelCpf);
             this.panel1.Controls.Add(this.lblTituloDetalhes);
             this.panel1.Controls.Add(this.lblDataEmissaoNF);
-            this.panel1.Controls.Add(this.lblClienteNF);
             this.panel1.Controls.Add(this.lblValorParcelas);
             this.panel1.Controls.Add(this.lblIdNF);
             this.panel1.Controls.Add(this.lblValorTotalNF);
             this.panel1.Controls.Add(this.lblLabelValorTotal);
             this.panel1.Controls.Add(this.pnDetalheslProdutos);
             this.panel1.Controls.Add(this.pnNotasFiscais);
-            this.panel1.Controls.Add(this.lblLabelCliente);
             this.panel1.Controls.Add(this.lblLabelDataEmissao);
             this.panel1.Controls.Add(this.lblLabelParcelas);
             this.panel1.Controls.Add(this.lblLabelId);
@@ -94,15 +90,15 @@
             // 
             // lblCpfNF
             // 
-            this.lblCpfNF.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.lblCpfNF.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCpfNF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.lblCpfNF.Font = new System.Drawing.Font("Calibri", 13.8F);
             this.lblCpfNF.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCpfNF.Location = new System.Drawing.Point(317, 90);
+            this.lblCpfNF.Location = new System.Drawing.Point(316, 55);
             this.lblCpfNF.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCpfNF.Name = "lblCpfNF";
-            this.lblCpfNF.Size = new System.Drawing.Size(88, 25);
+            this.lblCpfNF.Size = new System.Drawing.Size(400, 25);
             this.lblCpfNF.TabIndex = 140;
             this.lblCpfNF.Text = "xxxxxx";
             this.lblCpfNF.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -110,12 +106,12 @@
             // 
             // lblLabelCpf
             // 
-            this.lblLabelCpf.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.lblLabelCpf.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblLabelCpf.AutoSize = true;
             this.lblLabelCpf.Font = new System.Drawing.Font("Calibri", 13.8F);
             this.lblLabelCpf.ForeColor = System.Drawing.Color.White;
-            this.lblLabelCpf.Location = new System.Drawing.Point(226, 90);
+            this.lblLabelCpf.Location = new System.Drawing.Point(225, 55);
             this.lblLabelCpf.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLabelCpf.Name = "lblLabelCpf";
             this.lblLabelCpf.Size = new System.Drawing.Size(87, 23);
@@ -150,22 +146,6 @@
             this.lblDataEmissaoNF.Text = "xxxxxx";
             this.lblDataEmissaoNF.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblDataEmissaoNF.Visible = false;
-            // 
-            // lblClienteNF
-            // 
-            this.lblClienteNF.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblClienteNF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
-            this.lblClienteNF.Font = new System.Drawing.Font("Calibri", 13.8F);
-            this.lblClienteNF.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblClienteNF.Location = new System.Drawing.Point(316, 53);
-            this.lblClienteNF.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblClienteNF.Name = "lblClienteNF";
-            this.lblClienteNF.Size = new System.Drawing.Size(403, 25);
-            this.lblClienteNF.TabIndex = 49;
-            this.lblClienteNF.Text = "xxxxxx";
-            this.lblClienteNF.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblClienteNF.Visible = false;
             // 
             // lblValorParcelas
             // 
@@ -226,8 +206,8 @@
             // 
             // pnDetalheslProdutos
             // 
-            this.pnDetalheslProdutos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.pnDetalheslProdutos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnDetalheslProdutos.AutoScroll = true;
             this.pnDetalheslProdutos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -274,7 +254,7 @@
             // 
             // lblExemploProduto
             // 
-            this.lblExemploProduto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.lblExemploProduto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblExemploProduto.AutoSize = true;
             this.lblExemploProduto.Font = new System.Drawing.Font("Calibri", 13.8F);
@@ -318,7 +298,7 @@
             // 
             // lblExemploProdutoCampo
             // 
-            this.lblExemploProdutoCampo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.lblExemploProdutoCampo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblExemploProdutoCampo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.lblExemploProdutoCampo.Font = new System.Drawing.Font("Calibri", 13.8F);
@@ -334,7 +314,7 @@
             // 
             // pnNotasFiscais
             // 
-            this.pnNotasFiscais.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.pnNotasFiscais.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnNotasFiscais.AutoScroll = true;
             this.pnNotasFiscais.Controls.Add(this.btnLimparFiltro);
@@ -385,7 +365,7 @@
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.txtFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
             this.txtFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -407,21 +387,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Buscar CPF/CNPJ ou NF:";
             // 
-            // lblLabelCliente
-            // 
-            this.lblLabelCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblLabelCliente.AutoSize = true;
-            this.lblLabelCliente.Font = new System.Drawing.Font("Calibri", 13.8F);
-            this.lblLabelCliente.ForeColor = System.Drawing.Color.White;
-            this.lblLabelCliente.Location = new System.Drawing.Point(226, 55);
-            this.lblLabelCliente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblLabelCliente.Name = "lblLabelCliente";
-            this.lblLabelCliente.Size = new System.Drawing.Size(67, 23);
-            this.lblLabelCliente.TabIndex = 138;
-            this.lblLabelCliente.Text = "Cliente:";
-            this.lblLabelCliente.Visible = false;
-            // 
             // lblLabelDataEmissao
             // 
             this.lblLabelDataEmissao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -441,7 +406,7 @@
             this.lblLabelParcelas.AutoSize = true;
             this.lblLabelParcelas.Font = new System.Drawing.Font("Calibri", 13.8F);
             this.lblLabelParcelas.ForeColor = System.Drawing.Color.White;
-            this.lblLabelParcelas.Location = new System.Drawing.Point(13, 94);
+            this.lblLabelParcelas.Location = new System.Drawing.Point(13, 89);
             this.lblLabelParcelas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLabelParcelas.Name = "lblLabelParcelas";
             this.lblLabelParcelas.Size = new System.Drawing.Size(79, 23);
@@ -451,7 +416,7 @@
             // 
             // lblLabelId
             // 
-            this.lblLabelId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.lblLabelId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblLabelId.AutoSize = true;
             this.lblLabelId.Font = new System.Drawing.Font("Calibri", 13.8F);
@@ -480,8 +445,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.btnVoltarTelaInicial);
@@ -556,10 +521,8 @@
         private System.Windows.Forms.Label lblExemploValorCampo;
         private System.Windows.Forms.Label lblIdNF;
         private System.Windows.Forms.Label lblDataEmissaoNF;
-        private System.Windows.Forms.Label lblClienteNF;
         private System.Windows.Forms.Label lblValorParcelas;
         private System.Windows.Forms.Label lblTituloDetalhes;
-        private System.Windows.Forms.Label lblLabelCliente;
         private System.Windows.Forms.Label lblLabelDataEmissao;
         private System.Windows.Forms.Label lblLabelParcelas;
         private System.Windows.Forms.Label lblLabelId;

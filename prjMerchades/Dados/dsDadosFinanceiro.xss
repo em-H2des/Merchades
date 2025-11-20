@@ -9,8 +9,8 @@
     <Shape ID="DesignTable:RELATORIO_FINANCEIRO" ZOrder="5" X="97" Y="128" Height="172" Width="291" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:Vw_RELATORIO_FINANCEIRO_DESPESAS" ZOrder="4" X="139" Y="368" Height="172" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:Vw_RELATORIO_FINANCEIRO_GANHOS" ZOrder="3" X="475" Y="370" Height="172" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
-    <Shape ID="DesignTable:DEBITO_PARCELAS" ZOrder="2" X="709" Y="119" Height="248" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
-    <Shape ID="DesignTable:Vw_PARCELAS_CPF" ZOrder="1" X="415" Y="129" Height="172" Width="255" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
+    <Shape ID="DesignTable:DEBITO_PARCELAS" ZOrder="1" X="709" Y="119" Height="248" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
+    <Shape ID="DesignTable:Vw_PARCELAS_CPF" ZOrder="2" X="415" Y="129" Height="172" Width="255" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

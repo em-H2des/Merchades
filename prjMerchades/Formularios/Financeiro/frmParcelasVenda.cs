@@ -65,21 +65,25 @@ namespace prjMerchades.Formularios.Financeiro
 
         private void btnPagarParcelaVenda_Click(object sender, EventArgs e)
         {
-            for(int i = 0; i < dgvDebitoParcelas.SelectedRows.Count; i++)
+            var adapterDebitoParcelas = new DEBITO_PARCELASTableAdapter();
+            var adapterParcelas = new Vw_PARCELAS_CPFTableAdapter();
+
+            for (int i = 0; i < dgvDebitoParcelas.SelectedRows.Count; i++)
             {
                 int idDebitoParcela = Convert.ToInt32(dgvDebitoParcelas.SelectedRows[i].Cells[7].Value);
                 string numParcelas = dgvDebitoParcelas.SelectedRows[i].Cells[1].Value.ToString();
                 string observacao = dgvDebitoParcelas.SelectedRows[i].Cells[6].Value.ToString();
-
-                var adapterDebitoParcelas = new DEBITO_PARCELASTableAdapter();
-                adapterDebitoParcelas.PR_PagarParcela(idDebitoParcela, numParcelas, observacao);
-                adapterDebitoParcelas.Fill(this.dsDadosFinanceiro.DEBITO_PARCELAS);
-                this.dEBITOPARCELASBindingSource.ResetBindings(false);
-
-                var adapterParcelas = new Vw_PARCELAS_CPFTableAdapter();
-                adapterParcelas.Fill(this.dsDadosFinanceiro.Vw_PARCELAS_CPF);
-                this.vwPARCELASCPFBindingSource.ResetBindings(false);
+                
+                //PAGA A PARCELA
+                adapterDebitoParcelas.PR_PagarParcelas(idDebitoParcela, numParcelas, observacao);
             }
+
+            //Atualiza as datagrids
+            adapterDebitoParcelas.Fill(this.dsDadosFinanceiro.DEBITO_PARCELAS);
+            this.dEBITOPARCELASBindingSource.ResetBindings(false);
+            
+            adapterParcelas.Fill(this.dsDadosFinanceiro.Vw_PARCELAS_CPF);
+            this.vwPARCELASCPFBindingSource.ResetBindings(false);
 
         }
     }
