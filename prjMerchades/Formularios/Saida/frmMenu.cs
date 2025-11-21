@@ -27,29 +27,6 @@ namespace Merchades
             {
                 get { return lblTotalFinal.Text; }
             }
-            // Abre formulários dentro de uma aba
-            private void AbrirFormulario(Form form, string titulo)
-            {
-                foreach (TabPage page in tabControlSaida.TabPages)
-                {
-                    if (page.Text == titulo)
-                    {
-                        tabControlSaida.SelectedTab = page;
-                        return;
-                    }
-                }
-
-                TabPage novaAba = new TabPage(titulo);
-                form.TopLevel = false;
-                form.FormBorderStyle = FormBorderStyle.None;
-                form.Dock = DockStyle.Fill;
-
-                novaAba.Controls.Add(form);
-                tabControlSaida.TabPages.Add(novaAba);
-                tabControlSaida.SelectedTab = novaAba;
-
-                form.Show();
-            }
 
 
         //==================================Aba do Caixa==================================//
@@ -124,7 +101,7 @@ namespace Merchades
                         //Soma o valor de todas as colunas "Total"
                         somaTotal += Math.Round(Convert.ToDecimal(row.Cells["ColumnTotal"].Value), 2);
                     }
-                    lblTotalFinal.Text = somaTotal.ToString();
+                    lblTotalFinal.Text = "R$" + somaTotal.ToString();
                 }
             }
         }
@@ -164,17 +141,16 @@ namespace Merchades
                         object precoUnitario = dataGridViewProdutosCarrinho.SelectedRows[i].Cells[2].Value; //Valor Unitário do Produto
                         //Ajusta o Preço Total de acordo com a unidade
                         dataGridViewProdutosCarrinho.SelectedRows[i].Cells[3].Value = decimal.Parse(precoUnitario.ToString()) * decimal.Parse(quantidade.ToString());
-
-                        decimal somaTotal = 0; //Soma das colunas "Total" de cada linha
-                                               //Para cada Linha no DataGridView
-                        foreach (DataGridViewRow row in dataGridViewProdutosCarrinho.Rows)
-                        {
-                            //Soma o valor de todas as colunas "Total"
-                            somaTotal += Math.Round(Convert.ToDecimal(row.Cells["ColumnTotal"].Value), 2);
-                        }
-                        lblTotalFinal.Text = somaTotal.ToString();
                     }
                 }
+                decimal somaTotal = 0; //Soma das colunas "Total" de cada linha
+                                       //Para cada Linha no DataGridView
+                foreach (DataGridViewRow row in dataGridViewProdutosCarrinho.Rows)
+                {
+                    //Soma o valor de todas as colunas "Total"
+                    somaTotal += Math.Round(Convert.ToDecimal(row.Cells["ColumnTotal"].Value), 2);
+                }
+                lblTotalFinal.Text = "R$" + somaTotal.ToString();
             }
         }
 
@@ -189,6 +165,15 @@ namespace Merchades
                 {
                     dataGridViewProdutosCarrinho.Rows.RemoveAt(dataGridViewProdutosCarrinho.SelectedRows[0].Index);
                 }
+
+                decimal somaTotal = 0; //Soma das colunas "Total" de cada linha
+                                       //Para cada Linha no DataGridView
+                foreach (DataGridViewRow row in dataGridViewProdutosCarrinho.Rows)
+                {
+                    //Soma o valor de todas as colunas "Total"
+                    somaTotal += Math.Round(Convert.ToDecimal(row.Cells["ColumnTotal"].Value), 2);
+                }
+                lblTotalFinal.Text = "R$" + somaTotal.ToString();
             }
         }
 
@@ -416,7 +401,7 @@ namespace Merchades
                         //Soma o valor de todas as colunas "Total"
                         somaTotal += Math.Round(Convert.ToDecimal(row.Cells["ColumnTotal"].Value), 2);
                     }
-                    lblTotalFinal.Text = somaTotal.ToString();
+                    lblTotalFinal.Text = "R$" + somaTotal.ToString();
                 }
                 //Faz um sonzinho de caixa bacana
                 Console.Beep(1000, 500);

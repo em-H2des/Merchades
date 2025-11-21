@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRelFinanceiro));
             this.vwRELATORIOFINANCEIRODESPESASBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsDadosFinanceiro = new prjMerchades.Dados.dsDadosFinanceiro();
@@ -67,7 +67,6 @@
             this.rvGeral = new Microsoft.Reporting.WinForms.ReportViewer();
             this.label7 = new System.Windows.Forms.Label();
             this.picBox_Logo = new System.Windows.Forms.PictureBox();
-            this.btnConfirmaCompra = new System.Windows.Forms.Button();
             this.vw_RELATORIO_FINANCEIRO_DESPESASTableAdapter = new prjMerchades.Dados.dsDadosFinanceiroTableAdapters.Vw_RELATORIO_FINANCEIRO_DESPESASTableAdapter();
             this.vw_RELATORIO_FINANCEIRO_GANHOSTableAdapter = new prjMerchades.Dados.dsDadosFinanceiroTableAdapters.Vw_RELATORIO_FINANCEIRO_GANHOSTableAdapter();
             this.rELATORIO_FINANCEIROTableAdapter = new prjMerchades.Dados.dsDadosFinanceiroTableAdapters.RELATORIO_FINANCEIROTableAdapter();
@@ -219,9 +218,9 @@
             this.rvGastos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource4.Name = "DataSetReportViewerRelatorioFinanceiro";
-            reportDataSource4.Value = this.vwRELATORIOFINANCEIRODESPESASBindingSource;
-            this.rvGastos.LocalReport.DataSources.Add(reportDataSource4);
+            reportDataSource1.Name = "DataSetReportViewerRelatorioFinanceiro";
+            reportDataSource1.Value = this.vwRELATORIOFINANCEIRODESPESASBindingSource;
+            this.rvGastos.LocalReport.DataSources.Add(reportDataSource1);
             this.rvGastos.LocalReport.ReportEmbeddedResource = "prjMerchades.Formularios.Financeiro.ReportFinanceiro.rdlc";
             this.rvGastos.Location = new System.Drawing.Point(3, 66);
             this.rvGastos.Name = "rvGastos";
@@ -325,9 +324,9 @@
             // 
             this.rvVendas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource5.Name = "DataSetReportViewerRelatorioFinanceiro";
-            reportDataSource5.Value = this.vwRELATORIOFINANCEIROGANHOSBindingSource;
-            this.rvVendas.LocalReport.DataSources.Add(reportDataSource5);
+            reportDataSource2.Name = "DataSetReportViewerRelatorioFinanceiro";
+            reportDataSource2.Value = this.vwRELATORIOFINANCEIROGANHOSBindingSource;
+            this.rvVendas.LocalReport.DataSources.Add(reportDataSource2);
             this.rvVendas.LocalReport.ReportEmbeddedResource = "prjMerchades.Formularios.Financeiro.ReportFinanceiro.rdlc";
             this.rvVendas.Location = new System.Drawing.Point(4, 64);
             this.rvVendas.Name = "rvVendas";
@@ -420,9 +419,9 @@
             // 
             this.rvGeral.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource6.Name = "DataSetReportViewerRelatorioFinanceiro";
-            reportDataSource6.Value = this.rELATORIOFINANCEIROBindingSource;
-            this.rvGeral.LocalReport.DataSources.Add(reportDataSource6);
+            reportDataSource3.Name = "DataSetReportViewerRelatorioFinanceiro";
+            reportDataSource3.Value = this.rELATORIOFINANCEIROBindingSource;
+            this.rvGeral.LocalReport.DataSources.Add(reportDataSource3);
             this.rvGeral.LocalReport.ReportEmbeddedResource = "prjMerchades.Formularios.Financeiro.ReportFinanceiro.rdlc";
             this.rvGeral.Location = new System.Drawing.Point(4, 64);
             this.rvGeral.Name = "rvGeral";
@@ -451,24 +450,6 @@
             this.picBox_Logo.TabIndex = 7;
             this.picBox_Logo.TabStop = false;
             // 
-            // btnConfirmaCompra
-            // 
-            this.btnConfirmaCompra.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnConfirmaCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnConfirmaCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(46)))), ((int)(((byte)(28)))));
-            this.btnConfirmaCompra.FlatAppearance.BorderSize = 0;
-            this.btnConfirmaCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmaCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmaCompra.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnConfirmaCompra.Location = new System.Drawing.Point(796, 11);
-            this.btnConfirmaCompra.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.btnConfirmaCompra.MinimumSize = new System.Drawing.Size(122, 36);
-            this.btnConfirmaCompra.Name = "btnConfirmaCompra";
-            this.btnConfirmaCompra.Size = new System.Drawing.Size(122, 36);
-            this.btnConfirmaCompra.TabIndex = 31;
-            this.btnConfirmaCompra.Text = "Deslogar";
-            this.btnConfirmaCompra.UseVisualStyleBackColor = false;
-            // 
             // vw_RELATORIO_FINANCEIRO_DESPESASTableAdapter
             // 
             this.vw_RELATORIO_FINANCEIRO_DESPESASTableAdapter.ClearBeforeFill = true;
@@ -487,7 +468,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
             this.ClientSize = new System.Drawing.Size(1093, 687);
-            this.Controls.Add(this.btnConfirmaCompra);
             this.Controls.Add(this.picBox_Logo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl_Financeiro);
@@ -524,7 +504,6 @@
         private System.Windows.Forms.TabPage tabPage_Divida;
         private System.Windows.Forms.TabPage tabPage_CompraAntg;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnConfirmaCompra;
         private System.Windows.Forms.DateTimePicker dtpGastosFimPeriodo;
         private System.Windows.Forms.DateTimePicker dtpGastosInicioPeriodo;
         private System.Windows.Forms.Label label5;

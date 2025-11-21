@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtBuscarParcela = new System.Windows.Forms.TextBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgvTabelaParcelas = new System.Windows.Forms.DataGridView();
             this.iDPARCELASDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,17 +52,16 @@
             this.iDPARCELASDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dEBITOPARCELASBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnPagarParcelaVenda = new System.Windows.Forms.Button();
+            this.btnLimparFiltroParcelas = new System.Windows.Forms.Button();
             this.txtBuscarParcelas = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnAplicarFiltroParcelas = new System.Windows.Forms.Button();
+            this.cmbFiltroParcelas = new System.Windows.Forms.ComboBox();
             this.dsDadosSaida = new prjMerchades.Dados.dsDadosSaida();
             this.dEBITO_PARCELASTableAdapter = new prjMerchades.Dados.dsDadosFinanceiroTableAdapters.DEBITO_PARCELASTableAdapter();
             this.vw_PARCELAS_CPFTableAdapter = new prjMerchades.Dados.dsDadosFinanceiroTableAdapters.Vw_PARCELAS_CPFTableAdapter();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnLimparFiltroParcelas = new System.Windows.Forms.Button();
-            this.btnAplicarFiltroParcelas = new System.Windows.Forms.Button();
-            this.cmbFiltroParcelas = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtBuscarParcela = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -112,6 +112,19 @@
             this.groupBox1.Size = new System.Drawing.Size(886, 492);
             this.groupBox1.TabIndex = 58;
             this.groupBox1.TabStop = false;
+            // 
+            // txtBuscarParcela
+            // 
+            this.txtBuscarParcela.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBuscarParcela.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
+            this.txtBuscarParcela.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBuscarParcela.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.8F);
+            this.txtBuscarParcela.ForeColor = System.Drawing.Color.White;
+            this.txtBuscarParcela.Location = new System.Drawing.Point(586, 55);
+            this.txtBuscarParcela.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.txtBuscarParcela.Name = "txtBuscarParcela";
+            this.txtBuscarParcela.Size = new System.Drawing.Size(274, 29);
+            this.txtBuscarParcela.TabIndex = 58;
             // 
             // splitContainer1
             // 
@@ -327,64 +340,6 @@
             this.btnPagarParcelaVenda.UseVisualStyleBackColor = false;
             this.btnPagarParcelaVenda.Click += new System.EventHandler(this.btnPagarParcelaVenda_Click);
             // 
-            // txtBuscarParcelas
-            // 
-            this.txtBuscarParcelas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBuscarParcelas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
-            this.txtBuscarParcelas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBuscarParcelas.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.8F);
-            this.txtBuscarParcelas.ForeColor = System.Drawing.Color.White;
-            this.txtBuscarParcelas.Location = new System.Drawing.Point(8, 55);
-            this.txtBuscarParcelas.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.txtBuscarParcelas.Name = "txtBuscarParcelas";
-            this.txtBuscarParcelas.Size = new System.Drawing.Size(339, 29);
-            this.txtBuscarParcelas.TabIndex = 45;
-            this.txtBuscarParcelas.TextChanged += new System.EventHandler(this.txtBuscarParcelas_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.label1.Location = new System.Drawing.Point(3, 20);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(194, 30);
-            this.label1.TabIndex = 49;
-            this.label1.Text = "Busca por CPF:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // dsDadosSaida
-            // 
-            this.dsDadosSaida.DataSetName = "dsDadosSaida";
-            this.dsDadosSaida.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dEBITO_PARCELASTableAdapter
-            // 
-            this.dEBITO_PARCELASTableAdapter.ClearBeforeFill = true;
-            // 
-            // vw_PARCELAS_CPFTableAdapter
-            // 
-            this.vw_PARCELAS_CPFTableAdapter.ClearBeforeFill = true;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.label3.Location = new System.Drawing.Point(587, 15);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(278, 40);
-            this.label3.TabIndex = 51;
-            this.label3.Text = "Buscar parcela:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // btnLimparFiltroParcelas
             // 
             this.btnLimparFiltroParcelas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -402,6 +357,65 @@
             this.btnLimparFiltroParcelas.Text = "Limpar Filtro";
             this.btnLimparFiltroParcelas.UseVisualStyleBackColor = false;
             this.btnLimparFiltroParcelas.Click += new System.EventHandler(this.btnLimparFiltroParcelas_Click);
+            // 
+            // txtBuscarParcelas
+            // 
+            this.txtBuscarParcelas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBuscarParcelas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
+            this.txtBuscarParcelas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBuscarParcelas.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.8F);
+            this.txtBuscarParcelas.ForeColor = System.Drawing.Color.White;
+            this.txtBuscarParcelas.Location = new System.Drawing.Point(8, 55);
+            this.txtBuscarParcelas.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.txtBuscarParcelas.Name = "txtBuscarParcelas";
+            this.txtBuscarParcelas.Size = new System.Drawing.Size(339, 29);
+            this.txtBuscarParcelas.TabIndex = 45;
+            this.txtBuscarParcelas.TextChanged += new System.EventHandler(this.txtBuscarParcelas_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
+            this.label3.Location = new System.Drawing.Point(587, 15);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(278, 40);
+            this.label3.TabIndex = 51;
+            this.label3.Text = "Buscar parcela:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
+            this.label2.Location = new System.Drawing.Point(382, 15);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(200, 40);
+            this.label2.TabIndex = 50;
+            this.label2.Text = "Filtrar por:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
+            this.label1.Location = new System.Drawing.Point(3, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(194, 30);
+            this.label1.TabIndex = 49;
+            this.label1.Text = "Busca por CPF:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnAplicarFiltroParcelas
             // 
@@ -440,32 +454,18 @@
             this.cmbFiltroParcelas.Size = new System.Drawing.Size(178, 29);
             this.cmbFiltroParcelas.TabIndex = 46;
             // 
-            // label2
+            // dsDadosSaida
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.label2.Location = new System.Drawing.Point(382, 15);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(200, 40);
-            this.label2.TabIndex = 50;
-            this.label2.Text = "Filtrar por:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dsDadosSaida.DataSetName = "dsDadosSaida";
+            this.dsDadosSaida.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // txtBuscarParcela
+            // dEBITO_PARCELASTableAdapter
             // 
-            this.txtBuscarParcela.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBuscarParcela.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(148)))), ((int)(((byte)(144)))));
-            this.txtBuscarParcela.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBuscarParcela.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.8F);
-            this.txtBuscarParcela.ForeColor = System.Drawing.Color.White;
-            this.txtBuscarParcela.Location = new System.Drawing.Point(586, 51);
-            this.txtBuscarParcela.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.txtBuscarParcela.Name = "txtBuscarParcela";
-            this.txtBuscarParcela.Size = new System.Drawing.Size(274, 29);
-            this.txtBuscarParcela.TabIndex = 58;
+            this.dEBITO_PARCELASTableAdapter.ClearBeforeFill = true;
+            // 
+            // vw_PARCELAS_CPFTableAdapter
+            // 
+            this.vw_PARCELAS_CPFTableAdapter.ClearBeforeFill = true;
             // 
             // frmParcelasVenda
             // 

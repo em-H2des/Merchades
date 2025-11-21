@@ -217,7 +217,7 @@ namespace Merchades
             // TODO: esta linha de código carrega dados na tabela 'dsDadosSaida.METODO_PAGAMENTO'. Você pode movê-la ou removê-la conforme necessário.
             this.mETODO_PAGAMENTOTableAdapter.Fill(this.dsDadosSaida.METODO_PAGAMENTO);
             //Variável de Valor total
-            lblValorTotal.Text = $"R$ {_valorTotal.ValorTotal}";
+            lblValorTotal.Text = $"{_valorTotal.ValorTotal}";
         }
        
 

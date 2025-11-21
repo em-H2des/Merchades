@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
@@ -61,9 +63,9 @@
             this.cmbOrdenar = new System.Windows.Forms.ComboBox();
             this.cmbFiltro = new System.Windows.Forms.ComboBox();
             this.dataGridViewProdutosDisponiveis = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.resumoEstoqueBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsDadosSaida = new prjMerchades.Dados.dsDadosSaida();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.resumoEstoqueTableAdapter = new prjMerchades.Dados.dsDadosSaidaTableAdapters.ResumoEstoqueTableAdapter();
             this.cODIGODEBARRASDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nOMEPRODUTOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,9 +84,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProdutosCarrinho)).BeginInit();
             this.tabProdutos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProdutosDisponiveis)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resumoEstoqueBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsDadosSaida)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlSaida
@@ -343,6 +345,15 @@
             this.ColumnValUni,
             this.ColumnTotal,
             this.ID_PRODUTOS_CAIXA});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewProdutosCarrinho.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewProdutosCarrinho.Location = new System.Drawing.Point(17, 84);
             this.dataGridViewProdutosCarrinho.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dataGridViewProdutosCarrinho.MinimumSize = new System.Drawing.Size(439, 110);
@@ -569,6 +580,15 @@
             this.pRECO_PRODUTOSDataGridViewTextBoxColumn,
             this.ID_PRODUTOS});
             this.dataGridViewProdutosDisponiveis.DataSource = this.resumoEstoqueBindingSource;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.NullValue = null;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewProdutosDisponiveis.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewProdutosDisponiveis.Location = new System.Drawing.Point(7, 21);
             this.dataGridViewProdutosDisponiveis.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dataGridViewProdutosDisponiveis.Name = "dataGridViewProdutosDisponiveis";
@@ -578,6 +598,16 @@
             this.dataGridViewProdutosDisponiveis.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProdutosDisponiveis.Size = new System.Drawing.Size(600, 412);
             this.dataGridViewProdutosDisponiveis.TabIndex = 8;
+            // 
+            // resumoEstoqueBindingSource
+            // 
+            this.resumoEstoqueBindingSource.DataMember = "ResumoEstoque";
+            this.resumoEstoqueBindingSource.DataSource = this.dsDadosSaida;
+            // 
+            // dsDadosSaida
+            // 
+            this.dsDadosSaida.DataSetName = "dsDadosSaida";
+            this.dsDadosSaida.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pictureBox1
             // 
@@ -590,16 +620,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // resumoEstoqueBindingSource
-            // 
-            this.resumoEstoqueBindingSource.DataMember = "ResumoEstoque";
-            this.resumoEstoqueBindingSource.DataSource = this.dsDadosSaida;
-            // 
-            // dsDadosSaida
-            // 
-            this.dsDadosSaida.DataSetName = "dsDadosSaida";
-            this.dsDadosSaida.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // resumoEstoqueTableAdapter
             // 
@@ -643,8 +663,9 @@
             // pRECO_PRODUTOSDataGridViewTextBoxColumn
             // 
             this.pRECO_PRODUTOSDataGridViewTextBoxColumn.DataPropertyName = "PRECO_PRODUTOS";
-            dataGridViewCellStyle3.Format = "C2";
-            this.pRECO_PRODUTOSDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.pRECO_PRODUTOSDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.pRECO_PRODUTOSDataGridViewTextBoxColumn.HeaderText = "Preço de Venda";
             this.pRECO_PRODUTOSDataGridViewTextBoxColumn.Name = "pRECO_PRODUTOSDataGridViewTextBoxColumn";
             this.pRECO_PRODUTOSDataGridViewTextBoxColumn.ReadOnly = true;
@@ -676,6 +697,7 @@
             // ColumnValUni
             // 
             dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
             this.ColumnValUni.DefaultCellStyle = dataGridViewCellStyle1;
             this.ColumnValUni.HeaderText = "Preço Unitário";
             this.ColumnValUni.MinimumWidth = 8;
@@ -686,6 +708,7 @@
             // ColumnTotal
             // 
             dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
             this.ColumnTotal.DefaultCellStyle = dataGridViewCellStyle2;
             this.ColumnTotal.HeaderText = "Total";
             this.ColumnTotal.MinimumWidth = 8;
@@ -720,9 +743,9 @@
             this.tabProdutos.ResumeLayout(false);
             this.tabProdutos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProdutosDisponiveis)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resumoEstoqueBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsDadosSaida)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
