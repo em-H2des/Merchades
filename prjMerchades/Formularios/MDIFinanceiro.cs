@@ -41,5 +41,17 @@ namespace prjMerchades.Formularios
             frmRelFinanceiro.MdiParent = this;
             frmRelFinanceiro.Show();
         }
+
+        private void parcelasClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmParcelasVenda frmParcelasVenda = new frmParcelasVenda();
+            frmParcelasVenda.MdiParent = this;
+            frmParcelasVenda.Show();
+        }
+
+        private void MDIFinanceiro_Load(object sender, EventArgs e)
+        {
+            toolStripStatusLabel.Text = "Bem Vindo, " + prjMerchades.Properties.Settings.Default.usuarioNome;
+        }
     }
 }

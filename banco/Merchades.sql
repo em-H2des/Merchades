@@ -1,7 +1,4 @@
-﻿-- Tabelas --
 
-
--- Entrada --
 
 CREATE TABLE PRODUTOS (
 	ID_PRODUTOS int identity primary key, -- Identificação da tabela
@@ -10,6 +7,7 @@ CREATE TABLE PRODUTOS (
 	TIPO_UNITARIO varchar (30),  -- Exemplo: Grama, , Kilograma, Litro, Mililitro, Fardo...
 	PRECO_PRODUTOS money, -- Gerenciar o dinheiro do mercado e atribuir valor aos produtos 
 	CODIGO_DE_BARRAS int, -- Identificação do produto nas notas fiscais e no sistema
+	QTD_ESTOQUE int -- Saber quanto que tem do produto em específico no estoque
 );
  
 CREATE TABLE FORNECEDOR (
@@ -28,12 +26,13 @@ CREATE TABLE NOTA_FISCAL_FORNECEDOR (
     VALOR_COMPRA money, -- Quanto foi gasto com o fornecedor
     COD_NOTA_FORN varchar (50), -- Código da nota fiscal do fornecedor, para dividir e saber qual nota é
     OBSERVACAO varchar (150), -- Alguma especificação
+	PAGO char(1),
     ID_FORNECEDOR int foreign key references FORNECEDOR (ID_FORNECEDOR) -- Identificação do fornecedor via id
 );
 
 CREATE TABLE ESTOQUE ( 	
 	ID_ESTOQUE int identity primary key, 		 	
-	QTD_ESTOQUE int,
+	QTD_ESTOQUE_ADDED int, -- quantidade adicionada no estoque
 	ID_PRODUTOS int foreign key references PRODUTOS (ID_PRODUTOS), 	
 	ID_NOTA_FISCAL_FORNEC int foreign key references NOTA_FISCAL_FORNECEDOR (ID_NOTA_FISCAL_FORNEC)
 );
@@ -49,9 +48,8 @@ CREATE TABLE LOGIN_USUARIO (
 );
 
 CREATE TABLE CLIENTE (
-	ID_CLIENTE int identity primary key, -- Identificação da tabela e separação de cada cliente através do ID
-	NOME_CLIENTE varchar (255), -- Identificação do cliente por nome
-	CPF_CNPJ_CLIENTE varchar (14) -- Documento do cliente (CPF ou CNPJ)
+	ID_CLIENTE int identity primary key, -- Identificação da tabela e separação de cada cliente através do IDD
+	CPF_CNPJ_CLIENTE varchar (14), -- Documento do cliente (CPF ou CNPJ)
 );
 
 CREATE TABLE METODO_PAGAMENTO (
@@ -68,8 +66,6 @@ CREATE TABLE NOTA_FISCAL_VENDA (
     CPF_CNPJ_VENDA varchar (14),
 	OBSERVACAO varchar (150),
 	STATUS_VENDA char (1) CHECK (STATUS_VENDA IN ('F', 'A')),
-	ID_CLIENTE int foreign key references CLIENTE (ID_CLIENTE),
-	ID_FORNECEDOR int foreign key references FORNECEDOR (ID_FORNECEDOR),
 	ID_METODO_PAGAMENTO int foreign key references METODO_PAGAMENTO (ID_METODO_PAGAMENTO), -- Forma de pagamento para incluir na nota fiscal
 );
 
@@ -86,7 +82,7 @@ CREATE TABLE ITENS_NOTA_FORNECEDOR (
     NUM_LOTE int, -- Identificação do lote
     OBSERVACAO varchar(80), -- Alguma especificação
     ID_PRODUTOS int foreign key references PRODUTOS (ID_PRODUTOS),
-	ID_NOTA_FISCAL_FORNEC int foreign key references NOTA_FISCAL_FORNECEDOR (ID_NOTA_FISCAL_FORNEC)
+    ID_NOTA_FISCAL_FORNEC int foreign key references NOTA_FISCAL_FORNECEDOR (ID_NOTA_FISCAL_FORNEC)
 );
 
 CREATE TABLE RELATORIO_FINANCEIRO ( -- mostra os gastos e ganhos individualmente, tem uma procedure pra ver por período
@@ -123,7 +119,6 @@ CREATE TABLE FERIADOS (
     MES int NOT NULL,
     DESCRICAO varchar (100) NOT NULL
 );
-
 -- Triggers --
 
 
@@ -135,46 +130,43 @@ ON ITENS_NOTA_FORNECEDOR
 AFTER INSERT
 AS
 BEGIN
-    SET NOCOUNT ON;
+    SET NOCOUNT ON;
 
     -- Variável de controle (boa prática para triggers)
     IF NOT EXISTS(SELECT * FROM inserted) RETURN;
     
     -- Atualização (Para produtos que JÁ EXISTEM no ESTOQUE)
 
-    -- Soma a nova quantidade (QTD_UNIT_PAC) à QTD_ESTOQUE existente.
+    -- Soma a nova quantidade (QTD_UNIT_PAC) à QTD_ESTOQUE_ADDED existente.
 
-    UPDATE E
-    SET E.QTD_ESTOQUE = E.QTD_ESTOQUE + I.QTD_UNIT_PAC
-    FROM ESTOQUE E
-    INNER JOIN INSERTED I ON E.ID_PRODUTOS = I.ID_PRODUTOS;
+    UPDATE P
+    SET P.QTD_ESTOQUE = P.QTD_ESTOQUE + I.QTD_UNIT_PAC
+    FROM PRODUTOS P
+    INNER JOIN INSERTED I ON P.ID_PRODUTOS = I.ID_PRODUTOS;
 
-
+    INSERT INTO ESTOQUE (
+        QTD_ESTOQUE_ADDED,
+        ID_PRODUTOS,
+        ID_NOTA_FISCAL_FORNEC
+    )
+    SELECT 
+        I.QTD_UNIT_PAC, -- QTD_ESTOQUE_ADDED é o valor da entrada
+        I.ID_PRODUTOS, -- ID do produto
+        I.ID_NOTA_FISCAL_FORNEC -- ID da nota de fornecedor
+    FROM INSERTED I
+    -- Não precisamos da NOTA_FISCAL_FORNECEDOR (NF) aqui, pois todos os campos necessários já estão em INSERTED (I)
+    LEFT JOIN ESTOQUE E ON E.ID_PRODUTOS = I.ID_PRODUTOS
     
     -- Inserção (Para produtos que NÃO EXISTEM no ESTOQUE)
     
     -- Insere novos registros, preenchendo apenas as 3 colunas que existem.
     -- O LEFT JOIN + WHERE E.ID_PRODUTOS IS NULL encontra apenas os NOVOS.
-
-    INSERT INTO ESTOQUE (
-        QTD_ESTOQUE,
-        ID_PRODUTOS,
-        ID_NOTA_FISCAL_FORNEC
-    )
-    SELECT 
-        I.QTD_UNIT_PAC, -- QTD_ESTOQUE é o valor da entrada
-        I.ID_PRODUTOS, -- ID do produto
-        I.ID_NOTA_FISCAL_FORNEC -- ID da nota de fornecedor
-    FROM INSERTED I
-    -- Não precisamos da NOTA_FISCAL_FORNECEDOR (NF) aqui, pois todos os campos necessários já estão em INSERTED (I)
-    LEFT JOIN ESTOQUE E ON E.ID_PRODUTOS = I.ID_PRODUTOS
-    WHERE E.ID_PRODUTOS IS NULL;
 END;
 
 -- No caso de saida - quando produtos são vendidos, e altera o estoque do mercado, de novo usei a tabela estoque
 
 GO
-CREATE TRIGGER TR_AI_AtualizaEstoque_Saida
+CREATE TRIGGER TR_AI_AtualizaEstoque_Saida -- CORRIGIR !!! QTD_ESTOQUE NO PRODUTO
 ON ITENS_NOTA_VENDA
 AFTER INSERT
 AS
@@ -182,100 +174,70 @@ BEGIN
     SET NOCOUNT ON;
 
     -- Atualiza o estoque subtraindo a quantidade vendida
-    UPDATE E
-    SET E.QTD_ESTOQUE = E.QTD_ESTOQUE - I.QTD_PRODUTO
-    FROM ESTOQUE E
-    INNER JOIN INSERTED I ON E.ID_PRODUTOS = I.ID_PRODUTOS
-    WHERE E.QTD_ESTOQUE >= I.QTD_PRODUTO; -- caso não tenha estoque é necessário indicar isso no sistema mesmo!! (com error ou aviso)
+    UPDATE P
+    SET P.QTD_ESTOQUE = P.QTD_ESTOQUE - I.QTD_PRODUTO
+    FROM PRODUTOS P
+    INNER JOIN INSERTED I ON P.ID_PRODUTOS = I.ID_PRODUTOS
+    WHERE P.QTD_ESTOQUE >= I.QTD_PRODUTO; -- caso não tenha estoque é necessário indicar isso no sistema mesmo!! (com error ou aviso)
 	-- não usar where, usar condição!
 END;
 
 -----
 
-GO
+ GO
+
 CREATE TRIGGER TR_AI_ITENS_NOTA_VENDA
+
 ON ITENS_NOTA_VENDA
+
 AFTER INSERT
+
 AS
+
 BEGIN
+
     SET NOCOUNT ON;
+
     PRINT 'TR_ITENS_NOTA_VENDA em execução!...';
+
 
     DECLARE 
         @ID_NOTA_VENDA INT,
         @STATUS_VENDA CHAR(1),
         @VALOR_TOTAL MONEY,
-        @CPF_CNPJ VARCHAR(14),
-        @ID_CLIENTE INT;
-
+        @CPF_CNPJ VARCHAR(14);
     -- Calcula o valor total do(s) item(ns) inserido(s)
     SELECT 
         @VALOR_TOTAL = SUM(p.PRECO_PRODUTOS * i.QTD_PRODUTO)
     FROM INSERTED i
     INNER JOIN PRODUTOS p ON i.ID_PRODUTOS = p.ID_PRODUTOS;
-
     -- Pega o ID da nota mais recente
     SELECT TOP 1 @ID_NOTA_VENDA = ID_NOTA_VENDA
     FROM ITENS_NOTA_VENDA
     ORDER BY ID_ITENS_NOTA_VENDA DESC;
-
     -- Busca informações da nota
     SELECT 
         @STATUS_VENDA = NFV.STATUS_VENDA,
-        @ID_CLIENTE = NFV.ID_CLIENTE,
         @CPF_CNPJ = NFV.CPF_CNPJ_VENDA
     FROM NOTA_FISCAL_VENDA NFV
     WHERE NFV.ID_NOTA_VENDA = @ID_NOTA_VENDA;
-
     -- Se ainda não tiver cliente vinculado à nota
-    IF @ID_CLIENTE IS NULL
-    BEGIN
-        IF @CPF_CNPJ IS NULL OR @CPF_CNPJ = ''
-        BEGIN
-            -- Caso o CPF/CNPJ não exista → cria cliente genérico
-            INSERT INTO CLIENTE (NOME_CLIENTE, CPF_CNPJ_CLIENTE)
-            VALUES ('Cliente automático', NULL);
-
-            SET @ID_CLIENTE = SCOPE_IDENTITY();
-
-            PRINT 'Cliente genérico criado (CPF/CNPJ nulo).';
-        END
-        ELSE
-        BEGIN
-            -- Caso o CPF/CNPJ exista → cria cliente apenas com o CPF
-            IF NOT EXISTS (SELECT 1 FROM CLIENTE WHERE CPF_CNPJ_CLIENTE = @CPF_CNPJ)
+        IF NOT EXISTS (SELECT 1 FROM CLIENTE WHERE CPF_CNPJ_CLIENTE = @CPF_CNPJ)
             BEGIN
-                INSERT INTO CLIENTE (NOME_CLIENTE, CPF_CNPJ_CLIENTE)
-                VALUES (NULL, @CPF_CNPJ);
-
-                SET @ID_CLIENTE = SCOPE_IDENTITY();
-
+                INSERT INTO CLIENTE (CPF_CNPJ_CLIENTE)
+                VALUES (@CPF_CNPJ);
                 PRINT 'Cliente criado com CPF/CNPJ informado.';
             END
             ELSE
             BEGIN
-                -- Se o CPF já existe, só associa o cliente existente à nota
-                SELECT @ID_CLIENTE = ID_CLIENTE
-                FROM CLIENTE
-                WHERE CPF_CNPJ_CLIENTE = @CPF_CNPJ;
-
-                PRINT 'Cliente existente vinculado à nota fiscal.';
-            END
+                PRINT 'Cliente existente (verificado por CPF/CNPJ) vinculado à nota fiscal.';
         END
-
-        -- Atualiza a nota para associar o cliente criado ou existente
-        UPDATE NOTA_FISCAL_VENDA
-        SET ID_CLIENTE = @ID_CLIENTE
-        WHERE ID_NOTA_VENDA = @ID_NOTA_VENDA;
-    END
-
     -- Se a nota estiver fechada, interrompe
     IF @STATUS_VENDA = 'F'
     BEGIN
         PRINT 'Nota fiscal já encerrada. Nenhuma ação executada!';
         RETURN;
     END
-
     -- Se não houver nota aberta, cria nova
     IF @ID_NOTA_VENDA IS NULL
     BEGIN
@@ -292,9 +254,7 @@ BEGIN
             'A',
             'Nota fiscal gerada automaticamente pela trigger.'
         );
-
         SET @ID_NOTA_VENDA = SCOPE_IDENTITY();
-
         PRINT 'Nova nota fiscal criada automaticamente.';
     END
     ELSE
@@ -304,15 +264,15 @@ BEGIN
         SET VALOR_VENDA = ISNULL(VALOR_VENDA, 0) + @VALOR_TOTAL
         WHERE ID_NOTA_VENDA = @ID_NOTA_VENDA;
     END
-
     -- Vincula o item inserido à nota correspondente
     UPDATE ITENS_NOTA_VENDA
     SET ID_NOTA_VENDA = @ID_NOTA_VENDA
     WHERE ID_ITENS_NOTA_VENDA IN (SELECT ID_ITENS_NOTA_VENDA FROM INSERTED);
-
     PRINT 'Nota fiscal atualizada e cliente vinculado com sucesso!';
 END;
 GO
+
+
 
 
 -----
@@ -354,79 +314,183 @@ GO
 -- Saída --
 
 GO
-CREATE TRIGGER TR_AI_GerarParcelas
+CREATE TRIGGER TR_AI_CadastraCliente
 ON NOTA_FISCAL_VENDA
 AFTER INSERT
 AS
 BEGIN
     SET NOCOUNT ON;
 
+    -- Insere na tabela CLIENTE
+    INSERT INTO CLIENTE (CPF_CNPJ_CLIENTE)
+    
+    -- Seleciona APENAS os CPFs que ainda não existem
+    SELECT DISTINCT 
+        i.CPF_CNPJ_VENDA 
+    FROM 
+        INSERTED i -- Pega  as linhas que acabaram de ser inseridas
+    LEFT JOIN 
+        CLIENTE c ON i.CPF_CNPJ_VENDA = c.CPF_CNPJ_CLIENTE -- Tenta cruzar com clientes existentes
+    WHERE c.CPF_CNPJ_CLIENTE IS NULL; -- A mágica: só insere se o cliente (c) NÃO foi encontrado
+END;
+GO
+
+ GO
+
+CREATE TRIGGER TR_AI_GerarParcelas
+
+ON NOTA_FISCAL_VENDA
+
+AFTER INSERT
+AS
+BEGIN
+    SET NOCOUNT ON;
     DECLARE 
+
         @ID_NOTA_VENDA INT,
+
         @ID_CLIENTE INT,
+
+        @CPF_CNPJ_VENDA VARCHAR(14),
+
         @VALOR_VENDA MONEY,
+
         @QTD_PARCELAS INT,
+
         @DATA_EMISSAO DATE,
+
         @VALOR_UNIT MONEY,
+
         @ID_PARCELAS INT,
+
         @I INT,
+
         @DATA_VENC DATE;
 
+
     DECLARE cursorNotas CURSOR FOR
-    SELECT ID_NOTA_VENDA, ID_CLIENTE, VALOR_VENDA, QTD_PARCELAS, DATA_EMISSAO
+
+    SELECT ID_NOTA_VENDA, CPF_CNPJ_VENDA, VALOR_VENDA, QTD_PARCELAS, DATA_EMISSAO
+
     FROM inserted;
 
+
     OPEN cursorNotas;
-    FETCH NEXT FROM cursorNotas INTO @ID_NOTA_VENDA, @ID_CLIENTE, @VALOR_VENDA, @QTD_PARCELAS, @DATA_EMISSAO;
+
+    FETCH NEXT FROM cursorNotas INTO @ID_NOTA_VENDA, @CPF_CNPJ_VENDA, @VALOR_VENDA, @QTD_PARCELAS, @DATA_EMISSAO;
+
 
     WHILE @@FETCH_STATUS = 0
+
     BEGIN
+	SELECT @ID_CLIENTE = ID_CLIENTE
+        FROM CLIENTE
+        WHERE CPF_CNPJ_CLIENTE = @CPF_CNPJ_VENDA;
+
         -- Validação mínima de parcelas
+
+		IF @ID_CLIENTE IS NULL
+        BEGIN
+            INSERT INTO CLIENTE (CPF_CNPJ_CLIENTE)
+            VALUES (@CPF_CNPJ_VENDA); -- Define um nome padrão temporário
+
+            SET @ID_CLIENTE = SCOPE_IDENTITY(); -- Pega o ID que acabou de ser gerado
+        END
+
         IF @QTD_PARCELAS <= 0 SET @QTD_PARCELAS = 1;
 
+
         -- Ajuste para valor mínimo por parcela (opcional)
-        WHILE (@VALOR_VENDA / @QTD_PARCELAS) < 15 AND @QTD_PARCELAS > 1
-        BEGIN
-            SET @QTD_PARCELAS = @QTD_PARCELAS - 1;
-        END;
+
+		
+        --WHILE (@VALOR_VENDA / @QTD_PARCELAS) < 15 AND @QTD_PARCELAS > 1
+
+        --BEGIN
+
+            --SET @QTD_PARCELAS = @QTD_PARCELAS - 1;
+
+        --END;
+
 
         SET @VALOR_UNIT = ROUND(@VALOR_VENDA / @QTD_PARCELAS, 2);
 
+
         -- Registro principal de parcelamento
+
         INSERT INTO PARCELAS (VALOR_TOTAL, QTD_PARCELAS, STATUS_GERAL, ID_CLIENTE, ID_NOTA_VENDA)
+
         VALUES (@VALOR_VENDA, @QTD_PARCELAS, 'Pendente', @ID_CLIENTE, @ID_NOTA_VENDA);
+
 
         SET @ID_PARCELAS = SCOPE_IDENTITY();
 
+
         SET @I = 1;
+
         WHILE @I <= @QTD_PARCELAS
+
         BEGIN
+
             DECLARE @DATA_BASE DATE = DATEADD(MONTH, @I - 1, @DATA_EMISSAO);
+
             SET @DATA_VENC = dbo.FN_PROXIMO_DIA_UTIL(@DATA_BASE);
 
+
             -- Última parcela ajustada para compensar arredondamento
+
             DECLARE @VALOR_PARCELA MONEY = 
+
                 CASE 
+
                     WHEN @I = @QTD_PARCELAS THEN @VALOR_VENDA - (@VALOR_UNIT * (@QTD_PARCELAS - 1))
+
                     ELSE @VALOR_UNIT
+
                 END;
 
+
             INSERT INTO DEBITO_PARCELAS (
+
                 ID_PARCELAS, NUM_PARCELA, VALOR_PARCELA, DATA_VENCIMENTO, STATUS
+
             )
+
             VALUES (
+
                 @ID_PARCELAS, @I, @VALOR_PARCELA, @DATA_VENC, 'Pendente'
+
             );
 
+
             SET @I += 1;
+
         END;
 
-        FETCH NEXT FROM cursorNotas INTO @ID_NOTA_VENDA, @ID_CLIENTE, @VALOR_VENDA, @QTD_PARCELAS, @DATA_EMISSAO;
+
+        FETCH NEXT FROM cursorNotas INTO @ID_NOTA_VENDA, @CPF_CNPJ_VENDA, @VALOR_VENDA, @QTD_PARCELAS, @DATA_EMISSAO;
+
     END;
 
+
     CLOSE cursorNotas;
+
     DEALLOCATE cursorNotas;
+
 END;
+
+-- Views de relatório --
+GO
+CREATE VIEW
+Vw_RELATORIO_FINANCEIRO_DESPESAS 
+AS SELECT * FROM RELATORIO_FINANCEIRO 
+WHERE TIPO = 'D';
+
+GO
+CREATE VIEW
+Vw_RELATORIO_FINANCEIRO_GANHOS 
+AS SELECT * FROM RELATORIO_FINANCEIRO 
+WHERE TIPO = 'G';
+
 
 -- triggers de relatório --
 
@@ -475,7 +539,6 @@ GO
 
 -- de relatorio financeiro --
 
-GO
 CREATE PROCEDURE PR_GerarRelatorioFinanceiro
     @DataInicio DATE,
     @DataFim DATE
@@ -529,11 +592,10 @@ GO
 --
 
 
-GO
-CREATE PROCEDURE PR_PagarParcela
-    @ID_PARCELAS INT, -- id na tabela PARCELAS
-    @NUM_PARCELAS VARCHAR(35), -- a primeira, segunda, terceira, etc; Ex: '1,2,3' ou 'ALL' (sim, podem ser múltiplas (ou todas), só por nesse formato)
-    @OBS VARCHAR(255) = NULL -- observação
+CREATE PROCEDURE PR_PagarParcelas
+    @ID_PARCELA INT, -- id na tabela PARCELAS
+    @NUM_PARCELAS VARCHAR(35),
+    @OBS VARCHAR(255) = NULL
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -544,7 +606,7 @@ BEGIN
         SET STATUS = 'Paga',
             DATA_PAGAMENTO = GETDATE(),
             OBSERVACAO = @OBS
-        WHERE ID_PARCELAS = @ID_PARCELAS;
+        WHERE ID_PARCELAS = @ID_PARCELA; -- <-- CORREÇÃO: Usando ID_PARCELAS (FK)
     END
     ELSE
     BEGIN
@@ -552,7 +614,7 @@ BEGIN
         SET STATUS = 'Paga',
             DATA_PAGAMENTO = GETDATE(),
             OBSERVACAO = @OBS
-        WHERE ID_PARCELAS = @ID_PARCELAS
+        WHERE ID_PARCELAS = @ID_PARCELA -- <-- CORREÇÃO: Usando ID_PARCELAS (FK)
           AND NUM_PARCELA IN (
               SELECT value FROM STRING_SPLIT(@NUM_PARCELAS, ',')
           );
@@ -562,47 +624,15 @@ BEGIN
     IF EXISTS (
         SELECT 1
         FROM DEBITO_PARCELAS
-        WHERE ID_PARCELAS = @ID_PARCELAS AND STATUS <> 'Paga'
+        -- CORREÇÃO: Checa se há alguma parcela PENDENTE referente a este ID da Parcela Mãe
+        WHERE ID_PARCELAS = @ID_PARCELA AND STATUS <> 'Paga' 
     )
         RETURN;
 
     UPDATE PARCELAS
     SET STATUS_GERAL = 'Paga'
-    WHERE ID_PARCELAS = @ID_PARCELAS;
+    WHERE ID_PARCELAS = @ID_PARCELA;
 END;
-
--- Funções --
-
-GO
-CREATE FUNCTION FN_calcPascoa (@Ano INT)
-RETURNS DATE
-AS
-BEGIN
-    DECLARE 
-        @a INT, @b INT, @c INT, @d INT, @e INT,
-        @f INT, @g INT, @h INT, @i INT, @k INT,
-        @L INT, @m INT,
-        @mes INT, @dia INT;
-
-    SET @a = @Ano % 19;
-    SET @b = @Ano / 100;
-    SET @c = @Ano % 100;
-    SET @d = @b / 4;
-    SET @e = @b % 4;
-    SET @f = (@b + 8) / 25;
-    SET @g = (@b - @f + 1) / 3;
-    SET @h = (19 * @a + @b - @d - @g + 15) % 30;
-    SET @i = @c / 4;
-    SET @k = @c % 4;
-    SET @L = (32 + 2 * @e + 2 * @i - @h - @k) % 7;
-    SET @m = (@a + 11 * @h + 22 * @L) / 451;
-    SET @mes = (@h + @L - 7 * @m + 114) / 31;
-    SET @dia = ((@h + @L - 7 * @m + 114) % 31) + 1;
-
-    RETURN DATEFROMPARTS(@Ano, @mes, @dia);
-END;
-GO
-
 
 GO
 CREATE FUNCTION FN_PROXIMO_DIA_UTIL (@Data DATE)
@@ -672,3 +702,6 @@ CHECK (STATUS IN ('Pendente', 'Paga', 'Vencida')); -- pra padronizar os tipos de
 ALTER TABLE PARCELAS
 ADD CONSTRAINT CHK_Status_Geral
 CHECK (STATUS_GERAL IN ('Pendente', 'Paga', 'Vencida'));
+
+
+SELECT * FROM CLIENTE

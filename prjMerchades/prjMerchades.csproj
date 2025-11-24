@@ -51,7 +51,9 @@
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.ConfigurationManager, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Configuration.ConfigurationManager.10.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
@@ -75,6 +77,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>daDadosEntrada.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dados\dsDadosFinanceiro.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDadosFinanceiro.xsd</DependentUpon>
     </Compile>
     <Compile Include="Dados\dsDadosSaida.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -104,6 +111,12 @@
     </Compile>
     <Compile Include="Formularios\Entrada\frmListagemFornecedor.Designer.cs">
       <DependentUpon>frmListagemFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Financeiro\frmParcelasVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Financeiro\frmParcelasVenda.Designer.cs">
+      <DependentUpon>frmParcelasVenda.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Financeiro\frmRelFinanceiro.cs">
       <SubType>Form</SubType>
@@ -181,6 +194,9 @@
     <EmbeddedResource Include="Formularios\Entrada\frmListagemFornecedor.resx">
       <DependentUpon>frmListagemFornecedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Financeiro\frmParcelasVenda.resx">
+      <DependentUpon>frmParcelasVenda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Financeiro\frmRelFinanceiro.resx">
       <DependentUpon>frmRelFinanceiro.cs</DependentUpon>
     </EmbeddedResource>
@@ -225,6 +241,8 @@
     <EmbeddedResource Include="Properties\ResourcesSaida.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorio\relatorioEstoque.rdlc" />
+    <EmbeddedResource Include="Relatorio\RelatorioFornecedores.rdlc" />
     <None Include="Dados\daDadosEntrada.xsc">
       <DependentUpon>daDadosEntrada.xsd</DependentUpon>
     </None>
@@ -235,6 +253,17 @@
     </None>
     <None Include="Dados\daDadosEntrada.xss">
       <DependentUpon>daDadosEntrada.xsd</DependentUpon>
+    </None>
+    <None Include="Dados\dsDadosFinanceiro.xsc">
+      <DependentUpon>dsDadosFinanceiro.xsd</DependentUpon>
+    </None>
+    <None Include="Dados\dsDadosFinanceiro.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDadosFinanceiro.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dados\dsDadosFinanceiro.xss">
+      <DependentUpon>dsDadosFinanceiro.xsd</DependentUpon>
     </None>
     <None Include="Dados\dsDadosSaida.xsc">
       <DependentUpon>dsDadosSaida.xsd</DependentUpon>
@@ -259,7 +288,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\SplashScreen %281%29.png" />

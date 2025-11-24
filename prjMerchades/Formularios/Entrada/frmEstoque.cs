@@ -19,6 +19,8 @@ namespace prjMerchades.Formularios.Entrada
 
         private void frmEstoque_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'daDadosEntrada.ESTOQUEEntradaNomes'. Você pode movê-la ou removê-la conforme necessário.
+            this.eSTOQUEEntradaNomesTableAdapter.Fill(this.daDadosEntrada.ESTOQUEEntradaNomes);
 
             this.RprtVw_Estoque.RefreshReport();
             this.RprtVw_Estoque.RefreshReport();

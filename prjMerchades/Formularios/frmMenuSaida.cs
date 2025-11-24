@@ -18,12 +18,6 @@ namespace prjMerchades.Formularios
             InitializeComponent();
         }
 
-
-        private void FormMerchades_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnVercompra_Click(object sender, EventArgs e)
         {
             frmNotaFiscal novoForm = new frmNotaFiscal();
@@ -34,10 +28,6 @@ namespace prjMerchades.Formularios
 
         private void btnNovaCompra_Click(object sender, EventArgs e)
         {
-            /*formVendas novoForm = new formVendas();
-            this.Hide(); // apenas esconde o atual
-            novoForm.ShowDialog();
-            this.Close(); // fecha depois que o novo for fechado*/
 
             // Verifica se já existe um formMenu aberto
             frmMenu menuAberto = Application.OpenForms.OfType<frmMenu>().FirstOrDefault();
@@ -51,10 +41,23 @@ namespace prjMerchades.Formularios
             else
             {
                 // Se já estiver aberto, apenas traz para frente
+                menuAberto.Show();
                 menuAberto.BringToFront();
             }
+        }
 
-            this.Hide(); // Esconde o formVendas atual
+        private void btnDeslogar_Click(object sender, EventArgs e)
+        {
+            prjMerchades.Properties.Settings.Default.usuarioNome = "";
+            prjMerchades.Properties.Settings.Default.usuarioNivel = "";
+            Login telaLogin = new Login();
+            telaLogin.Show();
+            this.Hide();
+        }
+
+        private void frmMenuSaida_Load(object sender, EventArgs e)
+        {
+            lblNomeUsuario.Text += prjMerchades.Properties.Settings.Default.usuarioNome;
         }
     }
     

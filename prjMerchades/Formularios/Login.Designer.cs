@@ -153,7 +153,7 @@
             this.Controls.Add(this.Btn_OK);
             this.Controls.Add(this.TextBox_Senha);
             this.Controls.Add(this.TextBox_NomeUsuario);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.ShowIcon = false;

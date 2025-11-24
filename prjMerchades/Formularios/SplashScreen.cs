@@ -19,7 +19,7 @@ namespace prjMerchades.Formularios
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            progressBar1.Increment(1); // aumenta 1 por tick
+            progressBar1.Increment(10); // aumenta 1 por tick
             if (progressBar1.Value >= progressBar1.Maximum)
             {
                 timer1.Stop();
