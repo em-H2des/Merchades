@@ -31,21 +31,34 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEstoque));
+            this.eSTOQUEEntradaNomesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.daDadosEntrada = new prjMerchades.Dados.daDadosEntrada();
             this.RprtVw_Estoque = new Microsoft.Reporting.WinForms.ReportViewer();
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.btn_AddProduto = new System.Windows.Forms.Button();
             this.picBox_Logo = new System.Windows.Forms.PictureBox();
-            this.daDadosEntrada = new prjMerchades.Dados.daDadosEntrada();
-            this.eSTOQUEEntradaNomesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eSTOQUEEntradaNomesTableAdapter = new prjMerchades.Dados.daDadosEntradaTableAdapters.ESTOQUEEntradaNomesTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_Logo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.daDadosEntrada)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eSTOQUEEntradaNomesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.daDadosEntrada)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Logo)).BeginInit();
             this.SuspendLayout();
+            // 
+            // eSTOQUEEntradaNomesBindingSource
+            // 
+            this.eSTOQUEEntradaNomesBindingSource.DataMember = "ESTOQUEEntradaNomes";
+            this.eSTOQUEEntradaNomesBindingSource.DataSource = this.daDadosEntrada;
+            // 
+            // daDadosEntrada
+            // 
+            this.daDadosEntrada.DataSetName = "daDadosEntrada";
+            this.daDadosEntrada.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // RprtVw_Estoque
             // 
-            this.RprtVw_Estoque.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.RprtVw_Estoque.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.RprtVw_Estoque.AutoSize = true;
             reportDataSource1.Name = "dadosEstoque";
             reportDataSource1.Value = this.eSTOQUEEntradaNomesBindingSource;
             this.RprtVw_Estoque.LocalReport.DataSources.Add(reportDataSource1);
@@ -55,6 +68,7 @@
             this.RprtVw_Estoque.ServerReport.BearerToken = null;
             this.RprtVw_Estoque.Size = new System.Drawing.Size(800, 334);
             this.RprtVw_Estoque.TabIndex = 0;
+            this.RprtVw_Estoque.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
             // lbl_Titulo
             // 
@@ -69,6 +83,7 @@
             // 
             // btn_AddProduto
             // 
+            this.btn_AddProduto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_AddProduto.BackColor = System.Drawing.Color.White;
             this.btn_AddProduto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_AddProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -83,6 +98,7 @@
             // 
             // picBox_Logo
             // 
+            this.picBox_Logo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picBox_Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picBox_Logo.Image = ((System.Drawing.Image)(resources.GetObject("picBox_Logo.Image")));
             this.picBox_Logo.Location = new System.Drawing.Point(676, 12);
@@ -91,16 +107,6 @@
             this.picBox_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBox_Logo.TabIndex = 3;
             this.picBox_Logo.TabStop = false;
-            // 
-            // daDadosEntrada
-            // 
-            this.daDadosEntrada.DataSetName = "daDadosEntrada";
-            this.daDadosEntrada.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // eSTOQUEEntradaNomesBindingSource
-            // 
-            this.eSTOQUEEntradaNomesBindingSource.DataMember = "ESTOQUEEntradaNomes";
-            this.eSTOQUEEntradaNomesBindingSource.DataSource = this.daDadosEntrada;
             // 
             // eSTOQUEEntradaNomesTableAdapter
             // 
@@ -119,11 +125,12 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmEstoque";
+            this.ShowIcon = false;
             this.Text = "Controle de Estoque";
             this.Load += new System.EventHandler(this.frmEstoque_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_Logo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.daDadosEntrada)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eSTOQUEEntradaNomesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.daDadosEntrada)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

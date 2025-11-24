@@ -16,7 +16,6 @@ namespace prjMerchades.Formularios.Entrada
         {
             InitializeComponent();
 
-            picBox_Header.SendToBack();
         }
 
         private void frmListagemFornecedor_Load(object sender, EventArgs e)

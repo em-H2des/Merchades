@@ -34,7 +34,6 @@
             this.fORNECEDORBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsDadosEntrada = new prjMerchades.Dados.daDadosEntrada();
             this.ReportViewerFornec = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.picBox_Header = new System.Windows.Forms.PictureBox();
             this.lbl_FiltrarPor = new System.Windows.Forms.Label();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.cmbFiltro = new System.Windows.Forms.ComboBox();
@@ -46,7 +45,6 @@
             this.fORNECEDORTableAdapter = new prjMerchades.Dados.daDadosEntradaTableAdapters.FORNECEDORTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.fORNECEDORBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsDadosEntrada)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_Header)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,37 +60,28 @@
             // 
             // ReportViewerFornec
             // 
-            this.ReportViewerFornec.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ReportViewerFornec.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             reportDataSource1.Name = "DadosFornec";
             reportDataSource1.Value = this.fORNECEDORBindingSource;
             this.ReportViewerFornec.LocalReport.DataSources.Add(reportDataSource1);
             this.ReportViewerFornec.LocalReport.ReportEmbeddedResource = "prjMerchades.Relatorio.RelatorioFornecedores.rdlc";
-            this.ReportViewerFornec.Location = new System.Drawing.Point(0, 348);
-            this.ReportViewerFornec.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ReportViewerFornec.Location = new System.Drawing.Point(0, 226);
             this.ReportViewerFornec.Name = "ReportViewerFornec";
             this.ReportViewerFornec.ServerReport.BearerToken = null;
-            this.ReportViewerFornec.Size = new System.Drawing.Size(1739, 590);
+            this.ReportViewerFornec.Size = new System.Drawing.Size(1160, 384);
             this.ReportViewerFornec.TabIndex = 0;
-            // 
-            // picBox_Header
-            // 
-            this.picBox_Header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
-            this.picBox_Header.Location = new System.Drawing.Point(0, -5);
-            this.picBox_Header.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.picBox_Header.Name = "picBox_Header";
-            this.picBox_Header.Size = new System.Drawing.Size(1836, 214);
-            this.picBox_Header.TabIndex = 5;
-            this.picBox_Header.TabStop = false;
+            this.ReportViewerFornec.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
             // lbl_FiltrarPor
             // 
             this.lbl_FiltrarPor.AutoSize = true;
             this.lbl_FiltrarPor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_FiltrarPor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.lbl_FiltrarPor.Location = new System.Drawing.Point(603, 262);
-            this.lbl_FiltrarPor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_FiltrarPor.Location = new System.Drawing.Point(402, 170);
             this.lbl_FiltrarPor.Name = "lbl_FiltrarPor";
-            this.lbl_FiltrarPor.Size = new System.Drawing.Size(153, 31);
+            this.lbl_FiltrarPor.Size = new System.Drawing.Size(124, 25);
             this.lbl_FiltrarPor.TabIndex = 15;
             this.lbl_FiltrarPor.Text = "Filtrar Por:";
             // 
@@ -100,11 +89,10 @@
             // 
             this.txtFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.txtFiltro.Location = new System.Drawing.Point(1119, 259);
-            this.txtFiltro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtFiltro.Location = new System.Drawing.Point(746, 168);
             this.txtFiltro.Multiline = true;
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(392, 46);
+            this.txtFiltro.Size = new System.Drawing.Size(263, 31);
             this.txtFiltro.TabIndex = 17;
             // 
             // cmbFiltro
@@ -120,10 +108,9 @@
             "Que começa com",
             "Que contém",
             "Que termina com"});
-            this.cmbFiltro.Location = new System.Drawing.Point(786, 260);
-            this.cmbFiltro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmbFiltro.Location = new System.Drawing.Point(524, 169);
             this.cmbFiltro.Name = "cmbFiltro";
-            this.cmbFiltro.Size = new System.Drawing.Size(324, 37);
+            this.cmbFiltro.Size = new System.Drawing.Size(217, 32);
             this.cmbFiltro.TabIndex = 18;
             this.cmbFiltro.ValueMember = "TELEFONE_FORNECEDOR";
             // 
@@ -133,21 +120,22 @@
             this.lbl_titulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
             this.lbl_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_titulo.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbl_titulo.Location = new System.Drawing.Point(52, 54);
+            this.lbl_titulo.Location = new System.Drawing.Point(35, 35);
+            this.lbl_titulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_titulo.Name = "lbl_titulo";
-            this.lbl_titulo.Size = new System.Drawing.Size(762, 69);
+            this.lbl_titulo.Size = new System.Drawing.Size(621, 55);
             this.lbl_titulo.TabIndex = 41;
             this.lbl_titulo.Text = "Listagem de Fornecedores";
             // 
             // picBox_Logo
             // 
+            this.picBox_Logo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picBox_Logo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
             this.picBox_Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picBox_Logo.Image = ((System.Drawing.Image)(resources.GetObject("picBox_Logo.Image")));
-            this.picBox_Logo.Location = new System.Drawing.Point(1532, 40);
-            this.picBox_Logo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.picBox_Logo.Location = new System.Drawing.Point(1021, 26);
             this.picBox_Logo.Name = "picBox_Logo";
-            this.picBox_Logo.Size = new System.Drawing.Size(150, 134);
+            this.picBox_Logo.Size = new System.Drawing.Size(100, 87);
             this.picBox_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBox_Logo.TabIndex = 42;
             this.picBox_Logo.TabStop = false;
@@ -162,10 +150,9 @@
             this.cmbColunas.Items.AddRange(new object[] {
             "NOME_FORNECEDOR",
             "ESTADO_FORNECEDOR"});
-            this.cmbColunas.Location = new System.Drawing.Point(179, 261);
-            this.cmbColunas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmbColunas.Location = new System.Drawing.Point(119, 170);
             this.cmbColunas.Name = "cmbColunas";
-            this.cmbColunas.Size = new System.Drawing.Size(416, 37);
+            this.cmbColunas.Size = new System.Drawing.Size(279, 32);
             this.cmbColunas.TabIndex = 43;
             this.cmbColunas.ValueMember = "COLUMN_NAME";
             // 
@@ -175,10 +162,9 @@
             this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFiltrar.ForeColor = System.Drawing.Color.White;
-            this.btnFiltrar.Location = new System.Drawing.Point(1521, 254);
-            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnFiltrar.Location = new System.Drawing.Point(1014, 165);
             this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(183, 48);
+            this.btnFiltrar.Size = new System.Drawing.Size(122, 31);
             this.btnFiltrar.TabIndex = 44;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = false;
@@ -189,10 +175,9 @@
             this.lblColunas.AutoSize = true;
             this.lblColunas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblColunas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.lblColunas.Location = new System.Drawing.Point(14, 262);
-            this.lblColunas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblColunas.Location = new System.Drawing.Point(9, 170);
             this.lblColunas.Name = "lblColunas";
-            this.lblColunas.Size = new System.Drawing.Size(130, 31);
+            this.lblColunas.Size = new System.Drawing.Size(105, 25);
             this.lblColunas.TabIndex = 45;
             this.lblColunas.Text = "Colunas:";
             // 
@@ -202,10 +187,10 @@
             // 
             // frmListagemFornecedor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(1739, 938);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
+            this.ClientSize = new System.Drawing.Size(1159, 610);
             this.Controls.Add(this.lblColunas);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.cmbColunas);
@@ -214,17 +199,15 @@
             this.Controls.Add(this.cmbFiltro);
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.lbl_FiltrarPor);
-            this.Controls.Add(this.picBox_Header);
             this.Controls.Add(this.ReportViewerFornec);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmListagemFornecedor";
+            this.ShowIcon = false;
             this.Text = "Lista de Fornecedores";
             this.Load += new System.EventHandler(this.frmListagemFornecedor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fORNECEDORBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsDadosEntrada)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_Header)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -234,7 +217,6 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer ReportViewerFornec;
-        private System.Windows.Forms.PictureBox picBox_Header;
         private System.Windows.Forms.Label lbl_FiltrarPor;
         private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.ComboBox cmbFiltro;
