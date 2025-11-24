@@ -159,6 +159,42 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmCompras.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\brend\\OneDrive\\Documentos\\estudo\\Merchades\\prjMerchades\\Formularios\\Entrada\\frmCompras.cs",
+              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Entrada\\frmCompras.cs",
+              "ToolTip": "C:\\Users\\brend\\OneDrive\\Documentos\\estudo\\Merchades\\prjMerchades\\Formularios\\Entrada\\frmCompras.cs [Design]",
+              "RelativeToolTip": "prjMerchades\\Formularios\\Entrada\\frmCompras.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T23:38:19.996Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmEstoque.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\brend\\OneDrive\\Documentos\\estudo\\Merchades\\prjMerchades\\Formularios\\Entrada\\frmEstoque.cs",
+              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Entrada\\frmEstoque.cs",
+              "ToolTip": "C:\\Users\\brend\\OneDrive\\Documentos\\estudo\\Merchades\\prjMerchades\\Formularios\\Entrada\\frmEstoque.cs [Design]",
+              "RelativeToolTip": "prjMerchades\\Formularios\\Entrada\\frmEstoque.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T21:57:17.336Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "relatorioEstoque.rdlc [Criar]",
+              "DocumentMoniker": "C:\\Users\\brend\\OneDrive\\Documentos\\estudo\\Merchades\\prjMerchades\\Relatorio\\relatorioEstoque.rdlc",
+              "RelativeDocumentMoniker": "prjMerchades\\Relatorio\\relatorioEstoque.rdlc",
+              "ToolTip": "C:\\Users\\brend\\OneDrive\\Documentos\\estudo\\Merchades\\prjMerchades\\Relatorio\\relatorioEstoque.rdlc [Criar]",
+              "RelativeToolTip": "prjMerchades\\Relatorio\\relatorioEstoque.rdlc [Criar]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
+              "WhenOpened": "2025-11-18T21:55:22.764Z",
+              "EditorCaption": " [Criar]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
               "Title": "frmRelFinanceiro.cs [Design]",
               "DocumentMoniker": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Financeiro\\frmRelFinanceiro.cs",

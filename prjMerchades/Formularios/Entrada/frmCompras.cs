@@ -27,16 +27,10 @@ namespace prjMerchades.Formularios.Entrada
         private void frmCompras_Load(object sender, EventArgs e)
         {
             // TODO: esta linha de código carrega dados na tabela 'daDadosEntrada3.compraDividas'. Você pode movê-la ou removê-la conforme necessário.
-            this.compraDividasTableAdapter.Fill(this.daDadosEntrada3.compraDividas);
+            this.compraDividasTableAdapter.Fill(this.daDadosEntrada.compraDividas);
             // TODO: esta linha de código carrega dados na tabela 'daDadosEntrada3.comprasAntigas'. Você pode movê-la ou removê-la conforme necessário.
-            this.comprasAntigasTableAdapter.Fill(this.daDadosEntrada3.comprasAntigas);
+            this.comprasAntigasTableAdapter.Fill(this.daDadosEntrada.comprasAntigas);
             // TODO: esta linha de código carrega dados na tabela 'daDadosEntrada2.compraDividas'. Você pode movê-la ou removê-la conforme necessário.
-            this.compraDividasTableAdapter.Fill(this.daDadosEntrada2.compraDividas);
-            // TODO: esta linha de código carrega dados na tabela 'daDadosEntrada2.compraDividas'. Você pode movê-la ou removê-la conforme necessário.
-            this.compraDividasTableAdapter.Fill(this.daDadosEntrada2.compraDividas);
-            // TODO: esta linha de código carrega dados na tabela 'daDadosEntrada1.compraDividas'. Você pode movê-la ou removê-la conforme necessário.
-            this.compraDividasTableAdapter.Fill(this.daDadosEntrada1.compraDividas);
-            // TODO: esta linha de código carrega dados na tabela 'daDadosEntrada.NOTA_FISCAL_FORNECEDOR'. Você pode movê-la ou removê-la conforme necessário.
             this.nOTA_FISCAL_FORNECEDORTableAdapter.Fill(this.daDadosEntrada.NOTA_FISCAL_FORNECEDOR);
             lbl_Data.Text = DateTime.Now.ToString("dd/MM/yyyy");
             lbl_Data2.Text = DateTime.Now.ToString("dd/MM/yyyy");
@@ -106,54 +100,107 @@ namespace prjMerchades.Formularios.Entrada
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            string coluna, filtro, resultado;
+        {           
+            string coluna = cmbFiltro.Text; //qual coluna da tabela sera aplicado o filtro
+            string filtro = txtFiltro.Text.Trim(); //filtragem
+            string resultado = "";
 
-            coluna = cmbFiltro.Text; //qual coluna da tabela sera aplicado o filtro
-            filtro = txtFiltro.Text; //filtragem
-
-            if (coluna == "Fornecedor") 
+            if (coluna == "Fornecedor")
             {
-                resultado = "NOME_FORNECEDOR like '%" + filtro + "%'";
+                resultado = $"NOME_FORNECEDOR LIKE '%{filtro}%'";
                 compraDividasBindingSource.Filter = resultado;
+                return;
+            }
+
+            else if (coluna == "Valor")
+            {
+                filtro = filtro.Replace("R$", "").Trim(); //tira os caracteres
+
+                if (decimal.TryParse(filtro, out decimal valor))
+                {
+                    resultado = $"Convert(VALOR_COMPRA, 'System.String') LIKE '%{filtro}%'";
+                    compraDividasBindingSource.Filter = resultado;
+                }
+                else
+                {
+                    MessageBox.Show("Digite um valor válido.");
+                }
+
+                return;
             }
 
             else if (coluna == "Data")
             {
-                resultado = $"Convert(DATA_EMISSAO, 'System.String') LIKE '%{filtro}%'";
-                compraDividasBindingSource.Filter = resultado;
-            }
+                if (!DateTime.TryParse(filtro, out DateTime dataFiltro))
+                {
+                    MessageBox.Show("Digite uma data no formato dd/mm/yyyy");
+                    return;
+                }
+                
+                DateTime inicio = dataFiltro.Date; //deixa zerado as horas da data
+                DateTime fim = inicio.AddDays(1); //add 1 dia
 
-            if (coluna == "Valor")
-            {
-                resultado = $"Convert(VALOR_COMPRA, 'System.String') LIKE '%{filtro}%'";
+                //a data ta no formato americano, aqui ele converte e faz com que pegue as 24h do dia
+                string inicioUS = inicio.ToString("MM/dd/yyyy");
+                string fimUS = fim.ToString("MM/dd/yyyy");
+
+                resultado = $"DATA_EMISSAO >= #{inicioUS}# AND DATA_EMISSAO < #{fimUS}#"; // o filtro acaba pegando as 24h do dia digitado
+
                 compraDividasBindingSource.Filter = resultado;
+                return;
             }
         }
 
         private void btnBuscarAntigas_Click(object sender, EventArgs e)
         {
-            string coluna, filtro, resultado;
-
-            coluna = cmbFiltroAntigas.Text;
-            filtro = txtFiltroAntigas.Text;
+            string coluna = cmbFiltroAntigas.Text; //qual coluna da tabela sera aplicado o filtro
+            string filtro = txtFiltroAntigas.Text.Trim(); //filtragem
+            string resultado = "";
 
             if (coluna == "Fornecedor")
             {
-                resultado = "NOME_FORNECEDOR like '%" + filtro + "%'";
+                resultado = $"NOME_FORNECEDOR LIKE '%{filtro}%'";
                 comprasAntigasBindingSource.Filter = resultado;
+                return;
+            }
+
+            else if (coluna == "Valor")
+            {
+                filtro = filtro.Replace("R$", "").Trim(); //tira os caracteres
+
+                if (decimal.TryParse(filtro, out decimal valor))
+                {
+                    resultado = $"Convert(VALOR_COMPRA, 'System.String') LIKE '%{filtro}%'";
+                    comprasAntigasBindingSource.Filter = resultado;
+                }
+                else
+                {
+                    MessageBox.Show("Digite um valor válido.");
+                }
+
+                return;
             }
 
             else if (coluna == "Data")
             {
-                resultado = $"Convert(DATA_EMISSAO, 'System.String') LIKE '%{filtro}%'";
-                comprasAntigasBindingSource.Filter = resultado;
-            }
+                if (!DateTime.TryParse(filtro, out DateTime dataFiltro))
+                {
+                    MessageBox.Show("Digite uma data no formato dd/mm/yyyy");
+                    return;
+                }
 
-            if (coluna == "Valor")
-            {
-                resultado = $"Convert(VALOR_COMPRA, 'System.String') LIKE '%{filtro}%'";
+
+                DateTime inicio = dataFiltro.Date; //deixa zerado as horas da data
+                DateTime fim = inicio.AddDays(1);
+
+                //a data ta no formato americano, aqui ele converte e faz com que pegue as 24h do dia
+                string inicioUS = inicio.ToString("MM/dd/yyyy");
+                string fimUS = fim.ToString("MM/dd/yyyy");
+
+                resultado = $"DATA_EMISSAO >= #{inicioUS}# AND DATA_EMISSAO < #{fimUS}#"; // o filtro acaba pegando as 24h do dia digitado
+
                 comprasAntigasBindingSource.Filter = resultado;
+                return;
             }
         }
 
