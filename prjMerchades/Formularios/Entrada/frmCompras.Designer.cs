@@ -32,6 +32,40 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCompras));
             this.tabControl_Compras = new System.Windows.Forms.TabControl();
             this.tabPage_NF = new System.Windows.Forms.TabPage();
+            this.dtvwComprasNF = new System.Windows.Forms.DataGridView();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.pnCamposNF = new System.Windows.Forms.Panel();
+            this.lbl_CodFornecedor = new System.Windows.Forms.Label();
+            this.txtCodFornecedor = new System.Windows.Forms.TextBox();
+            this.lbl_CodNF = new System.Windows.Forms.Label();
+            this.txtCodNF = new System.Windows.Forms.TextBox();
+            this.lbl_DataEmissao = new System.Windows.Forms.Label();
+            this.dateEmissao = new System.Windows.Forms.DateTimePicker();
+            this.btnProximo = new System.Windows.Forms.Button();
+            this.pnCamposItens = new System.Windows.Forms.Panel();
+            this.lbl_NomeProduto = new System.Windows.Forms.Label();
+            this.numQtd = new System.Windows.Forms.NumericUpDown();
+            this.lbl_Qtd = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.numQtdACad = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmbTipoUnitario = new System.Windows.Forms.ComboBox();
+            this.dateValidade = new System.Windows.Forms.DateTimePicker();
+            this.lbl_DataVldd = new System.Windows.Forms.Label();
+            this.lbl_Preco = new System.Windows.Forms.Label();
+            this.txtPreco = new System.Windows.Forms.TextBox();
+            this.txtTipoProduto = new System.Windows.Forms.TextBox();
+            this.txtNomeProduto = new System.Windows.Forms.TextBox();
+            this.lbl_TipoProduto = new System.Windows.Forms.Label();
+            this.lbl_Lote = new System.Windows.Forms.Label();
+            this.txtLote = new System.Windows.Forms.TextBox();
+            this.lbl_CodBarras = new System.Windows.Forms.Label();
+            this.txtCodBarras = new System.Windows.Forms.TextBox();
+            this.lbl_Linha2 = new System.Windows.Forms.Label();
+            this.lbl_Linha1 = new System.Windows.Forms.Label();
+            this.btnEnviar = new System.Windows.Forms.Button();
+            this.txtVlrTtl = new System.Windows.Forms.TextBox();
+            this.lbl_VlrTtl = new System.Windows.Forms.Label();
             this.tabPage_Divida = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -67,42 +101,14 @@
             this.nOTA_FISCAL_FORNECEDORTableAdapter = new prjMerchades.Dados.daDadosEntradaTableAdapters.NOTA_FISCAL_FORNECEDORTableAdapter();
             this.comprasAntigasTableAdapter = new prjMerchades.Dados.daDadosEntradaTableAdapters.comprasAntigasTableAdapter();
             this.compraDividasTableAdapter = new prjMerchades.Dados.daDadosEntradaTableAdapters.compraDividasTableAdapter();
-            this.dtvwComprasNF = new System.Windows.Forms.DataGridView();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.pnCamposNF = new System.Windows.Forms.Panel();
-            this.lbl_CodFornecedor = new System.Windows.Forms.Label();
-            this.txtCodFornecedor = new System.Windows.Forms.TextBox();
-            this.lbl_CodNF = new System.Windows.Forms.Label();
-            this.txtCodNF = new System.Windows.Forms.TextBox();
-            this.lbl_DataEmissao = new System.Windows.Forms.Label();
-            this.dateEmissao = new System.Windows.Forms.DateTimePicker();
-            this.btnGerar = new System.Windows.Forms.Button();
-            this.pnCamposItens = new System.Windows.Forms.Panel();
-            this.lbl_NomeProduto = new System.Windows.Forms.Label();
-            this.numQtd = new System.Windows.Forms.NumericUpDown();
-            this.lbl_Qtd = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.numQtdACad = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cmbTipoUnitario = new System.Windows.Forms.ComboBox();
-            this.dateValidade = new System.Windows.Forms.DateTimePicker();
-            this.lbl_DataVldd = new System.Windows.Forms.Label();
-            this.lbl_Preco = new System.Windows.Forms.Label();
-            this.txtPreco = new System.Windows.Forms.TextBox();
-            this.txtTipoProduto = new System.Windows.Forms.TextBox();
-            this.txtVlrTtl = new System.Windows.Forms.TextBox();
-            this.txtNomeProduto = new System.Windows.Forms.TextBox();
-            this.lbl_VlrTtl = new System.Windows.Forms.Label();
-            this.lbl_TipoProduto = new System.Windows.Forms.Label();
-            this.lbl_Lote = new System.Windows.Forms.Label();
-            this.txtLote = new System.Windows.Forms.TextBox();
-            this.lbl_CodBarras = new System.Windows.Forms.Label();
-            this.txtCodBarras = new System.Windows.Forms.TextBox();
-            this.lbl_Linha2 = new System.Windows.Forms.Label();
-            this.lbl_Linha1 = new System.Windows.Forms.Label();
-            this.btnEnviar = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.tabControl_Compras.SuspendLayout();
             this.tabPage_NF.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtvwComprasNF)).BeginInit();
+            this.pnCamposNF.SuspendLayout();
+            this.pnCamposItens.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numQtd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numQtdACad)).BeginInit();
             this.tabPage_Divida.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compraDividasBindingSource)).BeginInit();
@@ -112,11 +118,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.comprasAntigasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nOTAFISCALFORNECEDORBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtvwComprasNF)).BeginInit();
-            this.pnCamposNF.SuspendLayout();
-            this.pnCamposItens.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numQtd)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numQtdACad)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl_Compras
@@ -138,7 +139,7 @@
             this.tabPage_NF.Controls.Add(this.dtvwComprasNF);
             this.tabPage_NF.Controls.Add(this.btnCancelar);
             this.tabPage_NF.Controls.Add(this.pnCamposNF);
-            this.tabPage_NF.Controls.Add(this.btnGerar);
+            this.tabPage_NF.Controls.Add(this.btnProximo);
             this.tabPage_NF.Controls.Add(this.pnCamposItens);
             this.tabPage_NF.Controls.Add(this.lbl_Linha2);
             this.tabPage_NF.Controls.Add(this.lbl_Linha1);
@@ -151,6 +152,396 @@
             this.tabPage_NF.Size = new System.Drawing.Size(1445, 623);
             this.tabPage_NF.TabIndex = 0;
             this.tabPage_NF.Text = "Receber Nota Fiscal";
+            // 
+            // dtvwComprasNF
+            // 
+            this.dtvwComprasNF.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dtvwComprasNF.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtvwComprasNF.Location = new System.Drawing.Point(902, 25);
+            this.dtvwComprasNF.Name = "dtvwComprasNF";
+            this.dtvwComprasNF.Size = new System.Drawing.Size(485, 572);
+            this.dtvwComprasNF.TabIndex = 50;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCancelar.BackColor = System.Drawing.Color.DarkRed;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCancelar.Location = new System.Drawing.Point(333, 537);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(122, 41);
+            this.btnCancelar.TabIndex = 48;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            // 
+            // pnCamposNF
+            // 
+            this.pnCamposNF.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnCamposNF.AutoScroll = true;
+            this.pnCamposNF.Controls.Add(this.lbl_CodFornecedor);
+            this.pnCamposNF.Controls.Add(this.txtCodFornecedor);
+            this.pnCamposNF.Controls.Add(this.lbl_CodNF);
+            this.pnCamposNF.Controls.Add(this.txtCodNF);
+            this.pnCamposNF.Controls.Add(this.lbl_DataEmissao);
+            this.pnCamposNF.Controls.Add(this.dateEmissao);
+            this.pnCamposNF.Location = new System.Drawing.Point(75, 37);
+            this.pnCamposNF.Name = "pnCamposNF";
+            this.pnCamposNF.Size = new System.Drawing.Size(787, 100);
+            this.pnCamposNF.TabIndex = 49;
+            // 
+            // lbl_CodFornecedor
+            // 
+            this.lbl_CodFornecedor.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_CodFornecedor.AutoSize = true;
+            this.lbl_CodFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CodFornecedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
+            this.lbl_CodFornecedor.Location = new System.Drawing.Point(15, 15);
+            this.lbl_CodFornecedor.Name = "lbl_CodFornecedor";
+            this.lbl_CodFornecedor.Size = new System.Drawing.Size(253, 25);
+            this.lbl_CodFornecedor.TabIndex = 12;
+            this.lbl_CodFornecedor.Text = "Código do Fornecedor:";
+            // 
+            // txtCodFornecedor
+            // 
+            this.txtCodFornecedor.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtCodFornecedor.Location = new System.Drawing.Point(21, 49);
+            this.txtCodFornecedor.Name = "txtCodFornecedor";
+            this.txtCodFornecedor.Size = new System.Drawing.Size(237, 26);
+            this.txtCodFornecedor.TabIndex = 13;
+            // 
+            // lbl_CodNF
+            // 
+            this.lbl_CodNF.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_CodNF.AutoSize = true;
+            this.lbl_CodNF.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CodNF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
+            this.lbl_CodNF.Location = new System.Drawing.Point(298, 15);
+            this.lbl_CodNF.Name = "lbl_CodNF";
+            this.lbl_CodNF.Size = new System.Drawing.Size(252, 25);
+            this.lbl_CodNF.TabIndex = 27;
+            this.lbl_CodNF.Text = "Código da Nota Fiscal:";
+            // 
+            // txtCodNF
+            // 
+            this.txtCodNF.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtCodNF.Location = new System.Drawing.Point(304, 49);
+            this.txtCodNF.Name = "txtCodNF";
+            this.txtCodNF.Size = new System.Drawing.Size(225, 26);
+            this.txtCodNF.TabIndex = 28;
+            // 
+            // lbl_DataEmissao
+            // 
+            this.lbl_DataEmissao.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_DataEmissao.AutoSize = true;
+            this.lbl_DataEmissao.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_DataEmissao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
+            this.lbl_DataEmissao.Location = new System.Drawing.Point(570, 15);
+            this.lbl_DataEmissao.Name = "lbl_DataEmissao";
+            this.lbl_DataEmissao.Size = new System.Drawing.Size(197, 25);
+            this.lbl_DataEmissao.TabIndex = 17;
+            this.lbl_DataEmissao.Text = "Data de Emissão:";
+            // 
+            // dateEmissao
+            // 
+            this.dateEmissao.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dateEmissao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateEmissao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateEmissao.Location = new System.Drawing.Point(586, 49);
+            this.dateEmissao.MaxDate = new System.DateTime(2025, 11, 20, 0, 0, 0, 0);
+            this.dateEmissao.Name = "dateEmissao";
+            this.dateEmissao.Size = new System.Drawing.Size(140, 29);
+            this.dateEmissao.TabIndex = 16;
+            this.dateEmissao.Value = new System.DateTime(2025, 11, 20, 0, 0, 0, 0);
+            // 
+            // btnProximo
+            // 
+            this.btnProximo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnProximo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
+            this.btnProximo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnProximo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProximo.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnProximo.Location = new System.Drawing.Point(391, 160);
+            this.btnProximo.Name = "btnProximo";
+            this.btnProximo.Size = new System.Drawing.Size(119, 31);
+            this.btnProximo.TabIndex = 47;
+            this.btnProximo.TabStop = false;
+            this.btnProximo.Text = "Próximo";
+            this.btnProximo.UseVisualStyleBackColor = false;
+            // 
+            // pnCamposItens
+            // 
+            this.pnCamposItens.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnCamposItens.AutoScroll = true;
+            this.pnCamposItens.Controls.Add(this.btnAdd);
+            this.pnCamposItens.Controls.Add(this.lbl_NomeProduto);
+            this.pnCamposItens.Controls.Add(this.numQtd);
+            this.pnCamposItens.Controls.Add(this.lbl_Qtd);
+            this.pnCamposItens.Controls.Add(this.label7);
+            this.pnCamposItens.Controls.Add(this.numQtdACad);
+            this.pnCamposItens.Controls.Add(this.label4);
+            this.pnCamposItens.Controls.Add(this.cmbTipoUnitario);
+            this.pnCamposItens.Controls.Add(this.dateValidade);
+            this.pnCamposItens.Controls.Add(this.lbl_DataVldd);
+            this.pnCamposItens.Controls.Add(this.lbl_Preco);
+            this.pnCamposItens.Controls.Add(this.txtPreco);
+            this.pnCamposItens.Controls.Add(this.txtTipoProduto);
+            this.pnCamposItens.Controls.Add(this.txtNomeProduto);
+            this.pnCamposItens.Controls.Add(this.lbl_TipoProduto);
+            this.pnCamposItens.Controls.Add(this.lbl_Lote);
+            this.pnCamposItens.Controls.Add(this.txtLote);
+            this.pnCamposItens.Controls.Add(this.lbl_CodBarras);
+            this.pnCamposItens.Controls.Add(this.txtCodBarras);
+            this.pnCamposItens.Location = new System.Drawing.Point(75, 243);
+            this.pnCamposItens.Name = "pnCamposItens";
+            this.pnCamposItens.Size = new System.Drawing.Size(787, 237);
+            this.pnCamposItens.TabIndex = 46;
+            // 
+            // lbl_NomeProduto
+            // 
+            this.lbl_NomeProduto.AutoSize = true;
+            this.lbl_NomeProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_NomeProduto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
+            this.lbl_NomeProduto.Location = new System.Drawing.Point(45, 21);
+            this.lbl_NomeProduto.Name = "lbl_NomeProduto";
+            this.lbl_NomeProduto.Size = new System.Drawing.Size(168, 25);
+            this.lbl_NomeProduto.TabIndex = 29;
+            this.lbl_NomeProduto.Text = "Nome Produto:";
+            // 
+            // numQtd
+            // 
+            this.numQtd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numQtd.Location = new System.Drawing.Point(431, 115);
+            this.numQtd.Name = "numQtd";
+            this.numQtd.Size = new System.Drawing.Size(77, 29);
+            this.numQtd.TabIndex = 2;
+            // 
+            // lbl_Qtd
+            // 
+            this.lbl_Qtd.AutoSize = true;
+            this.lbl_Qtd.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Qtd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
+            this.lbl_Qtd.Location = new System.Drawing.Point(426, 84);
+            this.lbl_Qtd.Name = "lbl_Qtd";
+            this.lbl_Qtd.Size = new System.Drawing.Size(56, 25);
+            this.lbl_Qtd.TabIndex = 3;
+            this.lbl_Qtd.Text = "Qtd:";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
+            this.label7.Location = new System.Drawing.Point(510, 20);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(274, 25);
+            this.label7.TabIndex = 38;
+            this.label7.Text = "Quantidade de Produtos:";
+            // 
+            // numQtdACad
+            // 
+            this.numQtdACad.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.numQtdACad.Location = new System.Drawing.Point(515, 54);
+            this.numQtdACad.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numQtdACad.Name = "numQtdACad";
+            this.numQtdACad.Size = new System.Drawing.Size(120, 26);
+            this.numQtdACad.TabIndex = 37;
+            this.numQtdACad.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
+            this.label4.Location = new System.Drawing.Point(47, 147);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(154, 25);
+            this.label4.TabIndex = 36;
+            this.label4.Text = "Tipo Unitario:";
+            // 
+            // cmbTipoUnitario
+            // 
+            this.cmbTipoUnitario.FormattingEnabled = true;
+            this.cmbTipoUnitario.Items.AddRange(new object[] {
+            "Grama",
+            "Quilograma",
+            "Mililitro",
+            "Litro",
+            "Fardo"});
+            this.cmbTipoUnitario.Location = new System.Drawing.Point(51, 181);
+            this.cmbTipoUnitario.Name = "cmbTipoUnitario";
+            this.cmbTipoUnitario.Size = new System.Drawing.Size(239, 28);
+            this.cmbTipoUnitario.TabIndex = 35;
+            // 
+            // dateValidade
+            // 
+            this.dateValidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateValidade.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateValidade.Location = new System.Drawing.Point(536, 114);
+            this.dateValidade.MinDate = new System.DateTime(2025, 11, 20, 0, 0, 0, 0);
+            this.dateValidade.Name = "dateValidade";
+            this.dateValidade.Size = new System.Drawing.Size(139, 29);
+            this.dateValidade.TabIndex = 6;
+            // 
+            // lbl_DataVldd
+            // 
+            this.lbl_DataVldd.AutoSize = true;
+            this.lbl_DataVldd.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_DataVldd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
+            this.lbl_DataVldd.Location = new System.Drawing.Point(531, 84);
+            this.lbl_DataVldd.Name = "lbl_DataVldd";
+            this.lbl_DataVldd.Size = new System.Drawing.Size(200, 25);
+            this.lbl_DataVldd.TabIndex = 7;
+            this.lbl_DataVldd.Text = "Data de Validade:";
+            // 
+            // lbl_Preco
+            // 
+            this.lbl_Preco.AutoSize = true;
+            this.lbl_Preco.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Preco.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
+            this.lbl_Preco.Location = new System.Drawing.Point(283, 84);
+            this.lbl_Preco.Name = "lbl_Preco";
+            this.lbl_Preco.Size = new System.Drawing.Size(80, 25);
+            this.lbl_Preco.TabIndex = 8;
+            this.lbl_Preco.Text = "Preço:";
+            // 
+            // txtPreco
+            // 
+            this.txtPreco.Location = new System.Drawing.Point(289, 118);
+            this.txtPreco.Name = "txtPreco";
+            this.txtPreco.Size = new System.Drawing.Size(120, 26);
+            this.txtPreco.TabIndex = 9;
+            // 
+            // txtTipoProduto
+            // 
+            this.txtTipoProduto.Location = new System.Drawing.Point(52, 118);
+            this.txtTipoProduto.Name = "txtTipoProduto";
+            this.txtTipoProduto.Size = new System.Drawing.Size(194, 26);
+            this.txtTipoProduto.TabIndex = 32;
+            // 
+            // txtNomeProduto
+            // 
+            this.txtNomeProduto.Location = new System.Drawing.Point(51, 55);
+            this.txtNomeProduto.Name = "txtNomeProduto";
+            this.txtNomeProduto.Size = new System.Drawing.Size(237, 26);
+            this.txtNomeProduto.TabIndex = 30;
+            // 
+            // lbl_TipoProduto
+            // 
+            this.lbl_TipoProduto.AutoSize = true;
+            this.lbl_TipoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TipoProduto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
+            this.lbl_TipoProduto.Location = new System.Drawing.Point(46, 84);
+            this.lbl_TipoProduto.Name = "lbl_TipoProduto";
+            this.lbl_TipoProduto.Size = new System.Drawing.Size(187, 25);
+            this.lbl_TipoProduto.TabIndex = 31;
+            this.lbl_TipoProduto.Text = "Tipo de Produto:";
+            // 
+            // lbl_Lote
+            // 
+            this.lbl_Lote.AutoSize = true;
+            this.lbl_Lote.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Lote.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
+            this.lbl_Lote.Location = new System.Drawing.Point(311, 147);
+            this.lbl_Lote.Name = "lbl_Lote";
+            this.lbl_Lote.Size = new System.Drawing.Size(65, 25);
+            this.lbl_Lote.TabIndex = 4;
+            this.lbl_Lote.Text = "Lote:";
+            // 
+            // txtLote
+            // 
+            this.txtLote.Location = new System.Drawing.Point(317, 181);
+            this.txtLote.Name = "txtLote";
+            this.txtLote.Size = new System.Drawing.Size(290, 26);
+            this.txtLote.TabIndex = 5;
+            // 
+            // lbl_CodBarras
+            // 
+            this.lbl_CodBarras.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_CodBarras.AutoSize = true;
+            this.lbl_CodBarras.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CodBarras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
+            this.lbl_CodBarras.Location = new System.Drawing.Point(298, 20);
+            this.lbl_CodBarras.Name = "lbl_CodBarras";
+            this.lbl_CodBarras.Size = new System.Drawing.Size(209, 25);
+            this.lbl_CodBarras.TabIndex = 0;
+            this.lbl_CodBarras.Text = "Código de Barras: ";
+            // 
+            // txtCodBarras
+            // 
+            this.txtCodBarras.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtCodBarras.Location = new System.Drawing.Point(302, 54);
+            this.txtCodBarras.Name = "txtCodBarras";
+            this.txtCodBarras.Size = new System.Drawing.Size(196, 26);
+            this.txtCodBarras.TabIndex = 1;
+            // 
+            // lbl_Linha2
+            // 
+            this.lbl_Linha2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_Linha2.AutoSize = true;
+            this.lbl_Linha2.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lbl_Linha2.Location = new System.Drawing.Point(57, 598);
+            this.lbl_Linha2.Name = "lbl_Linha2";
+            this.lbl_Linha2.Size = new System.Drawing.Size(829, 20);
+            this.lbl_Linha2.TabIndex = 45;
+            this.lbl_Linha2.Text = "_________________________________________________________________________________" +
+    "_";
+            // 
+            // lbl_Linha1
+            // 
+            this.lbl_Linha1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_Linha1.AutoSize = true;
+            this.lbl_Linha1.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lbl_Linha1.Location = new System.Drawing.Point(57, 196);
+            this.lbl_Linha1.Name = "lbl_Linha1";
+            this.lbl_Linha1.Size = new System.Drawing.Size(829, 20);
+            this.lbl_Linha1.TabIndex = 44;
+            this.lbl_Linha1.Text = "_________________________________________________________________________________" +
+    "_";
+            // 
+            // btnEnviar
+            // 
+            this.btnEnviar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEnviar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
+            this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEnviar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnviar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEnviar.Location = new System.Drawing.Point(461, 537);
+            this.btnEnviar.Name = "btnEnviar";
+            this.btnEnviar.Size = new System.Drawing.Size(122, 41);
+            this.btnEnviar.TabIndex = 43;
+            this.btnEnviar.Text = "Enviar";
+            this.btnEnviar.UseVisualStyleBackColor = false;
+            // 
+            // txtVlrTtl
+            // 
+            this.txtVlrTtl.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtVlrTtl.Location = new System.Drawing.Point(84, 546);
+            this.txtVlrTtl.Name = "txtVlrTtl";
+            this.txtVlrTtl.Size = new System.Drawing.Size(237, 26);
+            this.txtVlrTtl.TabIndex = 11;
+            // 
+            // lbl_VlrTtl
+            // 
+            this.lbl_VlrTtl.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_VlrTtl.AutoSize = true;
+            this.lbl_VlrTtl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_VlrTtl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
+            this.lbl_VlrTtl.Location = new System.Drawing.Point(79, 518);
+            this.lbl_VlrTtl.Name = "lbl_VlrTtl";
+            this.lbl_VlrTtl.Size = new System.Drawing.Size(134, 25);
+            this.lbl_VlrTtl.TabIndex = 10;
+            this.lbl_VlrTtl.Text = "Valor Total:";
             // 
             // tabPage_Divida
             // 
@@ -165,7 +556,7 @@
             this.tabPage_Divida.Location = new System.Drawing.Point(4, 29);
             this.tabPage_Divida.Name = "tabPage_Divida";
             this.tabPage_Divida.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_Divida.Size = new System.Drawing.Size(1085, 575);
+            this.tabPage_Divida.Size = new System.Drawing.Size(1445, 623);
             this.tabPage_Divida.TabIndex = 1;
             this.tabPage_Divida.Text = "Dívidas";
             // 
@@ -314,7 +705,7 @@
             this.tabPage_CompraAntg.Location = new System.Drawing.Point(4, 29);
             this.tabPage_CompraAntg.Name = "tabPage_CompraAntg";
             this.tabPage_CompraAntg.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_CompraAntg.Size = new System.Drawing.Size(1085, 575);
+            this.tabPage_CompraAntg.Size = new System.Drawing.Size(1445, 623);
             this.tabPage_CompraAntg.TabIndex = 2;
             this.tabPage_CompraAntg.Text = "Compras antigas";
             // 
@@ -484,394 +875,20 @@
             // 
             this.compraDividasTableAdapter.ClearBeforeFill = true;
             // 
-            // dtvwComprasNF
-            // 
-            this.dtvwComprasNF.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dtvwComprasNF.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtvwComprasNF.Location = new System.Drawing.Point(902, 25);
-            this.dtvwComprasNF.Name = "dtvwComprasNF";
-            this.dtvwComprasNF.Size = new System.Drawing.Size(485, 572);
-            this.dtvwComprasNF.TabIndex = 50;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCancelar.BackColor = System.Drawing.Color.DarkRed;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancelar.Location = new System.Drawing.Point(333, 537);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(122, 41);
-            this.btnCancelar.TabIndex = 48;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            // 
-            // pnCamposNF
-            // 
-            this.pnCamposNF.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnCamposNF.AutoScroll = true;
-            this.pnCamposNF.Controls.Add(this.lbl_CodFornecedor);
-            this.pnCamposNF.Controls.Add(this.txtCodFornecedor);
-            this.pnCamposNF.Controls.Add(this.lbl_CodNF);
-            this.pnCamposNF.Controls.Add(this.txtCodNF);
-            this.pnCamposNF.Controls.Add(this.lbl_DataEmissao);
-            this.pnCamposNF.Controls.Add(this.dateEmissao);
-            this.pnCamposNF.Location = new System.Drawing.Point(75, 37);
-            this.pnCamposNF.Name = "pnCamposNF";
-            this.pnCamposNF.Size = new System.Drawing.Size(787, 100);
-            this.pnCamposNF.TabIndex = 49;
-            // 
-            // lbl_CodFornecedor
-            // 
-            this.lbl_CodFornecedor.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl_CodFornecedor.AutoSize = true;
-            this.lbl_CodFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_CodFornecedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.lbl_CodFornecedor.Location = new System.Drawing.Point(15, 15);
-            this.lbl_CodFornecedor.Name = "lbl_CodFornecedor";
-            this.lbl_CodFornecedor.Size = new System.Drawing.Size(253, 25);
-            this.lbl_CodFornecedor.TabIndex = 12;
-            this.lbl_CodFornecedor.Text = "Código do Fornecedor:";
-            // 
-            // txtCodFornecedor
-            // 
-            this.txtCodFornecedor.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCodFornecedor.Location = new System.Drawing.Point(21, 49);
-            this.txtCodFornecedor.Name = "txtCodFornecedor";
-            this.txtCodFornecedor.Size = new System.Drawing.Size(237, 26);
-            this.txtCodFornecedor.TabIndex = 13;
-            // 
-            // lbl_CodNF
-            // 
-            this.lbl_CodNF.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl_CodNF.AutoSize = true;
-            this.lbl_CodNF.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_CodNF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.lbl_CodNF.Location = new System.Drawing.Point(298, 15);
-            this.lbl_CodNF.Name = "lbl_CodNF";
-            this.lbl_CodNF.Size = new System.Drawing.Size(252, 25);
-            this.lbl_CodNF.TabIndex = 27;
-            this.lbl_CodNF.Text = "Código da Nota Fiscal:";
-            // 
-            // txtCodNF
-            // 
-            this.txtCodNF.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCodNF.Location = new System.Drawing.Point(304, 49);
-            this.txtCodNF.Name = "txtCodNF";
-            this.txtCodNF.Size = new System.Drawing.Size(225, 26);
-            this.txtCodNF.TabIndex = 28;
-            // 
-            // lbl_DataEmissao
-            // 
-            this.lbl_DataEmissao.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl_DataEmissao.AutoSize = true;
-            this.lbl_DataEmissao.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_DataEmissao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.lbl_DataEmissao.Location = new System.Drawing.Point(570, 15);
-            this.lbl_DataEmissao.Name = "lbl_DataEmissao";
-            this.lbl_DataEmissao.Size = new System.Drawing.Size(197, 25);
-            this.lbl_DataEmissao.TabIndex = 17;
-            this.lbl_DataEmissao.Text = "Data de Emissão:";
-            // 
-            // dateEmissao
-            // 
-            this.dateEmissao.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dateEmissao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateEmissao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateEmissao.Location = new System.Drawing.Point(586, 49);
-            this.dateEmissao.MaxDate = new System.DateTime(2025, 11, 20, 0, 0, 0, 0);
-            this.dateEmissao.Name = "dateEmissao";
-            this.dateEmissao.Size = new System.Drawing.Size(140, 29);
-            this.dateEmissao.TabIndex = 16;
-            this.dateEmissao.Value = new System.DateTime(2025, 11, 20, 0, 0, 0, 0);
-            // 
-            // btnGerar
-            // 
-            this.btnGerar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnGerar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
-            this.btnGerar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnGerar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGerar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnGerar.Location = new System.Drawing.Point(391, 160);
-            this.btnGerar.Name = "btnGerar";
-            this.btnGerar.Size = new System.Drawing.Size(119, 31);
-            this.btnGerar.TabIndex = 47;
-            this.btnGerar.TabStop = false;
-            this.btnGerar.Text = "Gerar";
-            this.btnGerar.UseVisualStyleBackColor = false;
-            // 
-            // pnCamposItens
-            // 
-            this.pnCamposItens.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnCamposItens.AutoScroll = true;
-            this.pnCamposItens.Controls.Add(this.lbl_NomeProduto);
-            this.pnCamposItens.Controls.Add(this.numQtd);
-            this.pnCamposItens.Controls.Add(this.lbl_Qtd);
-            this.pnCamposItens.Controls.Add(this.label7);
-            this.pnCamposItens.Controls.Add(this.numQtdACad);
-            this.pnCamposItens.Controls.Add(this.label4);
-            this.pnCamposItens.Controls.Add(this.cmbTipoUnitario);
-            this.pnCamposItens.Controls.Add(this.dateValidade);
-            this.pnCamposItens.Controls.Add(this.lbl_DataVldd);
-            this.pnCamposItens.Controls.Add(this.lbl_Preco);
-            this.pnCamposItens.Controls.Add(this.txtPreco);
-            this.pnCamposItens.Controls.Add(this.txtTipoProduto);
-            this.pnCamposItens.Controls.Add(this.txtNomeProduto);
-            this.pnCamposItens.Controls.Add(this.lbl_TipoProduto);
-            this.pnCamposItens.Controls.Add(this.lbl_Lote);
-            this.pnCamposItens.Controls.Add(this.txtLote);
-            this.pnCamposItens.Controls.Add(this.lbl_CodBarras);
-            this.pnCamposItens.Controls.Add(this.txtCodBarras);
-            this.pnCamposItens.Location = new System.Drawing.Point(75, 243);
-            this.pnCamposItens.Name = "pnCamposItens";
-            this.pnCamposItens.Size = new System.Drawing.Size(787, 237);
-            this.pnCamposItens.TabIndex = 46;
-            // 
-            // lbl_NomeProduto
-            // 
-            this.lbl_NomeProduto.AutoSize = true;
-            this.lbl_NomeProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_NomeProduto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.lbl_NomeProduto.Location = new System.Drawing.Point(45, 21);
-            this.lbl_NomeProduto.Name = "lbl_NomeProduto";
-            this.lbl_NomeProduto.Size = new System.Drawing.Size(168, 25);
-            this.lbl_NomeProduto.TabIndex = 29;
-            this.lbl_NomeProduto.Text = "Nome Produto:";
-            // 
-            // numQtd
-            // 
-            this.numQtd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numQtd.Location = new System.Drawing.Point(431, 115);
-            this.numQtd.Name = "numQtd";
-            this.numQtd.Size = new System.Drawing.Size(77, 29);
-            this.numQtd.TabIndex = 2;
-            // 
-            // lbl_Qtd
-            // 
-            this.lbl_Qtd.AutoSize = true;
-            this.lbl_Qtd.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Qtd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.lbl_Qtd.Location = new System.Drawing.Point(426, 84);
-            this.lbl_Qtd.Name = "lbl_Qtd";
-            this.lbl_Qtd.Size = new System.Drawing.Size(56, 25);
-            this.lbl_Qtd.TabIndex = 3;
-            this.lbl_Qtd.Text = "Qtd:";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.label7.Location = new System.Drawing.Point(510, 20);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(274, 25);
-            this.label7.TabIndex = 38;
-            this.label7.Text = "Quantidade de Produtos:";
-            // 
-            // numQtdACad
-            // 
-            this.numQtdACad.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numQtdACad.Location = new System.Drawing.Point(515, 54);
-            this.numQtdACad.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numQtdACad.Name = "numQtdACad";
-            this.numQtdACad.Size = new System.Drawing.Size(120, 26);
-            this.numQtdACad.TabIndex = 37;
-            this.numQtdACad.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.label4.Location = new System.Drawing.Point(47, 147);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(154, 25);
-            this.label4.TabIndex = 36;
-            this.label4.Text = "Tipo Unitario:";
-            // 
-            // cmbTipoUnitario
-            // 
-            this.cmbTipoUnitario.FormattingEnabled = true;
-            this.cmbTipoUnitario.Items.AddRange(new object[] {
-            "Grama",
-            "Quilograma",
-            "Mililitro",
-            "Litro",
-            "Fardo"});
-            this.cmbTipoUnitario.Location = new System.Drawing.Point(51, 181);
-            this.cmbTipoUnitario.Name = "cmbTipoUnitario";
-            this.cmbTipoUnitario.Size = new System.Drawing.Size(239, 28);
-            this.cmbTipoUnitario.TabIndex = 35;
-            // 
-            // dateValidade
-            // 
-            this.dateValidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateValidade.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateValidade.Location = new System.Drawing.Point(536, 114);
-            this.dateValidade.MinDate = new System.DateTime(2025, 11, 20, 0, 0, 0, 0);
-            this.dateValidade.Name = "dateValidade";
-            this.dateValidade.Size = new System.Drawing.Size(139, 29);
-            this.dateValidade.TabIndex = 6;
-            // 
-            // lbl_DataVldd
-            // 
-            this.lbl_DataVldd.AutoSize = true;
-            this.lbl_DataVldd.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_DataVldd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.lbl_DataVldd.Location = new System.Drawing.Point(531, 84);
-            this.lbl_DataVldd.Name = "lbl_DataVldd";
-            this.lbl_DataVldd.Size = new System.Drawing.Size(200, 25);
-            this.lbl_DataVldd.TabIndex = 7;
-            this.lbl_DataVldd.Text = "Data de Validade:";
-            // 
-            // lbl_Preco
-            // 
-            this.lbl_Preco.AutoSize = true;
-            this.lbl_Preco.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Preco.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.lbl_Preco.Location = new System.Drawing.Point(283, 84);
-            this.lbl_Preco.Name = "lbl_Preco";
-            this.lbl_Preco.Size = new System.Drawing.Size(80, 25);
-            this.lbl_Preco.TabIndex = 8;
-            this.lbl_Preco.Text = "Preço:";
-            // 
-            // txtPreco
-            // 
-            this.txtPreco.Location = new System.Drawing.Point(289, 118);
-            this.txtPreco.Name = "txtPreco";
-            this.txtPreco.Size = new System.Drawing.Size(120, 26);
-            this.txtPreco.TabIndex = 9;
-            // 
-            // txtTipoProduto
-            // 
-            this.txtTipoProduto.Location = new System.Drawing.Point(52, 118);
-            this.txtTipoProduto.Name = "txtTipoProduto";
-            this.txtTipoProduto.Size = new System.Drawing.Size(194, 26);
-            this.txtTipoProduto.TabIndex = 32;
-            // 
-            // txtVlrTtl
-            // 
-            this.txtVlrTtl.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtVlrTtl.Location = new System.Drawing.Point(84, 546);
-            this.txtVlrTtl.Name = "txtVlrTtl";
-            this.txtVlrTtl.Size = new System.Drawing.Size(237, 26);
-            this.txtVlrTtl.TabIndex = 11;
-            // 
-            // txtNomeProduto
-            // 
-            this.txtNomeProduto.Location = new System.Drawing.Point(51, 55);
-            this.txtNomeProduto.Name = "txtNomeProduto";
-            this.txtNomeProduto.Size = new System.Drawing.Size(237, 26);
-            this.txtNomeProduto.TabIndex = 30;
-            // 
-            // lbl_VlrTtl
-            // 
-            this.lbl_VlrTtl.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl_VlrTtl.AutoSize = true;
-            this.lbl_VlrTtl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_VlrTtl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.lbl_VlrTtl.Location = new System.Drawing.Point(79, 518);
-            this.lbl_VlrTtl.Name = "lbl_VlrTtl";
-            this.lbl_VlrTtl.Size = new System.Drawing.Size(134, 25);
-            this.lbl_VlrTtl.TabIndex = 10;
-            this.lbl_VlrTtl.Text = "Valor Total:";
-            // 
-            // lbl_TipoProduto
-            // 
-            this.lbl_TipoProduto.AutoSize = true;
-            this.lbl_TipoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TipoProduto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.lbl_TipoProduto.Location = new System.Drawing.Point(46, 84);
-            this.lbl_TipoProduto.Name = "lbl_TipoProduto";
-            this.lbl_TipoProduto.Size = new System.Drawing.Size(187, 25);
-            this.lbl_TipoProduto.TabIndex = 31;
-            this.lbl_TipoProduto.Text = "Tipo de Produto:";
-            // 
-            // lbl_Lote
-            // 
-            this.lbl_Lote.AutoSize = true;
-            this.lbl_Lote.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Lote.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.lbl_Lote.Location = new System.Drawing.Point(311, 147);
-            this.lbl_Lote.Name = "lbl_Lote";
-            this.lbl_Lote.Size = new System.Drawing.Size(65, 25);
-            this.lbl_Lote.TabIndex = 4;
-            this.lbl_Lote.Text = "Lote:";
-            // 
-            // txtLote
-            // 
-            this.txtLote.Location = new System.Drawing.Point(317, 181);
-            this.txtLote.Name = "txtLote";
-            this.txtLote.Size = new System.Drawing.Size(290, 26);
-            this.txtLote.TabIndex = 5;
-            // 
-            // lbl_CodBarras
-            // 
-            this.lbl_CodBarras.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl_CodBarras.AutoSize = true;
-            this.lbl_CodBarras.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_CodBarras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.lbl_CodBarras.Location = new System.Drawing.Point(298, 20);
-            this.lbl_CodBarras.Name = "lbl_CodBarras";
-            this.lbl_CodBarras.Size = new System.Drawing.Size(209, 25);
-            this.lbl_CodBarras.TabIndex = 0;
-            this.lbl_CodBarras.Text = "Código de Barras: ";
-            // 
-            // txtCodBarras
-            // 
-            this.txtCodBarras.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCodBarras.Location = new System.Drawing.Point(302, 54);
-            this.txtCodBarras.Name = "txtCodBarras";
-            this.txtCodBarras.Size = new System.Drawing.Size(196, 26);
-            this.txtCodBarras.TabIndex = 1;
-            // 
-            // lbl_Linha2
-            // 
-            this.lbl_Linha2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl_Linha2.AutoSize = true;
-            this.lbl_Linha2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lbl_Linha2.Location = new System.Drawing.Point(57, 598);
-            this.lbl_Linha2.Name = "lbl_Linha2";
-            this.lbl_Linha2.Size = new System.Drawing.Size(829, 20);
-            this.lbl_Linha2.TabIndex = 45;
-            this.lbl_Linha2.Text = "_________________________________________________________________________________" +
-    "_";
-            // 
-            // lbl_Linha1
-            // 
-            this.lbl_Linha1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl_Linha1.AutoSize = true;
-            this.lbl_Linha1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lbl_Linha1.Location = new System.Drawing.Point(57, 196);
-            this.lbl_Linha1.Name = "lbl_Linha1";
-            this.lbl_Linha1.Size = new System.Drawing.Size(829, 20);
-            this.lbl_Linha1.TabIndex = 44;
-            this.lbl_Linha1.Text = "_________________________________________________________________________________" +
-    "_";
-            // 
-            // btnEnviar
-            // 
-            this.btnEnviar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEnviar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
-            this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEnviar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnviar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnEnviar.Location = new System.Drawing.Point(461, 537);
-            this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(122, 41);
-            this.btnEnviar.TabIndex = 43;
-            this.btnEnviar.Text = "Enviar";
-            this.btnEnviar.UseVisualStyleBackColor = false;
+            // btnAdd
+            // 
+            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAdd.Location = new System.Drawing.Point(635, 176);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(119, 31);
+            this.btnAdd.TabIndex = 51;
+            this.btnAdd.TabStop = false;
+            this.btnAdd.Text = "Adicionar";
+            this.btnAdd.UseVisualStyleBackColor = false;
             // 
             // frmCompras
             // 
@@ -891,6 +908,13 @@
             this.tabControl_Compras.ResumeLayout(false);
             this.tabPage_NF.ResumeLayout(false);
             this.tabPage_NF.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtvwComprasNF)).EndInit();
+            this.pnCamposNF.ResumeLayout(false);
+            this.pnCamposNF.PerformLayout();
+            this.pnCamposItens.ResumeLayout(false);
+            this.pnCamposItens.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numQtd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numQtdACad)).EndInit();
             this.tabPage_Divida.ResumeLayout(false);
             this.tabPage_Divida.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -902,13 +926,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.comprasAntigasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nOTAFISCALFORNECEDORBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtvwComprasNF)).EndInit();
-            this.pnCamposNF.ResumeLayout(false);
-            this.pnCamposNF.PerformLayout();
-            this.pnCamposItens.ResumeLayout(false);
-            this.pnCamposItens.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numQtd)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numQtdACad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -962,7 +979,7 @@
         private System.Windows.Forms.TextBox txtCodNF;
         private System.Windows.Forms.Label lbl_DataEmissao;
         private System.Windows.Forms.DateTimePicker dateEmissao;
-        private System.Windows.Forms.Button btnGerar;
+        private System.Windows.Forms.Button btnProximo;
         private System.Windows.Forms.Panel pnCamposItens;
         private System.Windows.Forms.Label lbl_NomeProduto;
         private System.Windows.Forms.NumericUpDown numQtd;
@@ -987,5 +1004,6 @@
         private System.Windows.Forms.Label lbl_Linha2;
         private System.Windows.Forms.Label lbl_Linha1;
         private System.Windows.Forms.Button btnEnviar;
+        private System.Windows.Forms.Button btnAdd;
     }
 }
