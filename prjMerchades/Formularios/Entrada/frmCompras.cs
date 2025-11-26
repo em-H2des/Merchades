@@ -213,5 +213,10 @@ namespace prjMerchades.Formularios.Entrada
         {
 
         }
+
+        private void lbl_Qtd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

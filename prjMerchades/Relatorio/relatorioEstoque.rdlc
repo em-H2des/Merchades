@@ -9,13 +9,13 @@
               <Width>5.46365cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.46365cm</Width>
+              <Width>4.82865cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.46365cm</Width>
+              <Width>5.53071cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.46365cm</Width>
+              <Width>6.96645cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -154,7 +154,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>CODIGO DA NOTA FISCAL</Value>
+                              <Value>CÓDIGO DA ÚLTIMA NOTA FISCAL</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -235,7 +235,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!QTD_ESTOQUE.Value)</Value>
+                              <Value>=Sum(Fields!QTD_ESTOQUE_ADDED.Value)</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
@@ -355,7 +355,7 @@
         </TablixRowHierarchy>
         <DataSetName>dadosEstoque</DataSetName>
         <Height>1.61396cm</Height>
-        <Width>21.85458cm</Width>
+        <Width>22.78946cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -366,7 +366,7 @@
     <Height>0.63542in</Height>
     <Style />
   </Body>
-  <Width>8.60417in</Width>
+  <Width>8.97223in</Width>
   <Page>
     <PageHeader>
       <Height>2.68111cm</Height>
@@ -472,10 +472,6 @@
           <DataField>ID_ESTOQUE</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="QTD_ESTOQUE">
-          <DataField>QTD_ESTOQUE</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
         <Field Name="PRODUTO">
           <DataField>PRODUTO</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -484,10 +480,14 @@
           <DataField>NOTA_FISCAL</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="QTD_ESTOQUE_ADDED">
+          <DataField>QTD_ESTOQUE_ADDED</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>daDadosEntrada</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\brend\OneDrive\Documentos\estudo\Merchades\prjMerchades\Dados\daDadosEntrada.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\LabInfo\Documents\GitHub\Merchades\prjMerchades\Dados\daDadosEntrada.xsd</rd:SchemaPath>
         <rd:TableName>ESTOQUEEntradaNomes</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
