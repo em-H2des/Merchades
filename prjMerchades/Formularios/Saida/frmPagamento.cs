@@ -62,6 +62,11 @@ namespace Merchades
             decimal valorVendaDecimal = 0;
             decimal.TryParse(totalString, out valorVendaDecimal);
 
+            //Pega o valor pago e converte-o em decimal
+            string valorPagoString = txtValorPago.Text.Replace("R$", "").Replace(" ", "");
+            decimal valorPago = 0;
+            decimal.TryParse(valorPagoString, out valorPago);
+
             //codNotaVenda
             string codNotaVenda = _codFiscal.ToString();
 
@@ -74,8 +79,20 @@ namespace Merchades
             //idPagamento
             int idPagamento = (cmbFormaPagamento.SelectedIndex) + 1;
 
-            int idNotaVenda = SalvarNotaFiscal(stringDeConexao, dataEmissao, valorVendaDecimal, codNotaVenda, qtdParcelas, cpf, idPagamento);
+            if (cmbFormaPagamento.Text == "Dinheiro" && valorPago < valorVendaDecimal)
+            {
+                MessageBox.Show("Erro. O valor total da venda não foi pago.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            DialogResult result = MessageBox.Show("Deseja confirmar o pagamento?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+
+            int idNotaVenda = SalvarNotaFiscal(stringDeConexao, dataEmissao, valorVendaDecimal, codNotaVenda, qtdParcelas, cpf, idPagamento);
 
             if (idNotaVenda > 0)
             {

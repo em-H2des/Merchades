@@ -263,7 +263,6 @@ namespace Merchades
                 while (dr.Read())
                 {
                     int id = dr.GetInt32(0);
-                    MessageBox.Show(id.ToString());
                     string cod = dr.GetString(1);
                     string cpf = dr.GetString(2);
 

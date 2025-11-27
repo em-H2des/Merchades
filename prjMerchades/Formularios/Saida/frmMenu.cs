@@ -49,6 +49,12 @@ namespace Merchades
 
         private void btnFinalizaCompra_Click(object sender, EventArgs e)
         {
+            if (dataGridViewProdutosCarrinho.Rows.Count == 0)
+            {
+                MessageBox.Show("Você precisa inserir produtos para cadastrar uma venda.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             //verifica se o CPF foi colocado
             if (txtCpf.Text == "")
             {
