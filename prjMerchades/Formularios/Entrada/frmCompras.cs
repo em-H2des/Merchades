@@ -18,6 +18,8 @@ namespace prjMerchades.Formularios.Entrada
 {
     public partial class frmCompras : Form
     {
+        private daDadosEntrada ds = new daDadosEntrada();
+        private readonly string connStr = Properties.Settings.Default.masterConnectionString;
 
         public frmCompras()
         {
@@ -32,71 +34,279 @@ namespace prjMerchades.Formularios.Entrada
             this.comprasAntigasTableAdapter.Fill(this.daDadosEntrada.comprasAntigas);
             // TODO: esta linha de código carrega dados na tabela 'daDadosEntrada2.compraDividas'. Você pode movê-la ou removê-la conforme necessário.
             this.nOTA_FISCAL_FORNECEDORTableAdapter.Fill(this.daDadosEntrada.NOTA_FISCAL_FORNECEDOR);
+            dtvwComprasNF.AutoGenerateColumns = true;
+            dtvwComprasNF.DataSource = ds.PRODUTOSEntrada; // tabela do XSD
             lbl_Data.Text = DateTime.Now.ToString("dd/MM/yyyy");
             lbl_Data2.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            dateEmissao.Value = DateTime.Today;
+            dateEmissao.Enabled = false;
+        }
+
+
+        bool CamposValidos()
+        {
+            if (string.IsNullOrWhiteSpace(txtCodFornecedor.Text)) return false;
+            if (string.IsNullOrWhiteSpace(txtCodNF.Text)) return false;
+            if (string.IsNullOrWhiteSpace(txtNomeProduto.Text)) return false;
+            if (string.IsNullOrWhiteSpace(txtPreco.Text)) return false;
+            if (string.IsNullOrWhiteSpace(txtCodBarras.Text)) return false;
+            if (cmbTipoUnitario.SelectedIndex < 0) return false;
+            if (numQtd.Value < 1) return false;
+
+            return true;
+        }
+
+        private void btnProximo_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtCodFornecedor.Text))
+            {
+                MessageBox.Show("Informe o código do fornecedor.");
+                return;
+            }
+
+            // gera NF automática
+            string prefixo = DateTime.Today.ToString("MMdd");
+
+            var notaTA = new NOTA_FISCAL_FORNECEDORTableAdapter();
+            int seq = GetSequenciaNF(notaTA, prefixo);
+
+            txtCodNF.Text = $"NF{prefixo}-{seq:0000}";
+            dateEmissao.Value = DateTime.Today;
+
+            // liberar campos de produto
+            txtNomeProduto.Enabled = true;
+            txtCodBarras.Enabled = true;
+            numQtd.Enabled = true;
+            dateValidade.Enabled = true;
+            txtTipoProduto.Enabled = true;
+            txtPreco.Enabled = true;
+            numQtdACad.Enabled = true;
+            cmbTipoUnitario.Enabled = true;
+            txtLote.Enabled = true;
+            btnAdd.Enabled = true;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (!CamposValidos())
+            {
+                MessageBox.Show("Preencha todos os campos obrigatórios.");
+                return;
+            }
+
+            int qtd = (int)numQtd.Value;
+            decimal preco = decimal.Parse(txtPreco.Text);
+            decimal total = preco * qtd;
+
+            dtvwComprasNF.Rows.Add(
+                txtCodBarras.Text,
+                txtNomeProduto.Text,
+                txtTipoProduto.Text,
+                cmbTipoUnitario.Text,
+                preco.ToString("F2"),
+                qtd,
+                total.ToString("F2")
+            );
+
+            // limpar parte do produto
+            txtNomeProduto.Clear();
+            txtCodBarras.Clear();
+            txtTipoProduto.Clear();
+            txtPreco.Clear();
+            cmbTipoUnitario.SelectedIndex = -1;
+            numQtd.Value = 1;
+        }
+
+        private int GetSequenciaNF(NOTA_FISCAL_FORNECEDORTableAdapter ta, string prefixo)
+        {
+            var dt = ta.GetData();
+            string like = $"NF{prefixo}-";
+            int maior = 0;
+
+            foreach (DataRow r in dt.Rows)
+            {
+                if (r["COD_NF"] == DBNull.Value) continue;
+
+                string cod = r["COD_NF"].ToString();
+                if (!cod.StartsWith(like)) continue;
+
+                string[] partes = cod.Split('-');
+                if (partes.Length == 2 && int.TryParse(partes[1], out int seq))
+                {
+                    if (seq > maior) maior = seq;
+                }
+            }
+
+            return maior + 1;
         }
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-            //colocando o table adapter de "Fornecedor" em uma variavel e preenchendo a tabela com os dados
-            var fornecedorTA = new Dados.daDadosEntradaTableAdapters.FORNECEDORTableAdapter(); 
-            fornecedorTA.Fill(daDadosEntrada.FORNECEDOR);
-
-            int codigoFornecedor =  int.Parse(txtCodFornecedor.Text);
-
-            //verificando se o fornecedor digitado ja existe no banco, se nao existe abre tela de cadastro
-            var fornecedor = daDadosEntrada.FORNECEDOR.FindByID_FORNECEDOR(codigoFornecedor);
-        
-            if (fornecedor == null)
+            if (dtvwComprasNF.Rows.Count == 0)
             {
-                MessageBox.Show("O fornecedor informado nao existe, cadastre-o.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                var formCadastroFornecedor = new frmCadFornecedor();
-                formCadastroFornecedor.MdiParent = this.MdiParent;
-                formCadastroFornecedor.Show();
-
-                return; //intemrrompe a execução
+                MessageBox.Show("Adicione ao menos 1 item.");
+                return;
             }
 
-            //table adapters
-            var notaFiscalFornecedor = new Dados.daDadosEntradaTableAdapters.NOTA_FISCAL_FORNECEDORTableAdapter();
-            var produtos = new Dados.daDadosEntradaTableAdapters.PRODUTOSEntradaTableAdapter();
-            var estoque = new Dados.daDadosEntradaTableAdapters.ESTOQUEEntradaTableAdapter();
+            var notaTA = new NOTA_FISCAL_FORNECEDORTableAdapter();
+            var produtosTA = new PRODUTOSEntradaTableAdapter();
+            var estoqueTA = new ESTOQUEEntradaTableAdapter();
+            var fornecedorTA = new FORNECEDORTableAdapter();
 
+            int idFornecedor = int.Parse(txtCodFornecedor.Text);
 
-            //insert na tabela de nota fiscal
-            notaFiscalFornecedor.Insert(
+            fornecedorTA.Fill(daDadosEntrada.FORNECEDOR);
+            if (daDadosEntrada.FORNECEDOR.FindByID_FORNECEDOR(idFornecedor) == null)
+            {
+                MessageBox.Show("Fornecedor não existe!");
+                return;
+            }
+
+            decimal totalNF = 0;
+            foreach (DataGridViewRow row in dtvwComprasNF.Rows)
+                totalNF += Convert.ToDecimal(row.Cells[6].Value);
+
+            // inserir NF
+            notaTA.Insert(
                 dateEmissao.Value,
-                int.Parse(txtVlrTtl.Text),
+                totalNF,
                 txtCodNF.Text,
-                txtTipoProduto.Text,
-                codigoFornecedor,
+                "ENTRADA",
+                idFornecedor,
                 "n"
-             );
+            );
 
-            //insert na tabela produto
-            produtos.Insert(
-                txtNomeProduto.Text,
-                txtTipoProduto.Text,
-                cmbTipoUnitario.Text,
-                decimal.Parse(txtPreco.Text),
-                int.Parse(txtCodBarras.Text)
-             );
+            int idNF = GetMaxId("NOTA_FISCAL_FORNECEDOR", "ID_NOTA_FISCAL");
 
-            //recuperando os IDs para dar insert na tabela "Estoque"
-            int idProduto = int.Parse(produtos.ultimoId().ToString());
-            int idNF = int.Parse(notaFiscalFornecedor.ultimoId().ToString());
-            int qtd = (int)numQtd.Value;
+            // carrega tabelas
+            var tabelaProd = produtosTA.GetData();
+            var tabelaEstoque = estoqueTA.GetData();
 
-            //insert na tabela estoque
-            estoque.Insert(
-                qtd,
-                idProduto,
-                idNF
-             );
+            foreach (DataGridViewRow row in dtvwComprasNF.Rows)
+            {
+                int codBarras = int.Parse(row.Cells[0].Value.ToString());
+                string nome = row.Cells[1].Value.ToString();
+                string tipo = row.Cells[2].Value.ToString();
+                string unidade = row.Cells[3].Value.ToString();
+                decimal preco = Convert.ToDecimal(row.Cells[4].Value);
+                int qtd = Convert.ToInt32(row.Cells[5].Value);
 
-            MessageBox.Show("Entrada cadastrada com sucesso!", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
+                var prodExist =
+                    tabelaProd.FirstOrDefault(r => r.CODIGO_DE_BARRAS == codBarras);
 
+                int idProduto;
+
+                if (prodExist != null)
+                {
+                    idProduto = prodExist.ID_PRODUTOS;
+
+                    // atualiza produto via SQL
+                    UpdateProdutoDireto(idProduto, nome, tipo, unidade, preco, codBarras);
+
+                    // soma estoque via SQL
+                    SomarQuantidadeEstoque(idProduto, qtd, idNF);
+                }
+                else
+                {
+                    // insere produto
+                    produtosTA.Insert(nome, tipo, unidade, preco, codBarras);
+
+                    idProduto = GetMaxId("PRODUTOSEntrada", "ID_PRODUTO");
+
+                    // novo estoque
+                    estoqueTA.Insert(qtd, idProduto, idNF);
+                }
+            }
+
+            MessageBox.Show("Entrada cadastrada com sucesso!");
+            dtvwComprasNF.Rows.Clear();
+        }
+
+
+        private int GetMaxId(string tabela, string coluna)
+        {
+            using (SqlConnection conn = new SqlConnection(connStr))
+            {
+                conn.Open();
+                string sql = $"SELECT ISNULL(MAX({coluna}), 0) FROM {tabela}";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                return Convert.ToInt32(cmd.ExecuteScalar());
+            }
+        }
+
+        private int MaxId(SqlConnection conn, string tabela, string colunaId)
+        {
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
+
+            string sql = $"SELECT ISNULL(MAX({colunaId}), 0) FROM {tabela}";
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            int ultimoId = Convert.ToInt32(cmd.ExecuteScalar());
+
+            return ultimoId;
+        }
+
+        private void UpdateProdutoDireto(int idProduto, string nome, string tipo, string unidade, decimal preco,int codBarras)
+        {
+            using (SqlConnection conn = new SqlConnection(connStr))
+            {
+                conn.Open();
+
+                string sql = @"
+            UPDATE PRODUTOSEntrada SET
+                NOME_PRODUTO = @nome,
+                TIPO_PRODUTO = @tipo,
+                UNIDADE = @unidade,
+                PRECO = @preco,
+                CODIGO_DE_BARRAS = @cod
+            WHERE ID_PRODUTO = @idProd";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@nome", nome);
+                cmd.Parameters.AddWithValue("@tipo", tipo);
+                cmd.Parameters.AddWithValue("@unidade", unidade);
+                cmd.Parameters.AddWithValue("@preco", preco);
+                cmd.Parameters.AddWithValue("@cod", codBarras);
+                cmd.Parameters.AddWithValue("@idProd", idProduto);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void SomarQuantidadeEstoque(int idProduto, int qtd, int idNF)
+        {
+            using (SqlConnection conn = new SqlConnection(connStr))
+            {
+                conn.Open();
+
+                // primeiro tenta atualizar
+                string sqlUpdate = @"
+            UPDATE ESTOQUEEntrada
+            SET QTD_ESTOQUE_ADDED = QTD_ESTOQUE_ADDED + @qtd
+            WHERE ID_PRODUTOS = @idProd";
+
+                SqlCommand cmd = new SqlCommand(sqlUpdate, conn);
+                cmd.Parameters.AddWithValue("@qtd", qtd);
+                cmd.Parameters.AddWithValue("@idProd", idProduto);
+
+                int afetou = cmd.ExecuteNonQuery();
+
+                if (afetou == 0)
+                {
+                    // não existia → insere novo registro
+                    string sqlInsert = @"
+                INSERT INTO ESTOQUEEntrada (QTD_ESTOQUE_ADDED, ID_PRODUTOS, ID_NOTA_FISCAL)
+                VALUES (@qtd, @idProd, @idNF)";
+
+                    SqlCommand insert = new SqlCommand(sqlInsert, conn);
+                    insert.Parameters.AddWithValue("@qtd", qtd);
+                    insert.Parameters.AddWithValue("@idProd", idProduto);
+                    insert.Parameters.AddWithValue("@idNF", idNF);
+
+                    insert.ExecuteNonQuery();
+                }
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -204,19 +414,15 @@ namespace prjMerchades.Formularios.Entrada
             }
         }
 
-        private void btnGerar_Click(object sender, EventArgs e)
+
+        private void numQtdACad_ValueChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_Qtd_Click(object sender, EventArgs e)
-        {
-
+            if (numQtd.Value < 1)
+            {
+                MessageBox.Show("A quantidade mínima é 1.");
+                numQtd.Value = 1;
+                return;
+            }
         }
     }
 }
