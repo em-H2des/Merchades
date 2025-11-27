@@ -29,27 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtBuscarParcela = new System.Windows.Forms.TextBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgvTabelaParcelas = new System.Windows.Forms.DataGridView();
-            this.iDPARCELASDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cPFCNPJCLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vALORTOTALDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qTDPARCELASDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sTATUSGERALDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vwPARCELASCPFBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsDadosFinanceiro = new prjMerchades.Dados.dsDadosFinanceiro();
             this.dgvDebitoParcelas = new System.Windows.Forms.DataGridView();
-            this.iDDEBITOPARCELADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nUMPARCELADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vALORPARCELADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dATAVENCIMENTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sTATUSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dATAPAGAMENTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oBSERVACAODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDPARCELASDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dEBITOPARCELASBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnPagarParcelaVenda = new System.Windows.Forms.Button();
             this.btnLimparFiltroParcelas = new System.Windows.Forms.Button();
@@ -62,6 +51,19 @@
             this.dsDadosSaida = new prjMerchades.Dados.dsDadosSaida();
             this.dEBITO_PARCELASTableAdapter = new prjMerchades.Dados.dsDadosFinanceiroTableAdapters.DEBITO_PARCELASTableAdapter();
             this.vw_PARCELAS_CPFTableAdapter = new prjMerchades.Dados.dsDadosFinanceiroTableAdapters.Vw_PARCELAS_CPFTableAdapter();
+            this.iDPARCELASDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cPFCNPJCLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vALORTOTALDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qTDPARCELASDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sTATUSGERALDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDDEBITOPARCELADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nUMPARCELADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vALORPARCELADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dATAVENCIMENTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sTATUSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dATAPAGAMENTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oBSERVACAODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDPARCELASDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -174,46 +176,6 @@
             this.dgvTabelaParcelas.TabIndex = 53;
             this.dgvTabelaParcelas.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTabelaParcelas_RowEnter);
             // 
-            // iDPARCELASDataGridViewTextBoxColumn
-            // 
-            this.iDPARCELASDataGridViewTextBoxColumn.DataPropertyName = "ID_PARCELAS";
-            this.iDPARCELASDataGridViewTextBoxColumn.HeaderText = "ID_PARCELAS";
-            this.iDPARCELASDataGridViewTextBoxColumn.Name = "iDPARCELASDataGridViewTextBoxColumn";
-            this.iDPARCELASDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDPARCELASDataGridViewTextBoxColumn.Width = 105;
-            // 
-            // cPFCNPJCLIENTEDataGridViewTextBoxColumn
-            // 
-            this.cPFCNPJCLIENTEDataGridViewTextBoxColumn.DataPropertyName = "CPF_CNPJ_CLIENTE";
-            this.cPFCNPJCLIENTEDataGridViewTextBoxColumn.HeaderText = "CPF_CNPJ_CLIENTE";
-            this.cPFCNPJCLIENTEDataGridViewTextBoxColumn.Name = "cPFCNPJCLIENTEDataGridViewTextBoxColumn";
-            this.cPFCNPJCLIENTEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cPFCNPJCLIENTEDataGridViewTextBoxColumn.Width = 136;
-            // 
-            // vALORTOTALDataGridViewTextBoxColumn
-            // 
-            this.vALORTOTALDataGridViewTextBoxColumn.DataPropertyName = "VALOR_TOTAL";
-            this.vALORTOTALDataGridViewTextBoxColumn.HeaderText = "VALOR_TOTAL";
-            this.vALORTOTALDataGridViewTextBoxColumn.Name = "vALORTOTALDataGridViewTextBoxColumn";
-            this.vALORTOTALDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vALORTOTALDataGridViewTextBoxColumn.Width = 109;
-            // 
-            // qTDPARCELASDataGridViewTextBoxColumn
-            // 
-            this.qTDPARCELASDataGridViewTextBoxColumn.DataPropertyName = "QTD_PARCELAS";
-            this.qTDPARCELASDataGridViewTextBoxColumn.HeaderText = "QTD_PARCELAS";
-            this.qTDPARCELASDataGridViewTextBoxColumn.Name = "qTDPARCELASDataGridViewTextBoxColumn";
-            this.qTDPARCELASDataGridViewTextBoxColumn.ReadOnly = true;
-            this.qTDPARCELASDataGridViewTextBoxColumn.Width = 117;
-            // 
-            // sTATUSGERALDataGridViewTextBoxColumn
-            // 
-            this.sTATUSGERALDataGridViewTextBoxColumn.DataPropertyName = "STATUS_GERAL";
-            this.sTATUSGERALDataGridViewTextBoxColumn.HeaderText = "STATUS_GERAL";
-            this.sTATUSGERALDataGridViewTextBoxColumn.Name = "sTATUSGERALDataGridViewTextBoxColumn";
-            this.sTATUSGERALDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sTATUSGERALDataGridViewTextBoxColumn.Width = 117;
-            // 
             // vwPARCELASCPFBindingSource
             // 
             this.vwPARCELASCPFBindingSource.DataMember = "Vw_PARCELAS_CPF";
@@ -252,70 +214,6 @@
             this.dgvDebitoParcelas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDebitoParcelas.Size = new System.Drawing.Size(535, 297);
             this.dgvDebitoParcelas.TabIndex = 53;
-            // 
-            // iDDEBITOPARCELADataGridViewTextBoxColumn
-            // 
-            this.iDDEBITOPARCELADataGridViewTextBoxColumn.DataPropertyName = "ID_DEBITO_PARCELA";
-            this.iDDEBITOPARCELADataGridViewTextBoxColumn.HeaderText = "ID_DEBITO_PARCELA";
-            this.iDDEBITOPARCELADataGridViewTextBoxColumn.Name = "iDDEBITOPARCELADataGridViewTextBoxColumn";
-            this.iDDEBITOPARCELADataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDDEBITOPARCELADataGridViewTextBoxColumn.Width = 144;
-            // 
-            // nUMPARCELADataGridViewTextBoxColumn
-            // 
-            this.nUMPARCELADataGridViewTextBoxColumn.DataPropertyName = "NUM_PARCELA";
-            this.nUMPARCELADataGridViewTextBoxColumn.HeaderText = "NUM_PARCELA";
-            this.nUMPARCELADataGridViewTextBoxColumn.Name = "nUMPARCELADataGridViewTextBoxColumn";
-            this.nUMPARCELADataGridViewTextBoxColumn.ReadOnly = true;
-            this.nUMPARCELADataGridViewTextBoxColumn.Width = 112;
-            // 
-            // vALORPARCELADataGridViewTextBoxColumn
-            // 
-            this.vALORPARCELADataGridViewTextBoxColumn.DataPropertyName = "VALOR_PARCELA";
-            this.vALORPARCELADataGridViewTextBoxColumn.HeaderText = "VALOR_PARCELA";
-            this.vALORPARCELADataGridViewTextBoxColumn.Name = "vALORPARCELADataGridViewTextBoxColumn";
-            this.vALORPARCELADataGridViewTextBoxColumn.ReadOnly = true;
-            this.vALORPARCELADataGridViewTextBoxColumn.Width = 123;
-            // 
-            // dATAVENCIMENTODataGridViewTextBoxColumn
-            // 
-            this.dATAVENCIMENTODataGridViewTextBoxColumn.DataPropertyName = "DATA_VENCIMENTO";
-            this.dATAVENCIMENTODataGridViewTextBoxColumn.HeaderText = "DATA_VENCIMENTO";
-            this.dATAVENCIMENTODataGridViewTextBoxColumn.Name = "dATAVENCIMENTODataGridViewTextBoxColumn";
-            this.dATAVENCIMENTODataGridViewTextBoxColumn.ReadOnly = true;
-            this.dATAVENCIMENTODataGridViewTextBoxColumn.Width = 138;
-            // 
-            // sTATUSDataGridViewTextBoxColumn
-            // 
-            this.sTATUSDataGridViewTextBoxColumn.DataPropertyName = "STATUS";
-            this.sTATUSDataGridViewTextBoxColumn.HeaderText = "STATUS";
-            this.sTATUSDataGridViewTextBoxColumn.Name = "sTATUSDataGridViewTextBoxColumn";
-            this.sTATUSDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sTATUSDataGridViewTextBoxColumn.Width = 75;
-            // 
-            // dATAPAGAMENTODataGridViewTextBoxColumn
-            // 
-            this.dATAPAGAMENTODataGridViewTextBoxColumn.DataPropertyName = "DATA_PAGAMENTO";
-            this.dATAPAGAMENTODataGridViewTextBoxColumn.HeaderText = "DATA_PAGAMENTO";
-            this.dATAPAGAMENTODataGridViewTextBoxColumn.Name = "dATAPAGAMENTODataGridViewTextBoxColumn";
-            this.dATAPAGAMENTODataGridViewTextBoxColumn.ReadOnly = true;
-            this.dATAPAGAMENTODataGridViewTextBoxColumn.Width = 135;
-            // 
-            // oBSERVACAODataGridViewTextBoxColumn
-            // 
-            this.oBSERVACAODataGridViewTextBoxColumn.DataPropertyName = "OBSERVACAO";
-            this.oBSERVACAODataGridViewTextBoxColumn.HeaderText = "OBSERVACAO";
-            this.oBSERVACAODataGridViewTextBoxColumn.Name = "oBSERVACAODataGridViewTextBoxColumn";
-            this.oBSERVACAODataGridViewTextBoxColumn.ReadOnly = true;
-            this.oBSERVACAODataGridViewTextBoxColumn.Width = 105;
-            // 
-            // iDPARCELASDataGridViewTextBoxColumn1
-            // 
-            this.iDPARCELASDataGridViewTextBoxColumn1.DataPropertyName = "ID_PARCELAS";
-            this.iDPARCELASDataGridViewTextBoxColumn1.HeaderText = "ID_PARCELAS";
-            this.iDPARCELASDataGridViewTextBoxColumn1.Name = "iDPARCELASDataGridViewTextBoxColumn1";
-            this.iDPARCELASDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.iDPARCELASDataGridViewTextBoxColumn1.Width = 105;
             // 
             // dEBITOPARCELASBindingSource
             // 
@@ -467,6 +365,114 @@
             // 
             this.vw_PARCELAS_CPFTableAdapter.ClearBeforeFill = true;
             // 
+            // iDPARCELASDataGridViewTextBoxColumn
+            // 
+            this.iDPARCELASDataGridViewTextBoxColumn.DataPropertyName = "ID_PARCELAS";
+            this.iDPARCELASDataGridViewTextBoxColumn.HeaderText = "ID das Parcelas";
+            this.iDPARCELASDataGridViewTextBoxColumn.Name = "iDPARCELASDataGridViewTextBoxColumn";
+            this.iDPARCELASDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDPARCELASDataGridViewTextBoxColumn.Width = 98;
+            // 
+            // cPFCNPJCLIENTEDataGridViewTextBoxColumn
+            // 
+            this.cPFCNPJCLIENTEDataGridViewTextBoxColumn.DataPropertyName = "CPF_CNPJ_CLIENTE";
+            this.cPFCNPJCLIENTEDataGridViewTextBoxColumn.HeaderText = "CPF";
+            this.cPFCNPJCLIENTEDataGridViewTextBoxColumn.Name = "cPFCNPJCLIENTEDataGridViewTextBoxColumn";
+            this.cPFCNPJCLIENTEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cPFCNPJCLIENTEDataGridViewTextBoxColumn.Width = 52;
+            // 
+            // vALORTOTALDataGridViewTextBoxColumn
+            // 
+            this.vALORTOTALDataGridViewTextBoxColumn.DataPropertyName = "VALOR_TOTAL";
+            dataGridViewCellStyle3.Format = "C2";
+            this.vALORTOTALDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.vALORTOTALDataGridViewTextBoxColumn.HeaderText = "Total";
+            this.vALORTOTALDataGridViewTextBoxColumn.Name = "vALORTOTALDataGridViewTextBoxColumn";
+            this.vALORTOTALDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vALORTOTALDataGridViewTextBoxColumn.Width = 56;
+            // 
+            // qTDPARCELASDataGridViewTextBoxColumn
+            // 
+            this.qTDPARCELASDataGridViewTextBoxColumn.DataPropertyName = "QTD_PARCELAS";
+            this.qTDPARCELASDataGridViewTextBoxColumn.HeaderText = "Quantidade de Parcelas";
+            this.qTDPARCELASDataGridViewTextBoxColumn.Name = "qTDPARCELASDataGridViewTextBoxColumn";
+            this.qTDPARCELASDataGridViewTextBoxColumn.ReadOnly = true;
+            this.qTDPARCELASDataGridViewTextBoxColumn.Width = 97;
+            // 
+            // sTATUSGERALDataGridViewTextBoxColumn
+            // 
+            this.sTATUSGERALDataGridViewTextBoxColumn.DataPropertyName = "STATUS_GERAL";
+            this.sTATUSGERALDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.sTATUSGERALDataGridViewTextBoxColumn.Name = "sTATUSGERALDataGridViewTextBoxColumn";
+            this.sTATUSGERALDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sTATUSGERALDataGridViewTextBoxColumn.Width = 62;
+            // 
+            // iDDEBITOPARCELADataGridViewTextBoxColumn
+            // 
+            this.iDDEBITOPARCELADataGridViewTextBoxColumn.DataPropertyName = "ID_DEBITO_PARCELA";
+            this.iDDEBITOPARCELADataGridViewTextBoxColumn.HeaderText = "ID das Parcelas em Débito";
+            this.iDDEBITOPARCELADataGridViewTextBoxColumn.Name = "iDDEBITOPARCELADataGridViewTextBoxColumn";
+            this.iDDEBITOPARCELADataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDEBITOPARCELADataGridViewTextBoxColumn.Width = 116;
+            // 
+            // nUMPARCELADataGridViewTextBoxColumn
+            // 
+            this.nUMPARCELADataGridViewTextBoxColumn.DataPropertyName = "NUM_PARCELA";
+            this.nUMPARCELADataGridViewTextBoxColumn.HeaderText = "Nº Parcelas";
+            this.nUMPARCELADataGridViewTextBoxColumn.Name = "nUMPARCELADataGridViewTextBoxColumn";
+            this.nUMPARCELADataGridViewTextBoxColumn.ReadOnly = true;
+            this.nUMPARCELADataGridViewTextBoxColumn.Width = 81;
+            // 
+            // vALORPARCELADataGridViewTextBoxColumn
+            // 
+            this.vALORPARCELADataGridViewTextBoxColumn.DataPropertyName = "VALOR_PARCELA";
+            dataGridViewCellStyle4.Format = "C2";
+            this.vALORPARCELADataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.vALORPARCELADataGridViewTextBoxColumn.HeaderText = "Valor da Parcela";
+            this.vALORPARCELADataGridViewTextBoxColumn.Name = "vALORPARCELADataGridViewTextBoxColumn";
+            this.vALORPARCELADataGridViewTextBoxColumn.ReadOnly = true;
+            this.vALORPARCELADataGridViewTextBoxColumn.Width = 101;
+            // 
+            // dATAVENCIMENTODataGridViewTextBoxColumn
+            // 
+            this.dATAVENCIMENTODataGridViewTextBoxColumn.DataPropertyName = "DATA_VENCIMENTO";
+            this.dATAVENCIMENTODataGridViewTextBoxColumn.HeaderText = "Data de Vencimento";
+            this.dATAVENCIMENTODataGridViewTextBoxColumn.Name = "dATAVENCIMENTODataGridViewTextBoxColumn";
+            this.dATAVENCIMENTODataGridViewTextBoxColumn.ReadOnly = true;
+            this.dATAVENCIMENTODataGridViewTextBoxColumn.Width = 118;
+            // 
+            // sTATUSDataGridViewTextBoxColumn
+            // 
+            this.sTATUSDataGridViewTextBoxColumn.DataPropertyName = "STATUS";
+            this.sTATUSDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.sTATUSDataGridViewTextBoxColumn.Name = "sTATUSDataGridViewTextBoxColumn";
+            this.sTATUSDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sTATUSDataGridViewTextBoxColumn.Width = 62;
+            // 
+            // dATAPAGAMENTODataGridViewTextBoxColumn
+            // 
+            this.dATAPAGAMENTODataGridViewTextBoxColumn.DataPropertyName = "DATA_PAGAMENTO";
+            this.dATAPAGAMENTODataGridViewTextBoxColumn.HeaderText = "Data de Pagamento";
+            this.dATAPAGAMENTODataGridViewTextBoxColumn.Name = "dATAPAGAMENTODataGridViewTextBoxColumn";
+            this.dATAPAGAMENTODataGridViewTextBoxColumn.ReadOnly = true;
+            this.dATAPAGAMENTODataGridViewTextBoxColumn.Width = 116;
+            // 
+            // oBSERVACAODataGridViewTextBoxColumn
+            // 
+            this.oBSERVACAODataGridViewTextBoxColumn.DataPropertyName = "OBSERVACAO";
+            this.oBSERVACAODataGridViewTextBoxColumn.HeaderText = "Observação";
+            this.oBSERVACAODataGridViewTextBoxColumn.Name = "oBSERVACAODataGridViewTextBoxColumn";
+            this.oBSERVACAODataGridViewTextBoxColumn.ReadOnly = true;
+            this.oBSERVACAODataGridViewTextBoxColumn.Width = 90;
+            // 
+            // iDPARCELASDataGridViewTextBoxColumn1
+            // 
+            this.iDPARCELASDataGridViewTextBoxColumn1.DataPropertyName = "ID_PARCELAS";
+            this.iDPARCELASDataGridViewTextBoxColumn1.HeaderText = "ID da Parcelas";
+            this.iDPARCELASDataGridViewTextBoxColumn1.Name = "iDPARCELASDataGridViewTextBoxColumn1";
+            this.iDPARCELASDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.iDPARCELASDataGridViewTextBoxColumn1.Width = 94;
+            // 
             // frmParcelasVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -476,7 +482,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmParcelasVenda";
-            this.Text = "frmParcelasVenda";
+            this.Text = "Parcelas do Cliente";
             this.Load += new System.EventHandler(this.frmParcelasVenda_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -509,6 +515,19 @@
         private Dados.dsDadosFinanceiro dsDadosFinanceiro;
         private System.Windows.Forms.BindingSource dEBITOPARCELASBindingSource;
         private Dados.dsDadosFinanceiroTableAdapters.DEBITO_PARCELASTableAdapter dEBITO_PARCELASTableAdapter;
+        private System.Windows.Forms.BindingSource vwPARCELASCPFBindingSource;
+        private Dados.dsDadosFinanceiroTableAdapters.Vw_PARCELAS_CPFTableAdapter vw_PARCELAS_CPFTableAdapter;
+        private System.Windows.Forms.TextBox txtBuscarParcela;
+        private System.Windows.Forms.Button btnLimparFiltroParcelas;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnAplicarFiltroParcelas;
+        private System.Windows.Forms.ComboBox cmbFiltroParcelas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDPARCELASDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cPFCNPJCLIENTEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vALORTOTALDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qTDPARCELASDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sTATUSGERALDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDEBITOPARCELADataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nUMPARCELADataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vALORPARCELADataGridViewTextBoxColumn;
@@ -517,18 +536,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dATAPAGAMENTODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn oBSERVACAODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDPARCELASDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.BindingSource vwPARCELASCPFBindingSource;
-        private Dados.dsDadosFinanceiroTableAdapters.Vw_PARCELAS_CPFTableAdapter vw_PARCELAS_CPFTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDPARCELASDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cPFCNPJCLIENTEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vALORTOTALDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qTDPARCELASDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sTATUSGERALDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox txtBuscarParcela;
-        private System.Windows.Forms.Button btnLimparFiltroParcelas;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnAplicarFiltroParcelas;
-        private System.Windows.Forms.ComboBox cmbFiltroParcelas;
     }
 }

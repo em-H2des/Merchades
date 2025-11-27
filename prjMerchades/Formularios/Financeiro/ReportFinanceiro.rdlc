@@ -372,7 +372,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox26">
+                    <Textbox Name="VALOR1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -382,6 +382,7 @@
                               <Value>=Sum(Fields!VALOR.Value)</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
+                                <Format>'R$'0.00;('R$'0.00)</Format>
                                 <Color>#333333</Color>
                               </Style>
                             </TextRun>
@@ -391,7 +392,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox26</rd:DefaultName>
+                      <rd:DefaultName>VALOR1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -399,13 +400,13 @@
                         <BottomBorder>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
                         </BottomBorder>
                         <BackgroundColor>#e6f8b2</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -572,6 +573,7 @@
                               <Value>=Fields!VALOR.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
+                                <Format>'R$'0.00;('R$'0.00)</Format>
                                 <Color>#333333</Color>
                               </Style>
                             </TextRun>
@@ -591,6 +593,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -749,6 +752,7 @@
                               <Value>=Sum(Fields!VALOR.Value)</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
+                                <Format>'R$'0.00;('R$'0.00)</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -767,8 +771,10 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -852,7 +858,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSetReportViewerRelatorioFinanceiro</DataSetName>
         <Height>1in</Height>
-        <Width>16.14583in</Width>
+        <Width>16.14581in</Width>
         <Style>
           <Border>
             <Style>None</Style>

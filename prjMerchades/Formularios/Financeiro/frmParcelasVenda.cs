@@ -68,6 +68,10 @@ namespace prjMerchades.Formularios.Financeiro
             var adapterDebitoParcelas = new DEBITO_PARCELASTableAdapter();
             var adapterParcelas = new Vw_PARCELAS_CPFTableAdapter();
 
+            DialogResult result = MessageBox.Show("Deseja realizar o pagamento?", "Pagar Parcela", MessageBoxButtons.YesNo, MessageBoxIcon.Question );
+            if (result == DialogResult.No) {
+                return;
+            }   
             for (int i = 0; i < dgvDebitoParcelas.SelectedRows.Count; i++)
             {
                 int idDebitoParcela = Convert.ToInt32(dgvDebitoParcelas.SelectedRows[i].Cells[7].Value);
