@@ -1,137 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\caiqu\\source\\repos\\Merchades\\",
+  "WorkspaceRootPath": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\caiqu\\source\\repos\\Merchades\\prjmerchades\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|c:\\users\\caiqu\\source\\repos\\merchades\\prjmerchades\\relatorio\\relatorioestoque.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\relatorio\\relatorioestoque.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\caiqu\\source\\repos\\Merchades\\prjmerchades\\dados\\dadadosentrada.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\dados\\dadadosentrada.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\caiqu\\source\\repos\\Merchades\\prjmerchades\\formularios\\entrada\\frmcompras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\entrada\\frmcompras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\caiqu\\source\\repos\\Merchades\\prjmerchades\\formularios\\entrada\\frmcompras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\entrada\\frmcompras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|prjMerchades||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\caiqu\\source\\repos\\Merchades\\prjmerchades\\formularios\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\caiqu\\source\\repos\\Merchades\\prjmerchades\\dados\\dsdadosfinanceiro.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\dados\\dsdadosfinanceiro.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\caiqu\\source\\repos\\Merchades\\prjmerchades\\dados\\dsdadossaida.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\dados\\dsdadossaida.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}"
-    },
-    {
-      "AbsoluteMoniker": "D:2:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|c:\\users\\caiqu\\source\\repos\\merchades\\prjmerchades\\formularios\\saida\\frmpagamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:2:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\saida\\frmpagamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\caiqu\\source\\repos\\Merchades\\prjmerchades\\formularios\\mdifinanceiro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\mdifinanceiro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\caiqu\\source\\repos\\Merchades\\prjmerchades\\formularios\\financeiro\\frmrelfinanceiro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\financeiro\\frmrelfinanceiro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\caiqu\\source\\repos\\Merchades\\prjmerchades\\formularios\\saida\\frmpagamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\saida\\frmpagamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\caiqu\\source\\repos\\Merchades\\prjmerchades\\formularios\\saida\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\saida\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\caiqu\\source\\repos\\Merchades\\prjmerchades\\formularios\\saida\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\saida\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\caiqu\\source\\repos\\Merchades\\prjmerchades\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|c:\\users\\labinfo\\documents\\github\\merchades\\prjmerchades\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\caiqu\\source\\repos\\Merchades\\prjmerchades\\formularios\\financeiro\\frmparcelasvenda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\financeiro\\frmparcelasvenda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|c:\\users\\labinfo\\documents\\github\\merchades\\prjmerchades\\formularios\\entrada\\frmcompras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\entrada\\frmcompras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\caiqu\\source\\repos\\Merchades\\prjmerchades\\formularios\\financeiro\\frmrelfinanceiro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\financeiro\\frmrelfinanceiro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|c:\\users\\labinfo\\documents\\github\\merchades\\prjmerchades\\formularios\\entrada\\frmcompras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\entrada\\frmcompras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\caiqu\\source\\repos\\Merchades\\prjmerchades\\formularios\\frmexibirnotafiscal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\frmexibirnotafiscal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\caiqu\\source\\repos\\Merchades\\prjmerchades\\formularios\\frmmenusaida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\frmmenusaida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\caiqu\\source\\repos\\Merchades\\prjmerchades\\formularios\\splashscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\splashscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\caiqu\\source\\repos\\Merchades\\prjmerchades\\formularios\\splashscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\splashscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\caiqu\\source\\repos\\Merchades\\prjmerchades\\formularios\\saida\\frmnotafiscal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\saida\\frmnotafiscal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\caiqu\\source\\repos\\Merchades\\prjmerchades\\formularios\\saida\\frmnotafiscal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\saida\\frmnotafiscal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\caiqu\\source\\repos\\Merchades\\prjmerchades\\formularios\\saida\\frmnotafiscal.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\saida\\frmnotafiscal.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\caiqu\\source\\repos\\Merchades\\prjmerchades\\formularios\\saida\\frmnotafiscal.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\saida\\frmnotafiscal.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\caiqu\\source\\repos\\Merchades\\prjmerchades\\properties\\settings.settings||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\properties\\settings.settings||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\caiqu\\source\\repos\\Merchades\\prjmerchades\\formularios\\entrada\\frmlistagemfornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\entrada\\frmlistagemfornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:1:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|c:\\users\\caiqu\\source\\repos\\merchades\\prjmerchades\\formularios\\saida\\frmpagamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:1:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\saida\\frmpagamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:1:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\caiqu\\source\\repos\\Merchades\\prjmerchades\\formularios\\financeiro\\frmparcelasvenda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:1:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\financeiro\\frmparcelasvenda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:1:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\caiqu\\source\\repos\\Merchades\\prjmerchades\\formularios\\mdifinanceiro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:1:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\mdifinanceiro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:2:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\caiqu\\source\\repos\\Merchades\\prjmerchades\\formularios\\financeiro\\frmparcelasvenda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:2:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\financeiro\\frmparcelasvenda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:2:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\caiqu\\source\\repos\\Merchades\\prjmerchades\\formularios\\mdifinanceiro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:2:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\mdifinanceiro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|c:\\users\\labinfo\\documents\\github\\merchades\\prjmerchades\\formularios\\entrada\\frmlistagemfornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\entrada\\frmlistagemfornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -141,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -153,383 +38,53 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Program.cs",
+              "RelativeDocumentMoniker": "prjMerchades\\Program.cs",
+              "ToolTip": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Program.cs",
+              "RelativeToolTip": "prjMerchades\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T17:45:09.873Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "daDadosEntrada.xsd",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Dados\\daDadosEntrada.xsd",
-              "RelativeDocumentMoniker": "prjMerchades\\Dados\\daDadosEntrada.xsd",
-              "ToolTip": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Dados\\daDadosEntrada.xsd",
-              "RelativeToolTip": "prjMerchades\\Dados\\daDadosEntrada.xsd",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003579|",
-              "WhenOpened": "2025-11-26T12:17:48.712Z"
+              "Title": "frmCompras.cs",
+              "DocumentMoniker": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Entrada\\frmCompras.cs",
+              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Entrada\\frmCompras.cs",
+              "ToolTip": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Entrada\\frmCompras.cs",
+              "RelativeToolTip": "prjMerchades\\Formularios\\Entrada\\frmCompras.cs",
+              "ViewState": "AgIAAKIBAAAAAAAAAADwv6sBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T17:31:08.593Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "relatorioEstoque.rdlc [Criar]",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Relatorio\\relatorioEstoque.rdlc",
-              "RelativeDocumentMoniker": "prjMerchades\\Relatorio\\relatorioEstoque.rdlc",
-              "ToolTip": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Relatorio\\relatorioEstoque.rdlc [Criar]",
-              "RelativeToolTip": "prjMerchades\\Relatorio\\relatorioEstoque.rdlc [Criar]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
-              "WhenOpened": "2025-11-26T12:05:35.034Z",
-              "EditorCaption": " [Criar]"
+              "Title": "frmCompras.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Entrada\\frmCompras.cs",
+              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Entrada\\frmCompras.cs",
+              "ToolTip": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Entrada\\frmCompras.cs [Design]",
+              "RelativeToolTip": "prjMerchades\\Formularios\\Entrada\\frmCompras.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T17:23:17.348Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "frmCompras.cs",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\Entrada\\frmCompras.cs",
-              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Entrada\\frmCompras.cs",
-              "ToolTip": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\Entrada\\frmCompras.cs",
-              "RelativeToolTip": "prjMerchades\\Formularios\\Entrada\\frmCompras.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-26T12:04:03.998Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "frmCompras.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\Entrada\\frmCompras.cs",
-              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Entrada\\frmCompras.cs",
-              "ToolTip": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Entrada\\frmCompras.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Entrada\\frmCompras.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-26T11:47:15.763Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "frmParcelasVenda.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\Financeiro\\frmParcelasVenda.cs",
-              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Financeiro\\frmParcelasVenda.cs",
-              "ToolTip": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Financeiro\\frmParcelasVenda.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Financeiro\\frmParcelasVenda.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T16:10:59.336Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "prjMerchades",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\prjMerchades.csproj",
-              "RelativeDocumentMoniker": "prjMerchades\\prjMerchades.csproj",
-              "ToolTip": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\prjMerchades.csproj",
-              "RelativeToolTip": "prjMerchades\\prjMerchades.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-11-19T21:27:27.028Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Login.cs",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\Login.cs",
-              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Login.cs",
-              "ToolTip": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\Login.cs",
-              "RelativeToolTip": "prjMerchades\\Formularios\\Login.cs",
-              "ViewState": "AgIAAJ8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-26T11:50:20.936Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Settings.settings",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Properties\\Settings.settings",
-              "RelativeDocumentMoniker": "prjMerchades\\Properties\\Settings.settings",
-              "ToolTip": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Properties\\Settings.settings",
-              "RelativeToolTip": "prjMerchades\\Properties\\Settings.settings",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002767|",
-              "WhenOpened": "2025-11-26T11:52:35.458Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "dsDadosSaida.xsd",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Dados\\dsDadosSaida.xsd",
-              "RelativeDocumentMoniker": "prjMerchades\\Dados\\dsDadosSaida.xsd",
-              "ToolTip": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Dados\\dsDadosSaida.xsd",
-              "RelativeToolTip": "prjMerchades\\Dados\\dsDadosSaida.xsd",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003579|",
-              "WhenOpened": "2025-11-19T15:22:15.474Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "dsDadosFinanceiro.xsd",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Dados\\dsDadosFinanceiro.xsd",
-              "RelativeDocumentMoniker": "prjMerchades\\Dados\\dsDadosFinanceiro.xsd",
-              "ToolTip": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Dados\\dsDadosFinanceiro.xsd",
-              "RelativeToolTip": "prjMerchades\\Dados\\dsDadosFinanceiro.xsd",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003579|",
-              "WhenOpened": "2025-11-19T14:18:15.533Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "frmPagamento.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\Saida\\frmPagamento.cs",
-              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Saida\\frmPagamento.cs",
-              "ToolTip": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Saida\\frmPagamento.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Saida\\frmPagamento.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T21:55:22.764Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "frmPagamento.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\Saida\\frmPagamento.cs",
-              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Saida\\frmPagamento.cs",
-              "ToolTip": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Saida\\frmPagamento.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Saida\\frmPagamento.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T13:37:22.665Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "MDIFinanceiro.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\MDIFinanceiro.cs",
-              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\MDIFinanceiro.cs",
-              "ToolTip": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\MDIFinanceiro.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\MDIFinanceiro.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T23:38:19.996Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "frmParcelasVenda.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\Financeiro\\frmParcelasVenda.cs",
-              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Financeiro\\frmParcelasVenda.cs",
-              "ToolTip": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Financeiro\\frmParcelasVenda.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Financeiro\\frmParcelasVenda.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T21:57:17.336Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "frmPagamento.cs",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\Saida\\frmPagamento.cs",
-              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Saida\\frmPagamento.cs",
-              "ToolTip": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\Saida\\frmPagamento.cs",
-              "RelativeToolTip": "prjMerchades\\Formularios\\Saida\\frmPagamento.cs",
-              "ViewState": "AgIAAPoAAAAAAAAAAAAMwAoBAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T13:37:25.055Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "frmMenu.cs",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\Saida\\frmMenu.cs",
-              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Saida\\frmMenu.cs",
-              "ToolTip": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\Saida\\frmMenu.cs",
-              "RelativeToolTip": "prjMerchades\\Formularios\\Saida\\frmMenu.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABsAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T14:13:08.855Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "frmRelFinanceiro.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\Financeiro\\frmRelFinanceiro.cs",
-              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Financeiro\\frmRelFinanceiro.cs",
-              "ToolTip": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Financeiro\\frmRelFinanceiro.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Financeiro\\frmRelFinanceiro.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T15:47:35.429Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "MDIFinanceiro.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\MDIFinanceiro.cs",
-              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\MDIFinanceiro.cs",
-              "ToolTip": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\MDIFinanceiro.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\MDIFinanceiro.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T15:50:01.665Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "MDIFinanceiro.cs",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\MDIFinanceiro.cs",
-              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\MDIFinanceiro.cs",
-              "ToolTip": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\MDIFinanceiro.cs",
-              "RelativeToolTip": "prjMerchades\\Formularios\\MDIFinanceiro.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAewBcAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T15:51:18.561Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "frmMenu.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\Saida\\frmMenu.cs",
-              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Saida\\frmMenu.cs",
-              "ToolTip": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Saida\\frmMenu.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Saida\\frmMenu.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T13:37:20.318Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Program.cs",
-              "RelativeDocumentMoniker": "prjMerchades\\Program.cs",
-              "ToolTip": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Program.cs",
-              "RelativeToolTip": "prjMerchades\\Program.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBgAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T14:18:32.041Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "SplashScreen.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\SplashScreen.cs",
-              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\SplashScreen.cs",
-              "ToolTip": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\SplashScreen.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\SplashScreen.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T15:39:18.856Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "frmExibirNotaFiscal.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\frmExibirNotaFiscal.cs",
-              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\frmExibirNotaFiscal.cs",
-              "ToolTip": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\frmExibirNotaFiscal.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\frmExibirNotaFiscal.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T15:50:16.336Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "frmRelFinanceiro.cs",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\Financeiro\\frmRelFinanceiro.cs",
-              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Financeiro\\frmRelFinanceiro.cs",
-              "ToolTip": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\Financeiro\\frmRelFinanceiro.cs",
-              "RelativeToolTip": "prjMerchades\\Formularios\\Financeiro\\frmRelFinanceiro.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T16:10:45.271Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "frmParcelasVenda.cs",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\Financeiro\\frmParcelasVenda.cs",
-              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Financeiro\\frmParcelasVenda.cs",
-              "ToolTip": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\Financeiro\\frmParcelasVenda.cs",
-              "RelativeToolTip": "prjMerchades\\Formularios\\Financeiro\\frmParcelasVenda.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAIwFUAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T15:57:46.018Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "frmMenuSaida.cs",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\frmMenuSaida.cs",
-              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\frmMenuSaida.cs",
-              "ToolTip": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\frmMenuSaida.cs",
-              "RelativeToolTip": "prjMerchades\\Formularios\\frmMenuSaida.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAhwDsAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T15:03:15.237Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "SplashScreen.cs",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\SplashScreen.cs",
-              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\SplashScreen.cs",
-              "ToolTip": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\SplashScreen.cs",
-              "RelativeToolTip": "prjMerchades\\Formularios\\SplashScreen.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABUAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T15:39:30.87Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "frmNotaFiscal.cs",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\Saida\\frmNotaFiscal.cs",
-              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Saida\\frmNotaFiscal.cs",
-              "ToolTip": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\Saida\\frmNotaFiscal.cs",
-              "RelativeToolTip": "prjMerchades\\Formularios\\Saida\\frmNotaFiscal.cs",
-              "ViewState": "AgIAAAgBAAAAAAAAAAASwBIBAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T13:55:30.063Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "Settings.settings",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Properties\\Settings.settings",
-              "RelativeDocumentMoniker": "prjMerchades\\Properties\\Settings.settings",
-              "ToolTip": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Properties\\Settings.settings",
-              "RelativeToolTip": "prjMerchades\\Properties\\Settings.settings",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002767|",
-              "WhenOpened": "2025-11-01T11:56:13.485Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "frmNotaFiscal.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\Saida\\frmNotaFiscal.cs",
-              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Saida\\frmNotaFiscal.cs",
-              "ToolTip": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Saida\\frmNotaFiscal.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Saida\\frmNotaFiscal.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T14:19:41.644Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "frmNotaFiscal.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\Saida\\frmNotaFiscal.Designer.cs",
-              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Saida\\frmNotaFiscal.Designer.cs",
-              "ToolTip": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\Saida\\frmNotaFiscal.Designer.cs",
-              "RelativeToolTip": "prjMerchades\\Formularios\\Saida\\frmNotaFiscal.Designer.cs",
-              "ViewState": "AgIAAAECAAAAAAAAAAAQwA8CAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T14:22:03.363Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "frmNotaFiscal.resx",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\Saida\\frmNotaFiscal.resx",
-              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Saida\\frmNotaFiscal.resx",
-              "ToolTip": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\Saida\\frmNotaFiscal.resx",
-              "RelativeToolTip": "prjMerchades\\Formularios\\Saida\\frmNotaFiscal.resx",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2025-11-19T14:22:29.008Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "frmListagemFornecedor.cs",
-              "DocumentMoniker": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\Entrada\\frmListagemFornecedor.cs",
+              "Title": "frmListagemFornecedor.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Entrada\\frmListagemFornecedor.cs",
               "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Entrada\\frmListagemFornecedor.cs",
-              "ToolTip": "C:\\Users\\caiqu\\source\\repos\\Merchades\\prjMerchades\\Formularios\\Entrada\\frmListagemFornecedor.cs",
-              "RelativeToolTip": "prjMerchades\\Formularios\\Entrada\\frmListagemFornecedor.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAWwGQAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Entrada\\frmListagemFornecedor.cs [Design]",
+              "RelativeToolTip": "prjMerchades\\Formularios\\Entrada\\frmListagemFornecedor.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T12:01:00.992Z"
+              "WhenOpened": "2025-11-29T17:19:44.911Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
