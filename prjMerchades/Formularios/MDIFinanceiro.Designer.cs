@@ -38,6 +38,7 @@
             this.parcelasClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fecharToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblNomeUsuario = new System.Windows.Forms.Label();
             this.statusStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -98,13 +99,13 @@
             // fecharToolStripMenuItem
             // 
             this.fecharToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.fecharToolStripMenuItem.BackColor = System.Drawing.Color.Red;
+            this.fecharToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(46)))), ((int)(((byte)(28)))));
             this.fecharToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fecharToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.fecharToolStripMenuItem.Name = "fecharToolStripMenuItem";
             this.fecharToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.fecharToolStripMenuItem.Size = new System.Drawing.Size(88, 28);
-            this.fecharToolStripMenuItem.Text = "Fechar";
+            this.fecharToolStripMenuItem.Size = new System.Drawing.Size(105, 28);
+            this.fecharToolStripMenuItem.Text = "Deslogar";
             this.fecharToolStripMenuItem.Click += new System.EventHandler(this.fecharToolStripMenuItem_Click);
             // 
             // logoToolStripMenuItem
@@ -118,6 +119,19 @@
             this.logoToolStripMenuItem.Size = new System.Drawing.Size(28, 28);
             this.logoToolStripMenuItem.Text = "   ";
             // 
+            // lblNomeUsuario
+            // 
+            this.lblNomeUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblNomeUsuario.AutoSize = true;
+            this.lblNomeUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
+            this.lblNomeUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
+            this.lblNomeUsuario.ForeColor = System.Drawing.Color.White;
+            this.lblNomeUsuario.Location = new System.Drawing.Point(672, 5);
+            this.lblNomeUsuario.Name = "lblNomeUsuario";
+            this.lblNomeUsuario.Size = new System.Drawing.Size(136, 24);
+            this.lblNomeUsuario.TabIndex = 33;
+            this.lblNomeUsuario.Text = "Bem Vindo(a), ";
+            // 
             // MDIFinanceiro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -126,14 +140,17 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1184, 561);
+            this.Controls.Add(this.lblNomeUsuario);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MDIFinanceiro";
-            this.Text = "MDIFinanceiro";
+            this.Text = "Menu Financeiro";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MDIFinanceiro_FormClosed);
             this.Load += new System.EventHandler(this.MDIFinanceiro_Load);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
@@ -153,6 +170,7 @@
         private System.Windows.Forms.ToolStripMenuItem RelFinanceiro;
         private System.Windows.Forms.ToolStripMenuItem fecharToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoToolStripMenuItem;
+        private System.Windows.Forms.Label lblNomeUsuario;
     }
 }
 

@@ -52,7 +52,7 @@ namespace prjMerchades.Formularios
         private void fecharToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-                "Deseja realmente fechar?",
+                "Deseja realmente deslogar?",
                 "Confirmação",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question
@@ -60,13 +60,18 @@ namespace prjMerchades.Formularios
 
             if (result == DialogResult.Yes)
             {
-                Application.Exit();
+                prjMerchades.Properties.Settings.Default.usuarioNome = "";
+                prjMerchades.Properties.Settings.Default.usuarioNivel = "";
+                Login telaLogin = new Login();
+                telaLogin.Show();
+                this.Hide();
             }
         }
 
         private void MDIEntrada_Load(object sender, EventArgs e)
         {
             dataToolStripStatusLabel.Text = "Data: " + DateTime.Now.ToString("dd/MM/yyyy");
+            lblNomeUsuario.Text += prjMerchades.Properties.Settings.Default.usuarioNome;
         }
 
         private void cadastroFrncdToolStripMenuItem_Click(object sender, EventArgs e)
@@ -74,6 +79,11 @@ namespace prjMerchades.Formularios
             frmCadFornecedor frmCadastroFornecedor = new frmCadFornecedor();
             frmCadastroFornecedor.MdiParent = this;
             frmCadastroFornecedor.Show();
+        }
+
+        private void MDIEntrada_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

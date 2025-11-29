@@ -23,15 +23,19 @@ namespace prjMerchades.Formularios
         private void fecharToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-                "Deseja realmente fechar?",
-                "Confirmação",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question
-            );
+               "Deseja realmente deslogar?",
+               "Confirmação",
+               MessageBoxButtons.YesNo,
+               MessageBoxIcon.Question
+           );
 
             if (result == DialogResult.Yes)
             {
-                Application.Exit();
+                prjMerchades.Properties.Settings.Default.usuarioNome = "";
+                prjMerchades.Properties.Settings.Default.usuarioNivel = "";
+                Login telaLogin = new Login();
+                telaLogin.Show();
+                this.Hide();
             }
         }
 
@@ -51,7 +55,13 @@ namespace prjMerchades.Formularios
 
         private void MDIFinanceiro_Load(object sender, EventArgs e)
         {
-            toolStripStatusLabel.Text = "Bem Vindo, " + prjMerchades.Properties.Settings.Default.usuarioNome;
+            toolStripStatusLabel.Text = "Data: " + DateTime.Now.ToString("dd/MM/yyyy");
+            lblNomeUsuario.Text += prjMerchades.Properties.Settings.Default.usuarioNome;
+        }
+
+        private void MDIFinanceiro_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

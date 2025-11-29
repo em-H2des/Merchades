@@ -48,11 +48,21 @@ namespace prjMerchades.Formularios
 
         private void btnDeslogar_Click(object sender, EventArgs e)
         {
-            prjMerchades.Properties.Settings.Default.usuarioNome = "";
-            prjMerchades.Properties.Settings.Default.usuarioNivel = "";
-            Login telaLogin = new Login();
-            telaLogin.Show();
-            this.Hide();
+            DialogResult result = MessageBox.Show(
+                "Deseja realmente deslogar?",
+                "Confirmação",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                prjMerchades.Properties.Settings.Default.usuarioNome = "";
+                prjMerchades.Properties.Settings.Default.usuarioNivel = "";
+                Login telaLogin = new Login();
+                telaLogin.Show();
+                this.Hide();
+            }
         }
 
         private void frmMenuSaida_Load(object sender, EventArgs e)

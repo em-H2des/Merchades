@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRelFinanceiro));
             this.vwRELATORIOFINANCEIRODESPESASBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsDadosFinanceiro = new prjMerchades.Dados.dsDadosFinanceiro();
@@ -129,9 +129,9 @@
             this.tabControl_Financeiro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl_Financeiro.Controls.Add(this.tabPage_CompraAntg);
             this.tabControl_Financeiro.Controls.Add(this.tabPage_NF);
             this.tabControl_Financeiro.Controls.Add(this.tabPage_Divida);
-            this.tabControl_Financeiro.Controls.Add(this.tabPage_CompraAntg);
             this.tabControl_Financeiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl_Financeiro.Location = new System.Drawing.Point(0, 98);
             this.tabControl_Financeiro.Name = "tabControl_Financeiro";
@@ -218,15 +218,16 @@
             this.rvGastos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource1.Name = "DataSetReportViewerRelatorioFinanceiro";
-            reportDataSource1.Value = this.vwRELATORIOFINANCEIRODESPESASBindingSource;
-            this.rvGastos.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "DataSetReportViewerRelatorioFinanceiro";
+            reportDataSource2.Value = this.vwRELATORIOFINANCEIRODESPESASBindingSource;
+            this.rvGastos.LocalReport.DataSources.Add(reportDataSource2);
             this.rvGastos.LocalReport.ReportEmbeddedResource = "prjMerchades.Formularios.Financeiro.ReportFinanceiro.rdlc";
             this.rvGastos.Location = new System.Drawing.Point(3, 66);
             this.rvGastos.Name = "rvGastos";
             this.rvGastos.ServerReport.BearerToken = null;
             this.rvGastos.Size = new System.Drawing.Size(1077, 506);
             this.rvGastos.TabIndex = 42;
+            this.rvGastos.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
             // label3
             // 
@@ -324,15 +325,16 @@
             // 
             this.rvVendas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource2.Name = "DataSetReportViewerRelatorioFinanceiro";
-            reportDataSource2.Value = this.vwRELATORIOFINANCEIROGANHOSBindingSource;
-            this.rvVendas.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource3.Name = "DataSetReportViewerRelatorioFinanceiro";
+            reportDataSource3.Value = this.vwRELATORIOFINANCEIROGANHOSBindingSource;
+            this.rvVendas.LocalReport.DataSources.Add(reportDataSource3);
             this.rvVendas.LocalReport.ReportEmbeddedResource = "prjMerchades.Formularios.Financeiro.ReportFinanceiro.rdlc";
             this.rvVendas.Location = new System.Drawing.Point(4, 64);
             this.rvVendas.Name = "rvVendas";
             this.rvVendas.ServerReport.BearerToken = null;
             this.rvVendas.Size = new System.Drawing.Size(1077, 506);
             this.rvVendas.TabIndex = 47;
+            this.rvVendas.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
             // label6
             // 
@@ -419,15 +421,16 @@
             // 
             this.rvGeral.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource3.Name = "DataSetReportViewerRelatorioFinanceiro";
-            reportDataSource3.Value = this.rELATORIOFINANCEIROBindingSource;
-            this.rvGeral.LocalReport.DataSources.Add(reportDataSource3);
+            reportDataSource1.Name = "DataSetReportViewerRelatorioFinanceiro";
+            reportDataSource1.Value = this.rELATORIOFINANCEIROBindingSource;
+            this.rvGeral.LocalReport.DataSources.Add(reportDataSource1);
             this.rvGeral.LocalReport.ReportEmbeddedResource = "prjMerchades.Formularios.Financeiro.ReportFinanceiro.rdlc";
             this.rvGeral.Location = new System.Drawing.Point(4, 64);
             this.rvGeral.Name = "rvGeral";
             this.rvGeral.ServerReport.BearerToken = null;
             this.rvGeral.Size = new System.Drawing.Size(1077, 506);
             this.rvGeral.TabIndex = 53;
+            this.rvGeral.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
             // label7
             // 
@@ -473,7 +476,6 @@
             this.Controls.Add(this.tabControl_Financeiro);
             this.Name = "frmRelFinanceiro";
             this.Text = "Relatórios Financeiros";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmRelFinanceiro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.vwRELATORIOFINANCEIRODESPESASBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsDadosFinanceiro)).EndInit();
