@@ -6,16 +6,16 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>5.46365cm</Width>
+              <Width>6.2922cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.46365cm</Width>
+              <Width>6.2922cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.46365cm</Width>
+              <Width>6.2922cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.46365cm</Width>
+              <Width>6.2922cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -235,7 +235,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!QTD_ESTOQUE.Value)</Value>
+                              <Value>=Sum(Fields!QTD_ESTOQUE_ADDED.Value)</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
@@ -355,7 +355,7 @@
         </TablixRowHierarchy>
         <DataSetName>dadosEstoque</DataSetName>
         <Height>1.61396cm</Height>
-        <Width>21.85458cm</Width>
+        <Width>25.16882cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -366,38 +366,22 @@
     <Height>0.63542in</Height>
     <Style />
   </Body>
-  <Width>8.60417in</Width>
+  <Width>9.90898in</Width>
   <Page>
-    <PageHeader>
-      <Height>2.68111cm</Height>
+    <PageFooter>
+      <Height>2.32833cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Image Name="Image2">
-          <Source>Embedded</Source>
-          <Value>logo_merchades_relatorio1</Value>
-          <Sizing>FitProportional</Sizing>
-          <Top>0.36724cm</Top>
-          <Left>0.34078cm</Left>
-          <Height>2.13748cm</Height>
-          <Width>5.31cm</Width>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </Image>
-        <Textbox Name="Textbox9">
+        <Textbox Name="ExecutionTime">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Relatório de estoque</Value>
+                  <Value>=Globals!ExecutionTime</Value>
                   <Style>
-                    <FontSize>20pt</FontSize>
-                    <FontWeight>ExtraBold</FontWeight>
                     <Color>White</Color>
                   </Style>
                 </TextRun>
@@ -405,11 +389,44 @@
               <Style />
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Textbox9</rd:DefaultName>
-          <Top>0.87285cm</Top>
-          <Left>7.11412cm</Left>
-          <Height>1.02333cm</Height>
-          <Width>9.00875cm</Width>
+          <rd:DefaultName>ExecutionTime</rd:DefaultName>
+          <Top>0.86416cm</Top>
+          <Left>0.34396cm</Left>
+          <Height>0.6cm</Height>
+          <Width>4.64312cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="PageNumber">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Globals!PageNumber</Value>
+                  <Style>
+                    <Color>White</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>PageNumber</rd:DefaultName>
+          <Top>0.86416cm</Top>
+          <Left>21.99382cm</Left>
+          <Height>0.6cm</Height>
+          <Width>0.71028cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -421,18 +438,75 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
+        <Textbox Name="Textbox29">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>de</Value>
+                  <Style>
+                    <Color>White</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox29</rd:DefaultName>
+          <Top>0.86416cm</Top>
+          <Left>22.88049cm</Left>
+          <Height>0.6cm</Height>
+          <Width>1.28292cm</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="TotalPages">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Globals!TotalPages</Value>
+                  <Style>
+                    <Color>White</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>TotalPages</rd:DefaultName>
+          <Top>0.86416cm</Top>
+          <Left>24.30924cm</Left>
+          <Height>0.6cm</Height>
+          <Width>0.54208cm</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
       </ReportItems>
-      <Style>
-        <Border>
-          <Style>None</Style>
-        </Border>
-        <BackgroundColor>#3a9374</BackgroundColor>
-      </Style>
-    </PageHeader>
-    <PageFooter>
-      <Height>2.32833cm</Height>
-      <PrintOnFirstPage>true</PrintOnFirstPage>
-      <PrintOnLastPage>true</PrintOnLastPage>
       <Style>
         <Border>
           <Style>None</Style>
@@ -472,10 +546,6 @@
           <DataField>ID_ESTOQUE</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="QTD_ESTOQUE">
-          <DataField>QTD_ESTOQUE</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
         <Field Name="PRODUTO">
           <DataField>PRODUTO</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -484,10 +554,14 @@
           <DataField>NOTA_FISCAL</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="QTD_ESTOQUE_ADDED">
+          <DataField>QTD_ESTOQUE_ADDED</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>daDadosEntrada</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\brend\OneDrive\Documentos\estudo\Merchades\prjMerchades\Dados\daDadosEntrada.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\LabInfo\Documents\GitHub\Merchades\prjMerchades\Dados\daDadosEntrada.xsd</rd:SchemaPath>
         <rd:TableName>ESTOQUEEntradaNomes</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
