@@ -66,7 +66,9 @@ namespace prjMerchades.Formularios
 
         private void MDIEntrada_Load(object sender, EventArgs e)
         {
-            dataToolStripStatusLabel.Text = "Data: " + DateTime.Now.ToString("dd/MM/yyyy");
+            toolStripStatusLabelData.Text = "Data: " + DateTime.Now.ToString("dd/MM/yyyy");
+            dataToolStripStatusLabelUsuario.Text = "Usuario: " + prjMerchades.Properties.Settings.Default.usuarioNome;
+
         }
 
         private void cadastroFrncdToolStripMenuItem_Click(object sender, EventArgs e)
@@ -74,6 +76,20 @@ namespace prjMerchades.Formularios
             frmCadFornecedor frmCadastroFornecedor = new frmCadFornecedor();
             frmCadastroFornecedor.MdiParent = this;
             frmCadastroFornecedor.Show();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            // Limpa a sessão
+            prjMerchades.Properties.Settings.Default.usuarioNome = "";
+            prjMerchades.Properties.Settings.Default.usuarioNivel = "";
+            prjMerchades.Properties.Settings.Default.Save();
+
+            // Volta para tela de login
+            Login frmLogin = new Login();
+            frmLogin.Show();
+
+            this.Close(); 
         }
     }
 }

@@ -41,8 +41,8 @@ namespace prjMerchades.Formularios.Entrada
             this.nOTA_FISCAL_FORNECEDORTableAdapter.Fill(this.daDadosEntrada.NOTA_FISCAL_FORNECEDOR);
             dtvwComprasNF.AutoGenerateColumns = true;
             dtvwComprasNF.DataSource = ds.PRODUTOSEntrada; // tabela do XSD
-            lbl_Data.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            lbl_Data2.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            //lbl_Data.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            //lbl_Data2.Text = DateTime.Now.ToString("dd/MM/yyyy");
             dateEmissao.Value = DateTime.Today;
             dateEmissao.Enabled = false;
         }
@@ -358,6 +358,13 @@ namespace prjMerchades.Formularios.Entrada
                 infoNotaDividasBindingSource.Filter = resultado;
                 return;
             }
+
+            else if (coluna == "Nota fiscal")
+            {
+                resultado = $"COD_NOTA_FORN LIKE '%{filtro}%'";
+                infoNotaDividasBindingSource.Filter = resultado;
+                return;
+            }
         }
 
         private void btnBuscarAntigas_Click(object sender, EventArgs e)
@@ -405,6 +412,13 @@ namespace prjMerchades.Formularios.Entrada
                 return;
             }
 
+            else if (coluna == "Nota fiscal")
+            {
+                resultado = $"COD_NOTA_FORN LIKE '%{filtro}%'";
+                infoNotaDividasBindingSource.Filter = resultado;
+                return;
+            }
+
         }
 
 
@@ -420,11 +434,11 @@ namespace prjMerchades.Formularios.Entrada
 
         private void dataGridViewNotas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0) return;
+            if (e.RowIndex < 0) return; //verifica se ta selecionado alguma nota
 
-            string idNota = dataGridViewNotasAntigas.Rows[e.RowIndex].Cells["COD_NOTA_FORN"].Value.ToString();
+            string idNota = dataGridViewNotasAntigas.Rows[e.RowIndex].Cells["COD_NOTA_FORN"].Value.ToString(); //salva o codigo da nota
 
-            this.infoProdutosTableAdapter1.Fill(this.daDadosEntrada.infoProdutos, idNota);
+            this.infoProdutosTableAdapter1.Fill(this.daDadosEntrada.infoProdutos, idNota); //preenche a tabela de produtos de acordo com a nota
         }
 
         private void cmbFiltroAntigas_SelectedIndexChanged(object sender, EventArgs e)
@@ -457,10 +471,10 @@ namespace prjMerchades.Formularios.Entrada
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
-            // Remove QUALQUER filtro aplicado
+            // remove filtros
             infoNotaBindingSource.RemoveFilter();
 
-            // Reseta campos visuais
+            //volta os campos ao estado original
             cmbFiltroAntigas.SelectedIndex = -1;
             txtFiltroAntigas.Text = "";
 
@@ -472,7 +486,7 @@ namespace prjMerchades.Formularios.Entrada
             txtFiltroAntigas.Visible = true;
             lblFiltroAntigas.Visible = true;
 
-            MessageBox.Show("Mostrando todas as notas.");
+            MessageBox.Show("Filtros resetados");
         }
 
         private void cmbFiltroDividas_SelectedIndexChanged(object sender, EventArgs e)
@@ -505,10 +519,10 @@ namespace prjMerchades.Formularios.Entrada
 
         private void btnLimparDividas_Click(object sender, EventArgs e)
         {
-            // Remove QUALQUER filtro aplicado
+            // remove os filtros
             infoNotaDividasBindingSource.RemoveFilter();
 
-            // Reseta campos visuais
+            // volta os campos ao estado original
             cmbFiltroDividas.SelectedIndex = -1;
             txtFiltroDividas.Text = "";
 
@@ -520,7 +534,7 @@ namespace prjMerchades.Formularios.Entrada
             txtFiltroDividas.Visible = true;
             lblFiltroDividas.Visible = true;
 
-            MessageBox.Show("Mostrando todas as notas.");
+            MessageBox.Show("Filtros resetados.");
         }
 
         private void fillByToolStripButton_Click(object sender, EventArgs e)
@@ -536,16 +550,6 @@ namespace prjMerchades.Formularios.Entrada
 
         }
 
-        private void pnCamposItens_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lbl_CodBarras_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void dataGridViewNOtasDividas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
@@ -553,6 +557,26 @@ namespace prjMerchades.Formularios.Entrada
             string idNota = dataGridViewNOtasDividas.Rows[e.RowIndex].Cells["COD_NOTA_FORND"].Value.ToString();
 
             this.infoProdutosDividasTableAdapter.FillBy(this.daDadosEntrada.infoProdutosDividas, idNota);
+        }
+
+        private void btnPagar_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewNOtasDividas.CurrentRow == null)
+            {
+                //verifica se tem alguma nota selecionada
+                MessageBox.Show("Selecione uma nota fiscal.");
+                return;
+            }
+
+            string idNota = dataGridViewNOtasDividas.CurrentRow.Cells["COD_NOTA_FORND"].Value.ToString(); //pega o codigo da nota
+
+            infoNotaDividasTableAdapter.UpdateNota(idNota); //atualiza o campo "PAGO" para "s"
+
+            // recarrega as notas das tabelas
+            infoNotaDividasTableAdapter.Fill(daDadosEntrada.infoNotaDividas);
+            infoNotaTableAdapter1.Fill(daDadosEntrada.infoNota);
+
+            MessageBox.Show("Nota fiscal paga.");
         }
     }
 }

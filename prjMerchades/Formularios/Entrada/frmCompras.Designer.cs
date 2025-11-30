@@ -30,6 +30,25 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCompras));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle77 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle78 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle79 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle80 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle81 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle82 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle83 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle84 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle85 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle86 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle87 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle88 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle89 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle90 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle91 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle92 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle93 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle94 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle95 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl_Compras = new System.Windows.Forms.TabControl();
             this.tabPage_NF = new System.Windows.Forms.TabPage();
             this.dtvwComprasNF = new System.Windows.Forms.DataGridView();
@@ -68,8 +87,12 @@
             this.txtVlrTtl = new System.Windows.Forms.TextBox();
             this.lbl_VlrTtl = new System.Windows.Forms.Label();
             this.tabPage_Divida = new System.Windows.Forms.TabPage();
+            this.btnPagar = new System.Windows.Forms.Button();
             this.dataGridViewProdutosDividas = new System.Windows.Forms.DataGridView();
+            this.infoProdutosDividasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.daDadosEntrada = new prjMerchades.Dados.daDadosEntrada();
             this.dataGridViewNOtasDividas = new System.Windows.Forms.DataGridView();
+            this.infoNotaDividasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnLimparDividas = new System.Windows.Forms.Button();
             this.lblFimDividas = new System.Windows.Forms.Label();
             this.lblInicioDividas = new System.Windows.Forms.Label();
@@ -80,7 +103,6 @@
             this.cmbFiltroDividas = new System.Windows.Forms.ComboBox();
             this.txtFiltroDividas = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.lbl_Data2 = new System.Windows.Forms.Label();
             this.tabPage_CompraAntg = new System.Windows.Forms.TabPage();
             this.btnLimparAntigas = new System.Windows.Forms.Button();
             this.lblFimAntigas = new System.Windows.Forms.Label();
@@ -88,28 +110,16 @@
             this.dateFimAntigas = new System.Windows.Forms.DateTimePicker();
             this.dateInicioAntigas = new System.Windows.Forms.DateTimePicker();
             this.dataGridViewProdutosAntigas = new System.Windows.Forms.DataGridView();
+            this.infoProdutosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblFiltroAntigas = new System.Windows.Forms.Label();
             this.btnBuscarAntigas = new System.Windows.Forms.Button();
             this.cmbFiltroAntigas = new System.Windows.Forms.ComboBox();
             this.txtFiltroAntigas = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridViewNotasAntigas = new System.Windows.Forms.DataGridView();
-            this.lbl_Data = new System.Windows.Forms.Label();
+            this.infoNotaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.picBox_Logo = new System.Windows.Forms.PictureBox();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.infoProdutosDividasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.daDadosEntrada = new prjMerchades.Dados.daDadosEntrada();
-            this.infoNotaDividasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nOMEPRODUTOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tIPOPRODUTOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRECOPRODUTOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qTDUNITPACDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.infoProdutosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.infoNotaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.daDadosEntrada1 = new prjMerchades.Dados.daDadosEntrada();
             this.compraDividasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comprasAntigasBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -122,18 +132,29 @@
             this.infoNotaTableAdapter1 = new prjMerchades.Dados.daDadosEntradaTableAdapters.infoNotaTableAdapter();
             this.tableAdapterManager = new prjMerchades.Dados.daDadosEntradaTableAdapters.TableAdapterManager();
             this.infoProdutosTableAdapter1 = new prjMerchades.Dados.daDadosEntradaTableAdapters.infoProdutosTableAdapter();
+            this.COD_NOTA_FORND = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nOMEPRODUTOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tIPOPRODUTOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRECOPRODUTOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qTDUNITPACDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.COD_NOTA_FORN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vALORCOMPRADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dATAEMISSAODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oBSERVACAODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nOMEFORNECEDORDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNPJFORNECEDORDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COD_NOTA_FORND = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnPagar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.tabControl_Compras.SuspendLayout();
             this.tabPage_NF.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtvwComprasNF)).BeginInit();
@@ -143,16 +164,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.numQtdACad)).BeginInit();
             this.tabPage_Divida.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProdutosDividas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNOtasDividas)).BeginInit();
-            this.tabPage_CompraAntg.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProdutosAntigas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNotasAntigas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_Logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.infoProdutosDividasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.daDadosEntrada)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNOtasDividas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.infoNotaDividasBindingSource)).BeginInit();
+            this.tabPage_CompraAntg.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProdutosAntigas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.infoProdutosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNotasAntigas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.infoNotaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.daDadosEntrada1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compraDividasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comprasAntigasBindingSource)).BeginInit();
@@ -339,7 +360,6 @@
             this.pnCamposItens.Name = "pnCamposItens";
             this.pnCamposItens.Size = new System.Drawing.Size(812, 296);
             this.pnCamposItens.TabIndex = 46;
-            this.pnCamposItens.Paint += new System.Windows.Forms.PaintEventHandler(this.pnCamposItens_Paint);
             // 
             // btnAdd
             // 
@@ -348,7 +368,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnAdd.Location = new System.Drawing.Point(667, 112);
+            this.btnAdd.Location = new System.Drawing.Point(671, 179);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(119, 31);
             this.btnAdd.TabIndex = 51;
@@ -392,7 +412,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.label7.Location = new System.Drawing.Point(413, 84);
+            this.label7.Location = new System.Drawing.Point(417, 83);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(274, 25);
             this.label7.TabIndex = 38;
@@ -401,7 +421,7 @@
             // numQtdACad
             // 
             this.numQtdACad.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numQtdACad.Location = new System.Drawing.Point(434, 117);
+            this.numQtdACad.Location = new System.Drawing.Point(438, 116);
             this.numQtdACad.Minimum = new decimal(new int[] {
             1,
             0,
@@ -530,17 +550,16 @@
             this.lbl_CodBarras.AutoSize = true;
             this.lbl_CodBarras.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_CodBarras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
-            this.lbl_CodBarras.Location = new System.Drawing.Point(301, 12);
+            this.lbl_CodBarras.Location = new System.Drawing.Point(305, 25);
             this.lbl_CodBarras.Name = "lbl_CodBarras";
             this.lbl_CodBarras.Size = new System.Drawing.Size(209, 25);
             this.lbl_CodBarras.TabIndex = 0;
             this.lbl_CodBarras.Text = "Código de Barras: ";
-            this.lbl_CodBarras.Click += new System.EventHandler(this.lbl_CodBarras_Click);
             // 
             // txtCodBarras
             // 
             this.txtCodBarras.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCodBarras.Location = new System.Drawing.Point(306, 43);
+            this.txtCodBarras.Location = new System.Drawing.Point(310, 56);
             this.txtCodBarras.Name = "txtCodBarras";
             this.txtCodBarras.Size = new System.Drawing.Size(196, 26);
             this.txtCodBarras.TabIndex = 1;
@@ -606,6 +625,8 @@
             // tabPage_Divida
             // 
             this.tabPage_Divida.BackColor = System.Drawing.Color.DarkGray;
+            this.tabPage_Divida.Controls.Add(this.label5);
+            this.tabPage_Divida.Controls.Add(this.label2);
             this.tabPage_Divida.Controls.Add(this.btnPagar);
             this.tabPage_Divida.Controls.Add(this.dataGridViewProdutosDividas);
             this.tabPage_Divida.Controls.Add(this.dataGridViewNOtasDividas);
@@ -619,13 +640,25 @@
             this.tabPage_Divida.Controls.Add(this.cmbFiltroDividas);
             this.tabPage_Divida.Controls.Add(this.txtFiltroDividas);
             this.tabPage_Divida.Controls.Add(this.label8);
-            this.tabPage_Divida.Controls.Add(this.lbl_Data2);
             this.tabPage_Divida.Location = new System.Drawing.Point(4, 29);
             this.tabPage_Divida.Name = "tabPage_Divida";
             this.tabPage_Divida.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage_Divida.Size = new System.Drawing.Size(1275, 583);
             this.tabPage_Divida.TabIndex = 1;
             this.tabPage_Divida.Text = "Dívidas";
+            // 
+            // btnPagar
+            // 
+            this.btnPagar.BackColor = System.Drawing.Color.Black;
+            this.btnPagar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPagar.ForeColor = System.Drawing.Color.White;
+            this.btnPagar.Location = new System.Drawing.Point(1092, 86);
+            this.btnPagar.Name = "btnPagar";
+            this.btnPagar.Size = new System.Drawing.Size(99, 28);
+            this.btnPagar.TabIndex = 56;
+            this.btnPagar.Text = "Pagar";
+            this.btnPagar.UseVisualStyleBackColor = false;
+            this.btnPagar.Click += new System.EventHandler(this.btnPagar_Click);
             // 
             // dataGridViewProdutosDividas
             // 
@@ -642,6 +675,16 @@
             this.dataGridViewProdutosDividas.Size = new System.Drawing.Size(632, 420);
             this.dataGridViewProdutosDividas.TabIndex = 55;
             // 
+            // infoProdutosDividasBindingSource
+            // 
+            this.infoProdutosDividasBindingSource.DataMember = "infoProdutosDividas";
+            this.infoProdutosDividasBindingSource.DataSource = this.daDadosEntrada;
+            // 
+            // daDadosEntrada
+            // 
+            this.daDadosEntrada.DataSetName = "daDadosEntrada";
+            this.daDadosEntrada.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // dataGridViewNOtasDividas
             // 
             this.dataGridViewNOtasDividas.AutoGenerateColumns = false;
@@ -653,6 +696,7 @@
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9});
             this.dataGridViewNOtasDividas.DataSource = this.infoNotaDividasBindingSource;
+            this.dataGridViewNOtasDividas.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dataGridViewNOtasDividas.Location = new System.Drawing.Point(-3, 162);
             this.dataGridViewNOtasDividas.Name = "dataGridViewNOtasDividas";
             this.dataGridViewNOtasDividas.RowHeadersWidth = 62;
@@ -660,14 +704,22 @@
             this.dataGridViewNOtasDividas.TabIndex = 54;
             this.dataGridViewNOtasDividas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewNOtasDividas_CellClick);
             // 
+            // infoNotaDividasBindingSource
+            // 
+            this.infoNotaDividasBindingSource.DataMember = "infoNotaDividas";
+            this.infoNotaDividasBindingSource.DataSource = this.daDadosEntrada;
+            // 
             // btnLimparDividas
             // 
-            this.btnLimparDividas.Location = new System.Drawing.Point(1097, 54);
+            this.btnLimparDividas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
+            this.btnLimparDividas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLimparDividas.ForeColor = System.Drawing.Color.White;
+            this.btnLimparDividas.Location = new System.Drawing.Point(1151, 50);
             this.btnLimparDividas.Name = "btnLimparDividas";
             this.btnLimparDividas.Size = new System.Drawing.Size(99, 30);
             this.btnLimparDividas.TabIndex = 53;
             this.btnLimparDividas.Text = "Limpar";
-            this.btnLimparDividas.UseVisualStyleBackColor = true;
+            this.btnLimparDividas.UseVisualStyleBackColor = false;
             this.btnLimparDividas.Click += new System.EventHandler(this.btnLimparDividas_Click);
             // 
             // lblFimDividas
@@ -725,12 +777,15 @@
             // 
             // btnBuscarDividas
             // 
-            this.btnBuscarDividas.Location = new System.Drawing.Point(982, 54);
+            this.btnBuscarDividas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
+            this.btnBuscarDividas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBuscarDividas.ForeColor = System.Drawing.Color.White;
+            this.btnBuscarDividas.Location = new System.Drawing.Point(1036, 50);
             this.btnBuscarDividas.Name = "btnBuscarDividas";
             this.btnBuscarDividas.Size = new System.Drawing.Size(99, 30);
             this.btnBuscarDividas.TabIndex = 47;
             this.btnBuscarDividas.Text = "Buscar";
-            this.btnBuscarDividas.UseVisualStyleBackColor = true;
+            this.btnBuscarDividas.UseVisualStyleBackColor = false;
             this.btnBuscarDividas.Click += new System.EventHandler(this.btnBuscarDividas_Click);
             // 
             // cmbFiltroDividas
@@ -742,7 +797,8 @@
             this.cmbFiltroDividas.Items.AddRange(new object[] {
             "Fornecedor",
             "Data",
-            "Valor"});
+            "Valor",
+            "Nota fiscal"});
             this.cmbFiltroDividas.Location = new System.Drawing.Point(42, 55);
             this.cmbFiltroDividas.Name = "cmbFiltroDividas";
             this.cmbFiltroDividas.Size = new System.Drawing.Size(300, 32);
@@ -770,21 +826,11 @@
             this.label8.TabIndex = 44;
             this.label8.Text = "Filtrar Por:";
             // 
-            // lbl_Data2
-            // 
-            this.lbl_Data2.AutoSize = true;
-            this.lbl_Data2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
-            this.lbl_Data2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Data2.ForeColor = System.Drawing.Color.White;
-            this.lbl_Data2.Location = new System.Drawing.Point(1139, 0);
-            this.lbl_Data2.Name = "lbl_Data2";
-            this.lbl_Data2.Size = new System.Drawing.Size(110, 25);
-            this.lbl_Data2.TabIndex = 24;
-            this.lbl_Data2.Text = "              ";
-            // 
             // tabPage_CompraAntg
             // 
             this.tabPage_CompraAntg.BackColor = System.Drawing.Color.DarkGray;
+            this.tabPage_CompraAntg.Controls.Add(this.label6);
+            this.tabPage_CompraAntg.Controls.Add(this.label9);
             this.tabPage_CompraAntg.Controls.Add(this.btnLimparAntigas);
             this.tabPage_CompraAntg.Controls.Add(this.lblFimAntigas);
             this.tabPage_CompraAntg.Controls.Add(this.lblInicioAntigas);
@@ -797,7 +843,6 @@
             this.tabPage_CompraAntg.Controls.Add(this.txtFiltroAntigas);
             this.tabPage_CompraAntg.Controls.Add(this.label3);
             this.tabPage_CompraAntg.Controls.Add(this.dataGridViewNotasAntigas);
-            this.tabPage_CompraAntg.Controls.Add(this.lbl_Data);
             this.tabPage_CompraAntg.Location = new System.Drawing.Point(4, 29);
             this.tabPage_CompraAntg.Name = "tabPage_CompraAntg";
             this.tabPage_CompraAntg.Padding = new System.Windows.Forms.Padding(3);
@@ -807,12 +852,15 @@
             // 
             // btnLimparAntigas
             // 
+            this.btnLimparAntigas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
+            this.btnLimparAntigas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLimparAntigas.ForeColor = System.Drawing.Color.White;
             this.btnLimparAntigas.Location = new System.Drawing.Point(1080, 56);
             this.btnLimparAntigas.Name = "btnLimparAntigas";
             this.btnLimparAntigas.Size = new System.Drawing.Size(99, 30);
             this.btnLimparAntigas.TabIndex = 43;
             this.btnLimparAntigas.Text = "Limpar";
-            this.btnLimparAntigas.UseVisualStyleBackColor = true;
+            this.btnLimparAntigas.UseVisualStyleBackColor = false;
             this.btnLimparAntigas.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // lblFimAntigas
@@ -872,6 +920,11 @@
             this.dataGridViewProdutosAntigas.Size = new System.Drawing.Size(632, 420);
             this.dataGridViewProdutosAntigas.TabIndex = 38;
             // 
+            // infoProdutosBindingSource
+            // 
+            this.infoProdutosBindingSource.DataMember = "infoProdutos";
+            this.infoProdutosBindingSource.DataSource = this.daDadosEntrada;
+            // 
             // lblFiltroAntigas
             // 
             this.lblFiltroAntigas.AutoSize = true;
@@ -885,12 +938,15 @@
             // 
             // btnBuscarAntigas
             // 
+            this.btnBuscarAntigas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
+            this.btnBuscarAntigas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBuscarAntigas.ForeColor = System.Drawing.Color.White;
             this.btnBuscarAntigas.Location = new System.Drawing.Point(965, 56);
             this.btnBuscarAntigas.Name = "btnBuscarAntigas";
             this.btnBuscarAntigas.Size = new System.Drawing.Size(99, 30);
             this.btnBuscarAntigas.TabIndex = 36;
             this.btnBuscarAntigas.Text = "Buscar";
-            this.btnBuscarAntigas.UseVisualStyleBackColor = true;
+            this.btnBuscarAntigas.UseVisualStyleBackColor = false;
             this.btnBuscarAntigas.Click += new System.EventHandler(this.btnBuscarAntigas_Click);
             // 
             // cmbFiltroAntigas
@@ -902,7 +958,8 @@
             this.cmbFiltroAntigas.Items.AddRange(new object[] {
             "Fornecedor",
             "Data",
-            "Valor"});
+            "Valor",
+            "Nota fiscal"});
             this.cmbFiltroAntigas.Location = new System.Drawing.Point(25, 57);
             this.cmbFiltroAntigas.Name = "cmbFiltroAntigas";
             this.cmbFiltroAntigas.Size = new System.Drawing.Size(300, 32);
@@ -949,17 +1006,10 @@
             this.dataGridViewNotasAntigas.TabIndex = 32;
             this.dataGridViewNotasAntigas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewNotas_CellClick);
             // 
-            // lbl_Data
+            // infoNotaBindingSource
             // 
-            this.lbl_Data.AutoSize = true;
-            this.lbl_Data.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
-            this.lbl_Data.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Data.ForeColor = System.Drawing.Color.White;
-            this.lbl_Data.Location = new System.Drawing.Point(1146, 3);
-            this.lbl_Data.Name = "lbl_Data";
-            this.lbl_Data.Size = new System.Drawing.Size(110, 25);
-            this.lbl_Data.TabIndex = 19;
-            this.lbl_Data.Text = "              ";
+            this.infoNotaBindingSource.DataMember = "infoNota";
+            this.infoNotaBindingSource.DataSource = this.daDadosEntrada;
             // 
             // label1
             // 
@@ -982,79 +1032,6 @@
             this.picBox_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBox_Logo.TabIndex = 4;
             this.picBox_Logo.TabStop = false;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "NOME_PRODUTOS";
-            this.dataGridViewTextBoxColumn1.HeaderText = "NOME_PRODUTOS";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "TIPO_PRODUTOS";
-            this.dataGridViewTextBoxColumn2.HeaderText = "TIPO_PRODUTOS";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "PRECO_PRODUTOS";
-            this.dataGridViewTextBoxColumn3.HeaderText = "PRECO_PRODUTOS";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "QTD_UNIT_PAC";
-            this.dataGridViewTextBoxColumn4.HeaderText = "QTD_UNIT_PAC";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // infoProdutosDividasBindingSource
-            // 
-            this.infoProdutosDividasBindingSource.DataMember = "infoProdutosDividas";
-            this.infoProdutosDividasBindingSource.DataSource = this.daDadosEntrada;
-            // 
-            // daDadosEntrada
-            // 
-            this.daDadosEntrada.DataSetName = "daDadosEntrada";
-            this.daDadosEntrada.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // infoNotaDividasBindingSource
-            // 
-            this.infoNotaDividasBindingSource.DataMember = "infoNotaDividas";
-            this.infoNotaDividasBindingSource.DataSource = this.daDadosEntrada;
-            // 
-            // nOMEPRODUTOSDataGridViewTextBoxColumn
-            // 
-            this.nOMEPRODUTOSDataGridViewTextBoxColumn.DataPropertyName = "NOME_PRODUTOS";
-            this.nOMEPRODUTOSDataGridViewTextBoxColumn.HeaderText = "NOME_PRODUTOS";
-            this.nOMEPRODUTOSDataGridViewTextBoxColumn.Name = "nOMEPRODUTOSDataGridViewTextBoxColumn";
-            // 
-            // tIPOPRODUTOSDataGridViewTextBoxColumn
-            // 
-            this.tIPOPRODUTOSDataGridViewTextBoxColumn.DataPropertyName = "TIPO_PRODUTOS";
-            this.tIPOPRODUTOSDataGridViewTextBoxColumn.HeaderText = "TIPO_PRODUTOS";
-            this.tIPOPRODUTOSDataGridViewTextBoxColumn.Name = "tIPOPRODUTOSDataGridViewTextBoxColumn";
-            // 
-            // pRECOPRODUTOSDataGridViewTextBoxColumn
-            // 
-            this.pRECOPRODUTOSDataGridViewTextBoxColumn.DataPropertyName = "PRECO_PRODUTOS";
-            this.pRECOPRODUTOSDataGridViewTextBoxColumn.HeaderText = "PRECO_PRODUTOS";
-            this.pRECOPRODUTOSDataGridViewTextBoxColumn.Name = "pRECOPRODUTOSDataGridViewTextBoxColumn";
-            // 
-            // qTDUNITPACDataGridViewTextBoxColumn
-            // 
-            this.qTDUNITPACDataGridViewTextBoxColumn.DataPropertyName = "QTD_UNIT_PAC";
-            this.qTDUNITPACDataGridViewTextBoxColumn.HeaderText = "QTD_UNIT_PAC";
-            this.qTDUNITPACDataGridViewTextBoxColumn.Name = "qTDUNITPACDataGridViewTextBoxColumn";
-            // 
-            // infoProdutosBindingSource
-            // 
-            this.infoProdutosBindingSource.DataMember = "infoProdutos";
-            this.infoProdutosBindingSource.DataSource = this.daDadosEntrada;
-            // 
-            // infoNotaBindingSource
-            // 
-            this.infoNotaBindingSource.DataMember = "infoNota";
-            this.infoNotaBindingSource.DataSource = this.daDadosEntrada;
             // 
             // daDadosEntrada1
             // 
@@ -1114,51 +1091,19 @@
             // 
             this.infoProdutosTableAdapter1.ClearBeforeFill = true;
             // 
-            // COD_NOTA_FORN
-            // 
-            this.COD_NOTA_FORN.DataPropertyName = "COD_NOTA_FORN";
-            this.COD_NOTA_FORN.HeaderText = "COD_NOTA_FORN";
-            this.COD_NOTA_FORN.Name = "COD_NOTA_FORN";
-            // 
-            // vALORCOMPRADataGridViewTextBoxColumn
-            // 
-            this.vALORCOMPRADataGridViewTextBoxColumn.DataPropertyName = "VALOR_COMPRA";
-            this.vALORCOMPRADataGridViewTextBoxColumn.HeaderText = "VALOR_COMPRA";
-            this.vALORCOMPRADataGridViewTextBoxColumn.Name = "vALORCOMPRADataGridViewTextBoxColumn";
-            // 
-            // dATAEMISSAODataGridViewTextBoxColumn
-            // 
-            this.dATAEMISSAODataGridViewTextBoxColumn.DataPropertyName = "DATA_EMISSAO";
-            this.dATAEMISSAODataGridViewTextBoxColumn.HeaderText = "DATA_EMISSAO";
-            this.dATAEMISSAODataGridViewTextBoxColumn.Name = "dATAEMISSAODataGridViewTextBoxColumn";
-            // 
-            // oBSERVACAODataGridViewTextBoxColumn
-            // 
-            this.oBSERVACAODataGridViewTextBoxColumn.DataPropertyName = "OBSERVACAO";
-            this.oBSERVACAODataGridViewTextBoxColumn.HeaderText = "OBSERVACAO";
-            this.oBSERVACAODataGridViewTextBoxColumn.Name = "oBSERVACAODataGridViewTextBoxColumn";
-            // 
-            // nOMEFORNECEDORDataGridViewTextBoxColumn
-            // 
-            this.nOMEFORNECEDORDataGridViewTextBoxColumn.DataPropertyName = "NOME_FORNECEDOR";
-            this.nOMEFORNECEDORDataGridViewTextBoxColumn.HeaderText = "NOME_FORNECEDOR";
-            this.nOMEFORNECEDORDataGridViewTextBoxColumn.Name = "nOMEFORNECEDORDataGridViewTextBoxColumn";
-            // 
-            // cNPJFORNECEDORDataGridViewTextBoxColumn
-            // 
-            this.cNPJFORNECEDORDataGridViewTextBoxColumn.DataPropertyName = "CNPJ_FORNECEDOR";
-            this.cNPJFORNECEDORDataGridViewTextBoxColumn.HeaderText = "CNPJ_FORNECEDOR";
-            this.cNPJFORNECEDORDataGridViewTextBoxColumn.Name = "cNPJFORNECEDORDataGridViewTextBoxColumn";
-            // 
             // COD_NOTA_FORND
             // 
             this.COD_NOTA_FORND.DataPropertyName = "COD_NOTA_FORN";
+            dataGridViewCellStyle77.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
+            this.COD_NOTA_FORND.DefaultCellStyle = dataGridViewCellStyle77;
             this.COD_NOTA_FORND.HeaderText = "COD_NOTA_FORN";
             this.COD_NOTA_FORND.Name = "COD_NOTA_FORND";
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "NOME_FORNECEDOR";
+            dataGridViewCellStyle78.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle78;
             this.dataGridViewTextBoxColumn6.HeaderText = "NOME DO FORNECEDOR";
             this.dataGridViewTextBoxColumn6.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
@@ -1167,6 +1112,8 @@
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "OBSERVACAO";
+            dataGridViewCellStyle79.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle79;
             this.dataGridViewTextBoxColumn7.HeaderText = "OBSERVACAO";
             this.dataGridViewTextBoxColumn7.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
@@ -1175,6 +1122,8 @@
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "DATA_EMISSAO";
+            dataGridViewCellStyle80.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle80;
             this.dataGridViewTextBoxColumn8.HeaderText = "DATA DE EMISSAO";
             this.dataGridViewTextBoxColumn8.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
@@ -1183,19 +1132,180 @@
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "VALOR_COMPRA";
+            dataGridViewCellStyle81.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle81;
             this.dataGridViewTextBoxColumn9.HeaderText = "VALOR";
             this.dataGridViewTextBoxColumn9.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.Width = 200;
             // 
-            // btnPagar
+            // dataGridViewTextBoxColumn1
             // 
-            this.btnPagar.Location = new System.Drawing.Point(1039, 90);
-            this.btnPagar.Name = "btnPagar";
-            this.btnPagar.Size = new System.Drawing.Size(99, 30);
-            this.btnPagar.TabIndex = 56;
-            this.btnPagar.Text = "Pagar";
-            this.btnPagar.UseVisualStyleBackColor = true;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "NOME_PRODUTOS";
+            dataGridViewCellStyle82.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle82;
+            this.dataGridViewTextBoxColumn1.HeaderText = "NOME_PRODUTOS";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 300;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "TIPO_PRODUTOS";
+            dataGridViewCellStyle83.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle83;
+            this.dataGridViewTextBoxColumn2.HeaderText = "TIPO_PRODUTOS";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "PRECO_PRODUTOS";
+            dataGridViewCellStyle84.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle84;
+            this.dataGridViewTextBoxColumn3.HeaderText = "PRECO_PRODUTOS";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "QTD_UNIT_PAC";
+            dataGridViewCellStyle85.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle85;
+            this.dataGridViewTextBoxColumn4.HeaderText = "QTD_UNIT_PAC";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 150;
+            // 
+            // nOMEPRODUTOSDataGridViewTextBoxColumn
+            // 
+            this.nOMEPRODUTOSDataGridViewTextBoxColumn.DataPropertyName = "NOME_PRODUTOS";
+            dataGridViewCellStyle86.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
+            this.nOMEPRODUTOSDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle86;
+            this.nOMEPRODUTOSDataGridViewTextBoxColumn.HeaderText = "NOME_PRODUTOS";
+            this.nOMEPRODUTOSDataGridViewTextBoxColumn.Name = "nOMEPRODUTOSDataGridViewTextBoxColumn";
+            this.nOMEPRODUTOSDataGridViewTextBoxColumn.Width = 300;
+            // 
+            // tIPOPRODUTOSDataGridViewTextBoxColumn
+            // 
+            this.tIPOPRODUTOSDataGridViewTextBoxColumn.DataPropertyName = "TIPO_PRODUTOS";
+            dataGridViewCellStyle87.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
+            this.tIPOPRODUTOSDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle87;
+            this.tIPOPRODUTOSDataGridViewTextBoxColumn.HeaderText = "TIPO_PRODUTOS";
+            this.tIPOPRODUTOSDataGridViewTextBoxColumn.Name = "tIPOPRODUTOSDataGridViewTextBoxColumn";
+            this.tIPOPRODUTOSDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // pRECOPRODUTOSDataGridViewTextBoxColumn
+            // 
+            this.pRECOPRODUTOSDataGridViewTextBoxColumn.DataPropertyName = "PRECO_PRODUTOS";
+            dataGridViewCellStyle88.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
+            this.pRECOPRODUTOSDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle88;
+            this.pRECOPRODUTOSDataGridViewTextBoxColumn.HeaderText = "PRECO_PRODUTOS";
+            this.pRECOPRODUTOSDataGridViewTextBoxColumn.Name = "pRECOPRODUTOSDataGridViewTextBoxColumn";
+            this.pRECOPRODUTOSDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // qTDUNITPACDataGridViewTextBoxColumn
+            // 
+            this.qTDUNITPACDataGridViewTextBoxColumn.DataPropertyName = "QTD_UNIT_PAC";
+            dataGridViewCellStyle89.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
+            this.qTDUNITPACDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle89;
+            this.qTDUNITPACDataGridViewTextBoxColumn.HeaderText = "QTD_UNIT_PAC";
+            this.qTDUNITPACDataGridViewTextBoxColumn.Name = "qTDUNITPACDataGridViewTextBoxColumn";
+            this.qTDUNITPACDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // COD_NOTA_FORN
+            // 
+            this.COD_NOTA_FORN.DataPropertyName = "COD_NOTA_FORN";
+            dataGridViewCellStyle90.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
+            this.COD_NOTA_FORN.DefaultCellStyle = dataGridViewCellStyle90;
+            this.COD_NOTA_FORN.HeaderText = "COD_NOTA_FORN";
+            this.COD_NOTA_FORN.Name = "COD_NOTA_FORN";
+            // 
+            // vALORCOMPRADataGridViewTextBoxColumn
+            // 
+            this.vALORCOMPRADataGridViewTextBoxColumn.DataPropertyName = "VALOR_COMPRA";
+            dataGridViewCellStyle91.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
+            this.vALORCOMPRADataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle91;
+            this.vALORCOMPRADataGridViewTextBoxColumn.HeaderText = "VALOR_COMPRA";
+            this.vALORCOMPRADataGridViewTextBoxColumn.Name = "vALORCOMPRADataGridViewTextBoxColumn";
+            // 
+            // dATAEMISSAODataGridViewTextBoxColumn
+            // 
+            this.dATAEMISSAODataGridViewTextBoxColumn.DataPropertyName = "DATA_EMISSAO";
+            dataGridViewCellStyle92.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
+            this.dATAEMISSAODataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle92;
+            this.dATAEMISSAODataGridViewTextBoxColumn.HeaderText = "DATA_EMISSAO";
+            this.dATAEMISSAODataGridViewTextBoxColumn.Name = "dATAEMISSAODataGridViewTextBoxColumn";
+            // 
+            // oBSERVACAODataGridViewTextBoxColumn
+            // 
+            this.oBSERVACAODataGridViewTextBoxColumn.DataPropertyName = "OBSERVACAO";
+            dataGridViewCellStyle93.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
+            this.oBSERVACAODataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle93;
+            this.oBSERVACAODataGridViewTextBoxColumn.HeaderText = "OBSERVACAO";
+            this.oBSERVACAODataGridViewTextBoxColumn.Name = "oBSERVACAODataGridViewTextBoxColumn";
+            // 
+            // nOMEFORNECEDORDataGridViewTextBoxColumn
+            // 
+            this.nOMEFORNECEDORDataGridViewTextBoxColumn.DataPropertyName = "NOME_FORNECEDOR";
+            dataGridViewCellStyle94.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
+            this.nOMEFORNECEDORDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle94;
+            this.nOMEFORNECEDORDataGridViewTextBoxColumn.HeaderText = "NOME_FORNECEDOR";
+            this.nOMEFORNECEDORDataGridViewTextBoxColumn.Name = "nOMEFORNECEDORDataGridViewTextBoxColumn";
+            // 
+            // cNPJFORNECEDORDataGridViewTextBoxColumn
+            // 
+            this.cNPJFORNECEDORDataGridViewTextBoxColumn.DataPropertyName = "CNPJ_FORNECEDOR";
+            dataGridViewCellStyle95.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
+            this.cNPJFORNECEDORDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle95;
+            this.cNPJFORNECEDORDataGridViewTextBoxColumn.HeaderText = "CNPJ_FORNECEDOR";
+            this.cNPJFORNECEDORDataGridViewTextBoxColumn.Name = "cNPJFORNECEDORDataGridViewTextBoxColumn";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Black;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(227, 122);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(155, 25);
+            this.label2.TabIndex = 57;
+            this.label2.Text = "Notas Fiscais";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Black;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(930, 122);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(106, 25);
+            this.label5.TabIndex = 58;
+            this.label5.Text = "Produtos";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Black;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(915, 117);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(106, 25);
+            this.label6.TabIndex = 60;
+            this.label6.Text = "Produtos";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Black;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(212, 117);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(155, 25);
+            this.label9.TabIndex = 59;
+            this.label9.Text = "Notas Fiscais";
             // 
             // frmCompras
             // 
@@ -1225,17 +1335,17 @@
             this.tabPage_Divida.ResumeLayout(false);
             this.tabPage_Divida.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProdutosDividas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infoProdutosDividasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.daDadosEntrada)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNOtasDividas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infoNotaDividasBindingSource)).EndInit();
             this.tabPage_CompraAntg.ResumeLayout(false);
             this.tabPage_CompraAntg.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProdutosAntigas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNotasAntigas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_Logo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.infoProdutosDividasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.daDadosEntrada)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.infoNotaDividasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.infoProdutosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNotasAntigas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.infoNotaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.daDadosEntrada1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.compraDividasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comprasAntigasBindingSource)).EndInit();
@@ -1253,8 +1363,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage_CompraAntg;
         private System.Windows.Forms.PictureBox picBox_Logo;
-        private System.Windows.Forms.Label lbl_Data;
-        private System.Windows.Forms.Label lbl_Data2;
         private Dados.daDadosEntrada daDadosEntrada;
         private System.Windows.Forms.BindingSource nOTAFISCALFORNECEDORBindingSource;
         private Dados.daDadosEntradaTableAdapters.NOTA_FISCAL_FORNECEDORTableAdapter nOTA_FISCAL_FORNECEDORTableAdapter;
@@ -1313,10 +1421,6 @@
         private System.Windows.Forms.Label lblInicioAntigas;
         private System.Windows.Forms.Button btnLimparAntigas;
         private System.Windows.Forms.DataGridView dataGridViewProdutosDividas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridView dataGridViewNOtasDividas;
         private System.Windows.Forms.Button btnLimparDividas;
         private System.Windows.Forms.Label lblFimDividas;
@@ -1336,23 +1440,31 @@
         private Dados.daDadosEntradaTableAdapters.infoNotaTableAdapter infoNotaTableAdapter1;
         private Dados.daDadosEntradaTableAdapters.TableAdapterManager tableAdapterManager;
         private Dados.daDadosEntradaTableAdapters.infoProdutosTableAdapter infoProdutosTableAdapter1;
+        private System.Windows.Forms.BindingSource infoProdutosBindingSource;
+        private System.Windows.Forms.BindingSource infoNotaBindingSource;
+        private System.Windows.Forms.Button btnPagar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn COD_NOTA_FORND;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridViewTextBoxColumn nOMEPRODUTOSDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tIPOPRODUTOSDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pRECOPRODUTOSDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn qTDUNITPACDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource infoProdutosBindingSource;
-        private System.Windows.Forms.BindingSource infoNotaBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn COD_NOTA_FORN;
         private System.Windows.Forms.DataGridViewTextBoxColumn vALORCOMPRADataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dATAEMISSAODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn oBSERVACAODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nOMEFORNECEDORDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cNPJFORNECEDORDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COD_NOTA_FORND;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.Button btnPagar;
     }
 }

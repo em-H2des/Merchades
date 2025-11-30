@@ -39,8 +39,11 @@
             this.fecharToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.dataToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.dataToolStripStatusLabelUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelData = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -53,6 +56,7 @@
             this.comprasToolStripMenuItem,
             this.estoqueToolStripMenuItem,
             this.exibirNotaFiscalToolStripMenuItem,
+            this.toolStripMenuItem1,
             this.fecharToolStripMenuItem,
             this.logoToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
@@ -137,21 +141,50 @@
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dataToolStripStatusLabel});
+            this.toolStripStatusLabelData,
+            this.dataToolStripStatusLabelUsuario,
+            this.toolStripStatusLabel1});
             this.statusStrip.Location = new System.Drawing.Point(0, 539);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(1184, 22);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
-            // dataToolStripStatusLabel
+            // dataToolStripStatusLabelUsuario
             // 
-            this.dataToolStripStatusLabel.BackColor = System.Drawing.Color.SeaGreen;
-            this.dataToolStripStatusLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataToolStripStatusLabel.Name = "dataToolStripStatusLabel";
-            this.dataToolStripStatusLabel.Size = new System.Drawing.Size(1169, 17);
-            this.dataToolStripStatusLabel.Spring = true;
-            this.dataToolStripStatusLabel.Text = "Data: ";
+            this.dataToolStripStatusLabelUsuario.BackColor = System.Drawing.Color.SeaGreen;
+            this.dataToolStripStatusLabelUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataToolStripStatusLabelUsuario.Name = "dataToolStripStatusLabelUsuario";
+            this.dataToolStripStatusLabelUsuario.Size = new System.Drawing.Size(569, 17);
+            this.dataToolStripStatusLabelUsuario.Spring = true;
+            this.dataToolStripStatusLabelUsuario.Text = "Usuario:";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
+            // 
+            // toolStripStatusLabelData
+            // 
+            this.toolStripStatusLabelData.BackColor = System.Drawing.Color.SeaGreen;
+            this.toolStripStatusLabelData.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.toolStripStatusLabelData.Name = "toolStripStatusLabelData";
+            this.toolStripStatusLabelData.Size = new System.Drawing.Size(569, 17);
+            this.toolStripStatusLabelData.Spring = true;
+            this.toolStripStatusLabelData.Text = "Data: ";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(82)))), ((int)(((byte)(66)))));
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.toolStripMenuItem1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(96, 28);
+            this.toolStripMenuItem1.Text = "Log Out";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // MDIEntrada
             // 
@@ -185,7 +218,7 @@
 
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.StatusStrip statusStrip;
-        private System.Windows.Forms.ToolStripStatusLabel dataToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel dataToolStripStatusLabelUsuario;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripMenuItem fornecedorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listagemDeFornecedoresToolStripMenuItem;
@@ -194,6 +227,9 @@
         private System.Windows.Forms.ToolStripMenuItem exibirNotaFiscalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fecharToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelData;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }
 
