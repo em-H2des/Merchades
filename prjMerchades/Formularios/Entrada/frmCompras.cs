@@ -9,6 +9,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -28,6 +29,10 @@ namespace prjMerchades.Formularios.Entrada
 
         private void frmCompras_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'daDadosEntrada1.infoNotaDividas'. Você pode movê-la ou removê-la conforme necessário.
+            this.infoNotaDividasTableAdapter.Fill(this.daDadosEntrada.infoNotaDividas);
+            // TODO: esta linha de código carrega dados na tabela 'daDadosEntrada.infoNota'. Você pode movê-la ou removê-la conforme necessário.
+            this.infoNotaTableAdapter1.Fill(this.daDadosEntrada.infoNota);
             // TODO: esta linha de código carrega dados na tabela 'daDadosEntrada3.compraDividas'. Você pode movê-la ou removê-la conforme necessário.
             this.compraDividasTableAdapter.Fill(this.daDadosEntrada.compraDividas);
             // TODO: esta linha de código carrega dados na tabela 'daDadosEntrada3.comprasAntigas'. Você pode movê-la ou removê-la conforme necessário.
@@ -309,16 +314,16 @@ namespace prjMerchades.Formularios.Entrada
             }
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {           
-            string coluna = cmbFiltro.Text; //qual coluna da tabela sera aplicado o filtro
-            string filtro = txtFiltro.Text.Trim(); //filtragem
+        private void btnBuscarDividas_Click(object sender, EventArgs e)
+        {
+            string coluna = cmbFiltroDividas.Text; //qual coluna da tabela sera aplicado o filtro
+            string filtro = txtFiltroDividas.Text.Trim(); //filtragem
             string resultado = "";
 
             if (coluna == "Fornecedor")
             {
                 resultado = $"NOME_FORNECEDOR LIKE '%{filtro}%'";
-                compraDividasBindingSource.Filter = resultado;
+                infoNotaDividasBindingSource.Filter = resultado;
                 return;
             }
 
@@ -329,7 +334,7 @@ namespace prjMerchades.Formularios.Entrada
                 if (decimal.TryParse(filtro, out decimal valor))
                 {
                     resultado = $"Convert(VALOR_COMPRA, 'System.String') LIKE '%{filtro}%'";
-                    compraDividasBindingSource.Filter = resultado;
+                    infoNotaDividasBindingSource.Filter = resultado;
                 }
                 else
                 {
@@ -341,22 +346,16 @@ namespace prjMerchades.Formularios.Entrada
 
             else if (coluna == "Data")
             {
-                if (!DateTime.TryParse(filtro, out DateTime dataFiltro))
-                {
-                    MessageBox.Show("Digite uma data no formato dd/mm/yyyy");
-                    return;
-                }
-                
-                DateTime inicio = dataFiltro.Date; //deixa zerado as horas da data
-                DateTime fim = inicio.AddDays(1); //add 1 dia
+                DateTime datainicio = dateInicioDividas.Value.Date;
+                DateTime datafim = dateFimDividas.Value.Date.AddDays(1); // pega até o fim do último dia
 
-                //a data ta no formato americano, aqui ele converte e faz com que pegue as 24h do dia
-                string inicioUS = inicio.ToString("MM/dd/yyyy");
-                string fimUS = fim.ToString("MM/dd/yyyy");
+                // O usuário escolhe BR, mas aqui você transforma para o formato aceito no Filter
+                string inicioUS = datainicio.ToString("MM/dd/yyyy");
+                string fimUS = datafim.ToString("MM/dd/yyyy");
 
-                resultado = $"DATA_EMISSAO >= #{inicioUS}# AND DATA_EMISSAO < #{fimUS}#"; // o filtro acaba pegando as 24h do dia digitado
+                resultado = $"DATA_EMISSAO >= #{inicioUS}# AND DATA_EMISSAO < #{fimUS}#";
 
-                compraDividasBindingSource.Filter = resultado;
+                infoNotaDividasBindingSource.Filter = resultado;
                 return;
             }
         }
@@ -370,7 +369,7 @@ namespace prjMerchades.Formularios.Entrada
             if (coluna == "Fornecedor")
             {
                 resultado = $"NOME_FORNECEDOR LIKE '%{filtro}%'";
-                comprasAntigasBindingSource.Filter = resultado;
+                infoNotaBindingSource.Filter = resultado;
                 return;
             }
 
@@ -381,7 +380,7 @@ namespace prjMerchades.Formularios.Entrada
                 if (decimal.TryParse(filtro, out decimal valor))
                 {
                     resultado = $"Convert(VALOR_COMPRA, 'System.String') LIKE '%{filtro}%'";
-                    comprasAntigasBindingSource.Filter = resultado;
+                    infoNotaBindingSource.Filter = resultado;
                 }
                 else
                 {
@@ -393,25 +392,19 @@ namespace prjMerchades.Formularios.Entrada
 
             else if (coluna == "Data")
             {
-                if (!DateTime.TryParse(filtro, out DateTime dataFiltro))
-                {
-                    MessageBox.Show("Digite uma data no formato dd/mm/yyyy");
-                    return;
-                }
+                DateTime datainicio = dateInicioAntigas.Value.Date;
+                DateTime datafim = dateFimAntigas.Value.Date.AddDays(1); // pega até o fim do último dia
 
+                // O usuário escolhe BR, mas aqui você transforma para o formato aceito no Filter
+                string inicioUS = datainicio.ToString("MM/dd/yyyy");
+                string fimUS = datafim.ToString("MM/dd/yyyy");
 
-                DateTime inicio = dataFiltro.Date; //deixa zerado as horas da data
-                DateTime fim = inicio.AddDays(1);
+                resultado = $"DATA_EMISSAO >= #{inicioUS}# AND DATA_EMISSAO < #{fimUS}#";
 
-                //a data ta no formato americano, aqui ele converte e faz com que pegue as 24h do dia
-                string inicioUS = inicio.ToString("MM/dd/yyyy");
-                string fimUS = fim.ToString("MM/dd/yyyy");
-
-                resultado = $"DATA_EMISSAO >= #{inicioUS}# AND DATA_EMISSAO < #{fimUS}#"; // o filtro acaba pegando as 24h do dia digitado
-
-                comprasAntigasBindingSource.Filter = resultado;
+                infoNotaBindingSource.Filter = resultado;
                 return;
             }
+
         }
 
 
@@ -424,5 +417,143 @@ namespace prjMerchades.Formularios.Entrada
                 return;
             }
         }
+
+        private void dataGridViewNotas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            string idNota = dataGridViewNotasAntigas.Rows[e.RowIndex].Cells["COD_NOTA_FORN"].Value.ToString();
+
+            this.infoProdutosTableAdapter1.Fill(this.daDadosEntrada.infoProdutos, idNota);
+        }
+
+        private void cmbFiltroAntigas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbFiltroAntigas.Text == "Data")
+            {
+                // Mostra os DateTimePickers
+                dateInicioAntigas.Visible = true;
+                dateFimAntigas.Visible = true;
+                lblInicioAntigas.Visible = true;
+                lblFimAntigas.Visible = true;
+
+                // Oculta o campo de texto
+                txtFiltroAntigas.Visible = false;
+                lblFiltroAntigas.Visible = false;
+            }
+            else
+            {
+                // Oculta os DateTimePickers
+                dateInicioAntigas.Visible = false;
+                dateFimAntigas.Visible = false;
+                lblInicioAntigas.Visible = false;
+                lblFimAntigas.Visible = false;
+
+                // Mostra o textbox normal
+                txtFiltroAntigas.Visible = true;
+                lblFiltroAntigas.Visible = true;
+            }
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            // Remove QUALQUER filtro aplicado
+            infoNotaBindingSource.RemoveFilter();
+
+            // Reseta campos visuais
+            cmbFiltroAntigas.SelectedIndex = -1;
+            txtFiltroAntigas.Text = "";
+
+            dateInicioAntigas.Value = DateTime.Today;
+            dateFimAntigas.Value = DateTime.Today;
+
+            dateInicioAntigas.Visible = false;
+            dateFimAntigas.Visible = false;
+            txtFiltroAntigas.Visible = true;
+            lblFiltroAntigas.Visible = true;
+
+            MessageBox.Show("Mostrando todas as notas.");
+        }
+
+        private void cmbFiltroDividas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbFiltroDividas.Text == "Data")
+            {
+                // Mostra os DateTimePickers
+                dateInicioDividas.Visible = true;
+                dateFimDividas.Visible = true;
+                lblInicioDividas.Visible = true;
+                lblFimDividas.Visible = true;
+
+                // Oculta o campo de texto
+                txtFiltroDividas.Visible = false;
+                lblFiltroDividas.Visible = false;
+            }
+            else
+            {
+                // Oculta os DateTimePickers
+                dateInicioDividas.Visible = false;
+                dateFimDividas.Visible = false;
+                lblInicioDividas.Visible = false;
+                lblFimDividas.Visible = false;
+
+                // Mostra o textbox normal
+                txtFiltroDividas.Visible = true;
+                lblFiltroDividas.Visible = true;
+            }
+        }
+
+        private void btnLimparDividas_Click(object sender, EventArgs e)
+        {
+            // Remove QUALQUER filtro aplicado
+            infoNotaDividasBindingSource.RemoveFilter();
+
+            // Reseta campos visuais
+            cmbFiltroDividas.SelectedIndex = -1;
+            txtFiltroDividas.Text = "";
+
+            dateInicioDividas.Value = DateTime.Today;
+            dateFimDividas.Value = DateTime.Today;
+
+            dateInicioDividas.Visible = false;
+            dateFimDividas.Visible = false;
+            txtFiltroDividas.Visible = true;
+            lblFiltroDividas.Visible = true;
+
+            MessageBox.Show("Mostrando todas as notas.");
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.infoNotaTableAdapter1.FillBy(this.daDadosEntrada.infoNota);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void pnCamposItens_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lbl_CodBarras_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridViewNOtasDividas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            string idNota = dataGridViewNOtasDividas.Rows[e.RowIndex].Cells["COD_NOTA_FORND"].Value.ToString();
+
+            this.infoProdutosDividasTableAdapter.FillBy(this.daDadosEntrada.infoProdutosDividas, idNota);
+        }
     }
 }
+
