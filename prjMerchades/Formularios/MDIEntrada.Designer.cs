@@ -39,7 +39,7 @@
             this.fecharToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.dataToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.dataToolStripStatusLabelUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.lblNomeUsuario = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
@@ -54,6 +54,7 @@
             this.comprasToolStripMenuItem,
             this.estoqueToolStripMenuItem,
             this.exibirNotaFiscalToolStripMenuItem,
+            this.toolStripMenuItem1,
             this.fecharToolStripMenuItem,
             this.logoToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
@@ -138,14 +139,16 @@
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dataToolStripStatusLabel});
+            this.toolStripStatusLabelData,
+            this.dataToolStripStatusLabelUsuario,
+            this.toolStripStatusLabel1});
             this.statusStrip.Location = new System.Drawing.Point(0, 539);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(1184, 22);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
-            // dataToolStripStatusLabel
+            // dataToolStripStatusLabelUsuario
             // 
             this.dataToolStripStatusLabel.BackColor = System.Drawing.Color.SeaGreen;
             this.dataToolStripStatusLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -202,7 +205,7 @@
 
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.StatusStrip statusStrip;
-        private System.Windows.Forms.ToolStripStatusLabel dataToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel dataToolStripStatusLabelUsuario;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripMenuItem fornecedorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listagemDeFornecedoresToolStripMenuItem;

@@ -80,7 +80,6 @@ namespace prjMerchades.Formularios
             frmCadastroFornecedor.MdiParent = this;
             frmCadastroFornecedor.Show();
         }
-
         private void MDIEntrada_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();

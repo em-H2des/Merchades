@@ -11,7 +11,7 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PRODUTOSEntradaTableAdapter" GeneratorDataComponentClassName="PRODUTOSEntradaTableAdapter" Name="PRODUTOSEntrada" UserDataComponentName="PRODUTOSEntradaTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="masterConnectionString (Settings)" DbObjectName="master.dbo.PRODUTOS" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="db_240098_66_A_1_2024.dbo.PRODUTOS" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[PRODUTOS] WHERE (([ID_PRODUTOS] = @Original_ID_PRODUTOS) AND ((@IsNull_NOME_PRODUTOS = 1 AND [NOME_PRODUTOS] IS NULL) OR ([NOME_PRODUTOS] = @Original_NOME_PRODUTOS)) AND ((@IsNull_TIPO_PRODUTOS = 1 AND [TIPO_PRODUTOS] IS NULL) OR ([TIPO_PRODUTOS] = @Original_TIPO_PRODUTOS)) AND ((@IsNull_TIPO_UNITARIO = 1 AND [TIPO_UNITARIO] IS NULL) OR ([TIPO_UNITARIO] = @Original_TIPO_UNITARIO)) AND ((@IsNull_PRECO_PRODUTOS = 1 AND [PRECO_PRODUTOS] IS NULL) OR ([PRECO_PRODUTOS] = @Original_PRECO_PRODUTOS)) AND ((@IsNull_CODIGO_DE_BARRAS = 1 AND [CODIGO_DE_BARRAS] IS NULL) OR ([CODIGO_DE_BARRAS] = @Original_CODIGO_DE_BARRAS)))</CommandText>
@@ -85,7 +85,7 @@ SELECT ID_PRODUTOS, NOME_PRODUTOS, TIPO_PRODUTOS, TIPO_UNITARIO, PRECO_PRODUTOS,
               <Mapping SourceColumn="CODIGO_DE_BARRAS" DataSetColumn="CODIGO_DE_BARRAS" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="masterConnectionString (Settings)" DbObjectName="master.dbo.PRODUTOS" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="ultimoId" Modifier="Public" Name="ultimoId" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ultimoId">
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="db_240098_66_A_1_2024.dbo.PRODUTOS" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="ultimoId" Modifier="Public" Name="ultimoId" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ultimoId">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        TOP (1) ID_PRODUTOS
@@ -162,7 +162,7 @@ SELECT ID_ESTOQUE, QTD_ESTOQUE_ADDED, ID_PRODUTOS, ID_NOTA_FISCAL_FORNEC FROM ES
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="NOTA_FISCAL_FORNECEDORTableAdapter" GeneratorDataComponentClassName="NOTA_FISCAL_FORNECEDORTableAdapter" Name="NOTA_FISCAL_FORNECEDOR" UserDataComponentName="NOTA_FISCAL_FORNECEDORTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="masterConnectionString (Settings)" DbObjectName="master.dbo.NOTA_FISCAL_FORNECEDOR" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="db_240098_66_A_1_2024.dbo.NOTA_FISCAL_FORNECEDOR" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[NOTA_FISCAL_FORNECEDOR] WHERE (([ID_NOTA_FISCAL_FORNEC] = @Original_ID_NOTA_FISCAL_FORNEC) AND ((@IsNull_DATA_EMISSAO = 1 AND [DATA_EMISSAO] IS NULL) OR ([DATA_EMISSAO] = @Original_DATA_EMISSAO)) AND ((@IsNull_VALOR_COMPRA = 1 AND [VALOR_COMPRA] IS NULL) OR ([VALOR_COMPRA] = @Original_VALOR_COMPRA)) AND ((@IsNull_COD_NOTA_FORN = 1 AND [COD_NOTA_FORN] IS NULL) OR ([COD_NOTA_FORN] = @Original_COD_NOTA_FORN)) AND ((@IsNull_OBSERVACAO = 1 AND [OBSERVACAO] IS NULL) OR ([OBSERVACAO] = @Original_OBSERVACAO)) AND ((@IsNull_ID_FORNECEDOR = 1 AND [ID_FORNECEDOR] IS NULL) OR ([ID_FORNECEDOR] = @Original_ID_FORNECEDOR)) AND ((@IsNull_PAGO = 1 AND [PAGO] IS NULL) OR ([PAGO] = @Original_PAGO)))</CommandText>
@@ -243,7 +243,7 @@ SELECT ID_NOTA_FISCAL_FORNEC, DATA_EMISSAO, VALOR_COMPRA, COD_NOTA_FORN, OBSERVA
               <Mapping SourceColumn="PAGO" DataSetColumn="PAGO" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="masterConnectionString (Settings)" DbObjectName="master.dbo.NOTA_FISCAL_FORNECEDOR" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="ultimoId" Modifier="Public" Name="ultimoId" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ultimoId">
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="db_240098_66_A_1_2024.dbo.NOTA_FISCAL_FORNECEDOR" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="ultimoId" Modifier="Public" Name="ultimoId" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ultimoId">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        TOP (1) ID_NOTA_FISCAL_FORNEC
@@ -257,7 +257,7 @@ ORDER BY ID_NOTA_FISCAL_FORNEC DESC</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="compraDividasTableAdapter" GeneratorDataComponentClassName="compraDividasTableAdapter" Name="compraDividas" UserDataComponentName="compraDividasTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="masterConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT NF.ID_NOTA_FISCAL_FORNEC, F.NOME_FORNECEDOR, NF.OBSERVACAO, NF.DATA_EMISSAO, NF.VALOR_COMPRA
@@ -280,7 +280,7 @@ WHERE PAGO = 'n'</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="comprasAntigasTableAdapter" GeneratorDataComponentClassName="comprasAntigasTableAdapter" Name="comprasAntigas" UserDataComponentName="comprasAntigasTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="masterConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT NF.ID_NOTA_FISCAL_FORNEC, F.NOME_FORNECEDOR, NF.OBSERVACAO, NF.DATA_EMISSAO, NF.VALOR_COMPRA
@@ -331,7 +331,7 @@ LEFT JOIN NOTA_FISCAL_FORNECEDOR N
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FORNECEDORTableAdapter" GeneratorDataComponentClassName="FORNECEDORTableAdapter" Name="FORNECEDOR" UserDataComponentName="FORNECEDORTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="masterConnectionString (Settings)" DbObjectName="db_240098_66_A_1_2024.dbo.FORNECEDOR" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="db_240098_66_A_1_2024.dbo.FORNECEDOR" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[FORNECEDOR] WHERE (([ID_FORNECEDOR] = @Original_ID_FORNECEDOR) AND ((@IsNull_NOME_FORNECEDOR = 1 AND [NOME_FORNECEDOR] IS NULL) OR ([NOME_FORNECEDOR] = @Original_NOME_FORNECEDOR)) AND ((@IsNull_TELEFONE_FORNECEDOR = 1 AND [TELEFONE_FORNECEDOR] IS NULL) OR ([TELEFONE_FORNECEDOR] = @Original_TELEFONE_FORNECEDOR)) AND ((@IsNull_EMAIL_FORNECEDOR = 1 AND [EMAIL_FORNECEDOR] IS NULL) OR ([EMAIL_FORNECEDOR] = @Original_EMAIL_FORNECEDOR)) AND ((@IsNull_ESTADO_FORNECEDOR = 1 AND [ESTADO_FORNECEDOR] IS NULL) OR ([ESTADO_FORNECEDOR] = @Original_ESTADO_FORNECEDOR)) AND ((@IsNull_CEP_FORNECEDOR = 1 AND [CEP_FORNECEDOR] IS NULL) OR ([CEP_FORNECEDOR] = @Original_CEP_FORNECEDOR)) AND ((@IsNull_CNPJ_FORNECEDOR = 1 AND [CNPJ_FORNECEDOR] IS NULL) OR ([CNPJ_FORNECEDOR] = @Original_CNPJ_FORNECEDOR)))</CommandText>
@@ -413,6 +413,209 @@ SELECT ID_FORNECEDOR, NOME_FORNECEDOR, TELEFONE_FORNECEDOR, EMAIL_FORNECEDOR, ES
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="infoNotaTableAdapter" GeneratorDataComponentClassName="infoNotaTableAdapter" Name="infoNota" UserDataComponentName="infoNotaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT 
+    NF.COD_NOTA_FORN,
+    NF.VALOR_COMPRA,
+    NF.DATA_EMISSAO,
+    NF.OBSERVACAO,
+    F.NOME_FORNECEDOR,
+    F.CNPJ_FORNECEDOR
+FROM NOTA_FISCAL_FORNECEDOR NF
+INNER JOIN FORNECEDOR F ON F.ID_FORNECEDOR = NF.ID_FORNECEDOR
+WHERE NF.PAGO = 's';
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="COD_NOTA_FORN" DataSetColumn="COD_NOTA_FORN" />
+              <Mapping SourceColumn="VALOR_COMPRA" DataSetColumn="VALOR_COMPRA" />
+              <Mapping SourceColumn="DATA_EMISSAO" DataSetColumn="DATA_EMISSAO" />
+              <Mapping SourceColumn="OBSERVACAO" DataSetColumn="OBSERVACAO" />
+              <Mapping SourceColumn="NOME_FORNECEDOR" DataSetColumn="NOME_FORNECEDOR" />
+              <Mapping SourceColumn="CNPJ_FORNECEDOR" DataSetColumn="CNPJ_FORNECEDOR" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT 
+    NF.COD_NOTA_FORN,
+    NF.VALOR_COMPRA,
+    NF.DATA_EMISSAO,
+    NF.OBSERVACAO,
+    F.NOME_FORNECEDOR,
+    F.CNPJ_FORNECEDOR
+FROM NOTA_FISCAL_FORNECEDOR NF
+INNER JOIN FORNECEDOR F ON F.ID_FORNECEDOR = NF.ID_FORNECEDOR
+WHERE NF.PAGO = 's';
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="infoProdutosTableAdapter" GeneratorDataComponentClassName="infoProdutosTableAdapter" Name="infoProdutos" UserDataComponentName="infoProdutosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT
+    P.NOME_PRODUTOS,
+    P.TIPO_PRODUTOS,
+    P.PRECO_PRODUTOS,
+    INF.QTD_UNIT_PAC
+FROM ITENS_NOTA_FORNECEDOR INF
+INNER JOIN PRODUTOS P ON P.ID_PRODUTOS = INF.ID_PRODUTOS
+INNER JOIN NOTA_FISCAL_FORNECEDOR NF ON NF.ID_NOTA_FISCAL_FORNEC = INF.ID_NOTA_FISCAL_FORNEC
+WHERE NF.COD_NOTA_FORN = @CodNota
+  AND NF.PAGO = 's';
+</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="CodNota" ColumnName="COD_NOTA_FORN" DataSourceName="master.dbo.NOTA_FISCAL_FORNECEDOR" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@CodNota" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="COD_NOTA_FORN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NOME_PRODUTOS" DataSetColumn="NOME_PRODUTOS" />
+              <Mapping SourceColumn="TIPO_PRODUTOS" DataSetColumn="TIPO_PRODUTOS" />
+              <Mapping SourceColumn="PRECO_PRODUTOS" DataSetColumn="PRECO_PRODUTOS" />
+              <Mapping SourceColumn="QTD_UNIT_PAC" DataSetColumn="QTD_UNIT_PAC" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT
+    P.NOME_PRODUTOS,
+    P.TIPO_PRODUTOS,
+    P.PRECO_PRODUTOS,
+    INF.QTD_UNIT_PAC
+FROM ITENS_NOTA_FORNECEDOR INF
+INNER JOIN PRODUTOS P ON P.ID_PRODUTOS = INF.ID_PRODUTOS
+INNER JOIN NOTA_FISCAL_FORNECEDOR NF ON NF.ID_NOTA_FISCAL_FORNEC = INF.ID_NOTA_FISCAL_FORNEC
+WHERE NF.COD_NOTA_FORN = @CodNota
+  AND NF.PAGO = 's';
+</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="CodNota" ColumnName="COD_NOTA_FORN" DataSourceName="master.dbo.NOTA_FISCAL_FORNECEDOR" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@CodNota" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="COD_NOTA_FORN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="infoProdutosDividasTableAdapter" GeneratorDataComponentClassName="infoProdutosDividasTableAdapter" Name="infoProdutosDividas" UserDataComponentName="infoProdutosDividasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT
+    P.NOME_PRODUTOS,
+    P.TIPO_PRODUTOS,
+    P.PRECO_PRODUTOS,
+    INF.QTD_UNIT_PAC
+FROM ITENS_NOTA_FORNECEDOR INF
+INNER JOIN PRODUTOS P ON P.ID_PRODUTOS = INF.ID_PRODUTOS
+INNER JOIN NOTA_FISCAL_FORNECEDOR NF ON NF.ID_NOTA_FISCAL_FORNEC = INF.ID_NOTA_FISCAL_FORNEC
+WHERE NF.COD_NOTA_FORN = @CodNota
+  AND NF.PAGO = 'n';
+</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="CodNota" ColumnName="COD_NOTA_FORN" DataSourceName="master.dbo.NOTA_FISCAL_FORNECEDOR" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@CodNota" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="COD_NOTA_FORN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NOME_PRODUTOS" DataSetColumn="NOME_PRODUTOS" />
+              <Mapping SourceColumn="TIPO_PRODUTOS" DataSetColumn="TIPO_PRODUTOS" />
+              <Mapping SourceColumn="PRECO_PRODUTOS" DataSetColumn="PRECO_PRODUTOS" />
+              <Mapping SourceColumn="QTD_UNIT_PAC" DataSetColumn="QTD_UNIT_PAC" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        P.NOME_PRODUTOS, P.TIPO_PRODUTOS, P.PRECO_PRODUTOS, INF.QTD_UNIT_PAC
+FROM            ITENS_NOTA_FORNECEDOR AS INF INNER JOIN
+                         PRODUTOS AS P ON P.ID_PRODUTOS = INF.ID_PRODUTOS INNER JOIN
+                         NOTA_FISCAL_FORNECEDOR AS NF ON NF.ID_NOTA_FISCAL_FORNEC = INF.ID_NOTA_FISCAL_FORNEC
+WHERE        (NF.COD_NOTA_FORN = @CodNota) AND (NF.PAGO = 'n')</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="CodNota" ColumnName="COD_NOTA_FORN" DataSourceName="master.dbo.NOTA_FISCAL_FORNECEDOR" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@CodNota" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="COD_NOTA_FORN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="infoNotaDividasTableAdapter" GeneratorDataComponentClassName="infoNotaDividasTableAdapter" Name="infoNotaDividas" UserDataComponentName="infoNotaDividasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT 
+    NF.COD_NOTA_FORN,
+    NF.VALOR_COMPRA,
+    NF.DATA_EMISSAO,
+    NF.OBSERVACAO,
+    F.NOME_FORNECEDOR,
+    F.CNPJ_FORNECEDOR
+FROM NOTA_FISCAL_FORNECEDOR NF
+INNER JOIN FORNECEDOR F ON F.ID_FORNECEDOR = NF.ID_FORNECEDOR
+WHERE NF.PAGO = 'n';
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="COD_NOTA_FORN" DataSetColumn="COD_NOTA_FORN" />
+              <Mapping SourceColumn="VALOR_COMPRA" DataSetColumn="VALOR_COMPRA" />
+              <Mapping SourceColumn="DATA_EMISSAO" DataSetColumn="DATA_EMISSAO" />
+              <Mapping SourceColumn="OBSERVACAO" DataSetColumn="OBSERVACAO" />
+              <Mapping SourceColumn="NOME_FORNECEDOR" DataSetColumn="NOME_FORNECEDOR" />
+              <Mapping SourceColumn="CNPJ_FORNECEDOR" DataSetColumn="CNPJ_FORNECEDOR" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        NF.COD_NOTA_FORN, NF.VALOR_COMPRA, NF.DATA_EMISSAO, NF.OBSERVACAO, F.NOME_FORNECEDOR, F.CNPJ_FORNECEDOR
+FROM            NOTA_FISCAL_FORNECEDOR AS NF INNER JOIN
+                         FORNECEDOR AS F ON F.ID_FORNECEDOR = NF.ID_FORNECEDOR
+WHERE        (NF.PAGO = 'n')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateNota" Modifier="Public" Name="UpdateNota" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="UpdateNota">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE NOTA_FISCAL_FORNECEDOR
+SET PAGO = 's'
+WHERE COD_NOTA_FORN = @ID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="ID" ColumnName="COD_NOTA_FORN" DataSourceName="master.dbo.NOTA_FISCAL_FORNECEDOR" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@ID" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="COD_NOTA_FORN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -457,7 +660,7 @@ SELECT ID_FORNECEDOR, NOME_FORNECEDOR, TELEFONE_FORNECEDOR, EMAIL_FORNECEDOR, ES
               <xs:element name="ID_ESTOQUE" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="ID_ESTOQUEColumn" msprop:Generator_ColumnPropNameInRow="ID_ESTOQUE" msprop:Generator_UserColumnName="ID_ESTOQUE" msprop:Generator_ColumnVarNameInTable="columnID_ESTOQUE" type="xs:int" />
               <xs:element name="ID_PRODUTOS" msprop:Generator_ColumnPropNameInTable="ID_PRODUTOSColumn" msprop:Generator_ColumnPropNameInRow="ID_PRODUTOS" msprop:Generator_UserColumnName="ID_PRODUTOS" msprop:Generator_ColumnVarNameInTable="columnID_PRODUTOS" type="xs:int" minOccurs="0" />
               <xs:element name="ID_NOTA_FISCAL_FORNEC" msprop:Generator_ColumnPropNameInTable="ID_NOTA_FISCAL_FORNECColumn" msprop:Generator_ColumnPropNameInRow="ID_NOTA_FISCAL_FORNEC" msprop:Generator_UserColumnName="ID_NOTA_FISCAL_FORNEC" msprop:Generator_ColumnVarNameInTable="columnID_NOTA_FISCAL_FORNEC" type="xs:int" minOccurs="0" />
-              <xs:element name="QTD_ESTOQUE_ADDED" msprop:Generator_UserColumnName="QTD_ESTOQUE_ADDED" msprop:Generator_ColumnPropNameInTable="QTD_ESTOQUE_ADDEDColumn" msprop:Generator_ColumnPropNameInRow="QTD_ESTOQUE_ADDED" msprop:Generator_ColumnVarNameInTable="columnQTD_ESTOQUE_ADDED" type="xs:int" minOccurs="0" />
+              <xs:element name="QTD_ESTOQUE_ADDED" msprop:Generator_ColumnPropNameInTable="QTD_ESTOQUE_ADDEDColumn" msprop:Generator_ColumnPropNameInRow="QTD_ESTOQUE_ADDED" msprop:Generator_UserColumnName="QTD_ESTOQUE_ADDED" msprop:Generator_ColumnVarNameInTable="columnQTD_ESTOQUE_ADDED" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -556,50 +759,166 @@ SELECT ID_FORNECEDOR, NOME_FORNECEDOR, TELEFONE_FORNECEDOR, EMAIL_FORNECEDOR, ES
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="QTD_ESTOQUE_ADDED" msprop:Generator_UserColumnName="QTD_ESTOQUE_ADDED" msprop:Generator_ColumnPropNameInTable="QTD_ESTOQUE_ADDEDColumn" msprop:Generator_ColumnPropNameInRow="QTD_ESTOQUE_ADDED" msprop:Generator_ColumnVarNameInTable="columnQTD_ESTOQUE_ADDED" type="xs:int" minOccurs="0" />
+              <xs:element name="QTD_ESTOQUE_ADDED" msprop:Generator_ColumnPropNameInTable="QTD_ESTOQUE_ADDEDColumn" msprop:Generator_ColumnPropNameInRow="QTD_ESTOQUE_ADDED" msprop:Generator_UserColumnName="QTD_ESTOQUE_ADDED" msprop:Generator_ColumnVarNameInTable="columnQTD_ESTOQUE_ADDED" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="FORNECEDOR" msprop:Generator_RowEvHandlerName="FORNECEDORRowChangeEventHandler" msprop:Generator_RowDeletedName="FORNECEDORRowDeleted" msprop:Generator_RowDeletingName="FORNECEDORRowDeleting" msprop:Generator_RowEvArgName="FORNECEDORRowChangeEvent" msprop:Generator_TablePropName="FORNECEDOR" msprop:Generator_RowChangedName="FORNECEDORRowChanged" msprop:Generator_RowChangingName="FORNECEDORRowChanging" msprop:Generator_TableClassName="FORNECEDORDataTable" msprop:Generator_RowClassName="FORNECEDORRow" msprop:Generator_TableVarName="tableFORNECEDOR" msprop:Generator_UserTableName="FORNECEDOR">
+        <xs:element name="FORNECEDOR" msprop:Generator_RowEvHandlerName="FORNECEDORRowChangeEventHandler" msprop:Generator_RowDeletedName="FORNECEDORRowDeleted" msprop:Generator_RowDeletingName="FORNECEDORRowDeleting" msprop:Generator_RowEvArgName="FORNECEDORRowChangeEvent" msprop:Generator_TablePropName="FORNECEDOR" msprop:Generator_RowChangedName="FORNECEDORRowChanged" msprop:Generator_UserTableName="FORNECEDOR" msprop:Generator_RowChangingName="FORNECEDORRowChanging" msprop:Generator_RowClassName="FORNECEDORRow" msprop:Generator_TableClassName="FORNECEDORDataTable" msprop:Generator_TableVarName="tableFORNECEDOR">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID_FORNECEDOR" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="ID_FORNECEDOR" msprop:Generator_ColumnPropNameInTable="ID_FORNECEDORColumn" msprop:Generator_ColumnVarNameInTable="columnID_FORNECEDOR" msprop:Generator_UserColumnName="ID_FORNECEDOR" type="xs:int" />
-              <xs:element name="NOME_FORNECEDOR" msprop:Generator_ColumnPropNameInRow="NOME_FORNECEDOR" msprop:Generator_ColumnPropNameInTable="NOME_FORNECEDORColumn" msprop:Generator_ColumnVarNameInTable="columnNOME_FORNECEDOR" msprop:Generator_UserColumnName="NOME_FORNECEDOR" minOccurs="0">
+              <xs:element name="ID_FORNECEDOR" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="ID_FORNECEDORColumn" msprop:Generator_ColumnPropNameInRow="ID_FORNECEDOR" msprop:Generator_UserColumnName="ID_FORNECEDOR" msprop:Generator_ColumnVarNameInTable="columnID_FORNECEDOR" type="xs:int" />
+              <xs:element name="NOME_FORNECEDOR" msprop:Generator_ColumnPropNameInTable="NOME_FORNECEDORColumn" msprop:Generator_ColumnPropNameInRow="NOME_FORNECEDOR" msprop:Generator_UserColumnName="NOME_FORNECEDOR" msprop:Generator_ColumnVarNameInTable="columnNOME_FORNECEDOR" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="TELEFONE_FORNECEDOR" msprop:Generator_ColumnPropNameInRow="TELEFONE_FORNECEDOR" msprop:Generator_ColumnPropNameInTable="TELEFONE_FORNECEDORColumn" msprop:Generator_ColumnVarNameInTable="columnTELEFONE_FORNECEDOR" msprop:Generator_UserColumnName="TELEFONE_FORNECEDOR" minOccurs="0">
+              <xs:element name="TELEFONE_FORNECEDOR" msprop:Generator_ColumnPropNameInTable="TELEFONE_FORNECEDORColumn" msprop:Generator_ColumnPropNameInRow="TELEFONE_FORNECEDOR" msprop:Generator_UserColumnName="TELEFONE_FORNECEDOR" msprop:Generator_ColumnVarNameInTable="columnTELEFONE_FORNECEDOR" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="15" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="EMAIL_FORNECEDOR" msprop:Generator_ColumnPropNameInRow="EMAIL_FORNECEDOR" msprop:Generator_ColumnPropNameInTable="EMAIL_FORNECEDORColumn" msprop:Generator_ColumnVarNameInTable="columnEMAIL_FORNECEDOR" msprop:Generator_UserColumnName="EMAIL_FORNECEDOR" minOccurs="0">
+              <xs:element name="EMAIL_FORNECEDOR" msprop:Generator_ColumnPropNameInTable="EMAIL_FORNECEDORColumn" msprop:Generator_ColumnPropNameInRow="EMAIL_FORNECEDOR" msprop:Generator_UserColumnName="EMAIL_FORNECEDOR" msprop:Generator_ColumnVarNameInTable="columnEMAIL_FORNECEDOR" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="180" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ESTADO_FORNECEDOR" msprop:Generator_ColumnPropNameInRow="ESTADO_FORNECEDOR" msprop:Generator_ColumnPropNameInTable="ESTADO_FORNECEDORColumn" msprop:Generator_ColumnVarNameInTable="columnESTADO_FORNECEDOR" msprop:Generator_UserColumnName="ESTADO_FORNECEDOR" minOccurs="0">
+              <xs:element name="ESTADO_FORNECEDOR" msprop:Generator_ColumnPropNameInTable="ESTADO_FORNECEDORColumn" msprop:Generator_ColumnPropNameInRow="ESTADO_FORNECEDOR" msprop:Generator_UserColumnName="ESTADO_FORNECEDOR" msprop:Generator_ColumnVarNameInTable="columnESTADO_FORNECEDOR" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="CEP_FORNECEDOR" msprop:Generator_ColumnPropNameInRow="CEP_FORNECEDOR" msprop:Generator_ColumnPropNameInTable="CEP_FORNECEDORColumn" msprop:Generator_ColumnVarNameInTable="columnCEP_FORNECEDOR" msprop:Generator_UserColumnName="CEP_FORNECEDOR" minOccurs="0">
+              <xs:element name="CEP_FORNECEDOR" msprop:Generator_ColumnPropNameInTable="CEP_FORNECEDORColumn" msprop:Generator_ColumnPropNameInRow="CEP_FORNECEDOR" msprop:Generator_UserColumnName="CEP_FORNECEDOR" msprop:Generator_ColumnVarNameInTable="columnCEP_FORNECEDOR" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="8" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="CNPJ_FORNECEDOR" msprop:Generator_ColumnPropNameInRow="CNPJ_FORNECEDOR" msprop:Generator_ColumnPropNameInTable="CNPJ_FORNECEDORColumn" msprop:Generator_ColumnVarNameInTable="columnCNPJ_FORNECEDOR" msprop:Generator_UserColumnName="CNPJ_FORNECEDOR" minOccurs="0">
+              <xs:element name="CNPJ_FORNECEDOR" msprop:Generator_ColumnPropNameInTable="CNPJ_FORNECEDORColumn" msprop:Generator_ColumnPropNameInRow="CNPJ_FORNECEDOR" msprop:Generator_UserColumnName="CNPJ_FORNECEDOR" msprop:Generator_ColumnVarNameInTable="columnCNPJ_FORNECEDOR" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="14" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="infoNota" msprop:Generator_RowClassName="infoNotaRow" msprop:Generator_RowEvHandlerName="infoNotaRowChangeEventHandler" msprop:Generator_RowDeletedName="infoNotaRowDeleted" msprop:Generator_RowDeletingName="infoNotaRowDeleting" msprop:Generator_RowEvArgName="infoNotaRowChangeEvent" msprop:Generator_TablePropName="infoNota" msprop:Generator_RowChangedName="infoNotaRowChanged" msprop:Generator_UserTableName="infoNota" msprop:Generator_RowChangingName="infoNotaRowChanging" msprop:Generator_TableClassName="infoNotaDataTable" msprop:Generator_TableVarName="tableinfoNota">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="COD_NOTA_FORN" msprop:Generator_UserColumnName="COD_NOTA_FORN" msprop:Generator_ColumnPropNameInTable="COD_NOTA_FORNColumn" msprop:Generator_ColumnPropNameInRow="COD_NOTA_FORN" msprop:Generator_ColumnVarNameInTable="columnCOD_NOTA_FORN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VALOR_COMPRA" msprop:Generator_UserColumnName="VALOR_COMPRA" msprop:Generator_ColumnPropNameInTable="VALOR_COMPRAColumn" msprop:Generator_ColumnPropNameInRow="VALOR_COMPRA" msprop:Generator_ColumnVarNameInTable="columnVALOR_COMPRA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DATA_EMISSAO" msprop:Generator_UserColumnName="DATA_EMISSAO" msprop:Generator_ColumnPropNameInTable="DATA_EMISSAOColumn" msprop:Generator_ColumnPropNameInRow="DATA_EMISSAO" msprop:Generator_ColumnVarNameInTable="columnDATA_EMISSAO" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="OBSERVACAO" msprop:Generator_UserColumnName="OBSERVACAO" msprop:Generator_ColumnPropNameInTable="OBSERVACAOColumn" msprop:Generator_ColumnPropNameInRow="OBSERVACAO" msprop:Generator_ColumnVarNameInTable="columnOBSERVACAO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NOME_FORNECEDOR" msprop:Generator_UserColumnName="NOME_FORNECEDOR" msprop:Generator_ColumnPropNameInTable="NOME_FORNECEDORColumn" msprop:Generator_ColumnPropNameInRow="NOME_FORNECEDOR" msprop:Generator_ColumnVarNameInTable="columnNOME_FORNECEDOR" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CNPJ_FORNECEDOR" msprop:Generator_UserColumnName="CNPJ_FORNECEDOR" msprop:Generator_ColumnPropNameInTable="CNPJ_FORNECEDORColumn" msprop:Generator_ColumnPropNameInRow="CNPJ_FORNECEDOR" msprop:Generator_ColumnVarNameInTable="columnCNPJ_FORNECEDOR" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="14" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="infoProdutos" msprop:Generator_RowClassName="infoProdutosRow" msprop:Generator_RowEvHandlerName="infoProdutosRowChangeEventHandler" msprop:Generator_RowDeletedName="infoProdutosRowDeleted" msprop:Generator_RowDeletingName="infoProdutosRowDeleting" msprop:Generator_RowEvArgName="infoProdutosRowChangeEvent" msprop:Generator_TablePropName="infoProdutos" msprop:Generator_RowChangedName="infoProdutosRowChanged" msprop:Generator_UserTableName="infoProdutos" msprop:Generator_RowChangingName="infoProdutosRowChanging" msprop:Generator_TableClassName="infoProdutosDataTable" msprop:Generator_TableVarName="tableinfoProdutos">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NOME_PRODUTOS" msprop:Generator_UserColumnName="NOME_PRODUTOS" msprop:Generator_ColumnPropNameInTable="NOME_PRODUTOSColumn" msprop:Generator_ColumnPropNameInRow="NOME_PRODUTOS" msprop:Generator_ColumnVarNameInTable="columnNOME_PRODUTOS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="70" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TIPO_PRODUTOS" msprop:Generator_UserColumnName="TIPO_PRODUTOS" msprop:Generator_ColumnPropNameInTable="TIPO_PRODUTOSColumn" msprop:Generator_ColumnPropNameInRow="TIPO_PRODUTOS" msprop:Generator_ColumnVarNameInTable="columnTIPO_PRODUTOS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PRECO_PRODUTOS" msprop:Generator_UserColumnName="PRECO_PRODUTOS" msprop:Generator_ColumnPropNameInTable="PRECO_PRODUTOSColumn" msprop:Generator_ColumnPropNameInRow="PRECO_PRODUTOS" msprop:Generator_ColumnVarNameInTable="columnPRECO_PRODUTOS" type="xs:decimal" minOccurs="0" />
+              <xs:element name="QTD_UNIT_PAC" msprop:Generator_UserColumnName="QTD_UNIT_PAC" msprop:Generator_ColumnPropNameInTable="QTD_UNIT_PACColumn" msprop:Generator_ColumnPropNameInRow="QTD_UNIT_PAC" msprop:Generator_ColumnVarNameInTable="columnQTD_UNIT_PAC" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="infoProdutosDividas" msprop:Generator_RowClassName="infoProdutosDividasRow" msprop:Generator_RowEvHandlerName="infoProdutosDividasRowChangeEventHandler" msprop:Generator_RowDeletedName="infoProdutosDividasRowDeleted" msprop:Generator_RowDeletingName="infoProdutosDividasRowDeleting" msprop:Generator_RowEvArgName="infoProdutosDividasRowChangeEvent" msprop:Generator_TablePropName="infoProdutosDividas" msprop:Generator_RowChangedName="infoProdutosDividasRowChanged" msprop:Generator_UserTableName="infoProdutosDividas" msprop:Generator_RowChangingName="infoProdutosDividasRowChanging" msprop:Generator_TableClassName="infoProdutosDividasDataTable" msprop:Generator_TableVarName="tableinfoProdutosDividas">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NOME_PRODUTOS" msprop:Generator_UserColumnName="NOME_PRODUTOS" msprop:Generator_ColumnPropNameInTable="NOME_PRODUTOSColumn" msprop:Generator_ColumnPropNameInRow="NOME_PRODUTOS" msprop:Generator_ColumnVarNameInTable="columnNOME_PRODUTOS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="70" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TIPO_PRODUTOS" msprop:Generator_UserColumnName="TIPO_PRODUTOS" msprop:Generator_ColumnPropNameInTable="TIPO_PRODUTOSColumn" msprop:Generator_ColumnPropNameInRow="TIPO_PRODUTOS" msprop:Generator_ColumnVarNameInTable="columnTIPO_PRODUTOS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PRECO_PRODUTOS" msprop:Generator_UserColumnName="PRECO_PRODUTOS" msprop:Generator_ColumnPropNameInTable="PRECO_PRODUTOSColumn" msprop:Generator_ColumnPropNameInRow="PRECO_PRODUTOS" msprop:Generator_ColumnVarNameInTable="columnPRECO_PRODUTOS" type="xs:decimal" minOccurs="0" />
+              <xs:element name="QTD_UNIT_PAC" msprop:Generator_UserColumnName="QTD_UNIT_PAC" msprop:Generator_ColumnPropNameInTable="QTD_UNIT_PACColumn" msprop:Generator_ColumnPropNameInRow="QTD_UNIT_PAC" msprop:Generator_ColumnVarNameInTable="columnQTD_UNIT_PAC" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="infoNotaDividas" msprop:Generator_RowClassName="infoNotaDividasRow" msprop:Generator_RowEvHandlerName="infoNotaDividasRowChangeEventHandler" msprop:Generator_RowDeletedName="infoNotaDividasRowDeleted" msprop:Generator_RowDeletingName="infoNotaDividasRowDeleting" msprop:Generator_RowEvArgName="infoNotaDividasRowChangeEvent" msprop:Generator_TablePropName="infoNotaDividas" msprop:Generator_RowChangedName="infoNotaDividasRowChanged" msprop:Generator_UserTableName="infoNotaDividas" msprop:Generator_RowChangingName="infoNotaDividasRowChanging" msprop:Generator_TableClassName="infoNotaDividasDataTable" msprop:Generator_TableVarName="tableinfoNotaDividas">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="COD_NOTA_FORN" msprop:Generator_UserColumnName="COD_NOTA_FORN" msprop:Generator_ColumnPropNameInTable="COD_NOTA_FORNColumn" msprop:Generator_ColumnPropNameInRow="COD_NOTA_FORN" msprop:Generator_ColumnVarNameInTable="columnCOD_NOTA_FORN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VALOR_COMPRA" msprop:Generator_UserColumnName="VALOR_COMPRA" msprop:Generator_ColumnPropNameInTable="VALOR_COMPRAColumn" msprop:Generator_ColumnPropNameInRow="VALOR_COMPRA" msprop:Generator_ColumnVarNameInTable="columnVALOR_COMPRA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DATA_EMISSAO" msprop:Generator_UserColumnName="DATA_EMISSAO" msprop:Generator_ColumnPropNameInTable="DATA_EMISSAOColumn" msprop:Generator_ColumnPropNameInRow="DATA_EMISSAO" msprop:Generator_ColumnVarNameInTable="columnDATA_EMISSAO" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="OBSERVACAO" msprop:Generator_UserColumnName="OBSERVACAO" msprop:Generator_ColumnPropNameInTable="OBSERVACAOColumn" msprop:Generator_ColumnPropNameInRow="OBSERVACAO" msprop:Generator_ColumnVarNameInTable="columnOBSERVACAO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NOME_FORNECEDOR" msprop:Generator_UserColumnName="NOME_FORNECEDOR" msprop:Generator_ColumnPropNameInTable="NOME_FORNECEDORColumn" msprop:Generator_ColumnPropNameInRow="NOME_FORNECEDOR" msprop:Generator_ColumnVarNameInTable="columnNOME_FORNECEDOR" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CNPJ_FORNECEDOR" msprop:Generator_UserColumnName="CNPJ_FORNECEDOR" msprop:Generator_ColumnPropNameInTable="CNPJ_FORNECEDORColumn" msprop:Generator_ColumnPropNameInRow="CNPJ_FORNECEDOR" msprop:Generator_ColumnVarNameInTable="columnCNPJ_FORNECEDOR" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="14" />
@@ -644,7 +963,7 @@ SELECT ID_FORNECEDOR, NOME_FORNECEDOR, TELEFONE_FORNECEDOR, EMAIL_FORNECEDOR, ES
     <xs:appinfo>
       <msdata:Relationship name="FK__ESTOQUE__ID_PROD__05C3D225" msdata:parent="PRODUTOSEntrada" msdata:child="ESTOQUEEntrada" msdata:parentkey="ID_PRODUTOS" msdata:childkey="ID_PRODUTOS" msprop:Generator_UserParentTable="PRODUTOSEntrada" msprop:Generator_UserChildTable="ESTOQUEEntrada" msprop:Generator_RelationVarName="relationFK__ESTOQUE__ID_PROD__05C3D225" msprop:Generator_ChildPropName="GetESTOQUEEntradaRows" msprop:Generator_UserRelationName="FK__ESTOQUE__ID_PROD__05C3D225" msprop:Generator_ParentPropName="PRODUTOSRow" />
       <msdata:Relationship name="FK__ESTOQUE__ID_NOTA__06B7F65E1" msdata:parent="NOTA_FISCAL_FORNECEDOR" msdata:child="ESTOQUEEntrada" msdata:parentkey="ID_NOTA_FISCAL_FORNEC" msdata:childkey="ID_NOTA_FISCAL_FORNEC" msprop:Generator_UserParentTable="NOTA_FISCAL_FORNECEDOR" msprop:Generator_UserChildTable="ESTOQUEEntrada" msprop:Generator_RelationVarName="relationFK__ESTOQUE__ID_NOTA__06B7F65E1" msprop:Generator_ChildPropName="GetESTOQUEEntradaRows" msprop:Generator_ParentPropName="NOTA_FISCAL_FORNECEDORRow" msprop:Generator_UserRelationName="FK__ESTOQUE__ID_NOTA__06B7F65E1" />
-      <msdata:Relationship name="FK__NOTA_FISC__ID_FO__0C50D423" msdata:parent="FORNECEDOR" msdata:child="NOTA_FISCAL_FORNECEDOR" msdata:parentkey="ID_FORNECEDOR" msdata:childkey="ID_FORNECEDOR" msprop:Generator_UserParentTable="FORNECEDOR" msprop:Generator_UserChildTable="NOTA_FISCAL_FORNECEDOR" msprop:Generator_RelationVarName="relationFK__NOTA_FISC__ID_FO__0C50D423" msprop:Generator_UserRelationName="FK__NOTA_FISC__ID_FO__0C50D423" msprop:Generator_ChildPropName="GetNOTA_FISCAL_FORNECEDORRows" msprop:Generator_ParentPropName="FORNECEDORRow" />
+      <msdata:Relationship name="FK__NOTA_FISC__ID_FO__0C50D423" msdata:parent="FORNECEDOR" msdata:child="NOTA_FISCAL_FORNECEDOR" msdata:parentkey="ID_FORNECEDOR" msdata:childkey="ID_FORNECEDOR" msprop:Generator_UserParentTable="FORNECEDOR" msprop:Generator_UserChildTable="NOTA_FISCAL_FORNECEDOR" msprop:Generator_RelationVarName="relationFK__NOTA_FISC__ID_FO__0C50D423" msprop:Generator_ChildPropName="GetNOTA_FISCAL_FORNECEDORRows" msprop:Generator_UserRelationName="FK__NOTA_FISC__ID_FO__0C50D423" msprop:Generator_ParentPropName="FORNECEDORRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
