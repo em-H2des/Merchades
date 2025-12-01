@@ -54,7 +54,7 @@ namespace prjMerchades.Formularios.Entrada
             }
 
             // ====== 3. STRING DE CONEXÃO ======
-            string conexao = @"Server=localhost;Database=merchades;Trusted_Connection=True;";
+            string conexao = prjMerchades.Properties.Settings.Default.db_240098_66_A_1_2024ConnectionString;
 
             // ====== 4. QUERY ======
             string query = @"INSERT INTO FORNECEDOR 

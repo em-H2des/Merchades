@@ -78,7 +78,7 @@
             // 
             this.lbl_FiltrarPor.AutoSize = true;
             this.lbl_FiltrarPor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_FiltrarPor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
+            this.lbl_FiltrarPor.ForeColor = System.Drawing.Color.White;
             this.lbl_FiltrarPor.Location = new System.Drawing.Point(402, 170);
             this.lbl_FiltrarPor.Name = "lbl_FiltrarPor";
             this.lbl_FiltrarPor.Size = new System.Drawing.Size(124, 25);
@@ -174,7 +174,7 @@
             // 
             this.lblColunas.AutoSize = true;
             this.lblColunas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColunas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(78)))), ((int)(((byte)(46)))));
+            this.lblColunas.ForeColor = System.Drawing.Color.White;
             this.lblColunas.Location = new System.Drawing.Point(9, 170);
             this.lblColunas.Name = "lblColunas";
             this.lblColunas.Size = new System.Drawing.Size(105, 25);

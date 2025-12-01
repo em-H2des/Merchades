@@ -83,5 +83,12 @@ namespace prjMerchades.Formularios
         {
             Application.Exit();
         }
+
+        private void cadastrarFornecedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCadFornecedor telaCadFornecedor = new frmCadFornecedor();
+            telaCadFornecedor.MdiParent = this;
+            telaCadFornecedor.Show();
+        }
     }
 }

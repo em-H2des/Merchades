@@ -650,6 +650,7 @@
                               <Value>Total</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -684,6 +685,7 @@
                               <Value>=Count(Fields!ID_RELATORIO_FINANCEIRO.Value)</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -718,6 +720,7 @@
                               <Value />
                               <Style>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -753,6 +756,7 @@
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>'R$'0.00;('R$'0.00)</Format>
+                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -774,7 +778,6 @@
                         <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -789,6 +792,7 @@
                               <Value />
                               <Style>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>

@@ -26,7 +26,7 @@ namespace prjMerchades.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-QJKQV0N;Initial Catalog=merchades_teste_7;Integrated Security" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-QJKQV0N;Initial Catalog=merchades_teste_9;Integrated Security" +
             "=True;Encrypt=True;TrustServerCertificate=True")]
         public string ConnectionString {
             get {
@@ -88,6 +88,17 @@ namespace prjMerchades.Properties {
             }
             set {
                 this["usuarioNivel"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-QJKQV0N;Initial Catalog=merchades_teste_9;Integrated Security" +
+            "=True;Encrypt=True;TrustServerCertificate=True")]
+        public string dboConnectionString1 {
+            get {
+                return ((string)(this["dboConnectionString1"]));
             }
         }
     }

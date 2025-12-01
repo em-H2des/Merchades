@@ -14,7 +14,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace prjMerchades.Formularios.Entrada
 {
     public partial class frmCompras : Form
@@ -29,24 +28,17 @@ namespace prjMerchades.Formularios.Entrada
 
         private void frmCompras_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'daDadosEntrada1.infoNotaDividas'. Você pode movê-la ou removê-la conforme necessário.
-            this.infoNotaDividasTableAdapter.Fill(this.daDadosEntrada.infoNotaDividas);
-            // TODO: esta linha de código carrega dados na tabela 'daDadosEntrada.infoNota'. Você pode movê-la ou removê-la conforme necessário.
+            // TODO: This line of code loads data into the 'daDadosEntrada2.infoNotaDividas' table. You can move, or remove it, as needed.
+            this.infoNotaDividasTableAdapter.Fill(this.daDadosEntrada2.infoNotaDividas);
+            // Carrega dados necessários
+            this.fORNECEDORTableAdapter.Fill(this.daDadosEntrada.FORNECEDOR);
+            //this.infoNotaDividasBindingSource.Fill(this.daDadosEntrada.infoNotaDividas);
             this.infoNotaTableAdapter1.Fill(this.daDadosEntrada.infoNota);
-            // TODO: esta linha de código carrega dados na tabela 'daDadosEntrada3.compraDividas'. Você pode movê-la ou removê-la conforme necessário.
             this.compraDividasTableAdapter.Fill(this.daDadosEntrada.compraDividas);
-            // TODO: esta linha de código carrega dados na tabela 'daDadosEntrada3.comprasAntigas'. Você pode movê-la ou removê-la conforme necessário.
             this.comprasAntigasTableAdapter.Fill(this.daDadosEntrada.comprasAntigas);
-            // TODO: esta linha de código carrega dados na tabela 'daDadosEntrada2.compraDividas'. Você pode movê-la ou removê-la conforme necessário.
             this.nOTA_FISCAL_FORNECEDORTableAdapter.Fill(this.daDadosEntrada.NOTA_FISCAL_FORNECEDOR);
-            dtvwComprasNF.AutoGenerateColumns = true;
-            dtvwComprasNF.DataSource = ds.PRODUTOSEntrada; // tabela do XSD
-            //lbl_Data.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            //lbl_Data2.Text = DateTime.Now.ToString("dd/MM/yyyy");
             dateEmissao.Value = DateTime.Today;
-            dateEmissao.Enabled = false;
         }
-
 
         bool CamposValidos()
         {
@@ -63,32 +55,20 @@ namespace prjMerchades.Formularios.Entrada
 
         private void btnProximo_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtCodFornecedor.Text))
+            if (string.IsNullOrWhiteSpace(txtCodFornecedor.Text) || !txtCodNF.MaskCompleted || string.IsNullOrEmpty(dateEmissao.Text))
             {
-                MessageBox.Show("Informe o código do fornecedor.");
+                MessageBox.Show("Informe todos os dados antes de prosseguir.");
                 return;
             }
 
-            // gera NF automática
-            string prefixo = DateTime.Today.ToString("MMdd");
-
-            var notaTA = new NOTA_FISCAL_FORNECEDORTableAdapter();
-            int seq = GetSequenciaNF(notaTA, prefixo);
-
-            txtCodNF.Text = $"NF{prefixo}-{seq:0000}";
-            dateEmissao.Value = DateTime.Today;
-
             // liberar campos de produto
-            txtNomeProduto.Enabled = true;
-            txtCodBarras.Enabled = true;
-            numQtd.Enabled = true;
-            dateValidade.Enabled = true;
-            txtTipoProduto.Enabled = true;
-            txtPreco.Enabled = true;
-            numQtdACad.Enabled = true;
-            cmbTipoUnitario.Enabled = true;
-            txtLote.Enabled = true;
-            btnAdd.Enabled = true;
+            pnCamposItens.Visible = true;
+            pnCamposItens.Enabled = true;
+            lbl_VlrTtl.Visible = true;
+            txtVlrTtl.Visible = true;
+            btnAdd.Visible = true;
+            btnCancelar.Visible = true;
+            btnEnviar.Visible = true;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -116,33 +96,45 @@ namespace prjMerchades.Formularios.Entrada
             // limpar parte do produto
             txtNomeProduto.Clear();
             txtCodBarras.Clear();
-            txtTipoProduto.Clear();
+            txtTipoProduto.SelectedIndex = -1;
             txtPreco.Clear();
             cmbTipoUnitario.SelectedIndex = -1;
             numQtd.Value = 1;
+
+            // Calcular total
+            decimal somaTotal = 0;
+            foreach (DataGridViewRow row in dtvwComprasNF.Rows)
+            {
+                somaTotal += Math.Round(Convert.ToDecimal(row.Cells["Coluna_total"].Value), 2);
+            }
+            txtVlrTtl.Text = "R$" + somaTotal.ToString("F2");
         }
 
-        private int GetSequenciaNF(NOTA_FISCAL_FORNECEDORTableAdapter ta, string prefixo)
+        private void btnExcluir_Click(object sender, EventArgs e)
         {
-            var dt = ta.GetData();
-            string like = $"NF{prefixo}-";
-            int maior = 0;
-
-            foreach (DataRow r in dt.Rows)
+            DialogResult acaoDoUsuario = MessageBox.Show("Deseja apagar o(s) produto(s) selecionados do carrinho?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (acaoDoUsuario == DialogResult.Yes)
             {
-                if (r["COD_NF"] == DBNull.Value) continue;
+                int numDeItensSelecionados = dtvwComprasNF.SelectedRows.Count;
 
-                string cod = r["COD_NF"].ToString();
-                if (!cod.StartsWith(like)) continue;
-
-                string[] partes = cod.Split('-');
-                if (partes.Length == 2 && int.TryParse(partes[1], out int seq))
+                if (numDeItensSelecionados == 0)
                 {
-                    if (seq > maior) maior = seq;
+                    MessageBox.Show("Nenhum item selecionado. Por favor selecione um item para excluir.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
-            }
 
-            return maior + 1;
+                for (int i = 0; i < numDeItensSelecionados; i++)
+                {
+                    dtvwComprasNF.Rows.RemoveAt(dtvwComprasNF.SelectedRows[0].Index);
+                }
+
+                decimal somaTotal = 0;
+                foreach (DataGridViewRow row in dtvwComprasNF.Rows)
+                {
+                    somaTotal += Math.Round(Convert.ToDecimal(row.Cells["Coluna_total"].Value), 2);
+                }
+                txtVlrTtl.Text = "R$" + somaTotal.ToString("F2");
+            }
         }
 
         private void btnEnviar_Click(object sender, EventArgs e)
@@ -153,119 +145,138 @@ namespace prjMerchades.Formularios.Entrada
                 return;
             }
 
-            var notaTA = new NOTA_FISCAL_FORNECEDORTableAdapter();
-            var produtosTA = new PRODUTOSEntradaTableAdapter();
-            var estoqueTA = new ESTOQUEEntradaTableAdapter();
-            var fornecedorTA = new FORNECEDORTableAdapter();
+            // Validação de fornecedor
+            if (!int.TryParse(txtCodFornecedor.SelectedValue?.ToString(), out int idFornecedor))
+            {
+                MessageBox.Show("Fornecedor inválido!");
+                return;
+            }
 
-            int idFornecedor = int.Parse(txtCodFornecedor.Text);
-
-            fornecedorTA.Fill(daDadosEntrada.FORNECEDOR);
-            if (daDadosEntrada.FORNECEDOR.FindByID_FORNECEDOR(idFornecedor) == null)
+            // Verificar se fornecedor existe
+            if (!FornecedorExiste(idFornecedor))
             {
                 MessageBox.Show("Fornecedor não existe!");
                 return;
             }
 
-            decimal totalNF = 0;
-            foreach (DataGridViewRow row in dtvwComprasNF.Rows)
-                totalNF += Convert.ToDecimal(row.Cells[6].Value);
+            DialogResult result = MessageBox.Show("Deseja realmente cadastrar essa nota fiscal?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No) return;
 
-            // inserir NF
-            notaTA.Insert(
-                dateEmissao.Value,
-                totalNF,
-                txtCodNF.Text,
-                "ENTRADA",
-                idFornecedor,
-                "n"
-            );
-
-            int idNF = GetMaxId("NOTA_FISCAL_FORNECEDOR", "ID_NOTA_FISCAL");
-
-            // carrega tabelas
-            var tabelaProd = produtosTA.GetData();
-            var tabelaEstoque = estoqueTA.GetData();
-
-            foreach (DataGridViewRow row in dtvwComprasNF.Rows)
+            try
             {
-                int codBarras = int.Parse(row.Cells[0].Value.ToString());
-                string nome = row.Cells[1].Value.ToString();
-                string tipo = row.Cells[2].Value.ToString();
-                string unidade = row.Cells[3].Value.ToString();
-                decimal preco = Convert.ToDecimal(row.Cells[4].Value);
-                int qtd = Convert.ToInt32(row.Cells[5].Value);
+                // Calcular total da NF
+                decimal totalNF = 0;
+                foreach (DataGridViewRow row in dtvwComprasNF.Rows)
+                    totalNF += Convert.ToDecimal(row.Cells[6].Value);
 
-                var prodExist =
-                    tabelaProd.FirstOrDefault(r => r.CODIGO_DE_BARRAS == codBarras);
+                // 1. INSERIR NOTA FISCAL usando SQL direto
+                int idNF = InserirNotaFiscal(dateEmissao.Value, totalNF, txtCodNF.Text, idFornecedor);
+                MessageBox.Show($"Nota fiscal inserida com ID: {idNF}");
 
-                int idProduto;
-
-                if (prodExist != null)
+                // 2. PROCESSAR CADA PRODUTO
+                foreach (DataGridViewRow row in dtvwComprasNF.Rows)
                 {
-                    idProduto = prodExist.ID_PRODUTOS;
+                    string codBarras = row.Cells[0].Value.ToString();
+                    string nome = row.Cells[1].Value.ToString();
+                    string tipo = row.Cells[2].Value.ToString();
+                    string unidade = row.Cells[3].Value.ToString();
+                    decimal preco = Convert.ToDecimal(row.Cells[4].Value);
+                    int qtd = Convert.ToInt32(row.Cells[5].Value);
 
-                    // atualiza produto via SQL
-                    UpdateProdutoDireto(idProduto, nome, tipo, unidade, preco, codBarras);
+                    // Verificar se produto já existe
+                    int idProduto = VerificarProdutoExistente(codBarras);
 
-                    // soma estoque via SQL
-                    SomarQuantidadeEstoque(idProduto, qtd, idNF);
+                    if (idProduto > 0)
+                    {
+                        // Produto existe - ATUALIZAR
+                        AtualizarProduto(idProduto, nome, tipo, unidade, preco, codBarras);
+                    }
+                    else
+                    {
+                        // Produto não existe - INSERIR NOVO
+                        idProduto = InserirProduto(nome, tipo, unidade, preco, codBarras);
+                    }
+
+                    // Inserir na tabela ITENS_NOTA_FORNECEDOR (para trigger funcionar)
+                    InserirItemNotaFornecedor(qtd, idProduto, idNF);
                 }
-                else
-                {
-                    // insere produto
-                    produtosTA.Insert(nome, tipo, unidade, preco, codBarras);
 
-                    idProduto = GetMaxId("PRODUTOSEntrada", "ID_PRODUTO");
+                MessageBox.Show("Nota fiscal e produtos cadastrados com sucesso!");
 
-                    // novo estoque
-                    estoqueTA.Insert(qtd, idProduto, idNF);
-                }
+                // Limpar interface
+                dtvwComprasNF.Rows.Clear();
+                txtVlrTtl.Text = "R$0,00";
+                LimparCamposProduto();
+                this.Close();
             }
-
-            MessageBox.Show("Entrada cadastrada com sucesso!");
-            dtvwComprasNF.Rows.Clear();
+            catch (Exception ex)
+            {
+                MessageBox.Show($"ERRO: {ex.Message}\n\nDetalhes: {ex.InnerException?.Message}", "Erro no Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
+        // ========== MÉTODOS SQL DIRETO ==========
 
-        private int GetMaxId(string tabela, string coluna)
+        private bool FornecedorExiste(int idFornecedor)
         {
             using (SqlConnection conn = new SqlConnection(connStr))
             {
                 conn.Open();
-                string sql = $"SELECT ISNULL(MAX({coluna}), 0) FROM {tabela}";
+                string sql = "SELECT COUNT(*) FROM FORNECEDOR WHERE ID_FORNECEDOR = @id";
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                return Convert.ToInt32(cmd.ExecuteScalar());
+                cmd.Parameters.AddWithValue("@id", idFornecedor);
+                return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
             }
         }
 
-        private int MaxId(SqlConnection conn, string tabela, string colunaId)
-        {
-            if (conn.State != ConnectionState.Open)
-                conn.Open();
-
-            string sql = $"SELECT ISNULL(MAX({colunaId}), 0) FROM {tabela}";
-
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            int ultimoId = Convert.ToInt32(cmd.ExecuteScalar());
-
-            return ultimoId;
-        }
-
-        private void UpdateProdutoDireto(int idProduto, string nome, string tipo, string unidade, decimal preco,int codBarras)
+        private int InserirNotaFiscal(DateTime dataEmissao, decimal valor, string codNota, int idFornecedor)
         {
             using (SqlConnection conn = new SqlConnection(connStr))
             {
                 conn.Open();
-
                 string sql = @"
-            UPDATE PRODUTOSEntrada SET
-                NOME_PRODUTO = @nome,
-                TIPO_PRODUTO = @tipo,
-                UNIDADE = @unidade,
-                PRECO = @preco,
-                CODIGO_DE_BARRAS = @cod
-            WHERE ID_PRODUTO = @idProd";
+                    INSERT INTO NOTA_FISCAL_FORNECEDOR 
+                    (DATA_EMISSAO, VALOR_COMPRA, COD_NOTA_FORN, OBSERVACAO, ID_FORNECEDOR, PAGO)
+                    VALUES (@data, @valor, @codNota, 'ENTRADA', @idFornecedor, 'N');";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@data", dataEmissao);
+                cmd.Parameters.AddWithValue("@valor", valor);
+                cmd.Parameters.AddWithValue("@codNota", codNota);
+                cmd.Parameters.AddWithValue("@idFornecedor", idFornecedor);
+
+                cmd.ExecuteNonQuery();
+
+                string selectSql = "SELECT IDENT_CURRENT('NOTA_FISCAL_FORNECEDOR');";
+                SqlCommand selectCmd = new SqlCommand(selectSql, conn);
+                return Convert.ToInt32(selectCmd.ExecuteScalar());
+            }
+        }
+
+        private int VerificarProdutoExistente(string codBarras)
+        {
+            using (SqlConnection conn = new SqlConnection(connStr))
+            {
+                conn.Open();
+                string sql = "SELECT ID_PRODUTOS FROM PRODUTOS WHERE CODIGO_DE_BARRAS = @cod";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@cod", codBarras);
+
+                object result = cmd.ExecuteScalar();
+                return result != null ? Convert.ToInt32(result) : 0;
+            }
+        }
+
+        private int InserirProduto(string nome, string tipo, string unidade, decimal preco, string codBarras)
+        {
+            using (SqlConnection conn = new SqlConnection(connStr))
+            {
+                conn.Open();
+                string sql = @"
+                    INSERT INTO PRODUTOS 
+                    (NOME_PRODUTOS, TIPO_PRODUTOS, TIPO_UNITARIO, PRECO_PRODUTOS, CODIGO_DE_BARRAS)
+                    OUTPUT INSERTED.ID_PRODUTOS
+                    VALUES (@nome, @tipo, @unidade, @preco, @cod)";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@nome", nome);
@@ -273,51 +284,97 @@ namespace prjMerchades.Formularios.Entrada
                 cmd.Parameters.AddWithValue("@unidade", unidade);
                 cmd.Parameters.AddWithValue("@preco", preco);
                 cmd.Parameters.AddWithValue("@cod", codBarras);
-                cmd.Parameters.AddWithValue("@idProd", idProduto);
+
+                return Convert.ToInt32(cmd.ExecuteScalar());
+            }
+        }
+
+        private void AtualizarProduto(int idProduto, string nome, string tipo, string unidade, decimal preco, string codBarras)
+        {
+            using (SqlConnection conn = new SqlConnection(connStr))
+            {
+                conn.Open();
+                string sql = @"
+                    UPDATE PRODUTOS SET
+                        NOME_PRODUTOS = @nome,
+                        TIPO_PRODUTOS = @tipo,
+                        TIPO_UNITARIO = @unidade,
+                        PRECO_PRODUTOS = @preco,
+                        CODIGO_DE_BARRAS = @cod
+                    WHERE ID_PRODUTOS = @id";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@nome", nome);
+                cmd.Parameters.AddWithValue("@tipo", tipo);
+                cmd.Parameters.AddWithValue("@unidade", unidade);
+                cmd.Parameters.AddWithValue("@preco", preco);
+                cmd.Parameters.AddWithValue("@cod", codBarras);
+                cmd.Parameters.AddWithValue("@id", idProduto);
 
                 cmd.ExecuteNonQuery();
             }
         }
 
-        private void SomarQuantidadeEstoque(int idProduto, int qtd, int idNF)
+        private void InserirItemNotaFornecedor(int quantidade, int idProduto, int idNotaFiscal)
         {
             using (SqlConnection conn = new SqlConnection(connStr))
             {
                 conn.Open();
+                string sql = @"
+                    INSERT INTO ITENS_NOTA_FORNECEDOR 
+                    (QTD_UNIT_PAC, ID_PRODUTOS, ID_NOTA_FISCAL_FORNEC)
+                    VALUES (@qtd, @idProduto, @idNota)";
 
-                // primeiro tenta atualizar
-                string sqlUpdate = @"
-            UPDATE ESTOQUEEntrada
-            SET QTD_ESTOQUE_ADDED = QTD_ESTOQUE_ADDED + @qtd
-            WHERE ID_PRODUTOS = @idProd";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@qtd", quantidade);
+                cmd.Parameters.AddWithValue("@idProduto", idProduto);
+                cmd.Parameters.AddWithValue("@idNota", idNotaFiscal);
 
-                SqlCommand cmd = new SqlCommand(sqlUpdate, conn);
-                cmd.Parameters.AddWithValue("@qtd", qtd);
-                cmd.Parameters.AddWithValue("@idProd", idProduto);
-
-                int afetou = cmd.ExecuteNonQuery();
-
-                if (afetou == 0)
-                {
-                    // não existia → insere novo registro
-                    string sqlInsert = @"
-                INSERT INTO ESTOQUEEntrada (QTD_ESTOQUE_ADDED, ID_PRODUTOS, ID_NOTA_FISCAL)
-                VALUES (@qtd, @idProd, @idNF)";
-
-                    SqlCommand insert = new SqlCommand(sqlInsert, conn);
-                    insert.Parameters.AddWithValue("@qtd", qtd);
-                    insert.Parameters.AddWithValue("@idProd", idProduto);
-                    insert.Parameters.AddWithValue("@idNF", idNF);
-
-                    insert.ExecuteNonQuery();
-                }
+                cmd.ExecuteNonQuery();
             }
+        }
+
+        private void LimparCamposProduto()
+        {
+            txtNomeProduto.Clear();
+            txtCodBarras.Clear();
+            txtTipoProduto.SelectedIndex = -1;
+            txtPreco.Clear();
+            cmbTipoUnitario.SelectedIndex = -1;
+            numQtd.Value = 1;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Deseja realmente cancelar o cadastro dessa compra? Todos os dados não enviados serão apagados.", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.No) return;
+
+            // Limpar tudo
+            txtCodBarras.Clear();
+            txtCodFornecedor.SelectedIndex = -1;
+            txtCodNF.Clear();
+            txtLote.Clear();
+            txtVlrTtl.Text = "R$0,00";
+            txtTipoProduto.SelectedIndex = -1;
+            txtPreco.Clear();
+            numQtd.Value = 1;
+            cmbTipoUnitario.SelectedIndex = -1;
+            dateValidade.ResetText();
+
+            pnCamposItens.Visible = false;
+            btnCancelar.Visible = false;
+            btnEnviar.Visible = false;
+            lbl_VlrTtl.Visible = false;
+            txtVlrTtl.Visible = false;
+
+            dtvwComprasNF.Rows.Clear();
         }
 
         private void btnBuscarDividas_Click(object sender, EventArgs e)
         {
-            string coluna = cmbFiltroDividas.Text; //qual coluna da tabela sera aplicado o filtro
-            string filtro = txtFiltroDividas.Text.Trim(); //filtragem
+            string coluna = cmbFiltroDividas.Text;
+            string filtro = txtFiltroDividas.Text.Trim();
             string resultado = "";
 
             if (coluna == "Fornecedor")
@@ -326,11 +383,9 @@ namespace prjMerchades.Formularios.Entrada
                 infoNotaDividasBindingSource.Filter = resultado;
                 return;
             }
-
             else if (coluna == "Valor")
             {
-                filtro = filtro.Replace("R$", "").Trim(); //tira os caracteres
-
+                filtro = filtro.Replace("R$", "").Trim();
                 if (decimal.TryParse(filtro, out decimal valor))
                 {
                     resultado = $"Convert(VALOR_COMPRA, 'System.String') LIKE '%{filtro}%'";
@@ -340,25 +395,18 @@ namespace prjMerchades.Formularios.Entrada
                 {
                     MessageBox.Show("Digite um valor válido.");
                 }
-
                 return;
             }
-
             else if (coluna == "Data")
             {
                 DateTime datainicio = dateInicioDividas.Value.Date;
-                DateTime datafim = dateFimDividas.Value.Date.AddDays(1); // pega até o fim do último dia
-
-                // O usuário escolhe BR, mas aqui você transforma para o formato aceito no Filter
+                DateTime datafim = dateFimDividas.Value.Date.AddDays(1);
                 string inicioUS = datainicio.ToString("MM/dd/yyyy");
                 string fimUS = datafim.ToString("MM/dd/yyyy");
-
                 resultado = $"DATA_EMISSAO >= #{inicioUS}# AND DATA_EMISSAO < #{fimUS}#";
-
                 infoNotaDividasBindingSource.Filter = resultado;
                 return;
             }
-
             else if (coluna == "Nota fiscal")
             {
                 resultado = $"COD_NOTA_FORN LIKE '%{filtro}%'";
@@ -369,8 +417,8 @@ namespace prjMerchades.Formularios.Entrada
 
         private void btnBuscarAntigas_Click(object sender, EventArgs e)
         {
-            string coluna = cmbFiltroAntigas.Text; //qual coluna da tabela sera aplicado o filtro
-            string filtro = txtFiltroAntigas.Text.Trim(); //filtragem
+            string coluna = cmbFiltroAntigas.Text;
+            string filtro = txtFiltroAntigas.Text.Trim();
             string resultado = "";
 
             if (coluna == "Fornecedor")
@@ -379,11 +427,9 @@ namespace prjMerchades.Formularios.Entrada
                 infoNotaBindingSource.Filter = resultado;
                 return;
             }
-
             else if (coluna == "Valor")
             {
-                filtro = filtro.Replace("R$", "").Trim(); //tira os caracteres
-
+                filtro = filtro.Replace("R$", "").Trim();
                 if (decimal.TryParse(filtro, out decimal valor))
                 {
                     resultado = $"Convert(VALOR_COMPRA, 'System.String') LIKE '%{filtro}%'";
@@ -393,34 +439,25 @@ namespace prjMerchades.Formularios.Entrada
                 {
                     MessageBox.Show("Digite um valor válido.");
                 }
-
                 return;
             }
-
             else if (coluna == "Data")
             {
                 DateTime datainicio = dateInicioAntigas.Value.Date;
-                DateTime datafim = dateFimAntigas.Value.Date.AddDays(1); // pega até o fim do último dia
-
-                // O usuário escolhe BR, mas aqui você transforma para o formato aceito no Filter
+                DateTime datafim = dateFimAntigas.Value.Date.AddDays(1);
                 string inicioUS = datainicio.ToString("MM/dd/yyyy");
                 string fimUS = datafim.ToString("MM/dd/yyyy");
-
                 resultado = $"DATA_EMISSAO >= #{inicioUS}# AND DATA_EMISSAO < #{fimUS}#";
-
                 infoNotaBindingSource.Filter = resultado;
                 return;
             }
-
             else if (coluna == "Nota fiscal")
             {
                 resultado = $"COD_NOTA_FORN LIKE '%{filtro}%'";
                 infoNotaDividasBindingSource.Filter = resultado;
                 return;
             }
-
         }
-
 
         private void numQtdACad_ValueChanged(object sender, EventArgs e)
         {
@@ -434,36 +471,28 @@ namespace prjMerchades.Formularios.Entrada
 
         private void dataGridViewNotas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0) return; //verifica se ta selecionado alguma nota
-
-            string idNota = dataGridViewNotasAntigas.Rows[e.RowIndex].Cells["COD_NOTA_FORN"].Value.ToString(); //salva o codigo da nota
-
-            this.infoProdutosTableAdapter1.Fill(this.daDadosEntrada.infoProdutos, idNota); //preenche a tabela de produtos de acordo com a nota
+            if (e.RowIndex < 0) return;
+            string idNota = dataGridViewNotasAntigas.Rows[e.RowIndex].Cells["COD_NOTA_FORN"].Value.ToString();
+            this.infoProdutosTableAdapter1.Fill(this.daDadosEntrada.infoProdutos, idNota);
         }
 
         private void cmbFiltroAntigas_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbFiltroAntigas.Text == "Data")
             {
-                // Mostra os DateTimePickers
                 dateInicioAntigas.Visible = true;
                 dateFimAntigas.Visible = true;
                 lblInicioAntigas.Visible = true;
                 lblFimAntigas.Visible = true;
-
-                // Oculta o campo de texto
                 txtFiltroAntigas.Visible = false;
                 lblFiltroAntigas.Visible = false;
             }
             else
             {
-                // Oculta os DateTimePickers
                 dateInicioAntigas.Visible = false;
                 dateFimAntigas.Visible = false;
                 lblInicioAntigas.Visible = false;
                 lblFimAntigas.Visible = false;
-
-                // Mostra o textbox normal
                 txtFiltroAntigas.Visible = true;
                 lblFiltroAntigas.Visible = true;
             }
@@ -471,21 +500,15 @@ namespace prjMerchades.Formularios.Entrada
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
-            // remove filtros
             infoNotaBindingSource.RemoveFilter();
-
-            //volta os campos ao estado original
             cmbFiltroAntigas.SelectedIndex = -1;
             txtFiltroAntigas.Text = "";
-
             dateInicioAntigas.Value = DateTime.Today;
             dateFimAntigas.Value = DateTime.Today;
-
             dateInicioAntigas.Visible = false;
             dateFimAntigas.Visible = false;
             txtFiltroAntigas.Visible = true;
             lblFiltroAntigas.Visible = true;
-
             MessageBox.Show("Filtros resetados");
         }
 
@@ -493,25 +516,19 @@ namespace prjMerchades.Formularios.Entrada
         {
             if (cmbFiltroDividas.Text == "Data")
             {
-                // Mostra os DateTimePickers
                 dateInicioDividas.Visible = true;
                 dateFimDividas.Visible = true;
                 lblInicioDividas.Visible = true;
                 lblFimDividas.Visible = true;
-
-                // Oculta o campo de texto
                 txtFiltroDividas.Visible = false;
                 lblFiltroDividas.Visible = false;
             }
             else
             {
-                // Oculta os DateTimePickers
                 dateInicioDividas.Visible = false;
                 dateFimDividas.Visible = false;
                 lblInicioDividas.Visible = false;
                 lblFimDividas.Visible = false;
-
-                // Mostra o textbox normal
                 txtFiltroDividas.Visible = true;
                 lblFiltroDividas.Visible = true;
             }
@@ -519,21 +536,15 @@ namespace prjMerchades.Formularios.Entrada
 
         private void btnLimparDividas_Click(object sender, EventArgs e)
         {
-            // remove os filtros
             infoNotaDividasBindingSource.RemoveFilter();
-
-            // volta os campos ao estado original
             cmbFiltroDividas.SelectedIndex = -1;
             txtFiltroDividas.Text = "";
-
             dateInicioDividas.Value = DateTime.Today;
             dateFimDividas.Value = DateTime.Today;
-
             dateInicioDividas.Visible = false;
             dateFimDividas.Visible = false;
             txtFiltroDividas.Visible = true;
             lblFiltroDividas.Visible = true;
-
             MessageBox.Show("Filtros resetados.");
         }
 
@@ -547,15 +558,12 @@ namespace prjMerchades.Formularios.Entrada
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
-
         }
 
         private void dataGridViewNOtasDividas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
-
             string idNota = dataGridViewNOtasDividas.Rows[e.RowIndex].Cells["COD_NOTA_FORND"].Value.ToString();
-
             this.infoProdutosDividasTableAdapter.FillBy(this.daDadosEntrada.infoProdutosDividas, idNota);
         }
 
@@ -563,21 +571,15 @@ namespace prjMerchades.Formularios.Entrada
         {
             if (dataGridViewNOtasDividas.CurrentRow == null)
             {
-                //verifica se tem alguma nota selecionada
                 MessageBox.Show("Selecione uma nota fiscal.");
                 return;
             }
 
-            string idNota = dataGridViewNOtasDividas.CurrentRow.Cells["COD_NOTA_FORND"].Value.ToString(); //pega o codigo da nota
-
-            infoNotaDividasTableAdapter.UpdateNota(idNota); //atualiza o campo "PAGO" para "s"
-
-            // recarrega as notas das tabelas
+            string idNota = dataGridViewNOtasDividas.CurrentRow.Cells["COD_NOTA_FORND"].Value.ToString();
+            infoNotaDividasTableAdapter.UpdateNota(idNota);
             infoNotaDividasTableAdapter.Fill(daDadosEntrada.infoNotaDividas);
             infoNotaTableAdapter1.Fill(daDadosEntrada.infoNota);
-
             MessageBox.Show("Nota fiscal paga.");
         }
     }
 }
-

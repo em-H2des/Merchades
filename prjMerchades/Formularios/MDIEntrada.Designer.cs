@@ -42,6 +42,7 @@
             this.dataToolStripStatusLabelUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.lblNomeUsuario = new System.Windows.Forms.Label();
+            this.cadastrarFornecedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -67,7 +68,8 @@
             // 
             this.fornecedorToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.fornecedorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listagemDeFornecedoresToolStripMenuItem});
+            this.listagemDeFornecedoresToolStripMenuItem,
+            this.cadastrarFornecedorToolStripMenuItem});
             this.fornecedorToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fornecedorToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.fornecedorToolStripMenuItem.Name = "fornecedorToolStripMenuItem";
@@ -89,8 +91,8 @@
             this.comprasToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comprasToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
-            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(105, 28);
-            this.comprasToolStripMenuItem.Text = "Compras";
+            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(189, 28);
+            this.comprasToolStripMenuItem.Text = "Cadastrar Compra";
             this.comprasToolStripMenuItem.Click += new System.EventHandler(this.comprasToolStripMenuItem_Click);
             // 
             // estoqueToolStripMenuItem
@@ -164,6 +166,15 @@
             this.lblNomeUsuario.TabIndex = 32;
             this.lblNomeUsuario.Text = "Bem Vindo(a), ";
             // 
+            // cadastrarFornecedorToolStripMenuItem
+            // 
+            this.cadastrarFornecedorToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(147)))), ((int)(((byte)(116)))));
+            this.cadastrarFornecedorToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.cadastrarFornecedorToolStripMenuItem.Name = "cadastrarFornecedorToolStripMenuItem";
+            this.cadastrarFornecedorToolStripMenuItem.Size = new System.Drawing.Size(331, 28);
+            this.cadastrarFornecedorToolStripMenuItem.Text = "Cadastrar Fornecedor";
+            this.cadastrarFornecedorToolStripMenuItem.Click += new System.EventHandler(this.cadastrarFornecedorToolStripMenuItem_Click);
+            // 
             // MDIEntrada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -210,6 +221,7 @@
         private System.Windows.Forms.ToolStripMenuItem fecharToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoToolStripMenuItem;
         private System.Windows.Forms.Label lblNomeUsuario;
+        private System.Windows.Forms.ToolStripMenuItem cadastrarFornecedorToolStripMenuItem;
     }
 }
 
