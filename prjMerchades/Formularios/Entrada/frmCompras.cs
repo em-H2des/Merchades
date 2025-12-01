@@ -577,6 +577,13 @@ namespace prjMerchades.Formularios.Entrada
 
             string idNota = dataGridViewNOtasDividas.CurrentRow.Cells["COD_NOTA_FORND"].Value.ToString();
             infoNotaDividasTableAdapter.UpdateNota(idNota);
+            dataGridViewNOtasDividas.Rows.Remove(dataGridViewNOtasDividas.SelectedRows[0]);
+
+            foreach (DataGridViewRow row in dataGridViewProdutosDividas.Rows)
+            {
+                dataGridViewProdutosDividas.Rows.Remove(row);
+            }
+
             infoNotaDividasTableAdapter.Fill(daDadosEntrada.infoNotaDividas);
             infoNotaTableAdapter1.Fill(daDadosEntrada.infoNota);
             MessageBox.Show("Nota fiscal paga.");

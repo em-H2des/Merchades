@@ -3,23 +3,23 @@
   "WorkspaceRootPath": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjmerchades\\formularios\\entrada\\frmcompras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\entrada\\frmcompras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|c:\\users\\labinfo\\documents\\github\\merchades\\prjmerchades\\dados\\dadadosentrada.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\dados\\dadadosentrada.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|c:\\users\\labinfo\\documents\\github\\merchades\\prjmerchades\\formularios\\entrada\\frmcompras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\entrada\\frmcompras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|prjMerchades||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|c:\\users\\labinfo\\documents\\github\\merchades\\prjmerchades\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|prjMerchades||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|c:\\users\\labinfo\\documents\\github\\merchades\\prjmerchades\\formularios\\entrada\\frmcompras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\entrada\\frmcompras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|c:\\users\\labinfo\\documents\\github\\merchades\\prjmerchades\\formularios\\entrada\\frmcompras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\formularios\\entrada\\frmcompras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|c:\\users\\labinfo\\documents\\github\\merchades\\prjmerchades\\dados\\dadadosentrada.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}",
+      "RelativeMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|solutionrelative:prjmerchades\\dados\\dadadosentrada.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{255E382B-7771-45A0-8F3E-D411C21005A8}|prjMerchades\\prjMerchades.csproj|C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjmerchades\\formularios\\saida\\frmpagamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -45,7 +45,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,6 +58,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "frmCompras.cs",
+              "DocumentMoniker": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Entrada\\frmCompras.cs",
+              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Entrada\\frmCompras.cs",
+              "ToolTip": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Entrada\\frmCompras.cs",
+              "RelativeToolTip": "prjMerchades\\Formularios\\Entrada\\frmCompras.cs",
+              "ViewState": "AgIAADMCAAAAAAAAAAAnwEYCAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T21:35:55.3Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "frmCompras.cs [Design]",
               "DocumentMoniker": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Entrada\\frmCompras.cs",
               "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Entrada\\frmCompras.cs",
@@ -69,20 +82,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmCompras.cs",
-              "DocumentMoniker": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Entrada\\frmCompras.cs",
-              "RelativeDocumentMoniker": "prjMerchades\\Formularios\\Entrada\\frmCompras.cs",
-              "ToolTip": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Formularios\\Entrada\\frmCompras.cs",
-              "RelativeToolTip": "prjMerchades\\Formularios\\Entrada\\frmCompras.cs",
-              "ViewState": "AgIAADECAAAAAAAAAAAlwEQCAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T17:44:34.633Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "daDadosEntrada.xsd",
               "DocumentMoniker": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Dados\\daDadosEntrada.xsd",
               "RelativeDocumentMoniker": "prjMerchades\\Dados\\daDadosEntrada.xsd",
@@ -94,7 +94,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "prjMerchades",
               "DocumentMoniker": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\prjMerchades.csproj",
               "RelativeDocumentMoniker": "prjMerchades\\prjMerchades.csproj",
@@ -106,13 +106,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Program.cs",
               "RelativeDocumentMoniker": "prjMerchades\\Program.cs",
               "ToolTip": "C:\\Users\\LabInfo\\Documents\\GitHub\\Merchades\\prjMerchades\\Program.cs",
               "RelativeToolTip": "prjMerchades\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-01T20:30:55.529Z",
               "EditorCaption": ""

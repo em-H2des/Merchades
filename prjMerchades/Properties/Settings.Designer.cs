@@ -26,8 +26,8 @@ namespace prjMerchades.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-QJKQV0N;Initial Catalog=merchades_teste_9;Integrated Security" +
-            "=True;Encrypt=True;TrustServerCertificate=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-QJKQV0N;Initial Catalog=merchades_ultimo;Integrated Security=" +
+            "True;Encrypt=True;TrustServerCertificate=True")]
         public string ConnectionString {
             get {
                 return ((string)(this["ConnectionString"]));
@@ -37,8 +37,8 @@ namespace prjMerchades.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-QJKQV0N;Initial Catalog=merchades_teste_7;Integrated Security" +
-            "=True;Encrypt=True;TrustServerCertificate=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-QJKQV0N;Initial Catalog=merchades_ultimo;Integrated Security=" +
+            "True;Encrypt=True;TrustServerCertificate=True")]
         public string db_240098_66_A_1_2024ConnectionString {
             get {
                 return ((string)(this["db_240098_66_A_1_2024ConnectionString"]));
@@ -48,8 +48,8 @@ namespace prjMerchades.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-QJKQV0N;Initial Catalog=merchades_teste_7;Integrated Security" +
-            "=True;Encrypt=True;TrustServerCertificate=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-QJKQV0N;Initial Catalog=merchades_ultimo;Integrated Security=" +
+            "True;Encrypt=True;TrustServerCertificate=True")]
         public string masterConnectionString {
             get {
                 return ((string)(this["masterConnectionString"]));
@@ -59,8 +59,8 @@ namespace prjMerchades.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-QJKQV0N;Initial Catalog=merchades_teste_7;Integrated Security" +
-            "=True;Encrypt=True;TrustServerCertificate=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-QJKQV0N;Initial Catalog=merchades_ultimo;Integrated Security=" +
+            "True;Encrypt=True;TrustServerCertificate=True")]
         public string dboConnectionString {
             get {
                 return ((string)(this["dboConnectionString"]));
@@ -94,8 +94,8 @@ namespace prjMerchades.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-QJKQV0N;Initial Catalog=merchades_teste_9;Integrated Security" +
-            "=True;Encrypt=True;TrustServerCertificate=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-QJKQV0N;Initial Catalog=merchades_ultimo;Integrated Security=" +
+            "True;Encrypt=True;TrustServerCertificate=True")]
         public string dboConnectionString1 {
             get {
                 return ((string)(this["dboConnectionString1"]));

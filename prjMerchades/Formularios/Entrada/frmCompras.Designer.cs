@@ -107,7 +107,7 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.infoProdutosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.infoProdutosDividasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnPagar = new System.Windows.Forms.Button();
@@ -136,6 +136,7 @@
             this.tIPOPRODUTOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pRECOPRODUTOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qTDUNITPACDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.infoProdutosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btnLimparAntigas = new System.Windows.Forms.Button();
@@ -148,7 +149,6 @@
             this.cmbFiltroAntigas = new System.Windows.Forms.ComboBox();
             this.txtFiltroAntigas = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.infoProdutosDividasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.daDadosEntrada1 = new prjMerchades.Dados.daDadosEntrada();
             this.compraDividasBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -180,7 +180,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.infoNotaDividasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.daDadosEntrada2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProdutosDividas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.infoProdutosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infoProdutosDividasBindingSource)).BeginInit();
             this.tabPage_CompraAntg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
@@ -189,7 +189,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNotasAntigas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.infoNotaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProdutosAntigas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.infoProdutosDividasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infoProdutosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.daDadosEntrada1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compraDividasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comprasAntigasBindingSource)).BeginInit();
@@ -784,6 +784,7 @@
             this.dataGridViewNOtasDividas.Name = "dataGridViewNOtasDividas";
             this.dataGridViewNOtasDividas.ReadOnly = true;
             this.dataGridViewNOtasDividas.RowHeadersWidth = 62;
+            this.dataGridViewNOtasDividas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewNOtasDividas.Size = new System.Drawing.Size(629, 425);
             this.dataGridViewNOtasDividas.TabIndex = 54;
             this.dataGridViewNOtasDividas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewNOtasDividas_CellClick);
@@ -911,10 +912,10 @@
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Width = 150;
             // 
-            // infoProdutosBindingSource
+            // infoProdutosDividasBindingSource
             // 
-            this.infoProdutosBindingSource.DataMember = "infoProdutos";
-            this.infoProdutosBindingSource.DataSource = this.daDadosEntrada;
+            this.infoProdutosDividasBindingSource.DataMember = "infoProdutosDividas";
+            this.infoProdutosDividasBindingSource.DataSource = this.daDadosEntrada;
             // 
             // label5
             // 
@@ -1139,6 +1140,7 @@
             this.dataGridViewNotasAntigas.Name = "dataGridViewNotasAntigas";
             this.dataGridViewNotasAntigas.ReadOnly = true;
             this.dataGridViewNotasAntigas.RowHeadersWidth = 62;
+            this.dataGridViewNotasAntigas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewNotasAntigas.Size = new System.Drawing.Size(641, 496);
             this.dataGridViewNotasAntigas.TabIndex = 32;
             this.dataGridViewNotasAntigas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewNotas_CellClick);
@@ -1260,6 +1262,11 @@
             this.qTDUNITPACDataGridViewTextBoxColumn.Name = "qTDUNITPACDataGridViewTextBoxColumn";
             this.qTDUNITPACDataGridViewTextBoxColumn.ReadOnly = true;
             this.qTDUNITPACDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // infoProdutosBindingSource
+            // 
+            this.infoProdutosBindingSource.DataMember = "infoProdutos";
+            this.infoProdutosBindingSource.DataSource = this.daDadosEntrada;
             // 
             // label6
             // 
@@ -1409,11 +1416,6 @@
             this.label3.TabIndex = 33;
             this.label3.Text = "Filtrar Por:";
             // 
-            // infoProdutosDividasBindingSource
-            // 
-            this.infoProdutosDividasBindingSource.DataMember = "infoProdutosDividas";
-            this.infoProdutosDividasBindingSource.DataSource = this.daDadosEntrada;
-            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1526,7 +1528,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.infoNotaDividasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.daDadosEntrada2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProdutosDividas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.infoProdutosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infoProdutosDividasBindingSource)).EndInit();
             this.tabPage_CompraAntg.ResumeLayout(false);
             this.tabPage_CompraAntg.PerformLayout();
             this.splitContainer2.Panel1.ResumeLayout(false);
@@ -1536,7 +1538,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNotasAntigas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.infoNotaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProdutosAntigas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.infoProdutosDividasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infoProdutosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.daDadosEntrada1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.compraDividasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comprasAntigasBindingSource)).EndInit();
