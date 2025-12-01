@@ -54,12 +54,12 @@
             this.comprasToolStripMenuItem,
             this.estoqueToolStripMenuItem,
             this.exibirNotaFiscalToolStripMenuItem,
-            this.toolStripMenuItem1,
             this.fecharToolStripMenuItem,
             this.logoToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(1184, 32);
+            this.menuStrip.Stretch = false;
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 
@@ -139,9 +139,7 @@
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabelData,
-            this.dataToolStripStatusLabelUsuario,
-            this.toolStripStatusLabel1});
+            this.dataToolStripStatusLabelUsuario});
             this.statusStrip.Location = new System.Drawing.Point(0, 539);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(1184, 22);
@@ -150,12 +148,8 @@
             // 
             // dataToolStripStatusLabelUsuario
             // 
-            this.dataToolStripStatusLabel.BackColor = System.Drawing.Color.SeaGreen;
-            this.dataToolStripStatusLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataToolStripStatusLabel.Name = "dataToolStripStatusLabel";
-            this.dataToolStripStatusLabel.Size = new System.Drawing.Size(1138, 17);
-            this.dataToolStripStatusLabel.Spring = true;
-            this.dataToolStripStatusLabel.Text = "Data: ";
+            this.dataToolStripStatusLabelUsuario.Name = "dataToolStripStatusLabelUsuario";
+            this.dataToolStripStatusLabelUsuario.Size = new System.Drawing.Size(0, 17);
             // 
             // lblNomeUsuario
             // 
@@ -187,6 +181,7 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MDIEntrada";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "Menu Entrada";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

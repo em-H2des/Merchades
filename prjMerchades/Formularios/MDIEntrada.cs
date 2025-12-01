@@ -70,7 +70,6 @@ namespace prjMerchades.Formularios
 
         private void MDIEntrada_Load(object sender, EventArgs e)
         {
-            dataToolStripStatusLabel.Text = "Data: " + DateTime.Now.ToString("dd/MM/yyyy");
             lblNomeUsuario.Text += prjMerchades.Properties.Settings.Default.usuarioNome;
         }
 

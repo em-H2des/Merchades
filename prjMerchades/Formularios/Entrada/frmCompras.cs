@@ -34,16 +34,10 @@ namespace prjMerchades.Formularios.Entrada
             // TODO: esta linha de código carrega dados na tabela 'daDadosEntrada.infoNota'. Você pode movê-la ou removê-la conforme necessário.
             this.infoNotaTableAdapter1.Fill(this.daDadosEntrada.infoNota);
             // TODO: esta linha de código carrega dados na tabela 'daDadosEntrada3.compraDividas'. Você pode movê-la ou removê-la conforme necessário.
-            this.compraDividasTableAdapter.Fill(this.daDadosEntrada3.compraDividas);
+            this.compraDividasTableAdapter.Fill(this.daDadosEntrada.compraDividas);
             // TODO: esta linha de código carrega dados na tabela 'daDadosEntrada3.comprasAntigas'. Você pode movê-la ou removê-la conforme necessário.
-            this.comprasAntigasTableAdapter.Fill(this.daDadosEntrada3.comprasAntigas);
+            this.comprasAntigasTableAdapter.Fill(this.daDadosEntrada.comprasAntigas);
             // TODO: esta linha de código carrega dados na tabela 'daDadosEntrada2.compraDividas'. Você pode movê-la ou removê-la conforme necessário.
-            this.compraDividasTableAdapter.Fill(this.daDadosEntrada2.compraDividas);
-            // TODO: esta linha de código carrega dados na tabela 'daDadosEntrada2.compraDividas'. Você pode movê-la ou removê-la conforme necessário.
-            this.compraDividasTableAdapter.Fill(this.daDadosEntrada2.compraDividas);
-            // TODO: esta linha de código carrega dados na tabela 'daDadosEntrada1.compraDividas'. Você pode movê-la ou removê-la conforme necessário.
-            this.compraDividasTableAdapter.Fill(this.daDadosEntrada1.compraDividas);
-            // TODO: esta linha de código carrega dados na tabela 'daDadosEntrada.NOTA_FISCAL_FORNECEDOR'. Você pode movê-la ou removê-la conforme necessário.
             this.nOTA_FISCAL_FORNECEDORTableAdapter.Fill(this.daDadosEntrada.NOTA_FISCAL_FORNECEDOR);
             dtvwComprasNF.AutoGenerateColumns = true;
             dtvwComprasNF.DataSource = ds.PRODUTOSEntrada; // tabela do XSD
@@ -150,42 +144,7 @@ namespace prjMerchades.Formularios.Entrada
 
             return maior + 1;
         }
-        private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        {
-            if (e.RowIndex < 0) return;
 
-            if (e.ColumnIndex == dataGridView1.Columns["btn_pago"].Index)
-            {
-                e.PaintBackground(e.CellBounds, true);
-
-                Rectangle rect = e.CellBounds;
-                rect.Inflate(-4, -4);
-
-                using (SolidBrush brush = new SolidBrush(Color.FromArgb(0, 160, 80))) // verde
-                {
-                    e.Graphics.FillRectangle(brush, rect);
-                }
-
-                TextRenderer.DrawText(
-                    e.Graphics,
-                    "Pagar",
-                    new Font("Arial", 9, FontStyle.Bold),
-                    rect,
-                    Color.White,
-                    TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter
-                );
-
-                e.Handled = true;
-            }
-        }
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0 &&
-                e.ColumnIndex == dataGridView1.Columns["btn_pago"].Index)
-            {
-                MessageBox.Show("Pagamento realizado!");
-            }
-        }
         private void btnEnviar_Click(object sender, EventArgs e)
         {
             if (dtvwComprasNF.Rows.Count == 0)
@@ -267,6 +226,7 @@ namespace prjMerchades.Formularios.Entrada
             MessageBox.Show("Entrada cadastrada com sucesso!");
             dtvwComprasNF.Rows.Clear();
         }
+
 
         private int GetMaxId(string tabela, string coluna)
         {
@@ -360,10 +320,7 @@ namespace prjMerchades.Formularios.Entrada
             string filtro = txtFiltroDividas.Text.Trim(); //filtragem
             string resultado = "";
 
-            coluna = cmbFiltro.Text; //qual coluna da tabela sera aplicado o filtro
-            filtro = txtFiltro.Text; //filtragem
-
-            if (coluna == "Fornecedor") 
+            if (coluna == "Fornecedor")
             {
                 resultado = $"NOME_FORNECEDOR LIKE '%{filtro}%'";
                 infoNotaDividasBindingSource.Filter = resultado;
@@ -412,10 +369,9 @@ namespace prjMerchades.Formularios.Entrada
 
         private void btnBuscarAntigas_Click(object sender, EventArgs e)
         {
-            string coluna, filtro, resultado;
-
-            coluna = cmbFiltroAntigas.Text;
-            filtro = txtFiltroAntigas.Text;
+            string coluna = cmbFiltroAntigas.Text; //qual coluna da tabela sera aplicado o filtro
+            string filtro = txtFiltroAntigas.Text.Trim(); //filtragem
+            string resultado = "";
 
             if (coluna == "Fornecedor")
             {
