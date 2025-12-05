@@ -198,7 +198,7 @@ Funções:
 | [Caique](https://github.com/ComandanteWows) | [Brendon](https://github.com/BrendonLeal1313) |
 | César | Caio |
 | Eduardo Sugahara | Douglas |
-| Enzo | [Evelyn](https://github.com/lyyn09) |
+| [Enzo](https://github.com/Enzo-Oliveira-Soares) | [Evelyn](https://github.com/lyyn09) |
 | Felipe Tudela | [Felipe Augusto](https://github.com/Faugusto11) |
 | Filipe | Gabriel Henrique |
 | Gabriel Rangel | Giovanna |
