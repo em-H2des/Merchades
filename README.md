@@ -186,3 +186,31 @@ Funções:
 
 
 
+## Colaboradores do Projeto
+
+<div align="center">
+
+| Equipe Grupo Entrada (Compras) | Equipe Grupo Saída (Vendas) |
+| :---: | :---: |
+| **Gerente:** Felipe Tudela | **Gerente:** [Natália](https://github.com/nati1207) |
+| Amilton Neto | [Alain](https://github.com/cocafullgas) |
+| Brenda | [Arthur](https://github.com/aalps87) |
+| [Caique](https://github.com/ComandanteWows) | [Brendon](https://github.com/BrendonLeal1313) |
+| César | Caio |
+| Eduardo Sugahara | Douglas |
+| Enzo | [Evelyn](https://github.com/lyyn09) |
+| Felipe Tudela | [Felipe Augusto](https://github.com/Faugusto11) |
+| Filipe | Gabriel Henrique |
+| Gabriel Rangel | Giovanna |
+| Iago | Hessel |
+| [Lucas](https://github.com/RSette) | Iris |
+| Luiz Gustavo | Julia |
+| Maria Luísa | Maira |
+| Matheus | [Marco](https://github.com/marco-oliveira7) |
+| Murillo | Pedro |
+| Nikolas | Ramalho |
+| Ryan | [Samuel Trontino](https://github.com/SamuelTrontino) |
+| Sabina | |
+| Samuel Rodrigues | |
+
+</div>
