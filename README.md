@@ -209,7 +209,7 @@ Funções:
 | Matheus | [Marco](https://github.com/marco-oliveira7) |
 | Murillo | Pedro |
 | Nikolas | Ramalho |
-| Ryan | [Samuel Trontino](https://github.com/SamuelTrontino) |
+| [Ryan](https://github.com/Ryanpires-9) | [Samuel Trontino](https://github.com/SamuelTrontino) |
 | Sabina | |
 | Samuel Rodrigues | |
 
