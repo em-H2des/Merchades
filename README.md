@@ -211,6 +211,6 @@ Funções:
 | Nikolas | Ramalho |
 | [Ryan](https://github.com/Ryanpires-9) | [Samuel Trontino](https://github.com/SamuelTrontino) |
 | Sabina | |
-| Samuel Rodrigues | |
+| [Samuel Rodrigues](https://github.com/samudapaz) | |
 
 </div>
